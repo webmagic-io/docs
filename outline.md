@@ -3,9 +3,9 @@ WebMagic in Action
 
 >Little book of webmagic.
 
-章节：
+# 章节：
 
-## 1. [在项目中使用WebMagic](chapters/ch1-install.md)
+## 1. 在项目中使用WebMagic
 
 ### 1.1 使用Maven
 
@@ -13,7 +13,7 @@ WebMagic in Action
 
 ### 1.3 第一个项目
 
-## 2. [下载和编译源码](chapters/ch2-build-source.md)
+## 2. 下载和编译源码
 
 ### 2.1 下载源码
 
@@ -25,7 +25,7 @@ WebMagic in Action
 
 ### 2.3 编译和执行源码
 
-## 3. [基本的爬虫](chapters/ch3-basic-page-processor.md)
+## 3. 基本的爬虫
 
 ### 3.1 实现PageProcessor
 
