@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>下载和编译源码 | Webmagic-in-action</title>
+        <title>保存结果 | Webmagic-in-action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch2-build-source/git-repo.html" />
         
-        
-        <link rel="prev" href="../../posts/ch1-install/first-project.html" />
+        <link rel="prev" href="../../posts/ch3-basic-page-processor/selectable.html" />
         
 
-        <meta property="og:title" content="下载和编译源码 | Webmagic-in-action">
+        <meta property="og:title" content="保存结果 | Webmagic-in-action">
         <meta property="og:site_name" content="Webmagic-in-action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -40,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic-in-action" data-level="2" data-basepath="../.." data-revision="1396886406494">
+<div class="book" data-github="code4craft/webmagic-in-action" data-level="3.3" data-basepath="../.." data-revision="1396886406494">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -72,7 +70,7 @@
             <a href="https://github.com/code4craft/webmagic-in-action/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/code4craft/webmagic-in-action/edit/master/posts/ch2-build-source/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/code4craft/webmagic-in-action/edit/master/posts/ch3-basic-page-processor/results.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         <li data-level="0" data-path="index.html">
@@ -198,7 +196,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 41.666666666666664%;min-width: 33.333333333333336%;"></div>
+        <div class="inner" style="width: 100%;min-width: 91.66666666666667%;"></div>
     </div>
     <div class="chapters">
     
@@ -214,30 +212,44 @@
     
         <a href="../../posts/ch2-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="2" style="left: 41.666666666666664%;"></a>
     
-        <a href="../../posts/ch2-build-source/git-repo.html" title="下载源码" class="chapter  " data-progress="2.1" style="left: 50%;"></a>
+        <a href="../../posts/ch2-build-source/git-repo.html" title="下载源码" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
     
-        <a href="../../posts/ch2-build-source/import-project.html" title="导入项目" class="chapter  " data-progress="2.2" style="left: 58.333333333333336%;"></a>
+        <a href="../../posts/ch2-build-source/import-project.html" title="导入项目" class="chapter done " data-progress="2.2" style="left: 58.333333333333336%;"></a>
     
-        <a href="../../posts/ch2-build-source/compile-code.html" title="编译和执行源码" class="chapter  " data-progress="2.3" style="left: 66.66666666666667%;"></a>
+        <a href="../../posts/ch2-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="2.3" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../posts/ch3-basic-page-processor/README.html" title="基本的爬虫" class="chapter  new-chapter" data-progress="3" style="left: 75%;"></a>
+        <a href="../../posts/ch3-basic-page-processor/README.html" title="基本的爬虫" class="chapter done new-chapter" data-progress="3" style="left: 75%;"></a>
     
-        <a href="../../posts/ch3-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter  " data-progress="3.1" style="left: 83.33333333333333%;"></a>
+        <a href="../../posts/ch3-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="3.1" style="left: 83.33333333333333%;"></a>
     
-        <a href="../../posts/ch3-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter  " data-progress="3.2" style="left: 91.66666666666667%;"></a>
+        <a href="../../posts/ch3-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter done " data-progress="3.2" style="left: 91.66666666666667%;"></a>
     
-        <a href="../../posts/ch3-basic-page-processor/results.html" title="保存结果" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+        <a href="../../posts/ch3-basic-page-processor/results.html" title="保存结果" class="chapter done " data-progress="3.3" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_12">
                     
-                        <h2 id="2-">2.下载和编译源码</h2>
-<p>如果你对WebMagic的源码感兴趣，那么可以选择源码下载和编译的方式来使用WebMagic。“非常简单的二次开发”也是WebMagic的目标之一。</p>
-<p>WebMagic是一个纯Java项目，如果你熟悉Maven，那么下载并编译源码是非常简单的。如果不熟悉Maven也没关系，这部分会介绍如何在Eclipse里导入这个项目。</p>
+                        <h3 id="3-3-">3.3 保存结果</h3>
+<p>好了，爬虫编写完成，现在我们可能还有一个问题：我如果想把抓取的结果保存下来，要怎么做呢？WebMagic用于保存结果的组件叫做<code>Pipeline</code>。例如我们通过“控制台输出结果”这件事也是通过一个内置的Pipeline完成的，它叫做<code>ConsolePipeline</code>。那么，我现在想要把结果用Json的格式保存下来，怎么做呢？我只需要将Pipeline的实现换成&quot;JsonFilePipeline&quot;就可以了。</p>
+<pre><code class="lang-java">    public static void main(String[] args) {
+
+        Spider.create(new GithubRepoPageProcessor())
+                //从&quot;https://github.com/code4craft&quot;开始抓
+                .addUrl(&quot;https://github.com/code4craft&quot;)
+                .addPipeline(new JsonFilePipeline(&quot;D:\webmagic\&quot;))
+                //开启5个线程抓取
+                .thread(5)
+                //启动爬虫
+                .run();
+    }
+</code></pre>
+<p>这样子下载下来的文件就会保存在D盘的webmagic目录中了。</p>
+<p>通过定制Pipeline，我们还可以实现保存结果到文件、数据库等一系列功能。这个会在第7章“抽取结果的处理”中介绍。</p>
+<p>至此为止，我们已经完成了一个基本爬虫的编写，也具有了一些定制功能。</p>
 
                     
                     </section>
@@ -247,10 +259,8 @@
         </div>
 
         
-        <a href="../../posts/ch1-install/first-project.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../posts/ch3-basic-page-processor/selectable.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../posts/ch2-build-source/git-repo.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
