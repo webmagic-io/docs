@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>第一章 在项目中使用WebMagic | WebMagic in Action</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="code4craft">
+        <meta name="description" content="">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../chapters/ch2-build-source.html" />
+        
+        
+        <link rel="prev" href="../index.html" />
+        
+
+        <meta property="og:title" content="第一章 在项目中使用WebMagic | WebMagic in Action">
+        <meta property="og:site_name" content="WebMagic in Action">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/code4craft">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="code4craft/webmagic-in-action" data-level="1" data-basepath=".." data-revision="1396883115357">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/code4craft/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/code4craft/webmagic-in-action/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/code4craft/webmagic-in-action/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >WebMagic in Action</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/code4craft" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic-in-action/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic-in-action/edit/master/chapters/ch1-install.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="chapters/ch1-install.html">
+                
+                <a href="../chapters/ch1-install.html">
+                    <i class="fa fa-check"></i> <b>1)</b> 第一章 在项目中使用WebMagic
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="chapters/ch2-build-source.html">
+                
+                <a href="../chapters/ch2-build-source.html">
+                    <i class="fa fa-check"></i> <b>2)</b> 第二章 下载和编译源码
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="3" data-path="chapters/ch3-basic-page-processor.html">
+                
+                <a href="../chapters/ch3-basic-page-processor.html">
+                    <i class="fa fa-check"></i> <b>3)</b> 第三章 基本的爬虫
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 33.333333333333336%;min-width: 0%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../chapters/ch1-install.html" title="第一章 在项目中使用WebMagic" class="chapter done new-chapter" data-progress="1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../chapters/ch2-build-source.html" title="第二章 下载和编译源码" class="chapter  new-chapter" data-progress="2" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../chapters/ch3-basic-page-processor.html" title="第三章 基本的爬虫" class="chapter  new-chapter" data-progress="3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_2">
+                    
+                        <h2 id="1-webmagic">1. 使用WebMagic</h2>
+<p>WebMagic主要包含两个jar包：<code>webmagic-core-{version}.jar</code>和<code>webmagic-extension-{version}.jar</code>。在项目中添加这两个包的依赖，即可使用WebMagic。</p>
+<h3 id="1-1-maven">1.1 使用Maven</h3>
+<p>WebMagic基于Maven进行构建，推荐使用Maven来安装WebMagic。在项目中添加以下坐标即可：</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>us.codecraft<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>webmagic-extension<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.4.3<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre>
+<p>WebMagic使用slf4j-log4j12作为slf4j的实现.如果你自己定制了slf4j的实现，请在项目中去掉此依赖。</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>us.codecraft<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>webmagic-extension<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.4.3<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">exclusions</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">exclusion</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.slf4j<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>slf4j-log4j12<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">exclusion</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">exclusions</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre>
+<h3 id="1-2-maven">1.2 不使用Maven</h3>
+<p>不使用maven的用户，可以下载附带二进制jar包的版本(感谢<a href="http://www.oschina.net/" target="_blank">oschina</a>)：</p>
+<pre><code>git clone http://git<span class="hljs-preprocessor">.oschina</span><span class="hljs-preprocessor">.net</span>/flashsword20/webmagic<span class="hljs-preprocessor">.git</span>
+</code></pre><p>在<strong>lib</strong>目录下，有项目依赖的所有jar包，直接在IDE里，将这些jar添加到Libraries即可。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/102848_ETcU_190591.png" alt="import jars"></p>
+<h3 id="1-3-">1.3 第一个项目</h3>
+<p>在你的项目中添加了WebMagic的依赖之后，即可开始第一个爬虫的开发了！我们这里拿一个抓取Github信息的例子：</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> us.codecraft.webmagic.Page;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.Site;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.Spider;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.processor.PageProcessor;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> {</span>
+
+    <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">100</span>);
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>)==<span class="hljs-keyword">null</span>){
+            <span class="hljs-comment">//skip this page</span>
+            page.setSkip(<span class="hljs-keyword">true</span>);
+        }
+        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span>() {
+        <span class="hljs-keyword">return</span> site;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor()).addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>).thread(<span class="hljs-number">5</span>).run();
+    }
+}
+</code></pre>
+<p>点击main方法，选择“运行”，你会发现爬虫已经可以正常工作了！</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png" alt="runlog"></p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapters/ch2-build-source.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

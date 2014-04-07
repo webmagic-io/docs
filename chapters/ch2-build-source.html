@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>第二章 下载和编译源码 | WebMagic in Action</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="code4craft">
+        <meta name="description" content="">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../chapters/ch3-basic-page-processor.html" />
+        
+        
+        <link rel="prev" href="../chapters/ch1-install.html" />
+        
+
+        <meta property="og:title" content="第二章 下载和编译源码 | WebMagic in Action">
+        <meta property="og:site_name" content="WebMagic in Action">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/code4craft">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="code4craft/webmagic-in-action" data-level="2" data-basepath=".." data-revision="1396883115357">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/code4craft/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/code4craft/webmagic-in-action/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/code4craft/webmagic-in-action/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >WebMagic in Action</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/code4craft" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic-in-action/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic-in-action/edit/master/chapters/ch2-build-source.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="chapters/ch1-install.html">
+                
+                <a href="../chapters/ch1-install.html">
+                    <i class="fa fa-check"></i> <b>1)</b> 第一章 在项目中使用WebMagic
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="chapters/ch2-build-source.html">
+                
+                <a href="../chapters/ch2-build-source.html">
+                    <i class="fa fa-check"></i> <b>2)</b> 第二章 下载和编译源码
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="3" data-path="chapters/ch3-basic-page-processor.html">
+                
+                <a href="../chapters/ch3-basic-page-processor.html">
+                    <i class="fa fa-check"></i> <b>3)</b> 第三章 基本的爬虫
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 66.66666666666667%;min-width: 33.333333333333336%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../chapters/ch1-install.html" title="第一章 在项目中使用WebMagic" class="chapter done new-chapter" data-progress="1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../chapters/ch2-build-source.html" title="第二章 下载和编译源码" class="chapter done new-chapter" data-progress="2" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../chapters/ch3-basic-page-processor.html" title="第三章 基本的爬虫" class="chapter  new-chapter" data-progress="3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h2 id="2-">2.下载和编译源码</h2>
+<p>WebMagic是一个纯Java项目，如果你熟悉Maven，那么下载并编译源码是非常简单的。如果不熟悉Maven也没关系，这部分会介绍如何在Eclipse里导入这个项目。</p>
+<h3 id="2-1-">2.1 下载源码</h3>
+<p>WebMagic目前有两个仓库：</p>
+<ul>
+<li><a href="https://github.com/code4craft/webmagic" target="_blank">https://github.com/code4craft/webmagic</a></li>
+</ul>
+<p>github上的仓库保存最新版本，所有issue、pull request都在这里。大家觉得项目不错的话别忘了去给个star哦！</p>
+<ul>
+<li><a href="http://git.oschina.net/flashsword20/webmagic" target="_blank">http://git.oschina.net/flashsword20/webmagic</a></li>
+</ul>
+<p>此仓库包含所有编译好的依赖包，只保存项目的稳定版本，最新版本仍在github上更新。oschina在国内比较稳定，主要作为镜像。</p>
+<p>无论在哪个仓库，使用</p>
+<pre><code>git <span class="hljs-keyword">clone</span> https:<span class="hljs-comment">//github.com/code4craft/webmagic.git</span>
+</code></pre><p>或者</p>
+<pre><code>git clone http://git<span class="hljs-preprocessor">.oschina</span><span class="hljs-preprocessor">.net</span>/flashsword20/webmagic<span class="hljs-preprocessor">.git</span>
+</code></pre><p>即可下载最新代码。</p>
+<p>如果你对git本身使用也不熟悉，建议看看@黄勇的 <a href="http://my.oschina.net/huangyong/blog/200075" target="_blank">从 Git OSC 下载 Smart 源码</a></p>
+<h3 id="2-2-">2.2 导入项目</h3>
+<p>Intellij Idea默认自带Maven支持，import项目时选择Maven项目即可。</p>
+<h4 id="2-2-1-m2e-">2.2.1 使用m2e插件</h4>
+<p>使用Eclipse的用户，推荐安装m2e插件，安装地址：<a href="https://www.eclipse.org/m2e/download/[](https://www.eclipse.org/m2e/download/" target="_blank">https://www.eclipse.org/m2e/download/[](https://www.eclipse.org/m2e/download/</a>)</p>
+<p>安装后，在File-&gt;Import中选择Maven-&gt;Existing Maven Projects即可导入项目。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/104427_eNuc_190591.png" alt="m2e-import"></p>
+<p>导入后看到项目选择界面，点击finish即可。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/104735_6vwG_190591.png" alt="m2e-import2"></p>
+<h4 id="2-2-2-maven-eclipse-">2.2.2 使用Maven Eclipse插件</h4>
+<p>如果没有安装m2e插件，只要你安装了Maven，也是比较好办的。在项目根目录下使用命令：</p>
+<pre><code><span class="hljs-tag">mvn</span> <span class="hljs-tag">eclipse</span><span class="hljs-pseudo">:eclipse</span>
+</code></pre><p>生成maven项目结构的eclipse配置文件，然后在File-&gt;Import中选择General-&gt;Existing Projects into Workspace即可导入项目。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/100025_DAcy_190591.png" alt="eclipse-import-1"></p>
+<p>导入后看到项目选择界面，点击finish即可。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/100227_73DJ_190591.png" alt="eclipse-import-2"></p>
+<h3 id="2-3-">2.3 编译和执行源码</h3>
+<p>导入成功之后，应该就没有编译错误了！此时你可以运行一下webmagic-core项目中自带的exmaple:&quot;us.codecraft.webmagic.processor.example.GithubRepoPageProcessor&quot;。</p>
+<p>同样，看到控制台输出如下，则表示源码编译和执行成功了！</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png" alt="runlog"></p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapters/ch1-install.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapters/ch3-basic-page-processor.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>
