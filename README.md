@@ -9,4 +9,8 @@ WebMagic in Action
 
 这本小书以WebMagic入手，一方面讲解WebMagic的使用方式，另一方面讲解爬虫开发的一些惯用方案。
 
+文章预览请点[http://code4craft.github.io/webmagic-in-action/](http://code4craft.github.io/webmagic-in-action/)，页面基于[gitbook](https://github.com/GitbookIO/gitbook/)进行构建。
+
+此文档仍在编写中，所有的章节安排请点[这里](outline.md)。
+
 本文档遵循CC-BYNC协议。

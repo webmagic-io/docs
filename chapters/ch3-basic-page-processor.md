@@ -1,8 +1,3 @@
-WebMagic使用说明-基本的爬虫
-=========
-
-本文是WebMagic文档的一部分。系列文章写完后，会整合到[WebMagic新版文档](http://my.oschina.net/flashsword/blog/193273)中。
-
 ## 3. 基本的爬虫
 
 ### 3.1 实现PageProcessor
