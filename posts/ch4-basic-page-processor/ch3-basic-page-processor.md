@@ -1,10 +1,10 @@
-## 3. 基本的爬虫
+## 4. 基本的爬虫
 
 在WebMagic里，实现一个基本的爬虫只需要编写一个类，实现`PageProcessor`接口即可。这个类基本上包含了抓取一个网站，你需要写的所有代码。
 
 同时这部分还会介绍如何使用WebMagic的抽取API，以及最常见的抓取结果保存的问题。
 
-### 3.1 实现PageProcessor
+### 4.1 实现PageProcessor
 
 在WebMagic里，实现一个基本的爬虫只需要编写一个类，实现`PageProcessor`接口即可。这个类基本上包含了抓取一个网站，你需要写的所有代码。
 
@@ -50,11 +50,11 @@ public class GithubRepoPageProcessor implements PageProcessor {
 }
 ```
 
-#### 3.1.1 爬虫的配置
+#### 4.1.1 爬虫的配置
 
 第一部分关于爬虫的配置，包括编码、抓取间隔、超时时间、重试次数等，也包括一些模拟的参数，例如User Agent、cookie，以及代理的设置，我们会在第5章-“爬虫的配置”里进行介绍。在这里我们先简单设置一下：重试次数为3次，抓取间隔为一秒。
 
-#### 3.1.2 页面元素的抽取
+#### 4.1.2 页面元素的抽取
 
 第二部分是爬虫的核心部分：对于下载到的Html页面，你如何从中抽取到你想要的信息？WebMagic里主要使用了三种抽取技术：XPath、正则表达式和CSS选择器。
 
@@ -86,7 +86,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 XPath、CSS选择器和正则表达式的具体用法会在第4章“抽取工具详解”中讲到。
 
-#### 3.1.3 链接的发现
+#### 4.1.3 链接的发现
 
 有了处理页面的逻辑，我们的爬虫就接近完工了！
 
@@ -98,13 +98,13 @@ page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/
 
 这段代码的分为两部分，`page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all()`用于获取所有满足"(https://github\\.com/\\w+/\\w+)"这个正则表达式的链接，`page.addTargetRequests()`则将这些链接加入到待抓取的队列中去。
 
-### 3.2 使用Selectable的链式API
+### 4.2 使用Selectable的链式API
 
 `Selectable`相关的链式API是WebMagic的一个核心功能。使用Selectable接口，你可以直接完成页面元素的链式抽取，也无需去关心抽取的细节。
 
 在刚才的例子中可以看到，page.getHtml()返回的是一个`Html`对象，它实现了`Selectable`接口。这个接口包含一些重要的方法，我将它分为两类：抽取部分和获取结果部分。
 
-#### 3.2.1 抽取部分API：
+#### 4.2.1 抽取部分API：
 
 | 方法 | 说明 | 示例 |
 | ------------ | ------------- | ------------ |
@@ -144,7 +144,7 @@ page.addTargetRequests(urls);
 
 是不是比较简单？除了发现链接，Selectable的链式抽取还可以完成很多工作。我们会在第9章示例中再讲到。
 
-#### 3.2.2 获取结果的API：
+#### 4.2.2 获取结果的API：
 
 当链式调用结束时，我们一般都想要拿到一个字符串类型的结果。这时候就需要用到获取结果的API了。我们知道，一条抽取规则，无论是XPath、CSS选择器或者正则表达式，总有可能抽取到多条元素。WebMagic对这些进行了统一，你可以通过不同的API获取到一个或者多个元素。
 
@@ -163,7 +163,7 @@ selectable.all()则会获取到所有元素。
 
 好了，到现在为止，在回过头看看3.1中的GithubRepoPageProcessor，可能就觉得更加清晰了吧？指定main方法，已经可以看到抓取结果在控制台输出了。
 
-### 3.3 保存结果
+### 4.3 保存结果
 
 好了，爬虫编写完成，现在我们可能还有一个问题：我如果想把抓取的结果保存下来，要怎么做呢？WebMagic用于保存结果的组件叫做`Pipeline`。例如我们通过“控制台输出结果”这件事也是通过一个内置的Pipeline完成的，它叫做`ConsolePipeline`。那么，我现在想要把结果用Json的格式保存下来，怎么做呢？我只需要将Pipeline的实现换成"JsonFilePipeline"就可以了。
 

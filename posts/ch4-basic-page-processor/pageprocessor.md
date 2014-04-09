@@ -1,4 +1,4 @@
-### 3.1 实现PageProcessor
+### 4.1 实现PageProcessor
 
 这部分我们直接通过`GithubRepoPageProcessor`这个例子来介绍`PageProcessor`的编写方式。我将PageProcessor的定制分为三个部分，分别是爬虫的配置、页面元素的抽取和链接的发现。
 
@@ -42,11 +42,11 @@ public class GithubRepoPageProcessor implements PageProcessor {
 }
 ```
 
-#### 3.1.1 爬虫的配置
+#### 4.1.1 爬虫的配置
 
 第一部分关于爬虫的配置，包括编码、抓取间隔、超时时间、重试次数等，也包括一些模拟的参数，例如User Agent、cookie，以及代理的设置，我们会在第5章-“爬虫的配置”里进行介绍。在这里我们先简单设置一下：重试次数为3次，抓取间隔为一秒。
 
-#### 3.1.2 页面元素的抽取
+#### 4.1.2 页面元素的抽取
 
 第二部分是爬虫的核心部分：对于下载到的Html页面，你如何从中抽取到你想要的信息？WebMagic里主要使用了三种抽取技术：XPath、正则表达式和CSS选择器。
 
@@ -78,7 +78,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 XPath、CSS选择器和正则表达式的具体用法会在第4章“抽取工具详解”中讲到。
 
-#### 3.1.3 链接的发现
+#### 4.1.3 链接的发现
 
 有了处理页面的逻辑，我们的爬虫就接近完工了！
 

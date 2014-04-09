@@ -1,4 +1,4 @@
-### 1.1 使用Maven
+### 2.1 使用Maven
 
 WebMagic基于Maven进行构建，推荐使用Maven来安装WebMagic。在项目中添加以下坐标即可：
 

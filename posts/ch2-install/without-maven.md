@@ -1,4 +1,4 @@
-### 1.2 不使用Maven
+### 2.2 不使用Maven
 
 不使用maven的用户，可以下载附带二进制jar包的版本(感谢[oschina](http://www.oschina.net/))：
 

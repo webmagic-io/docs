@@ -1,8 +1,8 @@
-### 2.2 导入项目
+### 3.2 导入项目
 
 Intellij Idea默认自带Maven支持，import项目时选择Maven项目即可。
 
-#### 2.2.1 使用m2e插件
+#### 3.2.1 使用m2e插件
 
 使用Eclipse的用户，推荐安装m2e插件，安装地址：https://www.eclipse.org/m2e/download/[](https://www.eclipse.org/m2e/download/)
 
@@ -14,7 +14,7 @@ Intellij Idea默认自带Maven支持，import项目时选择Maven项目即可。
 
 ![m2e-import2](http://static.oschina.net/uploads/space/2014/0403/104735_6vwG_190591.png)
 
-#### 2.2.2 使用Maven Eclipse插件
+#### 3.2.2 使用Maven Eclipse插件
 
 如果没有安装m2e插件，只要你安装了Maven，也是比较好办的。在项目根目录下使用命令：
 
