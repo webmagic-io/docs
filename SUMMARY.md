@@ -20,3 +20,7 @@ This is the summary of my book.
 	* [保存结果](posts/ch4-basic-page-processor/results.md)
 * [使用注解编写爬虫(todo)](posts/ch5-annotation/README.md)
 * [一些常见爬虫的编写方式](posts/chx-cases/README.md)
+	* 定期抓取
+	* 增量更新
+	* 动态渲染的页面
+	* 按层级抓取
