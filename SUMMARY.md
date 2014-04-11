@@ -19,4 +19,9 @@ This is the summary of my book.
 	* [使用Selectable的链式API](posts/ch4-basic-page-processor/selectable.md)
 	* [保存结果](posts/ch4-basic-page-processor/results.md)
 * [使用注解编写爬虫(todo)](posts/ch5-annotation/README.md)
-* [一些常见爬虫的编写方式](posts/chx-cases/README.md)
+* [实例分析](posts/chx-cases/README.md)
+	* 基本的列表+详情页的抓取
+	* 抓取动态页面
+	* 分页抓取
+	* 定期抓取
+	* 增量更新
