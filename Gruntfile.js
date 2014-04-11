@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 input: "./",
                 title: "WebMagic in Action",
                 description: "",
-                github: "code4craft/webmagic-in-action",
+                github: "webmagic-io/webmagic-in-action",
                 theme: path.resolve(__dirname, 'theme')
             }
         },
