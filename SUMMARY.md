@@ -21,7 +21,7 @@ This is the summary of my book.
 * [使用注解编写爬虫(todo)](posts/ch5-annotation/README.md)
 * [实例分析](posts/chx-cases/README.md)
 	* [列表+详情的基本页面组合](posts/chx-cases/basic-list-target.md)
-	* 抓取动态页面
+	* [抓取动态页面](posts/chx-cases/js-render-page.md)
 	* 分页抓取
 	* 定期抓取
 	* 增量更新
