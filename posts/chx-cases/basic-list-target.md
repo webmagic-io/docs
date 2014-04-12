@@ -8,13 +8,13 @@
 
 * 列表页
 
-	列表页的格式是“http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html“，其中“0_1”中的“1”是可变的页数。
+	列表页的格式是“http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html“， 其中“0_1”中的“1”是可变的页数。
 	
 	![列表页](http://static.oschina.net/uploads/space/2014/0412/193620_Hr9E_190591.png)
 
 * 文章页
 
-	文章页的格式是“http://blog.sina.com.cn/s/blog_58ae76e80100g8au.html”，其中“58ae76e80100g8au”是可变的字符。
+	文章页的格式是“http://blog.sina.com.cn/s/blog_58ae76e80100g8au.html”， 其中“58ae76e80100g8au”是可变的字符。
 
 	![文章页](http://static.oschina.net/uploads/space/2014/0412/193102_ZleC_190591.png)
 
@@ -22,9 +22,9 @@
 
 在这个爬虫需求中，文章URL是我们最终关心的，所以如何发现这个博客中所有的文章地址，是爬虫的第一步。
 
-我们可以使用正则表达式`http://blog\\\\.sina\\\\.com\\\\.cn/s/blog_\\\\w+\\\\.html`对URL进行一次粗略过滤。这里比较复杂的是，这个URL过于宽泛，可能会抓取到其他博客的信息，所以我们必须从列表页中指定的区域获取URL。
+我们可以使用正则表达式`http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html`对URL进行一次粗略过滤。这里比较复杂的是，这个URL过于宽泛，可能会抓取到其他博客的信息，所以我们必须从列表页中指定的区域获取URL。
 
-在这里，我们使用xpath`//div[@class=\\"articleList\\"]`选中所有区域，再使用links()或者xpath`//a/@href`获取所有链接，最后再使用正则表达式`http://blog\\\\.sina\\\\.com\\\\.cn/s/blog_\\\\w+\\\\.html`，对URL进行过滤，去掉一些“编辑”或者“更多”之类的链接。于是，我们可以这样写：
+在这里，我们使用xpath`//div[@class=\\"articleList\\"]`选中所有区域，再使用links()或者xpath`//a/@href`获取所有链接，最后再使用正则表达式`http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html`，对URL进行过滤，去掉一些“编辑”或者“更多”之类的链接。于是，我们可以这样写：
 
 ```java
 page.addTargetRequests(page.getHtml().xpath("//div[@class=\"articleList\"]").links().regex("http://blog\\.sina\\.com\\.cn/s/articlelist_1487828712_0_\\d+\\.html").all());
