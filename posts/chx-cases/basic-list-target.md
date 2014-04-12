@@ -49,9 +49,29 @@ page.putField("date",
 
 完整的例子请看[SinaBlogProcessor.java](https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/SinaBlogProcessor.java)。
 
-#### 4 总结
+#### 4 区分列表和目标页
 
-在这个例子中，我们的主要做法有几个：
+现在，我们已经定义了对列表和目标页进行处理的方式，现在我们需要在处理时对他们进行区分。在这个例子中，区分方式很简单，因为列表页和目标页在URL格式上是不同的，所以直接用URL区分就可以了！
+
+```java
+//列表页
+if (page.getUrl().regex(URL_LIST).match()) {
+    page.addTargetRequests(page.getHtml().xpath("//div[@class=\"articleList\"]").links().regex(URL_POST).all());
+    page.addTargetRequests(page.getHtml().links().regex(URL_LIST).all());
+    //文章页
+} else {
+    page.putField("title", page.getHtml().xpath("//div[@class='articalTitle']/h2"));
+    page.putField("content", page.getHtml().xpath("//div[@id='articlebody']//div[@class='articalContent']"));
+    page.putField("date",
+            page.getHtml().xpath("//div[@id='articlebody']//span[@class='time SG_txtc']").regex("\\((.*)\\)"));
+}
+```
+
+#### 5 总结
+
+在这个例子中，我们的主要使用几个方法：
 
 * 从页面指定位置发现链接，使用正则表达式来过滤链接.
 * 在PageProcessor中处理两种页面，根据页面URL来区分需要如何处理。
+
+有些朋友反应，用if-else来区分不同处理有些不方便[#issue83](https://github.com/code4craft/webmagic/issues/83)。WebMagic计划在将来的0.5.0版本中，加入[`SubPageProcessor`](https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/handler/SubPageProcessor.java)来解决这个问题。
