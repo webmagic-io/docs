@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397307743744">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397309697138">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -348,9 +348,11 @@
 <li>在抓取阶段，在爬虫中内置一个浏览器内核，执行js渲染页面后，再抓取。这方面对应的工具有<code>Selenium</code>、<code>HtmlUnit</code>或者<code>PhantomJs</code>。但是这些工具都存在一定的效率问题，同时也不是那么稳定。好处是编写规则同静态页面一样。</li>
 <li>因为js渲染页面的数据也是从后端拿到，而且基本上都是Ajax获取，所以分析Ajax请求，找到对应数据的请求，也是比较可行的做法。而且相对于页面样式，这种接口变化可能性更小。缺点就是找到这个请求，并进行模拟，是一个相对困难的过程，也需要相对多的分析经验。</li>
 </ol>
-<p>对比两种方式，我的观点是，对于一次性或者小规模的需求，用第一种方式省时省力。但是对于长期性的、大规模的需求，还是第二种会更靠谱一些。</p>
-<h4 id="1-js-">1 分析js渲染的页面</h4>
-<p>判断页面是否为js渲染的方式比较简单，在浏览器中直接查看源码，如果找不到有效的信息，则基本可以肯定为js渲染。</p>
+<p>对比两种方式，我的观点是，对于一次性或者小规模的需求，用第一种方式省时省力。但是对于长期性的、大规模的需求，还是第二种会更靠谱一些。对于一些站点，甚至还有一些js混淆的技术，这个时候，第一种的方式基本是万能的，而第二种就会很复杂了。</p>
+<p>这里我主要介绍第二种方法，希望到最后你会发现：原来解析一个动态页面，也没有那么复杂。这里我们以AngularJS中文社区<a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a>为例。</p>
+<h4 id="1-">1 分析动态页面</h4>
+<p>判断页面是否为js渲染的方式比较简单，在浏览器中直接查看源码（Windows下Ctrl+U，Mac下command+alt+u），如果找不到有效的信息，则基本可以肯定为js渲染。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0412/211359_Dwhu_190591.jpeg" alt="view-source"></p>
 
                     
                     </section>
