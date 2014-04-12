@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>编译和执行源码 | WebMagic in Action</title>
+        <title>列表+详情的基本页面组合 | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch4-basic-page-processor/README.html" />
         
-        
-        <link rel="prev" href="../../posts/ch3-build-source/import-project.html" />
+        <link rel="prev" href="../../posts/chx-cases/README.html" />
         
 
-        <meta property="og:title" content="编译和执行源码 | WebMagic in Action">
+        <meta property="og:title" content="列表+详情的基本页面组合 | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -40,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="3.3" data-basepath="../.." data-revision="1397304999079">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.1" data-basepath="../.." data-revision="1397305822594">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -72,7 +70,7 @@
             <a href="https://github.com/docs/webmagic-in-action/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/docs/webmagic-in-action/edit/master/posts/ch3-build-source/compile-code.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/docs/webmagic-in-action/edit/master/posts/chx-cases/basic-list-target.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         <li data-level="0" data-path="index.html">
@@ -289,7 +287,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 63.1578947368421%;min-width: 57.89473684210526%;"></div>
+        <div class="inner" style="width: 100%;min-width: 94.73684210526316%;"></div>
     </div>
     <div class="chapters">
     
@@ -319,31 +317,79 @@
     
         <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="3.3" style="left: 63.1578947368421%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/README.html" title="基本的爬虫" class="chapter  new-chapter" data-progress="4" style="left: 68.42105263157895%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/README.html" title="基本的爬虫" class="chapter done new-chapter" data-progress="4" style="left: 68.42105263157895%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter  " data-progress="4.1" style="left: 73.6842105263158%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="4.1" style="left: 73.6842105263158%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter  " data-progress="4.2" style="left: 78.94736842105263%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter done " data-progress="4.2" style="left: 78.94736842105263%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter  " data-progress="4.3" style="left: 84.21052631578948%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter done " data-progress="4.3" style="left: 84.21052631578948%;"></a>
     
-        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫(todo)" class="chapter  new-chapter" data-progress="5" style="left: 89.47368421052632%;"></a>
+        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫(todo)" class="chapter done new-chapter" data-progress="5" style="left: 89.47368421052632%;"></a>
     
-        <a href="../../posts/chx-cases/README.html" title="实例分析" class="chapter  new-chapter" data-progress="6" style="left: 94.73684210526316%;"></a>
+        <a href="../../posts/chx-cases/README.html" title="实例分析" class="chapter done new-chapter" data-progress="6" style="left: 94.73684210526316%;"></a>
     
-        <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter  " data-progress="6.1" style="left: 100%;"></a>
+        <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter done " data-progress="6.1" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_11">
+                    <section class="normal" id="section-gitbook_20">
                     
-                        <h3 id="3-3-">3.3 编译和执行源码</h3>
-<p>导入成功之后，应该就没有编译错误了！此时你可以运行一下webmagic-core项目中自带的exmaple:&quot;us.codecraft.webmagic.processor.example.GithubRepoPageProcessor&quot;。</p>
-<p>同样，看到控制台输出如下，则表示源码编译和执行成功了！</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png" alt="runlog"></p>
+                        <h3 id="-">列表+详情的基本页面组合</h3>
+<p>我们先从一个最简单的例子入手。这个例子里，我们有一个列表页，这个列表页以分页的形式展现，我们可以遍历这些分页找到所有目标页面。</p>
+<h4 id="1-">1 示例介绍</h4>
+<p>这里我们以作者的新浪博客<a href="http://blog.sina.com.cn/flashsword20" target="_blank">http://blog.sina.com.cn/flashsword20</a>作为例子。在这个例子里，我们要从最终的博客文章页面，抓取博客的标题、内容、日期等信息，也要从列表页抓取博客的链接等信息，从而获取这个博客的所有文章。</p>
+<ul>
+<li><p>列表页</p>
+<p>  列表页的格式是“<a href="http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html“，" target="_blank">http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html“，</a> 其中“0_1”中的“1”是可变的页数。</p>
+<p>  <img src="http://static.oschina.net/uploads/space/2014/0412/193620_Hr9E_190591.png" alt="列表页"></p>
+</li>
+<li><p>文章页</p>
+<p>  文章页的格式是“<a href="http://blog.sina.com.cn/s/blog_58ae76e80100g8au.html”，" target="_blank">http://blog.sina.com.cn/s/blog_58ae76e80100g8au.html”，</a> 其中“58ae76e80100g8au”是可变的字符。</p>
+<p>  <img src="http://static.oschina.net/uploads/space/2014/0412/193102_ZleC_190591.png" alt="文章页"></p>
+</li>
+</ul>
+<h4 id="2-url">2 发现文章URL</h4>
+<p>在这个爬虫需求中，文章URL是我们最终关心的，所以如何发现这个博客中所有的文章地址，是爬虫的第一步。</p>
+<p>我们可以使用正则表达式<code>http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html</code>对URL进行一次粗略过滤。这里比较复杂的是，这个URL过于宽泛，可能会抓取到其他博客的信息，所以我们必须从列表页中指定的区域获取URL。</p>
+<p>在这里，我们使用xpath<code>//div[@class=\\&quot;articleList\\&quot;]</code>选中所有区域，再使用links()或者xpath<code>//a/@href</code>获取所有链接，最后再使用正则表达式<code>http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html</code>，对URL进行过滤，去掉一些“编辑”或者“更多”之类的链接。于是，我们可以这样写：</p>
+<pre><code class="lang-java">page.addTargetRequests(page.getHtml().xpath(<span class="hljs-string">"//div[@class=\"articleList\"]"</span>).links().regex(<span class="hljs-string">"http://blog\\.sina\\.com\\.cn/s/articlelist_1487828712_0_\\d+\\.html"</span>).all());
+</code></pre>
+<p>同时，我们需要把所有找到的列表页也加到待下载的URL中去：</p>
+<pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"http://blog\\.sina\\.com\\.cn/s/articlelist_1487828712_0_\\d+\\.html"</span>).all());
+</code></pre>
+<h4 id="3-">3 抽取内容</h4>
+<p>文章页面信息的抽取是比较简单的，写好对应的xpath抽取表达式就可以了。</p>
+<pre><code class="lang-java">page.putField(<span class="hljs-string">"title"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@class='articalTitle']/h2"</span>));
+page.putField(<span class="hljs-string">"content"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//div[@class='articalContent']"</span>));
+page.putField(<span class="hljs-string">"date"</span>,
+        page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//span[@class='time SG_txtc']"</span>).regex(<span class="hljs-string">"\\((.*)\\)"</span>));
+</code></pre>
+<p>完整的例子请看<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/SinaBlogProcessor.java" target="_blank">SinaBlogProcessor.java</a>。</p>
+<h4 id="4-">4 区分列表和目标页</h4>
+<p>现在，我们已经定义了对列表和目标页进行处理的方式，现在我们需要在处理时对他们进行区分。在这个例子中，区分方式很简单，因为列表页和目标页在URL格式上是不同的，所以直接用URL区分就可以了！</p>
+<pre><code class="lang-java"><span class="hljs-comment">//列表页</span>
+<span class="hljs-keyword">if</span> (page.getUrl().regex(URL_LIST).match()) {
+    page.addTargetRequests(page.getHtml().xpath(<span class="hljs-string">"//div[@class=\"articleList\"]"</span>).links().regex(URL_POST).all());
+    page.addTargetRequests(page.getHtml().links().regex(URL_LIST).all());
+    <span class="hljs-comment">//文章页</span>
+} <span class="hljs-keyword">else</span> {
+    page.putField(<span class="hljs-string">"title"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@class='articalTitle']/h2"</span>));
+    page.putField(<span class="hljs-string">"content"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//div[@class='articalContent']"</span>));
+    page.putField(<span class="hljs-string">"date"</span>,
+            page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//span[@class='time SG_txtc']"</span>).regex(<span class="hljs-string">"\\((.*)\\)"</span>));
+}
+</code></pre>
+<h4 id="5-">5 总结</h4>
+<p>在这个例子中，我们的主要使用几个方法：</p>
+<ul>
+<li>从页面指定位置发现链接，使用正则表达式来过滤链接.</li>
+<li>在PageProcessor中处理两种页面，根据页面URL来区分需要如何处理。</li>
+</ul>
+<p>有些朋友反应，用if-else来区分不同处理有些不方便<a href="https://github.com/code4craft/webmagic/issues/83" target="_blank">#issue83</a>。WebMagic计划在将来的0.5.0版本中，加入<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/handler/SubPageProcessor.java" target="_blank"><code>SubPageProcessor</code></a>来解决这个问题。</p>
 
                     
                     </section>
@@ -353,10 +399,8 @@
         </div>
 
         
-        <a href="../../posts/ch3-build-source/import-project.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../posts/chx-cases/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../posts/ch4-basic-page-processor/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
