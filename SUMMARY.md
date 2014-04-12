@@ -20,7 +20,7 @@ This is the summary of my book.
 	* [保存结果](posts/ch4-basic-page-processor/results.md)
 * [使用注解编写爬虫(todo)](posts/ch5-annotation/README.md)
 * [实例分析](posts/chx-cases/README.md)
-	* 基本的列表+详情页的抓取
+	* [列表+详情的基本页面组合](posts/chx-cases/basic-list-target.md)
 	* 抓取动态页面
 	* 分页抓取
 	* 定期抓取
