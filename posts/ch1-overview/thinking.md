@@ -1,6 +1,6 @@
 ### 1.1 WebMagic的设计思想
 
-![logo](https://raw.github.com/code4craft/webmagic/master/asserts/logo.jpg)
+![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 
 #### 1. 一个框架，一个领域
 
