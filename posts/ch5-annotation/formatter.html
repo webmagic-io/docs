@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="5.5" data-basepath="../.." data-revision="1397390866355">
+<div class="book" data-github="docs/webmagic-in-action" data-level="5.5" data-basepath="../.." data-revision="1397404897881">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -419,7 +419,94 @@
                     <section class="normal" id="section-gitbook_22">
                     
                         <h3 id="5-5-">5.5 结果的类型转换</h3>
-<p>类型转换是WebMagic 0.3.2增加的功能，它可以将抽取到的内容，自动转换成一些基本类型，而无需手动进行转换。</p>
+<p>类型转换（<code>Formatter</code>机制）是WebMagic 0.3.2增加的功能。因为抽取到的内容总是String，而我们想要的内容则可能是其他类型。Formatter可以将抽取到的内容，自动转换成一些基本类型，而无需手动使用代码进行转换。</p>
+<p>例如：</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//ul[@class='pagehead-actions']/li[1]//a[@class='social-count js-social-count']/text()"</span>)
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> star;
+</code></pre>
+<h4 id="5-5-1-">5.5.1 自动转换支持的类型</h4>
+<p>自动转换支持所有基本类型和装箱类型。</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>装箱类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody>
+</table>
+<p>另外，还支持<code>java.util.Date</code>类型的转换。但是在转换时，需要指定Date的格式。格式按照JDK的标准来定义，具体规范可以看这里：<a href="http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html" target="_blank">http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html</a></p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Formatter</span>(<span class="hljs-string">"yyyy-MM-dd HH:mm"</span>)
+<span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@class='BlogStat']/regex('\\d+-\\d+-\\d+\\s+\\d+:\\d+')"</span>)
+<span class="hljs-keyword">private</span> Date date;
+</code></pre>
+<h4 id="5-5-2-">5.5.2 显式指定转换类型</h4>
+<p>一般情况下，Formatter会根据字段类型进行转换，但是特殊情况下，我们会需要手动指定类型。这主要发生在字段是<code>List</code>类型的时候。</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Formatter</span>(value = <span class="hljs-string">""</span>,subClazz = Integer.class)
+<span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"//div[@class='id']/text()"</span>, multi = <span class="hljs-keyword">true</span>)
+<span class="hljs-keyword">private</span> List&lt;Integer&gt; ids;
+</code></pre>
+<h4 id="5-5-3-formatter-todo-">5.5.3 自定义Formatter（TODO）</h4>
+<p>实际上，除了自动类型转换之外，Formatter还可以做一些结果的后处理的事情。例如，我们有一种需求场景，需要将抽取的结果作为结果的一部分，拼接上一部分字符串来使用。在这里，我们定义了一个<code>StringTemplateFormatter</code>。</p>
+<pre><code class="lang-java">public class StringTemplateFormatter implements ObjectFormatter&lt;String&gt; {
+
+    private String template;
+
+    @Override
+    public String format(String raw) throws Exception {
+        return String.format(template, raw);
+    }
+
+    @Override
+    public Class&lt;String&gt; clazz() {
+        return String.class;
+    }
+
+    @Override
+    public void initParam(String[] extra) {
+        template = extra[0];
+    }
+}
+</code></pre>
+<p>那么，我们就能在抽取之后，做一些简单的操作了！</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@Formatter</span>(value = <span class="hljs-string">"author is %s"</span>,formatter = StringTemplateFormatter.class)
+<span class="hljs-annotation">@ExtractByUrl</span>(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>)
+<span class="hljs-keyword">private</span> String author;
+</code></pre>
+<p>此功能在0.4.3版本有BUG，将会在0.5.0中修复并开放。</p>
 
                     
                     </section>
