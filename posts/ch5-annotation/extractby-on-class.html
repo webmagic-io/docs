@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>下载和编译源码 | WebMagic in Action</title>
+        <title>在类上使用ExtractBy | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch3-build-source/git-repo.html" />
+        <link rel="next" href="../../posts/ch5-annotation/formatter.html" />
         
         
-        <link rel="prev" href="../../posts/ch2-install/first-project.html" />
+        <link rel="prev" href="../../posts/ch5-annotation/extractby.html" />
         
 
-        <meta property="og:title" content="下载和编译源码 | WebMagic in Action">
+        <meta property="og:title" content="在类上使用ExtractBy | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="3" data-basepath="../.." data-revision="1397388908317">
+<div class="book" data-github="docs/webmagic-in-action" data-level="5.4" data-basepath="../.." data-revision="1397388908317">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -72,7 +72,7 @@
             <a href="https://github.com/docs/webmagic-in-action/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/docs/webmagic-in-action/edit/master/posts/ch3-build-source/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/docs/webmagic-in-action/edit/master/posts/ch5-annotation/extractby-on-class.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         <li data-level="0" data-path="index.html">
@@ -351,7 +351,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 33.333333333333336%;min-width: 29.62962962962963%;"></div>
+        <div class="inner" style="width: 77.77777777777777%;min-width: 74.07407407407408%;"></div>
     </div>
     <div class="chapters">
     
@@ -375,29 +375,29 @@
     
         <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 33.333333333333336%;"></a>
     
-        <a href="../../posts/ch3-build-source/git-repo.html" title="下载源码" class="chapter  " data-progress="3.1" style="left: 37.03703703703704%;"></a>
+        <a href="../../posts/ch3-build-source/git-repo.html" title="下载源码" class="chapter done " data-progress="3.1" style="left: 37.03703703703704%;"></a>
     
-        <a href="../../posts/ch3-build-source/import-project.html" title="导入项目" class="chapter  " data-progress="3.2" style="left: 40.74074074074074%;"></a>
+        <a href="../../posts/ch3-build-source/import-project.html" title="导入项目" class="chapter done " data-progress="3.2" style="left: 40.74074074074074%;"></a>
     
-        <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter  " data-progress="3.3" style="left: 44.44444444444444%;"></a>
+        <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="3.3" style="left: 44.44444444444444%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/README.html" title="基本的爬虫" class="chapter  new-chapter" data-progress="4" style="left: 48.148148148148145%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/README.html" title="基本的爬虫" class="chapter done new-chapter" data-progress="4" style="left: 48.148148148148145%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter  " data-progress="4.1" style="left: 51.851851851851855%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="4.1" style="left: 51.851851851851855%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter  " data-progress="4.2" style="left: 55.55555555555556%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter done " data-progress="4.2" style="left: 55.55555555555556%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter  " data-progress="4.3" style="left: 59.25925925925926%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter done " data-progress="4.3" style="left: 59.25925925925926%;"></a>
     
-        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter  new-chapter" data-progress="5" style="left: 62.96296296296296%;"></a>
+        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter done new-chapter" data-progress="5" style="left: 62.96296296296296%;"></a>
     
-        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter  " data-progress="5.1" style="left: 66.66666666666667%;"></a>
+        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter done " data-progress="5.1" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter  " data-progress="5.2" style="left: 70.37037037037037%;"></a>
+        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter done " data-progress="5.2" style="left: 70.37037037037037%;"></a>
     
-        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter  " data-progress="5.3" style="left: 74.07407407407408%;"></a>
+        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter done " data-progress="5.3" style="left: 74.07407407407408%;"></a>
     
-        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter  " data-progress="5.4" style="left: 77.77777777777777%;"></a>
+        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter done " data-progress="5.4" style="left: 77.77777777777777%;"></a>
     
         <a href="../../posts/ch5-annotation/formatter.html" title="结果的类型转换" class="chapter  " data-progress="5.5" style="left: 81.48148148148148%;"></a>
     
@@ -416,11 +416,34 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_10">
+                    <section class="normal" id="section-gitbook_20">
                     
-                        <h2 id="3-">3.下载和编译源码</h2>
-<p>如果你对WebMagic的源码感兴趣，那么可以选择源码下载和编译的方式来使用WebMagic。“非常简单的二次开发”也是WebMagic的目标之一。</p>
-<p>WebMagic是一个纯Java项目，如果你熟悉Maven，那么下载并编译源码是非常简单的。如果不熟悉Maven也没关系，这部分会介绍如何在Eclipse里导入这个项目。</p>
+                        <h3 id="5-4-extractby">5.4 在类上使用ExtractBy</h3>
+<p>对于某一类需求，我们会发现，前面提到的注解模式是无法满足的：一个页面有多条要抽取的元素，因为在之前的模式，我们一个页面是只有一条结果。例如在“QQ美食”的列表页面<a href="http://meishi.qq.com/beijing/c/all" target="_blank">http://meishi.qq.com/beijing/c/all</a>，我想要抽取所有商户名和优惠信息，该怎么办呢？</p>
+<p>在类上使用<code>@ExtractBy</code>注解可以解决这个问题。</p>
+<p>在类上使用这个注解的意思很简单：使用这个结果抽取一个区域，让这块区域对应一个结果。</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"//ul[@id=\"promos_list2\"]/li"</span>,multi = <span class="hljs-keyword">true</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QQMeishi</span> {</span>
+    ……
+}
+</code></pre>
+<p>对应的，在这个类中的字段上再使用<code>@ExtractBy</code>的话，则是从这个区域而不是整个页面进行抽取。如果这个时候仍想要从整个页面抽取，则可以设置<code>source = RawHtml</code>。</p>
+<pre><code class="lang-java"><span class="hljs-annotation">@TargetUrl</span>(<span class="hljs-string">"http://meishi.qq.com/beijing/c/all[\\-p2]*"</span>)
+<span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"//ul[@id=\"promos_list2\"]/li"</span>,multi = <span class="hljs-keyword">true</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QQMeishi</span> {</span>
+
+    <span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@class=info]/a[@class=title]/h4/text()"</span>)
+    <span class="hljs-keyword">private</span> String shopName;
+
+    <span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@class=info]/a[@class=title]/text()"</span>)
+    <span class="hljs-keyword">private</span> String promo;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        OOSpider.create(Site.me(), <span class="hljs-keyword">new</span> ConsolePageModelPipeline(), QQMeishi.class).addUrl(<span class="hljs-string">"http://meishi.qq.com/beijing/c/all"</span>).thread(<span class="hljs-number">4</span>).run();
+    }
+
+}
+</code></pre>
 
                     
                     </section>
@@ -430,10 +453,10 @@
         </div>
 
         
-        <a href="../../posts/ch2-install/first-project.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../posts/ch5-annotation/extractby.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../posts/ch3-build-source/git-repo.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../posts/ch5-annotation/formatter.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
