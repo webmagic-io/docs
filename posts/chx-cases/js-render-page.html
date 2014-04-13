@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>抓取动态页面 | WebMagic in Action</title>
+        <title>抓取前端渲染的页面 | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -17,7 +17,7 @@
         <link rel="prev" href="../../posts/chx-cases/basic-list-target.html" />
         
 
-        <meta property="og:title" content="抓取动态页面 | WebMagic in Action">
+        <meta property="og:title" content="抓取前端渲染的页面 | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397318219027">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397362768805">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -254,7 +254,7 @@
                         <li  data-level="6.2" data-path="posts/chx-cases/js-render-page.html">
                             
                             <a href="../../posts/chx-cases/js-render-page.html">
-                                <i class="fa fa-check"></i> <b>6.2)</b> 抓取动态页面
+                                <i class="fa fa-check"></i> <b>6.2)</b> 抓取前端渲染的页面
                             </a>
                             
                         </li>
@@ -333,7 +333,7 @@
     
         <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter done " data-progress="6.1" style="left: 95%;"></a>
     
-        <a href="../../posts/chx-cases/js-render-page.html" title="抓取动态页面" class="chapter done " data-progress="6.2" style="left: 100%;"></a>
+        <a href="../../posts/chx-cases/js-render-page.html" title="抓取前端渲染的页面" class="chapter done " data-progress="6.2" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -342,15 +342,15 @@
                 
                     <section class="normal" id="section-gitbook_21">
                     
-                        <h3 id="-">抓取动态页面</h3>
+                        <h3 id="-">抓取前端渲染的页面</h3>
 <p>随着AJAX技术不断的普及，以及现在angular.js这种Single-page application框架的出现，现在js渲染出的页面越来越多。对于爬虫来说，这种页面是比较讨厌的：仅仅提取HTML内容，往往无法拿到有效的信息。那么如何处理这种页面呢？总的来说有两种做法：</p>
 <ol>
-<li>在抓取阶段，在爬虫中内置一个浏览器内核，执行js渲染页面后，再抓取。这方面对应的工具有<code>Selenium</code>、<code>HtmlUnit</code>或者<code>PhantomJs</code>。但是这些工具都存在一定的效率问题，同时也不是那么稳定。好处是编写规则同静态页面一样。</li>
+<li>在抓取阶段，在爬虫中内置一个浏览器内核，执行js渲染页面后，再抓取。这方面对应的工具有<code>Selenium</code>、<code>HtmlUnit</code>或者<code>PhantomJs</code>。webmagic-selenium就是这样的一个尝试，它定义了一个<code>Downloader</code>，在下载页面时，就是用浏览器内核进行渲染。但是这些工具都存在一定的效率问题，同时也不是那么稳定。好处是编写规则同静态页面一样。</li>
 <li>因为js渲染页面的数据也是从后端拿到，而且基本上都是AJAX获取，所以分析AJAX请求，找到对应数据的请求，也是比较可行的做法。而且相对于页面样式，这种接口变化可能性更小。缺点就是找到这个请求，并进行模拟，是一个相对困难的过程，也需要相对多的分析经验。</li>
 </ol>
 <p>对比两种方式，我的观点是，对于一次性或者小规模的需求，用第一种方式省时省力。但是对于长期性的、大规模的需求，还是第二种会更靠谱一些。对于一些站点，甚至还有一些js混淆的技术，这个时候，第一种的方式基本是万能的，而第二种就会很复杂了。</p>
-<p>这里我主要介绍第二种方法，希望到最后你会发现：原来解析一个动态页面，也没有那么复杂。这里我们以AngularJS中文社区<a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a>为例。</p>
-<h4 id="1-">1 如何判断动态页面</h4>
+<p>这里我主要介绍第二种方法，希望到最后你会发现：原来解析一个前端渲染的页面，也没有那么复杂。这里我们以AngularJS中文社区<a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a>为例。</p>
+<h4 id="1-">1 如何判断前端渲染</h4>
 <p>判断页面是否为js渲染的方式比较简单，在浏览器中直接查看源码（Windows下Ctrl+U，Mac下command+alt+u），如果找不到有效的信息，则基本可以肯定为js渲染。</p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0412/214310_cMYk_190591.png" alt="angular-view"></p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0412/214226_8s1v_190591.png" alt="angular-source"></p>
@@ -361,8 +361,55 @@
 <p>这一步需要一点耐心，但是也并不是无章可循。首先能帮助我们的是上方的分类筛选（All、Document等选项）。如果是正常的AJAX，在<code>XHR</code>标签下会显示，而JSONP请求会在<code>Scripts</code>标签下，这是两个比较常见的数据类型。</p>
 <p>然后你可以根据数据大小来判断一下，一般结果体积较大的更有可能是返回数据的接口。剩下的，基本靠经验了，例如这里这个&quot;latest?p=1&amp;s=20&quot;一看就很可疑…</p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0412/233924_6rXz_190591.png" alt="angular-ajax-list"></p>
-<p>对于可疑的地址，这时候可以看一下响应体是什么内容了。如果在开发者工具看不清楚，可以把URL复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。</p>
+<p>对于可疑的地址，这时候可以看一下响应体是什么内容了。这里在开发者工具看不清楚，我们把URL<code>http://angularjs.cn/api/article/latest?p=1&amp;s=20</code>复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。查看结果，看来我们找到了想要的。</p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0412/235310_8gHe_190591.png" alt="json"></p>
+<p>同样的办法，我们进入到帖子详情页，找到了具体内容的请求：<code>http://angularjs.cn/api/article/A0y2</code>。</p>
+<h4 id="3-">3 编写程序</h4>
+<p>回想一下之前列表+目标页的例子，会发现我们这次的需求，跟之前是类似的，只不过换成了AJAX方式-AJAX方式的列表，AJAX方式的数据，而返回数据变成了JSON。那么，我们仍然可以用上次的方式，分为两种页面来进行编写：</p>
+<ol>
+<li><p>数据列表</p>
+<p> 在这个列表页，我们需要找到有效的信息，来帮助我们构建目标AJAX的URL。这里我们看到，这个<code>_id</code>应该就是我们想要的帖子的id，而帖子的详情请求，就是由一些固定URL加上这个id组成。所以在这一步，我们自己手动构造URL，并加入到待抓取队列中。这里我们使用JsonPath这种选择语言来选择数据（webmagic-extension包中提供了<code>JsonPathSelector</code>来支持它）。</p>
+<pre><code class="lang-java"> <span class="hljs-keyword">if</span> (page.getUrl().regex(LIST_URL).match()) {
+     <span class="hljs-comment">//这里我们使用JSONPATH这种选择语言来选择数据</span>
+     List&lt;String&gt; ids = <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data._id"</span>).selectList(page.getRawText());
+     <span class="hljs-keyword">if</span> (CollectionUtils.isNotEmpty(ids)) {
+         <span class="hljs-keyword">for</span> (String id : ids) {
+             page.addTargetRequest(<span class="hljs-string">"http://angularjs\\.cn/api/article/"</span>+id);
+         }
+     }
+ }
+</code></pre>
+</li>
+<li><p>目标数据    </p>
+<p> 有了URL，实际上解析目标数据就非常简单了，因为JSON数据是完全结构化的，所以省去了我们分析页面，编写XPath的过程。这里我们依然使用JsonPath来获取标题和内容。</p>
+<pre><code class="lang-java"> page.putField(<span class="hljs-string">"title"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.title"</span>).select(page.getRawText()));
+ page.putField(<span class="hljs-string">"content"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.content"</span>).select(page.getRawText()));
+</code></pre>
+</li>
+</ol>
+<p>这个例子完整的代码请看<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/AngularJSProcessor.java" target="_blank">AngularJSProcessor.java</a></p>
+<h4 id="4-">4 总结</h4>
+<p>在这个例子中，我们分析了一个比较经典的动态页面的抓取过程。实际上，动态页面抓取，最大的区别在于：它提高了链接发现的难度。我们对比一下两种开发模式：</p>
+<ol>
+<li><p>后端渲染的页面</p>
+<p> 下载辅助页面=&gt;发现链接=&gt;下载并分析目标HTML</p>
+</li>
+<li><p>前端渲染的页面</p>
+<p> 发现辅助数据=&gt;构造链接=&gt;下载并分析目标AJAX</p>
+</li>
+</ol>
+<p>对于不同的站点，这个辅助数据可能是在页面HTML中已经预先输出，也可能是通过AJAX去请求，甚至可能是多次数据请求的过程，但是这个模式基本是固定的。</p>
+<p>但是这些数据请求的分析比起页面分析来说，仍然是要复杂得多，所以这其实是动态页面抓取的难点。</p>
+<p>本节这个例子希望做到的是，在分析出请求后，为这类爬虫的编写提供一个可遵循的模式，即<code>发现辅助数据=&gt;构造链接=&gt;下载并分析目标AJAX</code>这个模式。</p>
+<p>PS:</p>
+<p>WebMagic 0.5.0之后会将Json的支持增加到链式API中，以后你可以使用：</p>
+<pre><code class="lang-java">page.getJson().jsonPath(<span class="hljs-string">"$.name"</span>).get();
+</code></pre>
+<p>这样的方式来解析AJAX请求了。</p>
+<p>同时也支持</p>
+<pre><code class="lang-java">page.getJson().removePadding(<span class="hljs-string">"callback"</span>).jsonPath(<span class="hljs-string">"$.name"</span>).get();
+</code></pre>
+<p>这样的方式来解析JSONP请求。</p>
 
                     
                     </section>

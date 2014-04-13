@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="6.1" data-basepath="../.." data-revision="1397318219027">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.1" data-basepath="../.." data-revision="1397362768805">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -256,7 +256,7 @@
                         <li  data-level="6.2" data-path="posts/chx-cases/js-render-page.html">
                             
                             <a href="../../posts/chx-cases/js-render-page.html">
-                                <i class="fa fa-check"></i> <b>6.2)</b> 抓取动态页面
+                                <i class="fa fa-check"></i> <b>6.2)</b> 抓取前端渲染的页面
                             </a>
                             
                         </li>
@@ -335,7 +335,7 @@
     
         <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter done " data-progress="6.1" style="left: 95%;"></a>
     
-        <a href="../../posts/chx-cases/js-render-page.html" title="抓取动态页面" class="chapter  " data-progress="6.2" style="left: 100%;"></a>
+        <a href="../../posts/chx-cases/js-render-page.html" title="抓取前端渲染的页面" class="chapter  " data-progress="6.2" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -374,7 +374,6 @@ page.putField(<span class="hljs-string">"content"</span>, page.getHtml().xpath(<
 page.putField(<span class="hljs-string">"date"</span>,
         page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//span[@class='time SG_txtc']"</span>).regex(<span class="hljs-string">"\\((.*)\\)"</span>));
 </code></pre>
-<p>完整的例子请看<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/SinaBlogProcessor.java" target="_blank">SinaBlogProcessor.java</a>。</p>
 <h4 id="4-">4 区分列表和目标页</h4>
 <p>现在，我们已经定义了对列表和目标页进行处理的方式，现在我们需要在处理时对他们进行区分。在这个例子中，区分方式很简单，因为列表页和目标页在URL格式上是不同的，所以直接用URL区分就可以了！</p>
 <pre><code class="lang-java"><span class="hljs-comment">//列表页</span>
@@ -389,6 +388,7 @@ page.putField(<span class="hljs-string">"date"</span>,
             page.getHtml().xpath(<span class="hljs-string">"//div[@id='articlebody']//span[@class='time SG_txtc']"</span>).regex(<span class="hljs-string">"\\((.*)\\)"</span>));
 }
 </code></pre>
+<p>这个例子完整的代码请看<a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/SinaBlogProcessor.java" target="_blank">SinaBlogProcessor.java</a>。</p>
 <h4 id="5-">5 总结</h4>
 <p>在这个例子中，我们的主要使用几个方法：</p>
 <ul>
