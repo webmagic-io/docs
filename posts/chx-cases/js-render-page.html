@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397362768805">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397364894110">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -371,10 +371,10 @@
 <p> 在这个列表页，我们需要找到有效的信息，来帮助我们构建目标AJAX的URL。这里我们看到，这个<code>_id</code>应该就是我们想要的帖子的id，而帖子的详情请求，就是由一些固定URL加上这个id组成。所以在这一步，我们自己手动构造URL，并加入到待抓取队列中。这里我们使用JsonPath这种选择语言来选择数据（webmagic-extension包中提供了<code>JsonPathSelector</code>来支持它）。</p>
 <pre><code class="lang-java"> <span class="hljs-keyword">if</span> (page.getUrl().regex(LIST_URL).match()) {
      <span class="hljs-comment">//这里我们使用JSONPATH这种选择语言来选择数据</span>
-     List&lt;String&gt; ids = <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data._id"</span>).selectList(page.getRawText());
+     List&lt;String&gt; ids = <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data[*]._id"</span>).selectList(page.getRawText());
      <span class="hljs-keyword">if</span> (CollectionUtils.isNotEmpty(ids)) {
          <span class="hljs-keyword">for</span> (String id : ids) {
-             page.addTargetRequest(<span class="hljs-string">"http://angularjs\\.cn/api/article/"</span>+id);
+             page.addTargetRequest(<span class="hljs-string">"http://angularjs.cn/api/article/"</span>+id);
          }
      }
  }
@@ -382,8 +382,8 @@
 </li>
 <li><p>目标数据    </p>
 <p> 有了URL，实际上解析目标数据就非常简单了，因为JSON数据是完全结构化的，所以省去了我们分析页面，编写XPath的过程。这里我们依然使用JsonPath来获取标题和内容。</p>
-<pre><code class="lang-java"> page.putField(<span class="hljs-string">"title"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.title"</span>).select(page.getRawText()));
- page.putField(<span class="hljs-string">"content"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.content"</span>).select(page.getRawText()));
+<pre><code class="lang-java"> page.putField(<span class="hljs-string">"title"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data.title"</span>).select(page.getRawText()));
+ page.putField(<span class="hljs-string">"content"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data.content"</span>).select(page.getRawText()));
 </code></pre>
 </li>
 </ol>
