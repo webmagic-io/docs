@@ -32,3 +32,6 @@ This is the summary of my book.
 	* 分页抓取
 	* 定期抓取
 	* 增量更新
+* [常见问题](posts/chx-questions/README.md)
+	* [webmagic结合log4j](posts/chx-questions/webmagic-log4j.md)	
+	
