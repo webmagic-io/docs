@@ -4,7 +4,16 @@
 
 在类上使用`@ExtractBy`注解可以解决这个问题。
 
-在类上使用这个注解的意思很简单：使用这个结果抽取一个区域，让这块区域对应一个结果。对应的
+在类上使用这个注解的意思很简单：使用这个结果抽取一个区域，让这块区域对应一个结果。
+
+```java
+@ExtractBy(value = "//ul[@id=\"promos_list2\"]/li",multi = true)
+public class QQMeishi {
+	……
+}
+```
+
+对应的，在这个类中的字段上再使用`@ExtractBy`的话，则是从这个区域而不是整个页面进行抽取。如果这个时候仍想要从整个页面抽取，则可以设置`source = RawHtml`。
 
 ```java
 @TargetUrl("http://meishi.qq.com/beijing/c/all[\\-p2]*")
