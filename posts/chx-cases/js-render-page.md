@@ -31,7 +31,72 @@
 
 ![angular-ajax-list](http://static.oschina.net/uploads/space/2014/0412/233924_6rXz_190591.png)
 
-对于可疑的地址，这时候可以看一下响应体是什么内容了。如果在开发者工具看不清楚，可以把URL复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。
+对于可疑的地址，这时候可以看一下响应体是什么内容了。这里在开发者工具看不清楚，我们把URL`http://angularjs.cn/api/article/latest?p=1&s=20`复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。查看结果，看来我们找到了想要的。
 
 ![json](http://static.oschina.net/uploads/space/2014/0412/235310_8gHe_190591.png)
 
+同样的办法，我们进入到帖子详情页，找到了具体内容的请求：`http://angularjs.cn/api/article/A0y2`。
+
+#### 3 编写程序
+
+回想一下之前列表+目标页的例子，会发现我们这次的需求，跟之前是类似的，只不过换成了AJAX方式-AJAX方式的列表，AJAX方式的数据，而返回数据变成了JSON。那么，我们仍然可以用上次的方式，分为两种页面来进行编写：
+
+1. 数据列表
+	
+	在这个列表页，我们需要找到有效的信息，来帮助我们构建目标AJAX的URL。这里我们看到，这个`_id`应该就是我们想要的帖子的id，而帖子的详情请求，就是由一些固定URL加上这个id组成。所以在这一步，我们自己手动构造URL，并加入到待抓取队列中。这里我们使用JsonPath这种选择语言来选择数据（webmagic-extension包中提供了`JsonPathSelector`来支持它）。
+	
+	```java
+    if (page.getUrl().regex(LIST_URL).match()) {
+        //这里我们使用JSONPATH这种选择语言来选择数据
+        List<String> ids = new JsonPathSelector("$.data._id").selectList(page.getRawText());
+        if (CollectionUtils.isNotEmpty(ids)) {
+            for (String id : ids) {
+                page.addTargetRequest("http://angularjs\\.cn/api/article/"+id);
+            }
+        }
+    }
+	```
+	
+2. 目标数据	
+
+	有了URL，实际上解析目标数据就非常简单了，因为JSON数据是完全结构化的，所以省去了我们分析页面，编写XPath的过程。这里我们依然使用JSONPATH来获取标题和内容。
+	
+	```java
+    page.putField("title", new JsonPathSelector("$.title").select(page.getRawText()));
+    page.putField("content", new JsonPathSelector("$.content").select(page.getRawText()));
+    ```
+	
+这个例子完整的代码请看[AngularJSProcessor.java](https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/AngularJSProcessor.java)
+
+#### 4 总结
+
+在这个例子中，我们分析了一个比较经典的动态页面的抓取过程。实际上，动态页面抓取，最大的区别在于，它提高了链接发现的难度，我们对比一下两种开发模式：
+
+1. 后端渲染的页面
+
+	下载辅助页面=>发现链接=>下载并分析目标HTML
+	
+2. 前端渲染的页面
+
+	发现辅助数据=>构造链接=>下载并分析目标AJAX
+	
+对于不同的站点，这个辅助数据可能是在页面HTML中已经预先输出，也可能是通过AJAX去请求，甚至可能是多次数据请求的过程，但是这个模式基本是固定的。
+
+但是这些数据请求的分析比起页面分析来说，仍然是要复杂得多，所以这其实是动态页面抓取的难点。
+
+本节这个例子希望做到的是，在分析出请求后，为这类爬虫的编写提供一个可遵循的模式，即`发现辅助数据=>构造链接=>下载并分析目标AJAX`这个模式。
+
+PS:
+
+WebMagic 0.5.0之后会将Json的支持增加到链式API中，以后你可以使用：
+
+```java
+page.getJson().jsonPath("$.name").get();
+```
+这样的方式来解析AJAX请求了。
+
+同时也支持
+```java
+page.getJson().removePadding("callback").jsonPath("$.name").get();
+```
+这样的方式来解析JSONP请求。
