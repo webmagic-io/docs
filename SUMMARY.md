@@ -3,9 +3,9 @@
 This is the summary of my book.
 
 * [WebMagic概览](posts/ch1-overview/README.md)
-	* [设计思想](posts/ch1-overview/thinking.md) 
-	* [项目组成](posts/ch1-overview/component.md) 
+	* [设计思想](posts/ch1-overview/thinking.md)  
 	* [总体架构](posts/ch1-overview/architecture.md)
+	* [项目组成](posts/ch1-overview/component.md)
 * [使用WebMagic](posts/ch2-install/README.md)
 	* [使用Maven](posts/ch2-install/with-maven.md)
 	* [不使用Maven](posts/ch2-install/without-maven.md)

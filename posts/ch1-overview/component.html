@@ -13,10 +13,10 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch1-overview/architecture.html" />
+        <link rel="next" href="../../posts/ch2-install/README.html" />
         
         
-        <link rel="prev" href="../../posts/ch1-overview/thinking.html" />
+        <link rel="prev" href="../../posts/ch1-overview/architecture.html" />
         
 
         <meta property="og:title" content="项目组成 | WebMagic in Action">
@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="1.2" data-basepath="../.." data-revision="1397408448279">
+<div class="book" data-github="docs/webmagic-in-action" data-level="1.3" data-basepath="../.." data-revision="1397430003108">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -96,18 +96,18 @@
                             
                         </li>
                     
-                        <li  data-level="1.2" data-path="posts/ch1-overview/component.html">
+                        <li  data-level="1.2" data-path="posts/ch1-overview/architecture.html">
                             
-                            <a href="../../posts/ch1-overview/component.html">
-                                <i class="fa fa-check"></i> <b>1.2)</b> 项目组成
+                            <a href="../../posts/ch1-overview/architecture.html">
+                                <i class="fa fa-check"></i> <b>1.2)</b> 总体架构
                             </a>
                             
                         </li>
                     
-                        <li  data-level="1.3" data-path="posts/ch1-overview/architecture.html">
+                        <li  data-level="1.3" data-path="posts/ch1-overview/component.html">
                             
-                            <a href="../../posts/ch1-overview/architecture.html">
-                                <i class="fa fa-check"></i> <b>1.3)</b> 总体架构
+                            <a href="../../posts/ch1-overview/component.html">
+                                <i class="fa fa-check"></i> <b>1.3)</b> 项目组成
                             </a>
                             
                         </li>
@@ -351,7 +351,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 11.11111111111111%;min-width: 7.407407407407407%;"></div>
+        <div class="inner" style="width: 14.814814814814815%;min-width: 11.11111111111111%;"></div>
     </div>
     <div class="chapters">
     
@@ -361,9 +361,9 @@
     
         <a href="../../posts/ch1-overview/thinking.html" title="设计思想" class="chapter done " data-progress="1.1" style="left: 7.407407407407407%;"></a>
     
-        <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.2" style="left: 11.11111111111111%;"></a>
+        <a href="../../posts/ch1-overview/architecture.html" title="总体架构" class="chapter done " data-progress="1.2" style="left: 11.11111111111111%;"></a>
     
-        <a href="../../posts/ch1-overview/architecture.html" title="总体架构" class="chapter  " data-progress="1.3" style="left: 14.814814814814815%;"></a>
+        <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 14.814814814814815%;"></a>
     
         <a href="../../posts/ch2-install/README.html" title="使用WebMagic" class="chapter  new-chapter" data-progress="2" style="left: 18.51851851851852%;"></a>
     
@@ -418,15 +418,15 @@
                 
                     <section class="normal" id="section-gitbook_4">
                     
-                        <h3 id="1-2-">1.2 项目组成</h3>
+                        <h3 id="1-3-">1.3 项目组成</h3>
 <p>WebMagic项目代码包括几个部分，在根目录下以不同目录名分开。它们都是独立的Maven项目。</p>
-<h3 id="1-2-1-">1.2.1 主要部分</h3>
+<h3 id="1-3-1-">1.3.1 主要部分</h3>
 <p>WebMagic主要包括两个包，这两个包经过广泛实用，已经比较成熟：</p>
 <h4 id="webmagic-core">webmagic-core</h4>
 <p><code>webmagic-core</code>是WebMagic核心部分，只包含爬虫基本模块和基本抽取器。WebMagic-core的目标是成为网页爬虫的一个教科书般的实现。</p>
 <h4 id="webmagic-extension">webmagic-extension</h4>
 <p><code>webmagic-extension</code>是WebMagic的主要扩展模块，提供一些更方便的编写爬虫的工具。包括注解格式定义爬虫、JSON、分布式等支持。</p>
-<h3 id="1-2-2-">1.2.2 外围功能</h3>
+<h3 id="1-3-2-">1.3.2 外围功能</h3>
 <p>除此之外，WebMagic项目里还有几个包，这些都是一些实验性的功能，目的只是提供一些与外围工具整合的样例。因为精力有限，这些包没有经过广泛的使用和测试，推荐使用方式是自行下载源码，遇到问题后再修改。</p>
 <h4 id="webmagic-samples">webmagic-samples</h4>
 <p>这里是作者早期编写的一些爬虫的例子。因为时间有限，这些例子有些使用的仍然是老版本的API，也可能有一些因为目标页面的结构变化不再可用了。最新的、精选过的例子，请看webmaigc-core的<code>us.codecraft.webmagic.processor.example</code>包和webmaigc-core的<code>us.codecraft.webmagic.example</code>包。</p>
@@ -437,7 +437,7 @@
 <p>WebmMgic与Selenium结合的模块。Selenium是一个模拟浏览器进行页面渲染的工具，WebMagic依赖Selenium进行动态页面的抓取。</p>
 <h4 id="webmagic-saxon">webmagic-saxon</h4>
 <p>WebMagic与Saxon结合的模块。Saxon是一个XPath、XSLT的解析工具，webmagic依赖Saxon来进行XPath2.0语法解析支持。</p>
-<h3 id="1-2-3-webmagic-avalon">1.2.3 webmagic-avalon</h3>
+<h3 id="1-3-3-webmagic-avalon">1.3.3 webmagic-avalon</h3>
 <p><code>webmagic-avalon</code>是一个特殊的项目，它想基于WebMagic实现一个产品化的工具，涵盖爬虫的创建、爬虫的管理等后台工具。<a href="http://zh.wikipedia.org/wiki/%E9%98%BF%E7%93%A6%E9%9A%86" target="_blank">Avalon</a>是亚瑟王传说中的“理想之岛”，<code>webmagic-avalon</code>的目标是提供一个通用的爬虫产品，达到这个目标绝非易事，所以取名也有一点“理想”的意味，但是作者一直在朝这个目标努力。</p>
 <p>对这个项目感兴趣的可以看这里<a href="https://github.com/code4craft/webmagic/issues/43" target="_blank">WebMagic-Avalon项目计划</a>。</p>
 
@@ -449,10 +449,10 @@
         </div>
 
         
-        <a href="../../posts/ch1-overview/thinking.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../posts/ch1-overview/architecture.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../posts/ch1-overview/architecture.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../posts/ch2-install/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
