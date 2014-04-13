@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="5.4" data-basepath="../.." data-revision="1397388908317">
+<div class="book" data-github="docs/webmagic-in-action" data-level="5.4" data-basepath="../.." data-revision="1397390866355">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -419,7 +419,7 @@
                     <section class="normal" id="section-gitbook_20">
                     
                         <h3 id="5-4-extractby">5.4 在类上使用ExtractBy</h3>
-<p>对于某一类需求，我们会发现，前面提到的注解模式是无法满足的：一个页面有多条要抽取的元素，因为在之前的模式，我们一个页面是只有一条结果。例如在“QQ美食”的列表页面<a href="http://meishi.qq.com/beijing/c/all" target="_blank">http://meishi.qq.com/beijing/c/all</a>，我想要抽取所有商户名和优惠信息，该怎么办呢？</p>
+<p>在之前的注解模式中，我们一个页面只对应一条结果。如果一个页面有多个抽取的记录呢？例如在“QQ美食”的列表页面<a href="http://meishi.qq.com/beijing/c/all" target="_blank">http://meishi.qq.com/beijing/c/all</a>，我想要抽取所有商户名和优惠信息，该怎么办呢？</p>
 <p>在类上使用<code>@ExtractBy</code>注解可以解决这个问题。</p>
 <p>在类上使用这个注解的意思很简单：使用这个结果抽取一个区域，让这块区域对应一个结果。</p>
 <pre><code class="lang-java"><span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"//ul[@id=\"promos_list2\"]/li"</span>,multi = <span class="hljs-keyword">true</span>)
