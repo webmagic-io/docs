@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397364894110">
+<div class="book" data-github="docs/webmagic-in-action" data-level="6.2" data-basepath="../.." data-revision="1397365672698">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -343,7 +343,7 @@
                     <section class="normal" id="section-gitbook_21">
                     
                         <h3 id="-">抓取前端渲染的页面</h3>
-<p>随着AJAX技术不断的普及，以及现在angular.js这种Single-page application框架的出现，现在js渲染出的页面越来越多。对于爬虫来说，这种页面是比较讨厌的：仅仅提取HTML内容，往往无法拿到有效的信息。那么如何处理这种页面呢？总的来说有两种做法：</p>
+<p>随着AJAX技术不断的普及，以及现在AngularJS这种Single-page application框架的出现，现在js渲染出的页面越来越多。对于爬虫来说，这种页面是比较讨厌的：仅仅提取HTML内容，往往无法拿到有效的信息。那么如何处理这种页面呢？总的来说有两种做法：</p>
 <ol>
 <li>在抓取阶段，在爬虫中内置一个浏览器内核，执行js渲染页面后，再抓取。这方面对应的工具有<code>Selenium</code>、<code>HtmlUnit</code>或者<code>PhantomJs</code>。webmagic-selenium就是这样的一个尝试，它定义了一个<code>Downloader</code>，在下载页面时，就是用浏览器内核进行渲染。但是这些工具都存在一定的效率问题，同时也不是那么稳定。好处是编写规则同静态页面一样。</li>
 <li>因为js渲染页面的数据也是从后端拿到，而且基本上都是AJAX获取，所以分析AJAX请求，找到对应数据的请求，也是比较可行的做法。而且相对于页面样式，这种接口变化可能性更小。缺点就是找到这个请求，并进行模拟，是一个相对困难的过程，也需要相对多的分析经验。</li>
