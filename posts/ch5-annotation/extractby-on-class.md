@@ -1,6 +1,6 @@
 ### 5.4 在类上使用ExtractBy
 
-对于某一类需求，我们会发现，前面提到的注解模式是无法满足的：一个页面有多条要抽取的元素，因为在之前的模式，我们一个页面是只有一条结果。例如在“QQ美食”的列表页面[http://meishi.qq.com/beijing/c/all](http://meishi.qq.com/beijing/c/all)，我想要抽取所有商户名和优惠信息，该怎么办呢？
+在之前的注解模式中，我们一个页面只对应一条结果。如果一个页面有多个抽取的记录呢？例如在“QQ美食”的列表页面[http://meishi.qq.com/beijing/c/all](http://meishi.qq.com/beijing/c/all)，我想要抽取所有商户名和优惠信息，该怎么办呢？
 
 在类上使用`@ExtractBy`注解可以解决这个问题。
 
