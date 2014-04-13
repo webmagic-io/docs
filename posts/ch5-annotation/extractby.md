@@ -44,7 +44,7 @@ private String content;
 	@ExtractBy("//div[@class='BlogTags']/a/text()")
 	private List<String> tags;
 	```
-	
+		
 #### 5.3.5 ComboExtract（已废弃）
 
 `@ComboExtract`是一个比较复杂的注解，它可以将多个抽取规则进行组合，组合方式包括"AND/OR"两种方式。
@@ -64,3 +64,7 @@ private String content;
     @ExtractBy("//div[@id='title']/text() | //title/text()")
     private String title;
     ```
+    
+#### 5.3.6 ExtractByUrl
+
+`@ExtractByUrl`是一个单独的注解，它的意思是“从URL中进行抽取”。它只支持正则表达式作为抽取规则。
