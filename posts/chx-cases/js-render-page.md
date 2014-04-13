@@ -48,10 +48,10 @@
 	```java
     if (page.getUrl().regex(LIST_URL).match()) {
         //这里我们使用JSONPATH这种选择语言来选择数据
-        List<String> ids = new JsonPathSelector("$.data._id").selectList(page.getRawText());
+        List<String> ids = new JsonPathSelector("$.data[*]._id").selectList(page.getRawText());
         if (CollectionUtils.isNotEmpty(ids)) {
             for (String id : ids) {
-                page.addTargetRequest("http://angularjs\\.cn/api/article/"+id);
+                page.addTargetRequest("http://angularjs.cn/api/article/"+id);
             }
         }
     }
@@ -62,8 +62,8 @@
 	有了URL，实际上解析目标数据就非常简单了，因为JSON数据是完全结构化的，所以省去了我们分析页面，编写XPath的过程。这里我们依然使用JsonPath来获取标题和内容。
 	
 	```java
-    page.putField("title", new JsonPathSelector("$.title").select(page.getRawText()));
-    page.putField("content", new JsonPathSelector("$.content").select(page.getRawText()));
+    page.putField("title", new JsonPathSelector("$.data.title").select(page.getRawText()));
+    page.putField("content", new JsonPathSelector("$.data.content").select(page.getRawText()));
     ```
 	
 这个例子完整的代码请看[AngularJSProcessor.java](https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/AngularJSProcessor.java)
