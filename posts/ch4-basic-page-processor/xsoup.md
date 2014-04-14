@@ -1,6 +1,6 @@
 ### 4.4 抽取工具简介
 
-WebMagic的抽取主要用到了[`Jsoup`](http://jsoup.org/)和我自己开发的工具[`Xsoup`](https://github.com/code4craft/xsoup)。
+WebMagic的抽取主要用到了[Jsoup](http://jsoup.org/)和我自己开发的工具[Xsoup](https://github.com/code4craft/xsoup)。
 
 #### 4.4.1 Jsoup
 
@@ -10,36 +10,93 @@ Jsoup是一个简单的HTML解析器，同时它支持使用CSS选择器的方�
 
 [Xsoup](https://github.com/code4craft/xsoup)是我基于Jsoup开发的一款XPath解析器。
 
-之前WebMagic使用的解析器是[`HtmlCleaner`](http://htmlcleaner.sourceforge.net/)，使用过程存在一些问题。主要问题是XPath出错定位不准确，并且其不太合理的代码结构，也难以进行定制。最终我自己实现了Xsoup，使得更加符合爬虫开发的需要。令人欣喜的是，经过测试，Xsoup的性能比HtmlCleaner要快一倍以上。
+之前WebMagic使用的解析器是[HtmlCleaner](http://htmlcleaner.sourceforge.net/)，使用过程存在一些问题。主要问题是XPath出错定位不准确，并且其不太合理的代码结构，也难以进行定制。最终我自己实现了Xsoup，使得更加符合爬虫开发的需要。令人欣喜的是，经过测试，Xsoup的性能比HtmlCleaner要快一倍以上。
 
 Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支持的语法对照表：
 
-| Name	 | Expression	| Support|
-| ------------ | ---------|--|
-|nodename	| nodename |yes |
-|immediate parent |	/ |	yes|
-|parent	| //	|yes|
-|attribute |	[@key=value] |	yes|
-|nth child |	tag[n]	 |yes |
-| attribute |	/@key |	yes |
-|wildcard in tagname	| /*	 | yes|
-| wildcard in attribute|	/[@*]	| yes
-|function |	function()	| yes |
-| or |	a \| b	 | yes since 0.2.0
-| parent in path |	. or .. |	no |
-| predicates	| price>35 |	no |
-|predicates logic |	@class=a or @class=b |	yes since 0.2.0|
+<table>
+    <tr>
+        <td width="100">Name</td>
+        <td width="100">Expression</td>
+        <td>Support</td>
+    </tr>
+    <tr>
+        <td>nodename</td>
+        <td>nodename</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>immediate parent</td>
+        <td>/</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>parent</td>
+        <td>//</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>attribute</td>
+        <td>[@key=value]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>nth child</td>
+        <td>tag[n]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>attribute</td>
+        <td>/@key</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>wildcard in tagname</td>
+        <td>/*</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>wildcard in attribute</td>
+        <td>/[@*]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>function</td>
+        <td>function()</td>
+        <td>part</td>
+    </tr>
+    <tr>
+        <td>or</td>
+        <td>a | b</td>
+        <td>yes since 0.2.0</td>
+    </tr>
+    <tr>
+        <td>parent in path</td>
+        <td>. or ..</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>predicates</td>
+        <td>price>35</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>predicates logic</td>
+        <td>@class=a or @class=b</td>
+        <td>yes since 0.2.0</td>
+    </tr>
+</table>
 
-另外我自己定义了几个对于爬虫来说，很方便的XPath函数：
+另外我自己定义了几个对于爬虫来说，很方便的XPath函数。但是请注意，这些函数式标准XPath没有的。
 
 | Expression	| Description |	XPath1.0 |
 | ------------ | ---------|--|
-| text(n)|	nth text content of element(0 for all)|	text() only|
-|allText()	| text including children	| not support|
-|tidyText()	| text including children, well formatted |	not support |
-| html()	| innerhtml of element |	not support |
-| outerHtml() |	outerHtml of element|	not support
-|regex(@attr,expr,group) | use regex to extract content|	not support
+| text(n)| 第n个直接文本子节点，为0表示所有|	text() only|
+|allText()	| 所有的直接和简介文本子节点	| not support|
+|tidyText()	| 所有的直接和简介文本子节点，并将一些标签替换为换行，使纯文本显示更直接 |	not support |
+| html()	| 内部html，不包括标签的html本身 |	not support |
+| outerHtml() |	内部html，包括标签的html本身|	not support
+|regex(@attr,expr,group) | 这里@attr和group均可选，默认是group0|	not support
 
 #### 4.4.3 Saxon
 
