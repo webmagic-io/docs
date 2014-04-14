@@ -18,6 +18,7 @@ This is the summary of my book.
 	* [实现PageProcessor](posts/ch4-basic-page-processor/pageprocessor.md)
 	* [使用Selectable的链式API](posts/ch4-basic-page-processor/selectable.md)
 	* [保存结果](posts/ch4-basic-page-processor/results.md)
+	* [Jsoup与Xsoup](posts/ch4-basic-page-processor/xsoup.md)
 * [使用注解编写爬虫](posts/ch5-annotation/README.md)
 	* [编写Model类](posts/ch5-annotation/model.md)
 	* [TargetUrl与HelpUrl](posts/ch5-annotation/targeturl.md)

@@ -48,7 +48,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 #### 4.1.2 页面元素的抽取
 
-第二部分是爬虫的核心部分：对于下载到的Html页面，你如何从中抽取到你想要的信息？WebMagic里主要使用了三种抽取技术：XPath、正则表达式和CSS选择器。
+第二部分是爬虫的核心部分：对于下载到的Html页面，你如何从中抽取到你想要的信息？WebMagic里主要使用了三种抽取技术：XPath、正则表达式和CSS选择器。另外，对于JSON格式的内容，可使用JsonPath进行解析。
 
 1. XPath
 
@@ -73,10 +73,12 @@ public class GithubRepoPageProcessor implements PageProcessor {
 	```java
 	page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
 	```
-
+	
 	这段代码就用到了正则表达式，它表示匹配所有"https://github.com/code4craft/webmagic"这样的链接。
+	
+4. JsonPath
 
-XPath、CSS选择器和正则表达式的具体用法会在第4章“抽取工具详解”中讲到。
+	JsonPath是于XPath很类似的一个语言，它用于从Json中快速定位一条内容。WebMagic中使用的JsonPath格式可以参考这里：[https://code.google.com/p/json-path/](https://code.google.com/p/json-path/)
 
 #### 4.1.3 链接的发现
 

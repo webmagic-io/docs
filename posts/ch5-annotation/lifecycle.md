@@ -104,4 +104,4 @@ public class OschinaBlog extends Model<OschinaBlog> implements AfterExtractor {
 
 注解模式算是介绍结束，在WebMagic里，注解模式其实是完全基于`webmagic-core`中的`PageProcessor`和`Pipeline`扩展实现的，有兴趣的朋友可以去看看代码。
 
-这部分实现其实还是比较复杂的，如果发现一些细节的代码存在问题，欢迎[向我反馈问题](https://github.com/code4craft/webmagic/issues)。
+这部分实现其实还是比较复杂的，如果发现一些细节的代码存在问题，欢迎[向我反馈](https://github.com/code4craft/webmagic/issues)。
