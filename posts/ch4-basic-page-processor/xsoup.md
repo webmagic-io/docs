@@ -93,11 +93,11 @@ Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支
 | ------------ | ---------|--|
 | text(n)| 第n个直接文本子节点，为0表示所有|	text() only|
 |allText()	| 所有的直接和简介文本子节点	| not support|
-|tidyText()	| 所有的直接和简介文本子节点，并将一些标签替换为换行，使纯文本显示更直接 |	not support |
+|tidyText()	| 所有的直接和简介文本子节点，并将一些标签替换为换行，使纯文本显示更整洁 |	not support |
 | html()	| 内部html，不包括标签的html本身 |	not support |
 | outerHtml() |	内部html，包括标签的html本身|	not support
 |regex(@attr,expr,group) | 这里@attr和group均可选，默认是group0|	not support
 
 #### 4.4.3 Saxon
 
-Saxon是一个强大的XPath解析器，支持XPath 2.0语法。`webmagic-saxon`是对Saxon尝试性的一个整合，但是目前看来，因为XPath 2.0的复杂性，这个功能的使用者并不多。
+Saxon是一个强大的XPath解析器，支持XPath 2.0语法。`webmagic-saxon`是对Saxon尝试性的一个整合，但是目前看来，XPath 2.0的高级语法，似乎在爬虫开发中使用者并不多。
