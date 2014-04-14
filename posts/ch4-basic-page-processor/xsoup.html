@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="docs/webmagic-in-action" data-level="4.4" data-basepath="../.." data-revision="1397486293751">
+<div class="book" data-github="docs/webmagic-in-action" data-level="4.4" data-basepath="../.." data-revision="1397486719554">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/docs/webmagic-in-action" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -444,91 +444,87 @@
                     <section class="normal" id="section-gitbook_18">
                     
                         <h3 id="4-4-">4.4 抽取工具简介</h3>
-<p>WebMagic的抽取主要用到了<a href="http://jsoup.org/" target="_blank"><code>Jsoup</code></a>和我自己开发的工具<a href="https://github.com/code4craft/xsoup" target="_blank"><code>Xsoup</code></a>。</p>
+<p>WebMagic的抽取主要用到了<a href="http://jsoup.org/" target="_blank">Jsoup</a>和我自己开发的工具<a href="https://github.com/code4craft/xsoup" target="_blank">Xsoup</a>。</p>
 <h4 id="4-4-1-jsoup">4.4.1 Jsoup</h4>
 <p>Jsoup是一个简单的HTML解析器，同时它支持使用CSS选择器的方式查找元素。为了开发WebMagic，我对Jsoup的源码进行过详细的分析，具体文章参见<a href="https://github.com/code4craft/jsoup-learning" target="_blank">Jsoup学习笔记</a>。</p>
 <h4 id="4-4-2-xsoup">4.4.2 Xsoup</h4>
 <p><a href="https://github.com/code4craft/xsoup" target="_blank">Xsoup</a>是我基于Jsoup开发的一款XPath解析器。</p>
-<p>之前WebMagic使用的解析器是<a href="http://htmlcleaner.sourceforge.net/" target="_blank"><code>HtmlCleaner</code></a>，使用过程存在一些问题。主要问题是XPath出错定位不准确，并且其不太合理的代码结构，也难以进行定制。最终我自己实现了Xsoup，使得更加符合爬虫开发的需要。令人欣喜的是，经过测试，Xsoup的性能比HtmlCleaner要快一倍以上。</p>
+<p>之前WebMagic使用的解析器是<a href="http://htmlcleaner.sourceforge.net/" target="_blank">HtmlCleaner</a>，使用过程存在一些问题。主要问题是XPath出错定位不准确，并且其不太合理的代码结构，也难以进行定制。最终我自己实现了Xsoup，使得更加符合爬虫开发的需要。令人欣喜的是，经过测试，Xsoup的性能比HtmlCleaner要快一倍以上。</p>
 <p>Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支持的语法对照表：</p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Expression</th>
-<th>Support</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nodename</td>
-<td>nodename</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>immediate parent</td>
-<td>/</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>parent</td>
-<td>//</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>attribute</td>
-<td>[@key=value]</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>nth child</td>
-<td>tag[n]</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>attribute</td>
-<td>/@key</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>wildcard in tagname</td>
-<td>/*</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>wildcard in attribute</td>
-<td>/[@*]</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>function</td>
-<td>function()</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>or</td>
-<td>a \</td>
-<td>b</td>
-<td>yes since 0.2.0</td>
-</tr>
-<tr>
-<td>parent in path</td>
-<td>. or ..</td>
-<td>no</td>
-</tr>
-<tr>
-<td>predicates</td>
-<td>price&gt;35</td>
-<td>no</td>
-</tr>
-<tr>
-<td>predicates logic</td>
-<td>@class=a or @class=b</td>
-<td>yes since 0.2.0</td>
-</tr>
-</tbody>
+    <tr>
+        <td width="100">Name</td>
+        <td width="100">Expression</td>
+        <td>Support</td>
+    </tr>
+    <tr>
+        <td>nodename</td>
+        <td>nodename</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>immediate parent</td>
+        <td>/</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>parent</td>
+        <td>//</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>attribute</td>
+        <td>[@key=value]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>nth child</td>
+        <td>tag[n]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>attribute</td>
+        <td>/@key</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>wildcard in tagname</td>
+        <td>/<em></td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>wildcard in attribute</td>
+        <td>/[@</em>]</td>
+        <td>yes</td>
+    </tr>
+    <tr>
+        <td>function</td>
+        <td>function()</td>
+        <td>part</td>
+    </tr>
+    <tr>
+        <td>or</td>
+        <td>a | b</td>
+        <td>yes since 0.2.0</td>
+    </tr>
+    <tr>
+        <td>parent in path</td>
+        <td>. or ..</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>predicates</td>
+        <td>price&gt;35</td>
+        <td>no</td>
+    </tr>
+    <tr>
+        <td>predicates logic</td>
+        <td>@class=a or @class=b</td>
+        <td>yes since 0.2.0</td>
+    </tr>
 </table>
-<p>另外我自己定义了几个对于爬虫来说，很方便的XPath函数：</p>
+
+<p>另外我自己定义了几个对于爬虫来说，很方便的XPath函数。但是请注意，这些函数式标准XPath没有的。</p>
 <table>
 <thead>
 <tr>
@@ -540,32 +536,32 @@
 <tbody>
 <tr>
 <td>text(n)</td>
-<td>nth text content of element(0 for all)</td>
+<td>第n个直接文本子节点，为0表示所有</td>
 <td>text() only</td>
 </tr>
 <tr>
 <td>allText()</td>
-<td>text including children</td>
+<td>所有的直接和简介文本子节点</td>
 <td>not support</td>
 </tr>
 <tr>
 <td>tidyText()</td>
-<td>text including children, well formatted</td>
+<td>所有的直接和简介文本子节点，并将一些标签替换为换行，使纯文本显示更直接</td>
 <td>not support</td>
 </tr>
 <tr>
 <td>html()</td>
-<td>innerhtml of element</td>
+<td>内部html，不包括标签的html本身</td>
 <td>not support</td>
 </tr>
 <tr>
 <td>outerHtml()</td>
-<td>outerHtml of element</td>
+<td>内部html，包括标签的html本身</td>
 <td>not support</td>
 </tr>
 <tr>
 <td>regex(@attr,expr,group)</td>
-<td>use regex to extract content</td>
+<td>这里@attr和group均可选，默认是group0</td>
 <td>not support</td>
 </tr>
 </tbody>
