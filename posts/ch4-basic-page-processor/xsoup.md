@@ -16,8 +16,8 @@ Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支
 
 <table>
     <tr>
-        <td width="100">Name</td>
-        <td width="100">Expression</td>
+        <td>Name</td>
+        <td>Expression</td>
         <td>Support</td>
     </tr>
     <tr>
