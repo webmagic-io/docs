@@ -27,6 +27,7 @@ This is the summary of my book.
 	* [在类上使用ExtractBy](posts/ch5-annotation/extractby-on-class.md)
 	* [结果的类型转换](posts/ch5-annotation/formatter.md)
 	* [一个完整的流程](posts/ch5-annotation/lifecycle.md)
+	* [AfterExtractor](posts/ch5-annotation/after-extractor.md)
 * [实例分析](posts/chx-cases/README.md)
 	* [列表+详情的基本页面组合](posts/chx-cases/basic-list-target.md)
 	* [抓取前端渲染的页面](posts/chx-cases/js-render-page.md)
