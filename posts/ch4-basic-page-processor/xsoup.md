@@ -1,12 +1,12 @@
-### 4.4 抽取工具简介
+### 4.5 抽取工具简介
 
 WebMagic的抽取主要用到了[Jsoup](http://jsoup.org/)和我自己开发的工具[Xsoup](https://github.com/code4craft/xsoup)。
 
-#### 4.4.1 Jsoup
+#### 4.5.1 Jsoup
 
 Jsoup是一个简单的HTML解析器，同时它支持使用CSS选择器的方式查找元素。为了开发WebMagic，我对Jsoup的源码进行过详细的分析，具体文章参见[Jsoup学习笔记](https://github.com/code4craft/jsoup-learning)。
 
-#### 4.4.2 Xsoup
+#### 4.5.2 Xsoup
 
 [Xsoup](https://github.com/code4craft/xsoup)是我基于Jsoup开发的一款XPath解析器。
 
@@ -98,6 +98,6 @@ Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支
 | outerHtml() |	内部html，包括标签的html本身|	not support
 |regex(@attr,expr,group) | 这里@attr和group均可选，默认是group0|	not support
 
-#### 4.4.3 Saxon
+#### 4.5.3 Saxon
 
 Saxon是一个强大的XPath解析器，支持XPath 2.0语法。`webmagic-saxon`是对Saxon尝试性的一个整合，但是目前看来，XPath 2.0的高级语法，似乎在爬虫开发中使用者并不多。
