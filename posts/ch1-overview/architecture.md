@@ -32,7 +32,27 @@ Pipeline负责抽取结果的处理，包括计算、持久化到文件、数据
 
 `Pipeline`定义了结果保存的方式，如果你要保存到指定数据库，则需要编写对应的Pipeline。对于一类需求一般只需编写一个`Pipeline`。
 
-### 1.2.2 控制爬虫运转的引擎--Spider
+### 1.2.2 用于数据流转的对象
+
+#### 1. Request
+
+`Request`是对URL地址的一层封装，一个Request对应一个URL地址。
+
+它是PageProcessor与Downloader交互的载体，也是PageProcessor控制Downloader唯一方式。
+
+除了URL本身外，它还包含一个Key-Value结构的字段`extra`。你可以在extra中保存一些特殊的属性，然后在其他地方读取，以完成不同的功能。例如附加上一个页面的一些信息等。
+
+#### 2. Page
+
+`Page`代表了从Downloader下载到的一个页面——可能是HTML，也可能是JSON或者其他文本格式的内容。
+
+Page是WebMagic抽取过程的核心对象，它提供一些方法可供抽取、结果保存等。在第四章的例子中，我们会详细介绍它的使用。
+
+#### 3. ReusltItems
+
+`ReusltItems`相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段`skip`，若设置为true，则不应被Pipeline处理。
+
+### 1.2.3 控制爬虫运转的引擎--Spider
 
 Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。
 
