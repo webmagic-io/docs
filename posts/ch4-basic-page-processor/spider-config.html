@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.4" data-basepath="../.." data-revision="1397522089725">
+<div class="book" data-github="code4craft/webmagic" data-level="4.4" data-basepath="../.." data-revision="1397527933853">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -473,6 +473,11 @@
 <td>spider .addUrl(&quot;<a href="http://webmagic.io/docs/" target="_blank">http://webmagic.io/docs/</a>&quot;)</td>
 </tr>
 <tr>
+<td>addRequest(Request...)</td>
+<td>添加初始的Request</td>
+<td>spider .addUrl(&quot;<a href="http://webmagic.io/docs/" target="_blank">http://webmagic.io/docs/</a>&quot;)</td>
+</tr>
+<tr>
 <td>thread(n)</td>
 <td>开启n个线程</td>
 <td>spider.thread(5)</td>
@@ -513,9 +518,14 @@
 <td>spider .setDownloader(new SeleniumDownloader())</td>
 </tr>
 <tr>
-<td>get()</td>
+<td>get(String)</td>
 <td>同步调用，并直接取得结果</td>
 <td>ResultItems result = spider .get(&quot;<a href="http://webmagic.io/docs/" target="_blank">http://webmagic.io/docs/</a>&quot;)</td>
+</tr>
+<tr>
+<td>getAll(String…)</td>
+<td>同步调用，并直接取得一堆结果</td>
+<td>List&lt;ResultItems&gt; results = spider .getAll(&quot;<a href="http://webmagic.io/docs/" target="_blank">http://webmagic.io/docs/</a>&quot;, &quot;<a href="http://webmagic.io/xxx" target="_blank">http://webmagic.io/xxx</a>&quot;)</td>
 </tr>
 </tbody>
 </table>

@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1397522089725">
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1397527933853">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -521,7 +521,7 @@
 <p>但是现在还有一个问题：一个站点的页面是很多的，一开始我们不可能全部列举出来，于是如何发现后续的链接，是一个爬虫不可缺少的一部分。</p>
 <pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
 </code></pre>
-<p>这段代码的分为两部分，<code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code>用于获取所有满足&quot;(<a href="https://github\\.com/\\w+/\\w+)&quot;这个正则表达式的链接，`page.addTargetRequests()`则将这些链接加入到待抓取的队列中去。" target="_blank">https://github\\.com/\\w+/\\w+)&quot;这个正则表达式的链接，`page.addTargetRequests()`则将这些链接加入到待抓取的队列中去。</a></p>
+<p>这段代码的分为两部分，<code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code>用于获取所有满足&quot;(https:/ /github\.com/\w+/\w+)&quot;这个正则表达式的链接，<code>page.addTargetRequests()</code>则将这些链接加入到待抓取的队列中去。</p>
 
                     
                     </section>
