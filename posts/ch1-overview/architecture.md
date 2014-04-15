@@ -54,7 +54,7 @@ Page是WebMagic抽取过程的核心对象，它提供一些方法可供抽取�
 
 ### 1.2.3 控制爬虫运转的引擎--Spider
 
-Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。
+Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。详细的Spider设置请看第四章——[爬虫的配置、启动和终止](../ch4-basic-page-processor/spider-config.html)。
 
 ```java
 public static void main(String[] args) {

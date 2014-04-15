@@ -26,4 +26,16 @@
 
 | 方法 | 说明 | 示例 |
 |---|--|
-| setUserAgent| |
+|setCharset(String)|设置编码|site.setCharset("utf-8")|
+| setUserAgent(String)| 设置UserAgent | site.setUserAgent("Spider") |
+| setTimeOut(int)| 设置超时时间，单位是毫秒| site.setTimeOut(3000)|
+| setRetryTimes(int)| 设置重试次数 | site.setRetryTimes(3) |
+| setCycleRetryTimes(int)| 设置循环重试次数 | site.setRetryTimes(3) |
+|addCookie(String,String)| 添加一条cookie | site.addCookie("dotcomt_user","code4craft") |
+|setDomain(String)| 设置域名，需设置域名后，addCookie才可生效 | site.addDomain("github.com")
+|addHeader(String,String)| 添加一条addHeader | site.addHeader("Referer","https://github.com") |
+|setHttpProxy(HttpHost) | 设置Http代理 | site.setHttpProxy(new HttpHost("127.0.0.1",8080)) |
+
+其中循环重试cycleRetry是0.3.0版本加入的机制。
+
+该机制会将下载失败的url重新放入队列尾部重试，直到达到重试次数，以保证不因为某些网络原因漏抓页面。
