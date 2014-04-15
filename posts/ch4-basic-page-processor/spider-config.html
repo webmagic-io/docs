@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.4" data-basepath="../.." data-revision="1397530311767">
+<div class="book" data-github="code4craft/webmagic" data-level="4.4" data-basepath="../.." data-revision="1397539008370">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -541,11 +541,54 @@
 </thead>
 <tbody>
 <tr>
-<td>setUserAgent</td>
-<td></td>
+<td>setCharset(String)</td>
+<td>设置编码</td>
+<td>site.setCharset(&quot;utf-8&quot;)</td>
+</tr>
+<tr>
+<td>setUserAgent(String)</td>
+<td>设置UserAgent</td>
+<td>site.setUserAgent(&quot;Spider&quot;)</td>
+</tr>
+<tr>
+<td>setTimeOut(int)</td>
+<td>设置超时时间，单位是毫秒</td>
+<td>site.setTimeOut(3000)</td>
+</tr>
+<tr>
+<td>setRetryTimes(int)</td>
+<td>设置重试次数</td>
+<td>site.setRetryTimes(3)</td>
+</tr>
+<tr>
+<td>setCycleRetryTimes(int)</td>
+<td>设置循环重试次数</td>
+<td>site.setRetryTimes(3)</td>
+</tr>
+<tr>
+<td>addCookie(String,String)</td>
+<td>添加一条cookie</td>
+<td>site.addCookie(&quot;dotcomt_user&quot;,&quot;code4craft&quot;)</td>
+</tr>
+<tr>
+<td>setDomain(String)</td>
+<td>设置域名，需设置域名后，addCookie才可生效</td>
+<td>site.addDomain(&quot;github.com&quot;)</td>
+</tr>
+<tr>
+<td>addHeader(String,String)</td>
+<td>添加一条addHeader</td>
+<td>site.addHeader(&quot;Referer&quot;,&quot;<a href="https://github.com" target="_blank">https://github.com</a>&quot;)</td>
+</tr>
+<tr>
+<td>setHttpProxy(HttpHost)</td>
+<td>设置Http代理</td>
+<td>site.setHttpProxy(new HttpHost(&quot;127.0.0.1&quot;,8080))</td>
 </tr>
 </tbody>
 </table>
+<p>其中循环重试cycleRetry是0.3.0版本加入的机制。</p>
+<p>该机制会将下载失败的url重新放入队列尾部重试，直到达到重试次数，以保证不因为某些网络原因漏抓页面。</p>
 
                     
                     </section>

@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1397530311767">
+<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1397539008370">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -478,7 +478,7 @@
 <h4 id="3-reusltitems">3. ReusltItems</h4>
 <p><code>ReusltItems</code>相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段<code>skip</code>，若设置为true，则不应被Pipeline处理。</p>
 <h3 id="1-2-3-spider">1.2.3 控制爬虫运转的引擎--Spider</h3>
-<p>Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。</p>
+<p>Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。详细的Spider设置请看第四章——<a href="../ch4-basic-page-processor/spider-config.html">爬虫的配置、启动和终止</a>。</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
     Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())
             <span class="hljs-comment">//从https://github.com/code4craft开始抓    </span>
