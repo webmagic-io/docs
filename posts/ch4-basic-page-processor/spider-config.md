@@ -8,6 +8,7 @@
 |---|--|
 | create(PageProcessor)| 创建Spider | Spider.create(new GithubRepoProcessor())|
 |addUrl(String…) | 添加初始的URL |spider .addUrl("http://webmagic.io/docs/") |
+|addRequest(Request...) | 添加初始的Request |spider .addUrl("http://webmagic.io/docs/") |
 | thread(n)| 开启n个线程 | spider.thread(5)| 
 |run()|启动，会阻塞当前线程执行| spider.run() |
 |start()/runAsync()|异步启动，当前线程继续执行 | spider.start() |  
@@ -16,7 +17,8 @@
 | addPipeline(Pipeline) | 添加一个Pipeline，一个Spider可以有多个Pipeline | spider .addPipeline(new ConsolePipeline())|
 | setScheduler(Scheduler) | 设置Scheduler，一个Spider只能有个一个Scheduler |  spider.setScheduler(new RedisScheduler()) |
 | setDownloader(Downloader) | 设置Downloader，一个Spider只能有个一个Downloader |  spider .setDownloader(new SeleniumDownloader()) |
-| get() | 同步调用，并直接取得结果 | ResultItems result = spider .get("http://webmagic.io/docs/")
+| get(String) | 同步调用，并直接取得结果 | ResultItems result = spider .get("http://webmagic.io/docs/")
+| getAll(String…) | 同步调用，并直接取得一堆结果 | List&lt;ResultItems&gt; results = spider .getAll("http://webmagic.io/docs/", "http://webmagic.io/xxx")
 
 #### 4.4.2 Site
 
