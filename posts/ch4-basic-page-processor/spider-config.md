@@ -7,10 +7,16 @@
 | 方法 | 说明 | 示例 |
 |---|--|
 | create(PageProcessor)| 创建Spider | Spider.create(new GithubRepoProcessor())|
-| thread(n)| 开启n个线程 | spider.thread(5)|
+|addUrl(String…) | 添加初始的URL |spider .addUrl("http://webmagic.io/docs/") |
+| thread(n)| 开启n个线程 | spider.thread(5)| 
 |run()|启动，会阻塞当前线程执行| spider.run() |
 |start()/runAsync()|异步启动，当前线程继续执行 | spider.start() |  
-|start()/runAsync()|异步启动，当前线程继续执行 | spider.start() |  
+|stop()|停止爬虫 | spider.stop() |  
+|test(String)|抓取一个页面进行测试 | spider .test("http://webmagic.io/docs/") |
+| addPipeline(Pipeline) | 添加一个Pipeline，一个Spider可以有多个Pipeline | spider .addPipeline(new ConsolePipeline())|
+| setScheduler(Scheduler) | 设置Scheduler，一个Spider只能有个一个Scheduler |  spider.setScheduler(new RedisScheduler()) |
+| setDownloader(Downloader) | 设置Downloader，一个Spider只能有个一个Downloader |  spider .setDownloader(new SeleniumDownloader()) |
+| get() | 同步调用，并直接取得结果 | ResultItems result = spider .get("http://webmagic.io/docs/")
 
 #### 4.4.2 Site
 
