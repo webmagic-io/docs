@@ -32,7 +32,7 @@
 | setRetryTimes(int)| 设置重试次数 | site.setRetryTimes(3) |
 | setCycleRetryTimes(int)| 设置循环重试次数 | site.setRetryTimes(3) |
 |addCookie(String,String)| 添加一条cookie | site.addCookie("dotcomt_user","code4craft") |
-|setDomain(String)| 设置域名，需设置域名后，addCookie才可生效 | site.addDomain("github.com")
+|setDomain(String)| 设置域名，需设置域名后，addCookie才可生效 | site.setDomain("github.com")
 |addHeader(String,String)| 添加一条addHeader | site.addHeader("Referer","https://github.com") |
 |setHttpProxy(HttpHost) | 设置Http代理 | site.setHttpProxy(new HttpHost("127.0.0.1",8080)) |
 
