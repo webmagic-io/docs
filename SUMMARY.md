@@ -20,6 +20,7 @@ This is the summary of my book.
 	* [保存结果](posts/ch4-basic-page-processor/results.md)
 	* [爬虫的配置、启动和终止](posts/ch4-basic-page-processor/spider-config.md)
 	* [Jsoup与Xsoup](posts/ch4-basic-page-processor/xsoup.md)
+	* [爬虫的监控](posts/ch4-basic-page-processor/monitor.md)
 * [使用注解编写爬虫](posts/ch5-annotation/README.md)
 	* [编写Model类](posts/ch5-annotation/model.md)
 	* [TargetUrl与HelpUrl](posts/ch5-annotation/targeturl.md)
