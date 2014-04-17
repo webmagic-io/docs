@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>使用ExtractBy进行抽取 | WebMagic in Action</title>
+        <title>爬虫的监控 | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch5-annotation/extractby-on-class.html" />
+        <link rel="next" href="../../posts/ch5-annotation/README.html" />
         
         
-        <link rel="prev" href="../../posts/ch5-annotation/targeturl.html" />
+        <link rel="prev" href="../../posts/ch4-basic-page-processor/xsoup.html" />
         
 
-        <meta property="og:title" content="使用ExtractBy进行抽取 | WebMagic in Action">
+        <meta property="og:title" content="爬虫的监控 | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="5.3" data-basepath="../.." data-revision="1397695185746">
+<div class="book" data-github="code4craft/webmagic" data-level="4.6" data-basepath="../.." data-revision="1397695185746">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -393,7 +393,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 71.875%;min-width: 68.75%;"></div>
+        <div class="inner" style="width: 59.375%;min-width: 56.25%;"></div>
     </div>
     <div class="chapters">
     
@@ -437,13 +437,13 @@
     
         <a href="../../posts/ch4-basic-page-processor/monitor.html" title="爬虫的监控" class="chapter done " data-progress="4.6" style="left: 59.375%;"></a>
     
-        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter done new-chapter" data-progress="5" style="left: 62.5%;"></a>
+        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter  new-chapter" data-progress="5" style="left: 62.5%;"></a>
     
-        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter done " data-progress="5.1" style="left: 65.625%;"></a>
+        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter  " data-progress="5.1" style="left: 65.625%;"></a>
     
-        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter done " data-progress="5.2" style="left: 68.75%;"></a>
+        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter  " data-progress="5.2" style="left: 68.75%;"></a>
     
-        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter done " data-progress="5.3" style="left: 71.875%;"></a>
+        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter  " data-progress="5.3" style="left: 71.875%;"></a>
     
         <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter  " data-progress="5.4" style="left: 75%;"></a>
     
@@ -468,55 +468,53 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_24">
+                    <section class="normal" id="section-gitbook_15">
                     
-                        <h3 id="5-3-extractby-">5.3 使用ExtractBy进行抽取</h3>
-<p><code>@ExtractBy</code>是一个用于抽取元素的注解，它描述了一种抽取规则。</p>
-<h4 id="5-3-1-extractby-">5.3.1 初识ExtractBy注解</h4>
-<p>@ExtractBy注解主要作用于字段，它表示“使用这个抽取规则，将抽取到的结果保存到这个字段中”。例如：</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@id='readme']/text()"</span>)
-<span class="hljs-keyword">private</span> String readme;
+                        <h3 id="4-6-">4.6 爬虫的监控</h3>
+<p>这是0.5.0新增的功能，目前仍在开发和测试中，欢迎提出意见。开发完成后，这一章会讲解如何对爬虫进行监控。</p>
+<p>目前的计划是：提供JMX API，可以使用JConsole等工具连接，然后在外部提供一个Web项目，可以在Web页面上进行监控。欢迎去<a href="https://github.com/code4craft/webmagic/issues/98" target="_blank">github #issue98</a>反馈意见。</p>
+<h4 id="-">监控的启动方式</h4>
+<p>实例化一个<code>SpiderMonitor</code>即可。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) <span class="hljs-keyword">throws</span> JMException,
+        NullPointerException,
+        IOException {
+    Spider oschinaSpider = Spider.create(<span class="hljs-keyword">new</span> OschinaBlogPageProcessor())
+            .addUrl(<span class="hljs-string">"http://my.oschina.net/flashsword/blog"</span>).thread(<span class="hljs-number">2</span>);
+    Spider githubSpider = Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())
+            .addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>);
+    SpiderMonitor spiderMonitor = <span class="hljs-keyword">new</span> SpiderMonitor();
+    spiderMonitor.register(oschinaSpider, githubSpider);
+    spiderMonitor.jmxStart();
+}
 </code></pre>
-<p>这里&quot;//div[@id=&#39;readme&#39;]/text()&quot;是一个XPath表示的抽取规则，而抽取到的结果则会保存到readme字段中。</p>
-<h4 id="5-3-2-">5.3.2 使用其他抽取方式</h4>
-<p>除了XPath，我们还可以使用其他抽取方式来进行抽取，包括CSS选择器、正则表达式和JsonPath，在注解中指明<code>type</code>之后即可。</p>
-<pre><code class="lang-java"><span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"div.BlogContent"</span>, type = ExtractBy.Type.Css)
-<span class="hljs-keyword">private</span> String content;
+<h4 id="-">监控接口</h4>
+<p>这个监控接口会包含抓取的URL等信息。</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">SpiderStatusMBean</span> {</span>
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getTotalPageCount</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getLeftPageCount</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getSuccessPageCount</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getErrorPageCount</span>();
+
+    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title">getErrorPages</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span>();
+
+}
 </code></pre>
-<h4 id="5-3-3-notnull">5.3.3 notnull</h4>
-<p>@ExtractBy包含一个<code>notNull</code>属性，如果熟悉mysql的同学一定能明白它的意思：此字段不允许为空。如果为空，这条抽取到的结果会被丢弃。对于一些页面的关键性属性（例如文章的标题等），设置<code>notnull</code>为<code>true</code>，可以有效的过滤掉无用的页面。</p>
-<p><code>notNull</code>默认为<code>false</code>。</p>
-<h4 id="5-3-4-multi-">5.3.4 multi（已废弃）</h4>
-<p><code>multi</code>是一个boolean属性，它表示这条抽取规则是对应多条记录还是单条记录。对应的，这个字段必须为<code>java.util.List</code>类型。在0.4.3之后，当字段为List类型时，这个属性会自动为true，无须再设置。</p>
-<ul>
-<li><p>0.4.3以前</p>
-<pre><code class="lang-java">  <span class="hljs-annotation">@ExtractBy</span>(value = <span class="hljs-string">"//div[@class='BlogTags']/a/text()"</span>, multi = <span class="hljs-keyword">true</span>)
-  <span class="hljs-keyword">private</span> List&lt;String&gt; tags;
-</code></pre>
-</li>
-<li><p>0.4.3及以后</p>
-<pre><code class="lang-java">  <span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@class='BlogTags']/a/text()"</span>)
-  <span class="hljs-keyword">private</span> List&lt;String&gt; tags;
-</code></pre>
-</li>
-</ul>
-<h4 id="5-3-5-comboextract-">5.3.5 ComboExtract（已废弃）</h4>
-<p><code>@ComboExtract</code>是一个比较复杂的注解，它可以将多个抽取规则进行组合，组合方式包括&quot;AND/OR&quot;两种方式。</p>
-<p>在WebMagic 0.4.3版本中使用了Xsoup 0.2.0版本。在这个版本，XPath支持的语法大大加强了，不但支持XPath和正则表达式组合使用，还支持“|”进行或运算。所以作者认为，<code>ComboExtract</code>这种复杂的组合方式，已经不再需要了。</p>
-<ul>
-<li><p>XPath与正则表达式组合</p>
-<pre><code class="lang-java">  <span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@class='BlogStat']/regex('\\d+-\\d+-\\d+\\s+\\d+:\\d+')"</span>)
-  <span class="hljs-keyword">private</span> Date date;
-</code></pre>
-</li>
-<li><p>XPath的取或</p>
-<pre><code class="lang-java">  <span class="hljs-annotation">@ExtractBy</span>(<span class="hljs-string">"//div[@id='title']/text() | //title/text()"</span>)
-  <span class="hljs-keyword">private</span> String title;
-</code></pre>
-</li>
-</ul>
-<h4 id="5-3-6-extractbyurl">5.3.6 ExtractByUrl</h4>
-<p><code>@ExtractByUrl</code>是一个单独的注解，它的意思是“从URL中进行抽取”。它只支持正则表达式作为抽取规则。</p>
+<h4 id="-">监控界面</h4>
+<p>可以启动、终止一个爬虫，也可以查看状态。</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0417/074306_CHpA_190591.png" alt="jconsole"></p>
+<h4 id="-">定制扩展</h4>
+<p>你可以通过继承<code>SpiderStatusMBean</code>来实现扩展，具体例子可以看这里：
+<a href="https://github.com/code4craft/webmagic/tree/master/webmagic-core/src/test/java/us/codecraft/webmagic/monitor" target="_blank">定制扩展demo</a></p>
 
                     
                     </section>
@@ -526,10 +524,10 @@
         </div>
 
         
-        <a href="../../posts/ch5-annotation/targeturl.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../posts/ch4-basic-page-processor/xsoup.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../posts/ch5-annotation/extractby-on-class.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../posts/ch5-annotation/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
