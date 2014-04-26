@@ -2,6 +2,8 @@
 
 这是0.5.0新增的功能。利用这个功能，你可以查看爬虫的执行情况——已经下载了多少页面、还有多少页面、启动了多少线程等信息。该功能通过JMX实现，你可以使用Jconsole等JMX工具查看本地或者远程的爬虫信息。
 
+如果你完全不会JMX也没关系，因为它的使用相对简单，本章会比较详细的讲解使用方法。如果要弄明白其中原理，你可能需要一些JMX的知识，推荐阅读：[JMX整理](http://my.oschina.net/xpbug/blog/221547)。我很多部分也对这篇文章进行了参考。
+
 #### 4.6.1 为项目添加监控
 
 添加监控非常简单，获取一个`SpiderMonitor`的单例`SpiderMonitor.instance()`，并将你想要监控的Spider注册进去即可。你可以注册多个Spider到`SpiderMonitor`中。
@@ -42,5 +44,3 @@ WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户
 
 除了已有的一些监控信息，如果你有更多的信息需要监控，也可以通过扩展的方式来解决。你可以通过继承`SpiderStatusMBean`来实现扩展，具体例子可以看这里：
 [定制扩展demo](https://github.com/code4craft/webmagic/tree/master/webmagic-core/src/test/java/us/codecraft/webmagic/monitor)。
-
-如果要弄明白本章，你可能需要一些JMX的知识，推荐阅读：[JMX整理](http://my.oschina.net/xpbug/blog/221547)
