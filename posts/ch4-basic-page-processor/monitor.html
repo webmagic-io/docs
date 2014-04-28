@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.6" data-basepath="../.." data-revision="1398584566634">
+<div class="book" data-github="code4craft/webmagic" data-level="4.6" data-basepath="../.." data-revision="1398649058320">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -473,6 +473,7 @@
                         <h3 id="4-6-">4.6 爬虫的监控</h3>
 <p>爬虫的监控是0.5.0新增的功能。利用这个功能，你可以查看爬虫的执行情况——已经下载了多少页面、还有多少页面、启动了多少线程等信息。该功能通过JMX实现，你可以使用Jconsole等JMX工具查看本地或者远程的爬虫信息。</p>
 <p>如果你完全不会JMX也没关系，因为它的使用相对简单，本章会比较详细的讲解使用方法。如果要弄明白其中原理，你可能需要一些JMX的知识，推荐阅读：<a href="http://my.oschina.net/xpbug/blog/221547" target="_blank">JMX整理</a>。我很多部分也对这篇文章进行了参考。</p>
+<p>注意: 如果你自己定义了Scheduler，那么需要用这个类实现<code>MonitorableScheduler</code>接口，才能查看“LeftPageCount”和“TotalPageCount”这两条信息。</p>
 <h4 id="4-6-1-">4.6.1 为项目添加监控</h4>
 <p>添加监控非常简单，获取一个<code>SpiderMonitor</code>的单例<code>SpiderMonitor.instance()</code>，并将你想要监控的Spider注册进去即可。你可以注册多个Spider到<code>SpiderMonitor</code>中。</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MonitorExample</span> {</span>
@@ -495,7 +496,7 @@
 <p>WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户端来进行连接。我们这里以JDK自带的JConsole为例。我们首先启动WebMagic的一个Spider，并添加监控代码。然后我们通过JConsole来进行查看。</p>
 <p>我们按照4.6.1的例子启动程序，然后在命令行输入jconsole（windows下是在DOS下输入jconsole.exe）即可启动JConsole。</p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0426/231513_lP2O_190591.png" alt="jconsole"></p>
-<p>这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！注意: 如果你自己定义了Scheduler，那么需要用这个类实现<code>MonitorableScheduler</code>接口，才能查看“LeftPageCount”和“TotalPageCount”这两条信息。</p>
+<p>这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！</p>
 <p>这里我们也可以选择“操作”，在操作里可以选择启动-start()和终止爬虫-stop()，这会直接调用对应Spider的start()和stop()方法，来达到基本控制的目的。</p>
 <p><img src="http://static.oschina.net/uploads/space/2014/0426/231652_B3Mt_190591.png" alt="jconsole-show"></p>
 <h4 id="4-6-3-">4.6.3 扩展监控接口</h4>
