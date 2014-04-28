@@ -4,6 +4,8 @@
 
 如果你完全不会JMX也没关系，因为它的使用相对简单，本章会比较详细的讲解使用方法。如果要弄明白其中原理，你可能需要一些JMX的知识，推荐阅读：[JMX整理](http://my.oschina.net/xpbug/blog/221547)。我很多部分也对这篇文章进行了参考。
 
+注意: 如果你自己定义了Scheduler，那么需要用这个类实现`MonitorableScheduler`接口，才能查看“LeftPageCount”和“TotalPageCount”这两条信息。
+
 #### 4.6.1 为项目添加监控
 
 添加监控非常简单，获取一个`SpiderMonitor`的单例`SpiderMonitor.instance()`，并将你想要监控的Spider注册进去即可。你可以注册多个Spider到`SpiderMonitor`中。
@@ -34,7 +36,7 @@ WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户
 
 ![jconsole](http://static.oschina.net/uploads/space/2014/0426/231513_lP2O_190591.png)
 
-这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！注意: 如果你自己定义了Scheduler，那么需要用这个类实现`MonitorableScheduler`接口，才能查看“LeftPageCount”和“TotalPageCount”这两条信息。
+这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！
 
 这里我们也可以选择“操作”，在操作里可以选择启动-start()和终止爬虫-stop()，这会直接调用对应Spider的start()和stop()方法，来达到基本控制的目的。
 
