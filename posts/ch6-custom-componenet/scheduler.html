@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>定制Scheduler | WebMagic in Action</title>
+        <title>使用Scheduler | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,13 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/chx-cases/README.html" />
+        <link rel="next" href="../../posts/ch6-custom-componenet/downloader.html" />
         
         
         <link rel="prev" href="../../posts/ch6-custom-componenet/pipeline.html" />
         
 
-        <meta property="og:title" content="定制Scheduler | WebMagic in Action">
+        <meta property="og:title" content="使用Scheduler | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="6.2" data-basepath="../.." data-revision="1399046310370">
+<div class="book" data-github="code4craft/webmagic" data-level="6.2" data-basepath="../.." data-revision="1399069825933">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -320,7 +320,7 @@
             <li  data-level="6" data-path="posts/ch6-custom-componenet/README.html">
                 
                 <a href="../../posts/ch6-custom-componenet/README.html">
-                    <i class="fa fa-check"></i> <b>6)</b> 对组件进行定制
+                    <i class="fa fa-check"></i> <b>6)</b> 组件的使用和定制
                 </a>
                 
                 
@@ -337,7 +337,15 @@
                         <li  data-level="6.2" data-path="posts/ch6-custom-componenet/scheduler.html">
                             
                             <a href="../../posts/ch6-custom-componenet/scheduler.html">
-                                <i class="fa fa-check"></i> <b>6.2)</b> 定制Scheduler
+                                <i class="fa fa-check"></i> <b>6.2)</b> 使用Scheduler
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3" data-path="posts/ch6-custom-componenet/downloader.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/downloader.html">
+                                <i class="fa fa-check"></i> <b>6.3)</b> 使用Downloader
                             </a>
                             
                         </li>
@@ -401,75 +409,77 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 90.9090909090909%;min-width: 87.87878787878788%;"></div>
+        <div class="inner" style="width: 88.23529411764706%;min-width: 85.29411764705883%;"></div>
     </div>
     <div class="chapters">
     
         <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
     
-        <a href="../../posts/ch1-overview/README.html" title="WebMagic概览" class="chapter done new-chapter" data-progress="1" style="left: 3.0303030303030303%;"></a>
+        <a href="../../posts/ch1-overview/README.html" title="WebMagic概览" class="chapter done new-chapter" data-progress="1" style="left: 2.9411764705882355%;"></a>
     
-        <a href="../../posts/ch1-overview/thinking.html" title="设计思想" class="chapter done " data-progress="1.1" style="left: 6.0606060606060606%;"></a>
+        <a href="../../posts/ch1-overview/thinking.html" title="设计思想" class="chapter done " data-progress="1.1" style="left: 5.882352941176471%;"></a>
     
-        <a href="../../posts/ch1-overview/architecture.html" title="总体架构" class="chapter done " data-progress="1.2" style="left: 9.090909090909092%;"></a>
+        <a href="../../posts/ch1-overview/architecture.html" title="总体架构" class="chapter done " data-progress="1.2" style="left: 8.823529411764707%;"></a>
     
-        <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 12.121212121212121%;"></a>
+        <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 11.764705882352942%;"></a>
     
-        <a href="../../posts/ch2-install/README.html" title="使用WebMagic" class="chapter done new-chapter" data-progress="2" style="left: 15.151515151515152%;"></a>
+        <a href="../../posts/ch2-install/README.html" title="使用WebMagic" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
     
-        <a href="../../posts/ch2-install/with-maven.html" title="使用Maven" class="chapter done " data-progress="2.1" style="left: 18.181818181818183%;"></a>
+        <a href="../../posts/ch2-install/with-maven.html" title="使用Maven" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
     
-        <a href="../../posts/ch2-install/without-maven.html" title="不使用Maven" class="chapter done " data-progress="2.2" style="left: 21.21212121212121%;"></a>
+        <a href="../../posts/ch2-install/without-maven.html" title="不使用Maven" class="chapter done " data-progress="2.2" style="left: 20.58823529411765%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="第一个项目" class="chapter done " data-progress="2.3" style="left: 24.242424242424242%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="第一个项目" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
     
-        <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 27.272727272727273%;"></a>
+        <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 26.470588235294116%;"></a>
     
-        <a href="../../posts/ch3-build-source/git-repo.html" title="下载源码" class="chapter done " data-progress="3.1" style="left: 30.303030303030305%;"></a>
+        <a href="../../posts/ch3-build-source/git-repo.html" title="下载源码" class="chapter done " data-progress="3.1" style="left: 29.41176470588235%;"></a>
     
-        <a href="../../posts/ch3-build-source/import-project.html" title="导入项目" class="chapter done " data-progress="3.2" style="left: 33.333333333333336%;"></a>
+        <a href="../../posts/ch3-build-source/import-project.html" title="导入项目" class="chapter done " data-progress="3.2" style="left: 32.35294117647059%;"></a>
     
-        <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="3.3" style="left: 36.36363636363637%;"></a>
+        <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="3.3" style="left: 35.294117647058826%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/README.html" title="编写基本的爬虫" class="chapter done new-chapter" data-progress="4" style="left: 39.39393939393939%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/README.html" title="编写基本的爬虫" class="chapter done new-chapter" data-progress="4" style="left: 38.23529411764706%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="4.1" style="left: 42.42424242424242%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="4.1" style="left: 41.1764705882353%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter done " data-progress="4.2" style="left: 45.45454545454545%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter done " data-progress="4.2" style="left: 44.11764705882353%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter done " data-progress="4.3" style="left: 48.484848484848484%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter done " data-progress="4.3" style="left: 47.05882352941177%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="爬虫的配置、启动和终止" class="chapter done " data-progress="4.4" style="left: 51.515151515151516%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="爬虫的配置、启动和终止" class="chapter done " data-progress="4.4" style="left: 50%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Jsoup与Xsoup" class="chapter done " data-progress="4.5" style="left: 54.54545454545455%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Jsoup与Xsoup" class="chapter done " data-progress="4.5" style="left: 52.94117647058823%;"></a>
     
-        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="爬虫的监控" class="chapter done " data-progress="4.6" style="left: 57.57575757575758%;"></a>
+        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="爬虫的监控" class="chapter done " data-progress="4.6" style="left: 55.88235294117647%;"></a>
     
-        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter done new-chapter" data-progress="5" style="left: 60.60606060606061%;"></a>
+        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter done new-chapter" data-progress="5" style="left: 58.8235294117647%;"></a>
     
-        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter done " data-progress="5.1" style="left: 63.63636363636363%;"></a>
+        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter done " data-progress="5.1" style="left: 61.76470588235294%;"></a>
     
-        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter done " data-progress="5.2" style="left: 66.66666666666667%;"></a>
+        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter done " data-progress="5.2" style="left: 64.70588235294117%;"></a>
     
-        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter done " data-progress="5.3" style="left: 69.6969696969697%;"></a>
+        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter done " data-progress="5.3" style="left: 67.6470588235294%;"></a>
     
-        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter done " data-progress="5.4" style="left: 72.72727272727273%;"></a>
+        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter done " data-progress="5.4" style="left: 70.58823529411765%;"></a>
     
-        <a href="../../posts/ch5-annotation/formatter.html" title="结果的类型转换" class="chapter done " data-progress="5.5" style="left: 75.75757575757575%;"></a>
+        <a href="../../posts/ch5-annotation/formatter.html" title="结果的类型转换" class="chapter done " data-progress="5.5" style="left: 73.52941176470588%;"></a>
     
-        <a href="../../posts/ch5-annotation/lifecycle.html" title="一个完整的流程" class="chapter done " data-progress="5.6" style="left: 78.78787878787878%;"></a>
+        <a href="../../posts/ch5-annotation/lifecycle.html" title="一个完整的流程" class="chapter done " data-progress="5.6" style="left: 76.47058823529412%;"></a>
     
-        <a href="../../posts/ch5-annotation/after-extractor.html" title="AfterExtractor" class="chapter done " data-progress="5.7" style="left: 81.81818181818181%;"></a>
+        <a href="../../posts/ch5-annotation/after-extractor.html" title="AfterExtractor" class="chapter done " data-progress="5.7" style="left: 79.41176470588235%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="对组件进行定制" class="chapter done new-chapter" data-progress="6" style="left: 84.84848484848484%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="组件的使用和定制" class="chapter done new-chapter" data-progress="6" style="left: 82.3529411764706%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="定制Pipeline" class="chapter done " data-progress="6.1" style="left: 87.87878787878788%;"></a>
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="定制Pipeline" class="chapter done " data-progress="6.1" style="left: 85.29411764705883%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="定制Scheduler" class="chapter done " data-progress="6.2" style="left: 90.9090909090909%;"></a>
+        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="使用Scheduler" class="chapter done " data-progress="6.2" style="left: 88.23529411764706%;"></a>
     
-        <a href="../../posts/chx-cases/README.html" title="实例分析" class="chapter  new-chapter" data-progress="7" style="left: 93.93939393939394%;"></a>
+        <a href="../../posts/ch6-custom-componenet/downloader.html" title="使用Downloader" class="chapter  " data-progress="6.3" style="left: 91.17647058823529%;"></a>
     
-        <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter  " data-progress="7.1" style="left: 96.96969696969697%;"></a>
+        <a href="../../posts/chx-cases/README.html" title="实例分析" class="chapter  new-chapter" data-progress="7" style="left: 94.11764705882354%;"></a>
+    
+        <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter  " data-progress="7.1" style="left: 97.05882352941177%;"></a>
     
         <a href="../../posts/chx-cases/js-render-page.html" title="抓取前端渲染的页面" class="chapter  " data-progress="7.2" style="left: 100%;"></a>
     
@@ -478,7 +488,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_31">
+                    <section class="normal" id="section-gitbook_32">
                     
                         <h3 id="6-2-scheduler">6.2 定制Scheduler</h3>
 <p>Scheduler是WebMagic中进行URL管理的组件。一般来说，Scheduler包括两个作用：</p>
@@ -559,7 +569,7 @@
         <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../posts/chx-cases/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../posts/ch6-custom-componenet/downloader.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
