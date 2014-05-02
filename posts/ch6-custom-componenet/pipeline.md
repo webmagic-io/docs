@@ -144,3 +144,13 @@ GithubRepo githubRepo = (GithubRepo)resultItems.get("repo");
 
 #### 6.1.4 WebMagic已经提供的几个Pipeline
 
+WebMagic中已经提供了将结果输出到控制台、保存到文件和JSON格式保存的几个Pipeline：
+
+|类|说明|备注|
+|--|----|
+|ConsolePipeline|输出结果到控制台|抽取结果需要实现toString方法
+|FilePipeline|保存结果到文件|抽取结果需要实现toString方法
+|JsonFilePipeline|JSON格式保存结果到文件||
+|ConsolePageModelPipeline|(注解模式)输出结果到控制台||
+|FilePageModelPipeline|(注解模式)保存结果到文件||
+|JsonFilePageModelPipeline|(注解模式)JSON格式保存结果到文件|想要持久化的字段需要有getter方法
