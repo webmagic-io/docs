@@ -31,6 +31,7 @@ This is the summary of my book.
 	* [AfterExtractor](posts/ch5-annotation/after-extractor.md)
 * [对组件进行定制](posts/ch6-custom-componenet/README.md)
 	* [定制Pipeline](posts/ch6-custom-componenet/pipeline.md)
+	* [定制Scheduler](posts/ch6-custom-componenet/scheduler.md)
 * [实例分析](posts/chx-cases/README.md)
 	* [列表+详情的基本页面组合](posts/chx-cases/basic-list-target.md)
 	* [抓取前端渲染的页面](posts/chx-cases/js-render-page.md)
