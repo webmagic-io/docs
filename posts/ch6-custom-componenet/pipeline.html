@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="6.1" data-basepath="../.." data-revision="1399028040340">
+<div class="book" data-github="code4craft/webmagic" data-level="6.1" data-basepath="../.." data-revision="1399046310370">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -530,9 +530,10 @@
 }
 </code></pre>
 <p>参考这个例子，你就可以定制自己的Pipeline了——从<code>ResultItems</code>中取出数据，再按照你希望的方式处理即可。</p>
-<h4 id="6-1-3-mysql">6.1.3 将结果保存到MySql</h4>
+<h4 id="6-1-3-mysql">6.1.3 将结果保存到MySQL</h4>
 <p>这里先介绍一个demo项目：<a href="https://github.com/webmagic-io/jobhunter" target="_blank">jobhunter</a>。它是一个集成了Spring，使用WebMagic抓取招聘信息，并且使用Mybatis持久化到Mysql的例子。我们会用这个项目来介绍如果持久化到Mysql。</p>
-<p>一般来说，在Java里，我们会使用ORM框架来完成持久化到MySql的工作。这些框架一般都要求保存的内容是一个定义好结构的对象，而不是一个key-value形式的ResultItems。以MyBatis为例，我们使用<a href="http://mybatis.github.io/spring/zh/" target="_blank">MyBatis-Spring</a>可以定义这样一个DAO：</p>
+<p>在Java里，我们有很多方式将数据保存到MySQL，例如jdbc、dbutils、spring-jdbc、MyBatis等工具。这些工具都可以完成同样的事情，只不过功能和使用复杂程度不一样。如果使用jdbc，那么我们只需要从ResultItems取出数据，进行保存即可。</p>
+<p>如果我们会使用ORM框架来完成持久化到MySQL的工作，就会面临一个问题：这些框架一般都要求保存的内容是一个定义好结构的对象，而不是一个key-value形式的ResultItems。以MyBatis为例，我们使用<a href="http://mybatis.github.io/spring/zh/" target="_blank">MyBatis-Spring</a>可以定义这样一个DAO：</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">JobInfoDAO</span> {</span>
 
     <span class="hljs-annotation">@Insert</span>(<span class="hljs-string">"insert into JobInfo (`title`,`salary`,`company`,`description`,`requirement`,`source`,`url`,`urlMd5`) values (#{title},#{salary},#{company},#{description},#{requirement},#{source},#{url},#{urlMd5})"</span>)

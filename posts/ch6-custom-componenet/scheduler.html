@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="6.2" data-basepath="../.." data-revision="1399028040340">
+<div class="book" data-github="code4craft/webmagic" data-level="6.2" data-basepath="../.." data-revision="1399046310370">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -481,6 +481,72 @@
                     <section class="normal" id="section-gitbook_31">
                     
                         <h3 id="6-2-scheduler">6.2 定制Scheduler</h3>
+<p>Scheduler是WebMagic中进行URL管理的组件。一般来说，Scheduler包括两个作用：</p>
+<ol>
+<li>对待抓取的URL队列进行管理。</li>
+<li>对已抓取的URL进行去重。</li>
+</ol>
+<p>WebMagic内置了几个常用的Scheduler。如果你只是在本地执行规模比较小的爬虫，那么基本无需定制Scheduler，但是了解一下已经提供的几个Scheduler还是有意义的。</p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DuplicateRemovedScheduler</td>
+<td>抽象基类，提供一些模板方法</td>
+<td>继承它可以实现自己的功能</td>
+</tr>
+<tr>
+<td>QueueScheduler</td>
+<td>使用内存队列保存待抓取URL</td>
+<td></td>
+</tr>
+<tr>
+<td>PriorityScheduler</td>
+<td>使用带有优先级的内存队列保存待抓取URL</td>
+<td>耗费内存较QueueScheduler更大，但是当设置了request.priority之后，只能使用PriorityScheduler才可使优先级生效</td>
+</tr>
+<tr>
+<td>FileCacheQueueScheduler</td>
+<td>使用文件保存抓取URL，可以在关闭程序并下次启动时，从之前抓取到的URL继续抓取</td>
+<td>需指定路径，会建立.urls.txt和.cursor.txt两个文件</td>
+</tr>
+<tr>
+<td>RedisScheduler</td>
+<td>使用Redis保存抓取队列，可进行多台机器同时合作抓取</td>
+<td>需要安装并启动redis</td>
+</tr>
+</tbody>
+</table>
+<p>在0.5.1版本里，我对Scheduler的内部实现进行了重构，去重部分被单独抽象成了一个接口：<code>DuplicateRemover</code>，从而可以为同一个Scheduler选择不同的去重方式，以适应不同的需要，目前提供了两种去重方式。</p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashSetDuplicateRemover</td>
+<td>使用HashSet来进行去重，占用内存较大</td>
+</tr>
+<tr>
+<td>BloomFilterDuplicateRemover</td>
+<td>使用BloomFilter来进行去重，占用内存较小，但是可能漏抓页面</td>
+</tr>
+</tbody>
+</table>
+<p>所有默认的Scheduler都使用HashSetDuplicateRemover来进行去重，（除开RedisScheduler是使用Redis的set进行去重）。如果你的URL较多，使用HashSetDuplicateRemover会比较占用内存，所以也可以尝试以下BloomFilterDuplicateRemover，使用方式：</p>
+<pre><code class="lang-java">spider.setScheduler(<span class="hljs-keyword">new</span> QueueScheduler()
+.setDuplicateRemover(<span class="hljs-keyword">new</span> BloomFilterDuplicateRemover(<span class="hljs-number">10000000</span>)) <span class="hljs-comment">//10000000是估计的页面数量</span>
+)
+</code></pre>
 
                     
                     </section>
