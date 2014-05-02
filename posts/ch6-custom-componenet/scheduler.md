@@ -1,15 +1,31 @@
 ### 6.2 定制Scheduler
 
-Scheduler是WebMagic中进行URL管理的组件，它进行URL的去重，并保存待抓取的URL。WebMagic内置了几个常用的Scheduler。如果你只是在本地执行规模比较小的爬虫，那么基本无需定制Scheduler。而定制Scheduler，则可以满足一些分布式的、大规模的爬虫，或者一些定制爬虫的需要。
+Scheduler是WebMagic中进行URL管理的组件。一般来说，Scheduler包括两个作用：
 
-> 0.5.0的RedisScheduler存在BUG，[issue #117](https://github.com/code4craft/webmagic/issues/117)
+1. 对待抓取的URL队列进行管理。
+2. 对已抓取的URL进行去重。
 
-#### 6.2.1 WebMagic内置的几个Scheduler
-
-我们先从WebMagic内置的几个Scheduler来说明一下它的作用。
+WebMagic内置了几个常用的Scheduler。如果你只是在本地执行规模比较小的爬虫，那么基本无需定制Scheduler，但是了解一下已经提供的几个Scheduler还是有意义的。
 
 |类|说明|备注|
 |--|----|
-|DuplicatedRemoveScheduler|抽象基类，提供一些模板方法|
-|LocalDuplicatedRemoveScheduler|基类，使用内存Set进行去重|当URL量比较大的时候，建议使用BloomFilter等技术进行去重|
-|QueueScheduler|使用内存队列保存待抓取URL|
+|DuplicateRemovedScheduler|抽象基类，提供一些模板方法|继承它可以实现自己的功能
+|QueueScheduler|使用内存队列保存待抓取URL| |
+|PriorityScheduler|使用带有优先级的内存队列保存待抓取URL|耗费内存较QueueScheduler更大，但是当设置了request.priority之后，只能使用PriorityScheduler才可使优先级生效 |
+|FileCacheQueueScheduler|使用文件保存抓取URL，可以在关闭程序并下次启动时，从之前抓取到的URL继续抓取|需指定路径，会建立.urls.txt和.cursor.txt两个文件 |
+|RedisScheduler|使用Redis保存抓取队列，可进行多台机器同时合作抓取|需要安装并启动redis|
+
+在0.5.1版本里，我对Scheduler的内部实现进行了重构，去重部分被单独抽象成了一个接口：`DuplicateRemover`，从而可以为同一个Scheduler选择不同的去重方式，以适应不同的需要，目前提供了两种去重方式。
+
+|类|说明|
+|--|----|
+|HashSetDuplicateRemover|使用HashSet来进行去重，占用内存较大|
+|BloomFilterDuplicateRemover|使用BloomFilter来进行去重，占用内存较小，但是可能漏抓页面| |
+
+所有默认的Scheduler都使用HashSetDuplicateRemover来进行去重，（除开RedisScheduler是使用Redis的set进行去重）。如果你的URL较多，使用HashSetDuplicateRemover会比较占用内存，所以也可以尝试以下BloomFilterDuplicateRemover，使用方式：
+
+```java
+spider.setScheduler(new QueueScheduler()
+.setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)) //10000000是估计的页面数量
+)
+```

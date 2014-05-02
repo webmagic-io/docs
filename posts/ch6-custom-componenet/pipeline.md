@@ -66,11 +66,13 @@ public class ConsolePipeline implements Pipeline {
 
 参考这个例子，你就可以定制自己的Pipeline了——从`ResultItems`中取出数据，再按照你希望的方式处理即可。
 
-#### 6.1.3 将结果保存到MySql
+#### 6.1.3 将结果保存到MySQL
 
 这里先介绍一个demo项目：[jobhunter](https://github.com/webmagic-io/jobhunter)。它是一个集成了Spring，使用WebMagic抓取招聘信息，并且使用Mybatis持久化到Mysql的例子。我们会用这个项目来介绍如果持久化到Mysql。
 
-一般来说，在Java里，我们会使用ORM框架来完成持久化到MySql的工作。这些框架一般都要求保存的内容是一个定义好结构的对象，而不是一个key-value形式的ResultItems。以MyBatis为例，我们使用[MyBatis-Spring](http://mybatis.github.io/spring/zh/)可以定义这样一个DAO：
+在Java里，我们有很多方式将数据保存到MySQL，例如jdbc、dbutils、spring-jdbc、MyBatis等工具。这些工具都可以完成同样的事情，只不过功能和使用复杂程度不一样。如果使用jdbc，那么我们只需要从ResultItems取出数据，进行保存即可。
+
+如果我们会使用ORM框架来完成持久化到MySQL的工作，就会面临一个问题：这些框架一般都要求保存的内容是一个定义好结构的对象，而不是一个key-value形式的ResultItems。以MyBatis为例，我们使用[MyBatis-Spring](http://mybatis.github.io/spring/zh/)可以定义这样一个DAO：
 
 ```java
 public interface JobInfoDAO {
