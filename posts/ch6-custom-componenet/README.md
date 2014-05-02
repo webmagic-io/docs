@@ -6,7 +6,7 @@
 
 |方法|说明|示例
 |-|-|
-|setScheduler()|设置Scheduler|spipder.setScheduler(new FileCachedScheduler("D:\\data\\webmagic"))|
+|setScheduler()|设置Scheduler|spipder.setScheduler(new FileCacheQueueScheduler("D:\\data\\webmagic"))|
 |setDownloader()|设置Downloader|spipder.setDownloader(new SeleniumDownloader()))|
 |addDownloader()|设置Pipeline，一个Spider可以有多个Pipeline|spipder.addPipeline(new FilePipeline())|
 
