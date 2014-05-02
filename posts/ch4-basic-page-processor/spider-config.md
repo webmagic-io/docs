@@ -5,7 +5,7 @@
 `Spider`是爬虫启动的入口。在启动爬虫之前，我们需要使用一个`PageProcessor`创建一个Spider对象，然后使用`run()`进行启动。同时Spider的其他组件（Downloader、Scheduler、Pipeline）都可以通过set方法来进行设置。
 
 | 方法 | 说明 | 示例 |
-|---|--|
+| -------- | ------- | ------- |
 | create(PageProcessor)| 创建Spider | Spider.create(new GithubRepoProcessor())|
 |addUrl(String…) | 添加初始的URL |spider .addUrl("http://webmagic.io/docs/") |
 |addRequest(Request...) | 添加初始的Request |spider .addUrl("http://webmagic.io/docs/") |
@@ -25,7 +25,7 @@
 对站点本身的一些配置信息，例如编码、HTTP头、超时时间、重试策略等、代理等，都可以通过设置`Site`对象来进行配置。
 
 | 方法 | 说明 | 示例 |
-|---|--|
+| -------- | ------- | ------- |
 |setCharset(String)|设置编码|site.setCharset("utf-8")|
 | setUserAgent(String)| 设置UserAgent | site.setUserAgent("Spider") |
 | setTimeOut(int)| 设置超时时间，单位是毫秒| site.setTimeOut(3000)|
