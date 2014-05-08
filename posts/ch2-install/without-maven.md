@@ -1,6 +1,6 @@
 ### 2.2 不使用Maven
 
-不使用maven的用户，可以去[http://webmagic.io](http://webmagic.io)中下载最新的jar包。我将所有依赖的jar都打包在了一起，点[这里](http://webmagic.qiniudn.com/all-dependencies.tar.gz)下载。
+不使用maven的用户，可以去[http://webmagic.io](http://webmagic.io)中下载最新的jar包。我将所有依赖的jar都打包在了一起，点[这里](http://webmagic.io/download.html)下载。
 
 下载之后进行解压，然后在项目中import即可。
 
