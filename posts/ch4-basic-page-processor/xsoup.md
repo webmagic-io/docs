@@ -92,8 +92,8 @@ Xsoup发展到现在，已经支持爬虫常用的语法，以下是一些已支
 | Expression	| Description |	XPath1.0 |
 | -------- | ------- | ------- |
 | text(n)| 第n个直接文本子节点，为0表示所有|	text() only|
-|allText()	| 所有的直接和简介文本子节点	| not support|
-|tidyText()	| 所有的直接和简介文本子节点，并将一些标签替换为换行，使纯文本显示更整洁 |	not support |
+|allText()	| 所有的直接和间接文本子节点	| not support|
+|tidyText()	| 所有的直接和间接文本子节点，并将一些标签替换为换行，使纯文本显示更整洁 |	not support |
 | html()	| 内部html，不包括标签的html本身 |	not support |
 | outerHtml() |	内部html，包括标签的html本身|	not support
 |regex(@attr,expr,group) | 这里@attr和group均可选，默认是group0|	not support
