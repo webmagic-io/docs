@@ -27,7 +27,7 @@
 在这里，我们使用xpath`//div[@class=\\"articleList\\"]`选中所有区域，再使用links()或者xpath`//a/@href`获取所有链接，最后再使用正则表达式`http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html`，对URL进行过滤，去掉一些“编辑”或者“更多”之类的链接。于是，我们可以这样写：
 
 ```java
-page.addTargetRequests(page.getHtml().xpath("//div[@class=\"articleList\"]").links().regex("http://blog\\.sina\\.com\\.cn/s/articlelist_1487828712_0_\\d+\\.html").all());
+page.addTargetRequests(page.getHtml().xpath("//div[@class=\"articleList\"]").links().regex("http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html").all());
 ```
 
 同时，我们需要把所有找到的列表页也加到待下载的URL中去：
