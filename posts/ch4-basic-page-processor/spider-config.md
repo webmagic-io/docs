@@ -8,7 +8,7 @@
 | -------- | ------- | ------- |
 | create(PageProcessor)| 创建Spider | Spider.create(new GithubRepoProcessor())|
 |addUrl(String…) | 添加初始的URL |spider .addUrl("http://webmagic.io/docs/") |
-|addRequest(Request...) | 添加初始的Request |spider .addUrl("http://webmagic.io/docs/") |
+|addRequest(Request...) | 添加初始的Request |spider .addRequest("http://webmagic.io/docs/") |
 | thread(n)| 开启n个线程 | spider.thread(5)| 
 |run()|启动，会阻塞当前线程执行| spider.run() |
 |start()/runAsync()|异步启动，当前线程继续执行 | spider.start() |  
