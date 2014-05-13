@@ -1,8 +1,6 @@
 WebMagic in Action
 ==================
 
-[English](en/)
-
 >Little book of WebMagic.
 
 ![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
@@ -13,6 +11,6 @@ WebMagic in Action
 
 文章预览请点[http://webmagic.io/docs/](http://webmagic.io/docs/)，页面基于[gitbook](https://github.com/GitbookIO/gitbook/)进行构建。
 
-此文档仍在编写中，英文版也在征集译者。
+此文档仍在编写中，所有的章节安排请点[这里](outline.md)。
 
 本文档遵循CC-BYNC协议。
