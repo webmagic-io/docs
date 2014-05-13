@@ -21,7 +21,7 @@ This is the summary of my book.
 	* Formatter of Result
 	* A Complete Sample
 	* AfterExtractor
-* Customize Components
+* [Customize Components](posts/ch6-custom-componenet/README.md)
 	* Pipeline
 	* Scheduler
 	* Downloader
