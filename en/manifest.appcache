@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# Revision 1399991788749
+# Revision 1399991989938
 
 CACHE:
 index.html
 posts/ch1-overview/README.html
+posts/ch6-custom-componenet/README.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot

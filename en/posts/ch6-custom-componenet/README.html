@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>WebMagic Overview | WebMagic in Action</title>
+        <title>Customize Components | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,10 +14,8 @@
 
         
         
-        <link rel="prev" href="../../index.html" />
-        
 
-        <meta property="og:title" content="WebMagic Overview | WebMagic in Action">
+        <meta property="og:title" content="Customize Components | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +36,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="1" data-basepath="../.." data-revision="1399991989938">
+<div class="book" data-github="code4craft/webmagic" data-level="4" data-basepath="../.." data-revision="1399991989938">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -244,7 +242,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 50%;min-width: 0%;"></div>
+        <div class="inner" style="width: 100%;min-width: 50%;"></div>
     </div>
     <div class="chapters">
     
@@ -252,16 +250,44 @@
     
         <a href="../../posts/ch1-overview/README.html" title="WebMagic Overview" class="chapter done new-chapter" data-progress="1" style="left: 50%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="4" style="left: 100%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="4" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_2">
+                    <section class="normal" id="section-gitbook_3">
                     
-                        <h2 id="overview-of-webmagic">Overview of WebMagic</h2>
+                        <h2 id="6-customize-components">6.Customize Components</h2>
+<p>In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.</p>
+<p>In the Spider class, <code>PageProcessor</code>、<code>Downloader</code>、<code>Scheduler</code> and <code>Pipeline</code> are the fields of Spider class. Beside the <code>PageProcessor</code> have been assigned when the Spider create, the other three components can be changed by the setter function.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setScheduler()</td>
+<td>Change the Scheduler</td>
+<td>spipder.setScheduler(new FileCacheQueueScheduler(&quot;D:\data\webmagic&quot;))</td>
+</tr>
+<tr>
+<td>setDownloader()</td>
+<td>Change theDownloader</td>
+<td>spipder.setDownloader(new SeleniumDownloader()))</td>
+</tr>
+<tr>
+<td>addDownloader()</td>
+<td>Change the Pipeline，one Spider can have a few of pipeline</td>
+<td>spipder.addPipeline(new FilePipeline())</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -270,8 +296,6 @@
             </div>
         </div>
 
-        
-        <a href="../../index.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
