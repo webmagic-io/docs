@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang='zh-CN'>
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Pipeline | WebMagic in Action</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="code4craft">
+        <meta name="description" content="Little book of WebMagic.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        
+        <link rel="prev" href="../../posts/ch6-custom-componenet/README.html" />
+        
+
+        <meta property="og:title" content="Pipeline | WebMagic in Action">
+        <meta property="og:site_name" content="WebMagic in Action">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="zh-CN">
+
+        <meta property="book:author" content="https://github.com/code4craft">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="code4craft/webmagic" data-level="5.1" data-basepath="../.." data-revision="1400082309883">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/code4craft/webmagic/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/code4craft/webmagic/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../../" >WebMagic in Action</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/code4craft" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="posts/ch1-overview/README.html">
+                
+                <a href="../../posts/ch1-overview/README.html">
+                    <i class="fa fa-check"></i> <b>1)</b> WebMagic Overview
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" >
+                            
+                            <span><b>1.1)</b> Philosophy</span>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" >
+                            
+                            <span><b>1.2)</b> Architect</span>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" >
+                            
+                            <span><b>1.3)</b> Components</span>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="posts/ch2-install/README.html">
+                
+                <a href="../../posts/ch2-install/README.html">
+                    <i class="fa fa-check"></i> <b>2)</b> Install
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
+                            
+                            <a href="../../posts/ch2-install/with-maven.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> With maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="posts/ch2-install/without-maven.html">
+                            
+                            <a href="../../posts/ch2-install/without-maven.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Without maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
+                            
+                            <a href="../../posts/ch2-install/first-project.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> First Project
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" >
+                
+                <span><b>3)</b> Basic crawler</span>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" >
+                            
+                            <span><b>3.1)</b> Implement PageProcessor</span>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" >
+                            
+                            <span><b>3.2)</b> Selectable</span>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" >
+                            
+                            <span><b>3.3)</b> Save the results</span>
+                            
+                        </li>
+                    
+                        <li  data-level="3.4" >
+                            
+                            <span><b>3.4)</b> Config and control</span>
+                            
+                        </li>
+                    
+                        <li  data-level="3.5" >
+                            
+                            <span><b>3.5)</b> Jsoup and Xsoup</span>
+                            
+                        </li>
+                    
+                        <li  data-level="3.6" >
+                            
+                            <span><b>3.6)</b> Monitor with JMX</span>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" >
+                
+                <span><b>4)</b> Crawler in Annotation</span>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" >
+                            
+                            <span><b>4.1)</b> Write Model class</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" >
+                            
+                            <span><b>4.2)</b> TargetUrl and HelpUrl</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" >
+                            
+                            <span><b>4.3)</b> @ExtractBy</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.4" >
+                            
+                            <span><b>4.4)</b> @ExtractBy on Class</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.5" >
+                            
+                            <span><b>4.5)</b> Formatter of Result</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.6" >
+                            
+                            <span><b>4.6)</b> A Complete Sample</span>
+                            
+                        </li>
+                    
+                        <li  data-level="4.7" >
+                            
+                            <span><b>4.7)</b> AfterExtractor</span>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5" data-path="posts/ch6-custom-componenet/README.html">
+                
+                <a href="../../posts/ch6-custom-componenet/README.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Customize Components
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="posts/ch6-custom-componenet/pipeline.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/pipeline.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> Pipeline
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" >
+                            
+                            <span><b>5.2)</b> Scheduler</span>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" >
+                            
+                            <span><b>5.3)</b> Downloader</span>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 100%;min-width: 85.71428571428571%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../posts/ch1-overview/README.html" title="WebMagic Overview" class="chapter done new-chapter" data-progress="1" style="left: 14.285714285714286%;"></a>
+    
+        <a href="../../posts/ch2-install/README.html" title="Install" class="chapter done new-chapter" data-progress="2" style="left: 28.571428571428573%;"></a>
+    
+        <a href="../../posts/ch2-install/with-maven.html" title="With maven" class="chapter done " data-progress="2.1" style="left: 42.857142857142854%;"></a>
+    
+        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter done " data-progress="2.2" style="left: 57.142857142857146%;"></a>
+    
+        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 71.42857142857143%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter done " data-progress="5.1" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_8">
+                    
+                        <h3 id="6-1-customize-pipeline">6.1 Customize Pipeline</h3>
+<p>When the extract finished, we use<code>Pipeline</code>to persist the result of extract.We can also customize the pipeline to do some common function. In this chapter we will introduce the<code>Pipeline</code>, and use two examples to explane how to customize the pipeline.</p>
+<h4 id="6-1-1-introduction-of-pipeline">6.1.1 Introduction of Pipeline</h4>
+<p>The interface of<code>Pipeline</code>define is here:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Pipeline</span> {</span>
+
+    <span class="hljs-comment">// ResultItems persiste the result of extract，it is a structure of map</span>
+    <span class="hljs-comment">// The data in the page.putField(key,value) can use the ResultItems.get(key) to get</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(ResultItems resultItems, Task task);
+}
+</code></pre>
+<p>We can see,<code>Pipeline</code> persist the data which was extracted by the<code>PageProcessor</code>. This work we can also do in the <code>PageProcessor</code>. But why we use the<code>Pipeline</code>? There is some reason for this:</p>
+<ol>
+<li>To separate the modules.The extract of page and persist the data are the to stages of a spider. On one hand, separate the modules can make the structure of the code more clear. On the other hand, we can separate the process, process in another thread or even in another server.</li>
+<li>The function of<code>Pipeline</code> is more stable, it is very easy to make it as a common component.There is a big difference between process of different pages.But the persist of data is almost the same,such as save in a file or perisist in the database.It is very commons for almost of the pages.There is lots of common<code>Pipeline</code>in the WebMagic, such as write to the console,save in a file, save in a file as a JSON format.</li>
+</ol>
+<p>In the WebMagic, a<code>Spider</code>can have a lot of<code>Pipeline</code>, to use the <code>Spider.addPipeline()</code>can add a <code>Pipeline</code>. These <code>Pipeline</code> can all be process.For example, you can use:</p>
+<pre><code class="lang-java">spider.addPipeline(<span class="hljs-keyword">new</span> ConsolePipeline()).addPipeline(<span class="hljs-keyword">new</span> FilePipeline())
+</code></pre>
+<p>You can write the data on the console and save in the file.</p>
+<h4 id="6-1-2-put-the-result-on-the-console">6.1.2 Put the result on the console</h4>
+<p>When we introduce the <code>PageProcessor</code>, we use the <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/processor/example/GithubRepoPageProcessor.java" target="_blank">GithubRepoPageProcessor</a>as a example. There is a chip of the code:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+)"</span>).all());
+    <span class="hljs-comment">//save the author, the data will be save in ResultItems finally</span>
+    page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+    page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+    <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>)==<span class="hljs-keyword">null</span>){
+        <span class="hljs-comment">//when we set the skip,this page will not be processed by the`Pipeline`</span>
+        page.setSkip(<span class="hljs-keyword">true</span>);
+    }
+    page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+}
+</code></pre>
+<p>Now we want to write the result in the console. <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/pipeline/ConsolePipeline.java" target="_blank">ConsolePipeline</a> can do this.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsolePipeline</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Pipeline</span> {</span>
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(ResultItems resultItems, Task task) {
+        System.out.println(<span class="hljs-string">"get page: "</span> + resultItems.getRequest().getUrl());
+        <span class="hljs-comment">//Iterator all the result,and put it on the console,the "author","name","readme"are all the key,the result is value</span>
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, Object&gt; entry : resultItems.getAll().entrySet()) {
+            System.out.println(entry.getKey() + <span class="hljs-string">":\t"</span> + entry.getValue());
+        }
+    }
+}
+</code></pre>
+<p>To Reference this example, you can customize your own <code>Pipeline</code>.Get the data from the <code>ResultItems</code> and process as your own method.</p>
+<h4 id="6-1-3-persist-the-result-in-the-mysql">6.1.3 persist the result in the MySQL</h4>
+<p>First, we introduce a example<a href="https://github.com/webmagic-io/jobhunter" target="_blank">jobhunter</a>. It&#39;s a WebMagic which integrate a spring framework to crawl the job information. This example also show how to use Mybatis to persist the data in the MySQL database.</p>
+<p>In Java, we have many methods to save the data in database, such as jdbc、dbutils、spring-jdbc、MyBatis. These tools can do the same things, but their complexity is not the same. If we use JBDC, we should get the data in the ResulrItem and save it.</p>
+<p>If we use the ORM framework to persist the data, we will face a big problem. That is the framework all need a well defined model, but not a Key-Value format ResultItem. We use the Mybatis as a example to define a DAO <a href="http://mybatis.github.io/spring/zh/" target="_blank">MyBatis-Spring</a>.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">JobInfoDAO</span> {</span>
+
+    <span class="hljs-annotation">@Insert</span>(<span class="hljs-string">"insert into JobInfo (`title`,`salary`,`company`,`description`,`requirement`,`source`,`url`,`urlMd5`) values (#{title},#{salary},#{company},#{description},#{requirement},#{source},#{url},#{urlMd5})"</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span>(LieTouJobInfo jobInfo);
+}
+</code></pre>
+<p>All we need to do is to implements a Pipeline,to combine the <code>ResultItem</code>and<code>LieTouJobInfo</code>.</p>
+<h4 id="annotation-mode">Annotation mode</h4>
+<p>Under the annotation mode，there is a <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/pipeline/PageModelPipeline.java" target="_blank">PageModelPipeline</a>in the WebMagic：</p>
+<pre><code class="lang-java">public interface PageModelPipeline&lt;T&gt; {
+
+    //give the well processed object
+    public void process(T t, Task task);
+
+}
+</code></pre>
+<p>At this time,we can define a <a href="https://github.com/webmagic-io/jobhunter/blob/master/src/main/java/us/codecraft/jobhunter/pipeline/JobInfoDaoPipeline.java" target="_blank">JobInfoDaoPipeline</a> to achieve the function:</p>
+<pre><code class="lang-java">@Component("JobInfoDaoPipeline")
+public class JobInfoDaoPipeline implements PageModelPipeline&lt;LieTouJobInfo&gt; {
+
+    @Resource
+    private JobInfoDAO jobInfoDAO;
+
+    @Override
+    public void process(LieTouJobInfo lieTouJobInfo, Task task) {
+        //call the MyBatis DAO to save the result
+        jobInfoDAO.add(lieTouJobInfo);
+    }
+}
+</code></pre>
+<h4 id="basic-pipeline-mode">Basic Pipeline mode</h4>
+<p>We have finished the work of save the data! But how to use a original <code>Pipeline</code> interface? It&#39;s very easy! If you want to save a object, then you should save the data as a object when you extract it from a page.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+)"</span>).all());
+    GithubRepo githubRepo = <span class="hljs-keyword">new</span> GithubRepo();
+    githubRepo.setAuthor(page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+    githubRepo.setName(page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+    githubRepo.setReadme(page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>).toString());
+    <span class="hljs-keyword">if</span> (githubRepo.getName() == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">//skip this page</span>
+        page.setSkip(<span class="hljs-keyword">true</span>);
+    } <span class="hljs-keyword">else</span> {
+        page.putField(<span class="hljs-string">"repo"</span>, githubRepo);
+    }
+}
+</code></pre>
+<p>In the <code>Pipeline</code>, you should use</p>
+<pre><code class="lang-java">GithubRepo githubRepo = (GithubRepo)resultItems.get(<span class="hljs-string">"repo"</span>);
+</code></pre>
+<p>then you can get this object</p>
+<blockquote>
+<p>PageModelPipeline is also implements from the original <code>Pipeline</code> interface. It combine the <code>PageProcessor</code>. it use the class name as the key and the value is the object.In detail: <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/model/ModelPipeline.java" target="_blank">ModelPipeline</a>.</p>
+</blockquote>
+<h4 id="6-1-4-the-webmagic-has-already-define-some-pipeline">6.1.4 The WebMagic has already define some Pipeline</h4>
+<p>WebMagic can write the result to the comsole,save the data in a file or save as a JSON format.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ConsolePipeline</td>
+<td>write to the console</td>
+<td>the result must implements the toString() method</td>
+</tr>
+<tr>
+<td>FilePipeline</td>
+<td>save the result in the file</td>
+<td>the result must implements the toString() method</td>
+</tr>
+<tr>
+<td>JsonFilePipeline</td>
+<td>save the data in the file as JSON format</td>
+<td></td>
+</tr>
+<tr>
+<td>ConsolePageModelPipeline</td>
+<td>(Annotation mode)write to the console</td>
+<td></td>
+</tr>
+<tr>
+<td>FilePageModelPipeline</td>
+<td>(Annotation mode)save the result in the file</td>
+<td></td>
+</tr>
+<tr>
+<td>JsonFilePageModelPipeline</td>
+<td>(Annotation mode)save the data in the file as JSON format</td>
+<td>the field which want to be saved must have the getter method</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../posts/ch6-custom-componenet/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+        <script src="http://code4craft.qiniudn.com/ace.js"></script>
+        <script src="http://code4craft.qiniudn.com/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49956730-1', 'webmagic.io');
+  ga('send', 'pageview');
+
+</script>
+        
+    </body>
+</html>
