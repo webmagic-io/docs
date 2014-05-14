@@ -22,7 +22,7 @@ This is the summary of my book.
 	* A Complete Sample
 	* AfterExtractor
 * [Customize Components](posts/ch6-custom-componenet/README.md)
-	* Pipeline
+	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
 	* Scheduler
 	* Downloader
 	
