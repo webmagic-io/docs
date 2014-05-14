@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Customize Components | WebMagic in Action</title>
+        <title>With maven | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch6-custom-componenet/pipeline.html" />
+        <link rel="next" href="../../posts/ch2-install/without-maven.html" />
         
+        
+        <link rel="prev" href="../../posts/ch2-install/README.html" />
         
 
-        <meta property="og:title" content="Customize Components | WebMagic in Action">
+        <meta property="og:title" content="With maven | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="5" data-basepath="../.." data-revision="1400082402481">
+<div class="book" data-github="code4craft/webmagic" data-level="2.1" data-basepath="../.." data-revision="1400082402481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -283,7 +285,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 85.71428571428571%;min-width: 71.42857142857143%;"></div>
+        <div class="inner" style="width: 42.857142857142854%;min-width: 28.571428571428573%;"></div>
     </div>
     <div class="chapters">
     
@@ -295,11 +297,11 @@
     
         <a href="../../posts/ch2-install/with-maven.html" title="With maven" class="chapter done " data-progress="2.1" style="left: 42.857142857142854%;"></a>
     
-        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter done " data-progress="2.2" style="left: 57.142857142857146%;"></a>
+        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter  " data-progress="2.2" style="left: 57.142857142857146%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 71.42857142857143%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter  " data-progress="2.3" style="left: 71.42857142857143%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
     
         <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="5.1" style="left: 100%;"></a>
     
@@ -308,37 +310,32 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h2 id="6-customize-components">6.Customize Components</h2>
-<p>In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.</p>
-<p>In the Spider class, <code>PageProcessor</code>、<code>Downloader</code>、<code>Scheduler</code> and <code>Pipeline</code> are the fields of Spider class. Beside the <code>PageProcessor</code> have been assigned when the Spider create, the other three components can be changed by the setter function.</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>setScheduler()</td>
-<td>Change the Scheduler</td>
-<td>spipder.setScheduler(new FileCacheQueueScheduler(&quot;D:\data\webmagic&quot;))</td>
-</tr>
-<tr>
-<td>setDownloader()</td>
-<td>Change theDownloader</td>
-<td>spipder.setDownloader(new SeleniumDownloader()))</td>
-</tr>
-<tr>
-<td>addDownloader()</td>
-<td>Change the Pipeline，one Spider can have a few of pipeline</td>
-<td>spipder.addPipeline(new FilePipeline())</td>
-</tr>
-</tbody>
-</table>
+                        <h3 id="2-1-use-maven-to-manage-your-dependency">2.1 Use Maven to manage your dependency</h3>
+<p>WebMagic is built on Maven, so it is highly recommanded to use Maven to manage your project. You can add WebMagic
+by appending following lines to your <code>pom.xml</code>:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>us.codecraft<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>webmagic-extension<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.5.1<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre>
+<p>If you are not familiar with Maven, Here is an introduction: <a href="http://maven.apache.org/what-is-maven.html" target="_blank">What is Maven?</a></p>
+<p>WebMagic uses <code>slf4j-log4j12</code> as the implemetation of slf4j. If you have your own choice of slf4j implemetation,
+exclude the former from your dependency.</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>us.codecraft<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>webmagic-extension<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.5.1<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">exclusions</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">exclusion</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.slf4j<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>slf4j-log4j12<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">exclusion</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">exclusions</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre>
 
                     
                     </section>
@@ -348,8 +345,10 @@
         </div>
 
         
+        <a href="../../posts/ch2-install/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="../../posts/ch2-install/without-maven.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

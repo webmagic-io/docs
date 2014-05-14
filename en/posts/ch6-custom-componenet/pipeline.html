@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Customize Components | WebMagic in Action</title>
+        <title>Pipeline | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch6-custom-componenet/pipeline.html" />
         
+        <link rel="prev" href="../../posts/ch6-custom-componenet/README.html" />
         
 
-        <meta property="og:title" content="Customize Components | WebMagic in Action">
+        <meta property="og:title" content="Pipeline | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="5" data-basepath="../.." data-revision="1400082402481">
+<div class="book" data-github="code4craft/webmagic" data-level="5.1" data-basepath="../.." data-revision="1400082402481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -283,7 +283,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 85.71428571428571%;min-width: 71.42857142857143%;"></div>
+        <div class="inner" style="width: 100%;min-width: 85.71428571428571%;"></div>
     </div>
     <div class="chapters">
     
@@ -301,41 +301,162 @@
     
         <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="5.1" style="left: 100%;"></a>
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter done " data-progress="5.1" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_8">
                     
-                        <h2 id="6-customize-components">6.Customize Components</h2>
-<p>In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.</p>
-<p>In the Spider class, <code>PageProcessor</code>、<code>Downloader</code>、<code>Scheduler</code> and <code>Pipeline</code> are the fields of Spider class. Beside the <code>PageProcessor</code> have been assigned when the Spider create, the other three components can be changed by the setter function.</p>
+                        <h3 id="6-1-customize-pipeline">6.1 Customize Pipeline</h3>
+<p>When the extract finished, we use<code>Pipeline</code>to persist the result of extract.We can also customize the pipeline to do some common function. In this chapter we will introduce the<code>Pipeline</code>, and use two examples to explane how to customize the pipeline.</p>
+<h4 id="6-1-1-introduction-of-pipeline">6.1.1 Introduction of Pipeline</h4>
+<p>The interface of<code>Pipeline</code>define is here:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Pipeline</span> {</span>
+
+    <span class="hljs-comment">// ResultItems persiste the result of extract，it is a structure of map</span>
+    <span class="hljs-comment">// The data in the page.putField(key,value) can use the ResultItems.get(key) to get</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(ResultItems resultItems, Task task);
+}
+</code></pre>
+<p>We can see,<code>Pipeline</code> persist the data which was extracted by the<code>PageProcessor</code>. This work we can also do in the <code>PageProcessor</code>. But why we use the<code>Pipeline</code>? There is some reason for this:</p>
+<ol>
+<li>To separate the modules.The extract of page and persist the data are the to stages of a spider. On one hand, separate the modules can make the structure of the code more clear. On the other hand, we can separate the process, process in another thread or even in another server.</li>
+<li>The function of<code>Pipeline</code> is more stable, it is very easy to make it as a common component.There is a big difference between process of different pages.But the persist of data is almost the same,such as save in a file or perisist in the database.It is very commons for almost of the pages.There is lots of common<code>Pipeline</code>in the WebMagic, such as write to the console,save in a file, save in a file as a JSON format.</li>
+</ol>
+<p>In the WebMagic, a<code>Spider</code>can have a lot of<code>Pipeline</code>, to use the <code>Spider.addPipeline()</code>can add a <code>Pipeline</code>. These <code>Pipeline</code> can all be process.For example, you can use:</p>
+<pre><code class="lang-java">spider.addPipeline(<span class="hljs-keyword">new</span> ConsolePipeline()).addPipeline(<span class="hljs-keyword">new</span> FilePipeline())
+</code></pre>
+<p>You can write the data on the console and save in the file.</p>
+<h4 id="6-1-2-put-the-result-on-the-console">6.1.2 Put the result on the console</h4>
+<p>When we introduce the <code>PageProcessor</code>, we use the <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/processor/example/GithubRepoPageProcessor.java" target="_blank">GithubRepoPageProcessor</a>as a example. There is a chip of the code:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+)"</span>).all());
+    <span class="hljs-comment">//save the author, the data will be save in ResultItems finally</span>
+    page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+    page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+    <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>)==<span class="hljs-keyword">null</span>){
+        <span class="hljs-comment">//when we set the skip,this page will not be processed by the`Pipeline`</span>
+        page.setSkip(<span class="hljs-keyword">true</span>);
+    }
+    page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+}
+</code></pre>
+<p>Now we want to write the result in the console. <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/pipeline/ConsolePipeline.java" target="_blank">ConsolePipeline</a> can do this.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConsolePipeline</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Pipeline</span> {</span>
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(ResultItems resultItems, Task task) {
+        System.out.println(<span class="hljs-string">"get page: "</span> + resultItems.getRequest().getUrl());
+        <span class="hljs-comment">//Iterator all the result,and put it on the console,the "author","name","readme"are all the key,the result is value</span>
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, Object&gt; entry : resultItems.getAll().entrySet()) {
+            System.out.println(entry.getKey() + <span class="hljs-string">":\t"</span> + entry.getValue());
+        }
+    }
+}
+</code></pre>
+<p>To Reference this example, you can customize your own <code>Pipeline</code>.Get the data from the <code>ResultItems</code> and process as your own method.</p>
+<h4 id="6-1-3-persist-the-result-in-the-mysql">6.1.3 persist the result in the MySQL</h4>
+<p>First, we introduce a example<a href="https://github.com/webmagic-io/jobhunter" target="_blank">jobhunter</a>. It&#39;s a WebMagic which integrate a spring framework to crawl the job information. This example also show how to use Mybatis to persist the data in the MySQL database.</p>
+<p>In Java, we have many methods to save the data in database, such as jdbc、dbutils、spring-jdbc、MyBatis. These tools can do the same things, but their complexity is not the same. If we use JBDC, we should get the data in the ResulrItem and save it.</p>
+<p>If we use the ORM framework to persist the data, we will face a big problem. That is the framework all need a well defined model, but not a Key-Value format ResultItem. We use the Mybatis as a example to define a DAO <a href="http://mybatis.github.io/spring/zh/" target="_blank">MyBatis-Spring</a>.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">JobInfoDAO</span> {</span>
+
+    <span class="hljs-annotation">@Insert</span>(<span class="hljs-string">"insert into JobInfo (`title`,`salary`,`company`,`description`,`requirement`,`source`,`url`,`urlMd5`) values (#{title},#{salary},#{company},#{description},#{requirement},#{source},#{url},#{urlMd5})"</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span>(LieTouJobInfo jobInfo);
+}
+</code></pre>
+<p>All we need to do is to implements a Pipeline,to combine the <code>ResultItem</code>and<code>LieTouJobInfo</code>.</p>
+<h4 id="annotation-mode">Annotation mode</h4>
+<p>Under the annotation mode，there is a <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/pipeline/PageModelPipeline.java" target="_blank">PageModelPipeline</a>in the WebMagic：</p>
+<pre><code class="lang-java">public interface PageModelPipeline&lt;T&gt; {
+
+    //give the well processed object
+    public void process(T t, Task task);
+
+}
+</code></pre>
+<p>At this time,we can define a <a href="https://github.com/webmagic-io/jobhunter/blob/master/src/main/java/us/codecraft/jobhunter/pipeline/JobInfoDaoPipeline.java" target="_blank">JobInfoDaoPipeline</a> to achieve the function:</p>
+<pre><code class="lang-java">@Component("JobInfoDaoPipeline")
+public class JobInfoDaoPipeline implements PageModelPipeline&lt;LieTouJobInfo&gt; {
+
+    @Resource
+    private JobInfoDAO jobInfoDAO;
+
+    @Override
+    public void process(LieTouJobInfo lieTouJobInfo, Task task) {
+        //call the MyBatis DAO to save the result
+        jobInfoDAO.add(lieTouJobInfo);
+    }
+}
+</code></pre>
+<h4 id="basic-pipeline-mode">Basic Pipeline mode</h4>
+<p>We have finished the work of save the data! But how to use a original <code>Pipeline</code> interface? It&#39;s very easy! If you want to save a object, then you should save the data as a object when you extract it from a page.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+)"</span>).all());
+    GithubRepo githubRepo = <span class="hljs-keyword">new</span> GithubRepo();
+    githubRepo.setAuthor(page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+    githubRepo.setName(page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+    githubRepo.setReadme(page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>).toString());
+    <span class="hljs-keyword">if</span> (githubRepo.getName() == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">//skip this page</span>
+        page.setSkip(<span class="hljs-keyword">true</span>);
+    } <span class="hljs-keyword">else</span> {
+        page.putField(<span class="hljs-string">"repo"</span>, githubRepo);
+    }
+}
+</code></pre>
+<p>In the <code>Pipeline</code>, you should use</p>
+<pre><code class="lang-java">GithubRepo githubRepo = (GithubRepo)resultItems.get(<span class="hljs-string">"repo"</span>);
+</code></pre>
+<p>then you can get this object</p>
+<blockquote>
+<p>PageModelPipeline is also implements from the original <code>Pipeline</code> interface. It combine the <code>PageProcessor</code>. it use the class name as the key and the value is the object.In detail: <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/model/ModelPipeline.java" target="_blank">ModelPipeline</a>.</p>
+</blockquote>
+<h4 id="6-1-4-the-webmagic-has-already-define-some-pipeline">6.1.4 The WebMagic has already define some Pipeline</h4>
+<p>WebMagic can write the result to the comsole,save the data in a file or save as a JSON format.</p>
 <table>
 <thead>
 <tr>
-<th>Function</th>
+<th>Class</th>
 <th>Description</th>
-<th>Example</th>
+<th>Remark</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>setScheduler()</td>
-<td>Change the Scheduler</td>
-<td>spipder.setScheduler(new FileCacheQueueScheduler(&quot;D:\data\webmagic&quot;))</td>
+<td>ConsolePipeline</td>
+<td>write to the console</td>
+<td>the result must implements the toString() method</td>
 </tr>
 <tr>
-<td>setDownloader()</td>
-<td>Change theDownloader</td>
-<td>spipder.setDownloader(new SeleniumDownloader()))</td>
+<td>FilePipeline</td>
+<td>save the result in the file</td>
+<td>the result must implements the toString() method</td>
 </tr>
 <tr>
-<td>addDownloader()</td>
-<td>Change the Pipeline，one Spider can have a few of pipeline</td>
-<td>spipder.addPipeline(new FilePipeline())</td>
+<td>JsonFilePipeline</td>
+<td>save the data in the file as JSON format</td>
+<td></td>
+</tr>
+<tr>
+<td>ConsolePageModelPipeline</td>
+<td>(Annotation mode)write to the console</td>
+<td></td>
+</tr>
+<tr>
+<td>FilePageModelPipeline</td>
+<td>(Annotation mode)save the result in the file</td>
+<td></td>
+</tr>
+<tr>
+<td>JsonFilePageModelPipeline</td>
+<td>(Annotation mode)save the data in the file as JSON format</td>
+<td>the field which want to be saved must have the getter method</td>
 </tr>
 </tbody>
 </table>
@@ -348,8 +469,8 @@
         </div>
 
         
+        <a href="../../posts/ch6-custom-componenet/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

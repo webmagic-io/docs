@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Customize Components | WebMagic in Action</title>
+        <title>Without maven | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch6-custom-componenet/pipeline.html" />
+        <link rel="next" href="../../posts/ch2-install/first-project.html" />
         
+        
+        <link rel="prev" href="../../posts/ch2-install/with-maven.html" />
         
 
-        <meta property="og:title" content="Customize Components | WebMagic in Action">
+        <meta property="og:title" content="Without maven | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="5" data-basepath="../.." data-revision="1400082402481">
+<div class="book" data-github="code4craft/webmagic" data-level="2.2" data-basepath="../.." data-revision="1400082402481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -283,7 +285,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 85.71428571428571%;min-width: 71.42857142857143%;"></div>
+        <div class="inner" style="width: 57.142857142857146%;min-width: 42.857142857142854%;"></div>
     </div>
     <div class="chapters">
     
@@ -297,9 +299,9 @@
     
         <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter done " data-progress="2.2" style="left: 57.142857142857146%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 71.42857142857143%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter  " data-progress="2.3" style="left: 71.42857142857143%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
     
         <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="5.1" style="left: 100%;"></a>
     
@@ -308,37 +310,15 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_6">
                     
-                        <h2 id="6-customize-components">6.Customize Components</h2>
-<p>In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.</p>
-<p>In the Spider class, <code>PageProcessor</code>、<code>Downloader</code>、<code>Scheduler</code> and <code>Pipeline</code> are the fields of Spider class. Beside the <code>PageProcessor</code> have been assigned when the Spider create, the other three components can be changed by the setter function.</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>setScheduler()</td>
-<td>Change the Scheduler</td>
-<td>spipder.setScheduler(new FileCacheQueueScheduler(&quot;D:\data\webmagic&quot;))</td>
-</tr>
-<tr>
-<td>setDownloader()</td>
-<td>Change theDownloader</td>
-<td>spipder.setDownloader(new SeleniumDownloader()))</td>
-</tr>
-<tr>
-<td>addDownloader()</td>
-<td>Change the Pipeline，one Spider can have a few of pipeline</td>
-<td>spipder.addPipeline(new FilePipeline())</td>
-</tr>
-</tbody>
-</table>
+                        <h3 id="2-2-without-maven">2.2 Without Maven</h3>
+<p>If you don&#39;t know Maven or don&#39;t like it, you can download the newest jars from <a href="http://webmagic.io" target="_blank">http://webmagic.io</a>.
+I also wrapped all the jars that webmagic requires, click <a href="http://webmagic.io/download.html" target="_blank">here</a> to download.</p>
+<p>After the download, just unzip the archive and add all jars to your classpath.</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/102848_ETcU_190591.png" alt="import jars"></p>
+<p>Because WebMagic encourages the customization, it is really helpful to see the source code. You can get the newest <code>webmagic-core-{version}-sources.jar</code> and <code>webmagic-extension-{version}-sources.jar</code> on <a href="http://webmagic.io" target="_blank">http://webmagic.io</a>, just click on &quot;Attch Source&quot;.</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0416/111517_MD4e_190591.png" alt="http://static.oschina.net/uploads/space/2014/0416/111517_MD4e_190591.png"></p>
 
                     
                     </section>
@@ -348,8 +328,10 @@
         </div>
 
         
+        <a href="../../posts/ch2-install/with-maven.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="../../posts/ch2-install/first-project.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

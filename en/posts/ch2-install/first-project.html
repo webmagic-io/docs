@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Customize Components | WebMagic in Action</title>
+        <title>First Project | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch6-custom-componenet/pipeline.html" />
         
+        <link rel="prev" href="../../posts/ch2-install/without-maven.html" />
         
 
-        <meta property="og:title" content="Customize Components | WebMagic in Action">
+        <meta property="og:title" content="First Project | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="5" data-basepath="../.." data-revision="1400082402481">
+<div class="book" data-github="code4craft/webmagic" data-level="2.3" data-basepath="../.." data-revision="1400082402481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -283,7 +283,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 85.71428571428571%;min-width: 71.42857142857143%;"></div>
+        <div class="inner" style="width: 71.42857142857143%;min-width: 57.142857142857146%;"></div>
     </div>
     <div class="chapters">
     
@@ -299,7 +299,7 @@
     
         <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 71.42857142857143%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
     
         <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="5.1" style="left: 100%;"></a>
     
@@ -308,37 +308,44 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_4">
                     
-                        <h2 id="6-customize-components">6.Customize Components</h2>
-<p>In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.</p>
-<p>In the Spider class, <code>PageProcessor</code>、<code>Downloader</code>、<code>Scheduler</code> and <code>Pipeline</code> are the fields of Spider class. Beside the <code>PageProcessor</code> have been assigned when the Spider create, the other three components can be changed by the setter function.</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>setScheduler()</td>
-<td>Change the Scheduler</td>
-<td>spipder.setScheduler(new FileCacheQueueScheduler(&quot;D:\data\webmagic&quot;))</td>
-</tr>
-<tr>
-<td>setDownloader()</td>
-<td>Change theDownloader</td>
-<td>spipder.setDownloader(new SeleniumDownloader()))</td>
-</tr>
-<tr>
-<td>addDownloader()</td>
-<td>Change the Pipeline，one Spider can have a few of pipeline</td>
-<td>spipder.addPipeline(new FilePipeline())</td>
-</tr>
-</tbody>
-</table>
+                        <h3 id="2-3-first-project">2.3 First project</h3>
+<p>After adding maven dependencies for your project, we are ready to write our very first crawler.
+Here we take Github for example:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> us.codecraft.webmagic.Page;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.Site;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.Spider;
+<span class="hljs-keyword">import</span> us.codecraft.webmagic.processor.PageProcessor;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> {</span>
+
+    <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">100</span>);
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>)==<span class="hljs-keyword">null</span>){
+            <span class="hljs-comment">//skip this page</span>
+            page.setSkip(<span class="hljs-keyword">true</span>);
+        }
+        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span>() {
+        <span class="hljs-keyword">return</span> site;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor()).addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>).thread(<span class="hljs-number">5</span>).run();
+    }
+}
+</code></pre>
+<p>Now run the main()... And voilà.</p>
+<p><img src="http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png" alt="runlog"></p>
 
                     
                     </section>
@@ -348,8 +355,8 @@
         </div>
 
         
+        <a href="../../posts/ch2-install/without-maven.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
