@@ -7,6 +7,6 @@ After the download, just unzip the archive and add all jars to your classpath.
 
 ![import jars](http://static.oschina.net/uploads/space/2014/0403/102848_ETcU_190591.png)
 
-Because WebMagic encourages the customization, it is really helpful to see the source code. You can get the newest webmagic-core-{version}-sources.jar` and `webmagic-extension-{version}-sources.jar` on [http://webmagic.io](http://webmagic.io), just click on "Attch Source".
+Because WebMagic encourages the customization, it is really helpful to see the source code. You can get the newest `webmagic-core-{version}-sources.jar` and `webmagic-extension-{version}-sources.jar` on [http://webmagic.io](http://webmagic.io), just click on "Attch Source".
 
 ![http://static.oschina.net/uploads/space/2014/0416/111517_MD4e_190591.png](http://static.oschina.net/uploads/space/2014/0416/111517_MD4e_190591.png)

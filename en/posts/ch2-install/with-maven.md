@@ -11,7 +11,7 @@ by appending following lines to your `pom.xml`:
 </dependency>
 ```
 
-If you are not familiar with Maven, Here is an introduction: [What is Maven?](http://maven.apache.org/what-is-maven.html).
+If you are not familiar with Maven, Here is an introduction: [What is Maven?](http://maven.apache.org/what-is-maven.html)
 
 WebMagic uses `slf4j-log4j12` as the implemetation of slf4j. If you have your own choice of slf4j implemetation,
 exclude the former from your dependency.
