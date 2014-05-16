@@ -10,7 +10,7 @@ This is the summary of my book.
 	* [With maven](posts/ch2-install/with-maven.md)
 	* [Without maven](posts/ch2-install/without-maven.md)
 	* [First Project](posts/ch2-install/first-project.md)
-* [Basic crawler]()
+* Basic crawler
 	* Implement PageProcessor
 	* Selectable
 	* Save the results
@@ -27,6 +27,6 @@ This is the summary of my book.
 	* AfterExtractor
 * [Customize Components](posts/ch6-custom-componenet/README.md)
 	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
-	* Scheduler
+	* [Scheduler](posts/ch6-custom-componenet/scheduler.md)
 	* Downloader
 	
