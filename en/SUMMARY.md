@@ -6,7 +6,11 @@ This is the summary of my book.
 	* Philosophy
 	* Architect
 	* Components
-* Basic crawler
+* [Install](posts/ch2-install/README.md)
+	* [With maven](posts/ch2-install/with-maven.md)
+	* [Without maven](posts/ch2-install/without-maven.md)
+	* [First Project](posts/ch2-install/first-project.md)
+* [Basic crawler]()
 	* Implement PageProcessor
 	* Selectable
 	* Save the results
