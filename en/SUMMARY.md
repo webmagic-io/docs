@@ -27,6 +27,6 @@ This is the summary of my book.
 	* AfterExtractor
 * [Customize Components](posts/ch6-custom-componenet/README.md)
 	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
-	* Scheduler
-	* Downloader
+	* [Scheduler](posts/ch6-custom-componenet/scheduler.md)
+	* [Downloader](posts/ch6-custom-componenet/downloader.md)
 	
