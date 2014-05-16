@@ -28,5 +28,5 @@ This is the summary of my book.
 * [Customize Components](posts/ch6-custom-componenet/README.md)
 	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
 	* [Scheduler](posts/ch6-custom-componenet/scheduler.md)
-	* Downloader
+	* [Downloader](posts/ch6-custom-componenet/downloader.md)
 	
