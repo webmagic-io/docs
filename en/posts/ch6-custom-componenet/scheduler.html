@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Install | WebMagic in Action</title>
+        <title>Scheduler | WebMagic in Action</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -13,11 +13,11 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../posts/ch2-install/with-maven.html" />
         
+        <link rel="prev" href="../../posts/ch6-custom-componenet/pipeline.html" />
         
 
-        <meta property="og:title" content="Install | WebMagic in Action">
+        <meta property="og:title" content="Scheduler | WebMagic in Action">
         <meta property="og:site_name" content="WebMagic in Action">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="zh-CN">
@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="2" data-basepath="../.." data-revision="1400217879499">
+<div class="book" data-github="code4craft/webmagic" data-level="5.2" data-basepath="../.." data-revision="1400217879499">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -285,7 +285,7 @@
             <div class="page-wrapper">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 25%;min-width: 12.5%;"></div>
+        <div class="inner" style="width: 100%;min-width: 87.5%;"></div>
     </div>
     <div class="chapters">
     
@@ -295,28 +295,92 @@
     
         <a href="../../posts/ch2-install/README.html" title="Install" class="chapter done new-chapter" data-progress="2" style="left: 25%;"></a>
     
-        <a href="../../posts/ch2-install/with-maven.html" title="With maven" class="chapter  " data-progress="2.1" style="left: 37.5%;"></a>
+        <a href="../../posts/ch2-install/with-maven.html" title="With maven" class="chapter done " data-progress="2.1" style="left: 37.5%;"></a>
     
-        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter  " data-progress="2.2" style="left: 50%;"></a>
+        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter done " data-progress="2.2" style="left: 50%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter  " data-progress="2.3" style="left: 62.5%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 62.5%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="5" style="left: 75%;"></a>
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter done new-chapter" data-progress="5" style="left: 75%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="5.1" style="left: 87.5%;"></a>
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter done " data-progress="5.1" style="left: 87.5%;"></a>
     
-        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="Scheduler" class="chapter  " data-progress="5.2" style="left: 100%;"></a>
+        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="Scheduler" class="chapter done " data-progress="5.2" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_3">
+                    <section class="normal" id="section-gitbook_9">
                     
-                        <h2 id="2-use-webmagic">2. Use WebMagic</h2>
-<p>WebMagic&#39;s core feature requires two jars：<code>webmagic-core-{version}.jar</code> and <code>webmagic-extension-{version}.jar</code>. Just add them to your classpath and you are good to go.</p>
-<p>WebMagic uses Maven to manage its dependencies, but of cause you can use it without Maven.</p>
+                        <h3 id="6-2-customized-scheduler">6.2 Customized Scheduler</h3>
+<p>The scheduler is a components of the WebMagic which manage the url.In general, there are two effect of the scheduler:</p>
+<ol>
+<li>manage the url which is wait to be crawl</li>
+<li>filter out the repeat url</li>
+</ol>
+<p>WebMagic have some common schedular. If you just want to run some simple sprider in your local, then you needn&#39;t to customize scheduler.But it is meaningful for you to know some of them.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Discreption</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DuplicateRemovedScheduler</td>
+<td>a abstract class,it provide some template method</td>
+<td>extends it can achieve your own function</td>
+</tr>
+<tr>
+<td>QueueScheduler</td>
+<td>use the memory queue to save the url</td>
+<td></td>
+</tr>
+<tr>
+<td>PriorityScheduler</td>
+<td>use the priority mamory queue to save the url</td>
+<td>the use of memory is bigger than the QueueScheduler，but whne you set the request.priority.it is necessary to use the PriorityScheduler to take the priority effect</td>
+</tr>
+<tr>
+<td>FileCacheQueueScheduler</td>
+<td>use the file to save the url，when the program exit and start next time，it can crawl the url which have been saved in the file</td>
+<td>it need to set the path of the file. It will create two files .urls.txt and .cursor.txt</td>
+</tr>
+<tr>
+<td>RedisScheduler</td>
+<td>use the redis to save the queue, it can crawl the internet in a distrubuted system</td>
+<td>need to install redis and start it</td>
+</tr>
+</tbody>
+</table>
+<p>In the Version 0.5.1,I have rebuild the scheduler.The duplicated remover have been extract to a independent interface:<code>DuplicateRemover</code>.Then you can set a different <code>DuplicateRemover</code> for one scheduler.There are two ways of remove the Duplicate.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Discreption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashSetDuplicateRemover</td>
+<td>use the hashset to remove,but it needs a lots of memory</td>
+</tr>
+<tr>
+<td>BloomFilterDuplicateRemover</td>
+<td>use the BloomFilter to remove, use a few of memory. But it may leave out a few url</td>
+</tr>
+</tbody>
+</table>
+<p>All the default scheduler use the <code>HashSetDuplicateRemover</code> to remove(except the RedisScheduler).If you have a mount of url to do this, we recommend you to use the <code>BloomFilterDuplicateRemover</code> . For example:</p>
+<pre><code class="lang-java">spider.setScheduler(<span class="hljs-keyword">new</span> QueueScheduler()
+.setDuplicateRemover(<span class="hljs-keyword">new</span> BloomFilterDuplicateRemover(<span class="hljs-number">10000000</span>)) <span class="hljs-comment">//10000000 is the estimate value of urls</span>
+)
+</code></pre>
 
                     
                     </section>
@@ -326,8 +390,8 @@
         </div>
 
         
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
-        <a href="../../posts/ch2-install/with-maven.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
