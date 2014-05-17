@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1400217879499
+# Revision 1400286581124
 
 CACHE:
 index.html
@@ -9,6 +9,7 @@ posts/ch2-install/first-project.html
 posts/ch2-install/with-maven.html
 posts/ch2-install/without-maven.html
 posts/ch6-custom-componenet/README.html
+posts/ch6-custom-componenet/downloader.html
 posts/ch6-custom-componenet/pipeline.html
 posts/ch6-custom-componenet/scheduler.html
 gitbook/app.js
