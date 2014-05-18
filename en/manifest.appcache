@@ -1,13 +1,14 @@
 CACHE MANIFEST
-# Revision 1400287334544
+# Revision 1400420295642
 
 CACHE:
 index.html
+posts/ch1-overview/README.html
+posts/ch1-overview/philosophy.html
 posts/ch2-install/README.html
 posts/ch2-install/first-project.html
 posts/ch2-install/with-maven.html
 posts/ch2-install/without-maven.html
-posts/ch1-overview/README.html
 posts/ch6-custom-componenet/README.html
 posts/ch6-custom-componenet/downloader.html
 posts/ch6-custom-componenet/pipeline.html
@@ -34,8 +35,8 @@ gitbook/jsrepl/sandbox.html
 gitbook/jsrepl/sandbox.js
 gitbook/print.css
 gitbook/style.css
-gitbook/plugins/gitbook-plugin-mathjax/plugin.js
 gitbook/plugins/gitbook-plugin-mixpanel/plugin.js
+gitbook/plugins/gitbook-plugin-mathjax/plugin.js
 
 NETWORK:
 *
