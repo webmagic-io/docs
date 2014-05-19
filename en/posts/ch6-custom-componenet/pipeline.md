@@ -1,6 +1,6 @@
-### 6.1 Customize Pipeline
+### 4.1 Customize Pipeline
 When the extract finished, we use`Pipeline`to persist the result of extract.We can also customize the pipeline to do some common function. In this chapter we will introduce the`Pipeline`, and use two examples to explane how to customize the pipeline.
-#### 6.1.1 Introduction of Pipeline
+#### 4.1.1 Introduction of Pipeline
 The interface of`Pipeline`define is here:
 ```java
 public interface Pipeline {
@@ -22,7 +22,7 @@ spider.addPipeline(new ConsolePipeline()).addPipeline(new FilePipeline())
 
 You can write the data on the console and save in the file.
 
-#### 6.1.2 Put the result on the console
+#### 4.1.2 Put the result on the console
 When we introduce the `PageProcessor`, we use the [GithubRepoPageProcessor](https://github.com/code4craft/webmagic/blob/master/webmagic-core/src/main/java/us/codecraft/webmagic/processor/example/GithubRepoPageProcessor.java)as a example. There is a chip of the code:
 
 ```java
@@ -57,7 +57,7 @@ public class ConsolePipeline implements Pipeline {
 ```
 To Reference this example, you can customize your own `Pipeline`.Get the data from the `ResultItems` and process as your own method.
 
-#### 6.1.3 persist the result in the MySQL
+#### 4.1.3 persist the result in the MySQL
 First, we introduce a example[jobhunter](https://github.com/webmagic-io/jobhunter). It's a WebMagic which integrate a spring framework to crawl the job information. This example also show how to use Mybatis to persist the data in the MySQL database.
 
 In Java, we have many methods to save the data in database, such as jdbc、dbutils、spring-jdbc、MyBatis. These tools can do the same things, but their complexity is not the same. If we use JBDC, we should get the data in the ResulrItem and save it.
@@ -135,7 +135,7 @@ then you can get this object
 
 > PageModelPipeline is also implements from the original `Pipeline` interface. It combine the `PageProcessor`. it use the class name as the key and the value is the object.In detail: [ModelPipeline](https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/model/ModelPipeline.java).
 
-#### 6.1.4 The WebMagic has already define some Pipeline
+#### 4.1.4 The WebMagic has already define some Pipeline
 
 WebMagic can write the result to the comsole,save the data in a file or save as a JSON format.
 
