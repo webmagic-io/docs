@@ -3,7 +3,7 @@
 This is the summary of my book.
 
 * [WebMagic Overview](posts/ch1-overview/README.md)
-	* Philosophy
+	* [Philosophy](posts/ch1-overview/philosophy.md)
 	* Architect
 	* Components
 * [Install](posts/ch2-install/README.md)
