@@ -1,4 +1,4 @@
-### 6.2 Customized Scheduler
+### 4.2 Customized Scheduler
 The scheduler is a components of the WebMagic which manage the url.In general, there are two effect of the scheduler:
 1. manage the url which is wait to be crawl
 2. filter out the repeat url
@@ -13,7 +13,7 @@ WebMagic have some common schedular. If you just want to run some simple sprider
 |FileCacheQueueScheduler|use the file to save the url，when the program exit and start next time，it can crawl the url which have been saved in the file|it need to set the path of the file. It will create two files .urls.txt and .cursor.txt |
 |RedisScheduler|use the redis to save the queue, it can crawl the internet in a distrubuted system|need to install redis and start it|
 
-In the Version 0.5.1,I have rebuild the scheduler.The duplicated remover have been extract to a independent interface:`DuplicateRemover`.Then you can set a different `DuplicateRemover` for one scheduler.There are two ways of remove the Duplicate.
+In the Version 0.5.1,i jave rebuild the scheduler.The duplicated remover have been extract to a independent interface:`DuplicateRemover`.Then you can set a different `DuplicateRemover` for one scheduler.There are two ways of remove the Duplicate.
 
 |Class|Discreption|
 | -------- | ------- |
