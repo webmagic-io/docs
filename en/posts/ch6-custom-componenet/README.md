@@ -1,4 +1,4 @@
-## 4.Customize Components
+## 6.Customize Components
 In the chapter One, we reference the components of WebMagic. WebMagic the biggest advantage is that you can customize the function of components flexible to achieve the function you want to have.
 
 In the Spider class, `PageProcessor`、`Downloader`、`Scheduler` and `Pipeline` are the fields of Spider class. Beside the `PageProcessor` have been assigned when the Spider create, the other three components can be changed by the setter function.

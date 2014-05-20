@@ -1,4 +1,4 @@
-### 4.2 Customized Scheduler
+### 6.2 Customized Scheduler
 The scheduler is a components of the WebMagic which manage the url.In general, there are two effect of the scheduler:
 1. manage the url which is wait to be crawl
 2. filter out the repeat url

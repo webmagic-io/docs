@@ -10,6 +10,10 @@ This is the summary of my book.
 	* [With maven](posts/ch2-install/with-maven.md)
 	* [Without maven](posts/ch2-install/without-maven.md)
 	* [First Project](posts/ch2-install/first-project.md)
+* Build From Source
+	* Get the Source Code
+	* Import Project
+	* Build and run examples
 * Basic crawler
 	* Implement PageProcessor
 	* Selectable
