@@ -10,8 +10,7 @@ This is the summary of my book.
 	* 新建项目
 	* [添加依赖](posts/ch2-install/with-maven.md)
 	* [不使用Maven](posts/ch2-install/without-maven.md)
-	* [编写一个爬虫](posts/ch2-install/first-project.md)
-	* [执行爬虫](posts/ch2-install/first-project.md)
+	* [编写第一个爬虫](posts/ch2-install/first-project.md)
 * [下载和编译源码](posts/ch3-build-source/README.md)
 	* [下载源码](posts/ch3-build-source/git-repo.md)
 	* [导入项目](posts/ch3-build-source/import-project.md)
