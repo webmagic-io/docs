@@ -7,7 +7,7 @@ This is the summary of my book.
 	* [总体架构](posts/ch1-overview/architecture.md)
 	* [项目组成](posts/ch1-overview/component.md)
 * [快速开始](posts/ch2-install/README.md)
-	* 新建项目
+	* [新建项目](posts/ch2-install/first-project.md)
 	* [添加依赖](posts/ch2-install/with-maven.md)
 	* [不使用Maven](posts/ch2-install/without-maven.md)
 	* [编写第一个爬虫](posts/ch2-install/first-project.md)
