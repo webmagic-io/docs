@@ -8,6 +8,6 @@
 |-|-|
 |setScheduler()|设置Scheduler|spipder.setScheduler(new FileCacheQueueScheduler("D:\\data\\webmagic"))|
 |setDownloader()|设置Downloader|spipder.setDownloader(new SeleniumDownloader()))|
-|addDownloader()|设置Pipeline，一个Spider可以有多个Pipeline|spipder.addPipeline(new FilePipeline())|
+|addPipeline()|设置Pipeline，一个Spider可以有多个Pipeline|spipder.addPipeline(new FilePipeline())|
 
 在这一章，我们会讲到如何定制这些组件，完成我们想要的功能。
