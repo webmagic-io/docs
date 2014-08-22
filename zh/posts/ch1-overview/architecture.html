@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1408720292643">
+<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1408720879414">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -488,7 +488,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_46">
+                    <section class="normal" id="section-gitbook_14">
                     
                         <h3 id="1-2-">1.2 总体架构</h3>
 <p>WebMagic的结构分为<code>Downloader</code>、<code>PageProcessor</code>、<code>Scheduler</code>、<code>Pipeline</code>四大组件，并由Spider将它们彼此组织起来。这四大组件对应爬虫生命周期中的下载、处理、管理和持久化等功能。WebMagic的设计参考了Scapy，但是实现方式更Java化一些。</p>
@@ -533,7 +533,7 @@
             .run();
 }
 </code></pre>
-<h3 id="1-2-3-">1.2.3 快速上手</h3>
+<h3 id="1-2-4-">1.2.4 快速上手</h3>
 <p>上面介绍了很多组件，但是其实使用者需要关心的没有那么多，因为大部分模块WebMagic已经提供了默认实现。</p>
 <p>一般来说，对于编写一个爬虫，<code>PageProcessor</code>是需要编写的部分，而<code>Spider</code>则是创建和控制爬虫的入口。在第四章中，我们会介绍如何通过定制PageProcessr来编写一个爬虫，并通过Spider来启动。</p>
 
