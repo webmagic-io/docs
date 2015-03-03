@@ -45,4 +45,4 @@ WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户
 #### 4.6.3 扩展监控接口
 
 除了已有的一些监控信息，如果你有更多的信息需要监控，也可以通过扩展的方式来解决。你可以通过继承`SpiderStatusMBean`来实现扩展，具体例子可以看这里：
-[定制扩展demo](https://github.com/code4craft/webmagic/tree/master/webmagic-core/src/test/java/us/codecraft/webmagic/monitor)。
+[定制扩展demo](https://github.com/code4craft/webmagic/tree/master/webmagic-extension/src/test/java/us/codecraft/webmagic/monitor)。
