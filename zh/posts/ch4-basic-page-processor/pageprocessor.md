@@ -60,7 +60,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 	这段代码使用了XPath，它的意思是“查找所有class属性为'entry-title public'的h1元素，并找到他的strong子节点的a子节点，并提取a节点的文本信息”。
 对应的Html是这样子的：
 
-	![xpath-html](http://static.oschina.net/uploads/space/2014/0404/104607_Aqq8_190591.png)
+	![xpath-html](http://webmagic.qiniudn.com/oscimages/104607_Aqq8_190591.png)
 
 2. CSS选择器
 

@@ -15,9 +15,9 @@
 
 判断页面是否为js渲染的方式比较简单，在浏览器中直接查看源码（Windows下Ctrl+U，Mac下command+alt+u），如果找不到有效的信息，则基本可以肯定为js渲染。
 
-![angular-view](http://static.oschina.net/uploads/space/2014/0412/214310_cMYk_190591.png)
+![angular-view](http://webmagic.qiniudn.com/oscimages/214310_cMYk_190591.png)
 
-![angular-source]( http://static.oschina.net/uploads/space/2014/0412/214226_8s1v_190591.png)
+![angular-source]( http://webmagic.qiniudn.com/oscimages/214226_8s1v_190591.png)
 
 这个例子中，在页面中的标题“有孚计算机网络-前端攻城师”在源码中无法找到，则可以断定是js渲染，并且这个数据是AJAX得到。
 
@@ -31,11 +31,11 @@
 
 然后你可以根据数据大小来判断一下，一般结果体积较大的更有可能是返回数据的接口。剩下的，基本靠经验了，例如这里这个"latest?p=1&s=20"一看就很可疑…
 
-![angular-ajax-list](http://static.oschina.net/uploads/space/2014/0412/233924_6rXz_190591.png)
+![angular-ajax-list](http://webmagic.qiniudn.com/oscimages/233924_6rXz_190591.png)
 
 对于可疑的地址，这时候可以看一下响应体是什么内容了。这里在开发者工具看不清楚，我们把URL`http://angularjs.cn/api/article/latest?p=1&s=20`复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。查看结果，看来我们找到了想要的。
 
-![json](http://static.oschina.net/uploads/space/2014/0412/235310_8gHe_190591.png)
+![json](http://webmagic.qiniudn.com/oscimages/235310_8gHe_190591.png)
 
 同样的办法，我们进入到帖子详情页，找到了具体内容的请求：`http://angularjs.cn/api/article/A0y2`。
 

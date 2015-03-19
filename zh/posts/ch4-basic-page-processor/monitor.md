@@ -34,13 +34,13 @@ WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户
 
 我们按照4.6.1的例子启动程序，然后在命令行输入jconsole（windows下是在DOS下输入jconsole.exe）即可启动JConsole。
 
-![jconsole](http://static.oschina.net/uploads/space/2014/0426/231513_lP2O_190591.png)
+![jconsole](http://webmagic.qiniudn.com/oscimages/231513_lP2O_190591.png)
 
 这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！
 
 这里我们也可以选择“操作”，在操作里可以选择启动-start()和终止爬虫-stop()，这会直接调用对应Spider的start()和stop()方法，来达到基本控制的目的。
 
-![jconsole-show](http://static.oschina.net/uploads/space/2014/0426/231652_B3Mt_190591.png)
+![jconsole-show](http://webmagic.qiniudn.com/oscimages/231652_B3Mt_190591.png)
 
 #### 4.6.3 扩展监控接口
 

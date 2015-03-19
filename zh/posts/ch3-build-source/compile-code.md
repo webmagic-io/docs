@@ -4,4 +4,4 @@
 
 同样，看到控制台输出如下，则表示源码编译和执行成功了！
 
-![runlog](http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png)
+![runlog](http://webmagic.qiniudn.com/oscimages/103741_3Gf5_190591.png)

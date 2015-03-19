@@ -8,11 +8,11 @@ Intellij Idea默认自带Maven支持，import项目时选择Maven项目即可。
 
 安装后，在File->Import中选择Maven->Existing Maven Projects即可导入项目。
 
-![m2e-import](http://static.oschina.net/uploads/space/2014/0403/104427_eNuc_190591.png)
+![m2e-import](http://webmagic.qiniudn.com/oscimages/104427_eNuc_190591.png)
 
 导入后看到项目选择界面，点击finish即可。
 
-![m2e-import2](http://static.oschina.net/uploads/space/2014/0403/104735_6vwG_190591.png)
+![m2e-import2](http://webmagic.qiniudn.com/oscimages/104735_6vwG_190591.png)
 
 #### 3.2.2 使用Maven Eclipse插件
 
@@ -22,8 +22,8 @@ Intellij Idea默认自带Maven支持，import项目时选择Maven项目即可。
 	
 生成maven项目结构的eclipse配置文件，然后在File->Import中选择General->Existing Projects into Workspace即可导入项目。
 
-![eclipse-import-1](http://static.oschina.net/uploads/space/2014/0403/100025_DAcy_190591.png)
+![eclipse-import-1](http://webmagic.qiniudn.com/oscimages/100025_DAcy_190591.png)
 
 导入后看到项目选择界面，点击finish即可。
 
-![eclipse-import-2](http://static.oschina.net/uploads/space/2014/0403/100227_73DJ_190591.png)
+![eclipse-import-2](http://webmagic.qiniudn.com/oscimages/100227_73DJ_190591.png)

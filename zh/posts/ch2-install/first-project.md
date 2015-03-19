@@ -37,4 +37,4 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 点击main方法，选择“运行”，你会发现爬虫已经可以正常工作了！
 
-![runlog](http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png)
+![runlog](http://webmagic.qiniudn.com/oscimages/103741_3Gf5_190591.png)

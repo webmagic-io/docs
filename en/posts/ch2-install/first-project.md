@@ -38,4 +38,4 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 Now run the main()... And voilà.
 
-![runlog](http://static.oschina.net/uploads/space/2014/0403/103741_3Gf5_190591.png)
+![runlog](http://webmagic.qiniudn.com/oscimages/103741_3Gf5_190591.png)

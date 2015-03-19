@@ -23,11 +23,11 @@
 
 为了避免抓取范围太宽，我指定只从分页部分抓取链接。这个抓取规则是比较复杂的，我会要怎么写呢？
 
-![selectable-chain-ui](http://static.oschina.net/uploads/space/2014/0404/151454_2T01_190591.png)
+![selectable-chain-ui](http://webmagic.qiniudn.com/oscimages/151454_2T01_190591.png)
 
 首先看到页面的html结构是这个样子的：
 
-![selectable-chain](http://static.oschina.net/uploads/space/2014/0404/151632_88Oq_190591.png)
+![selectable-chain](http://webmagic.qiniudn.com/oscimages/151632_88Oq_190591.png)
 
 那么我可以先用CSS选择器提取出这个div，然后在取到所有的链接。为了保险起见，我再使用正则表达式限定一下提取出的URL的格式，那么最终的写法是这样子的：
 

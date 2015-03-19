@@ -10,13 +10,13 @@
 
 	列表页的格式是“http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html“， 其中“0_1”中的“1”是可变的页数。
 	
-	![列表页](http://static.oschina.net/uploads/space/2014/0412/193620_Hr9E_190591.png)
+	![列表页](http://webmagic.qiniudn.com/oscimages/193620_Hr9E_190591.png)
 
 * 文章页
 
 	文章页的格式是“http://blog.sina.com.cn/s/blog_58ae76e80100g8au.html”， 其中“58ae76e80100g8au”是可变的字符。
 
-	![文章页](http://static.oschina.net/uploads/space/2014/0412/193102_ZleC_190591.png)
+	![文章页](http://webmagic.qiniudn.com/oscimages/193102_ZleC_190591.png)
 
 #### 2 发现文章URL
 
