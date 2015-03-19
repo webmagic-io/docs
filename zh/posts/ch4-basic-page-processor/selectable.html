@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.2" data-basepath="../.." data-revision="1425463721295">
+<div class="book" data-github="code4craft/webmagic" data-level="4.2" data-basepath="../.." data-revision="1426746191322">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -548,9 +548,9 @@
 <p>这部分抽取API返回的都是一个<code>Selectable</code>接口，意思是说，抽取是支持链式调用的。下面我用一个实例来讲解链式API的使用。</p>
 <p>例如，我现在要抓取github上所有的Java项目，这些项目可以在<a href="https://github.com/search?l=Java&amp;p=1&amp;q=stars%3A%3E1&amp;s=stars&amp;type=Repositories" target="_blank">https://github.com/search?l=Java&amp;p=1&amp;q=stars%3A%3E1&amp;s=stars&amp;type=Repositories</a>搜索结果中看到。</p>
 <p>为了避免抓取范围太宽，我指定只从分页部分抓取链接。这个抓取规则是比较复杂的，我会要怎么写呢？</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0404/151454_2T01_190591.png" alt="selectable-chain-ui"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/151454_2T01_190591.png" alt="selectable-chain-ui"></p>
 <p>首先看到页面的html结构是这个样子的：</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0404/151632_88Oq_190591.png" alt="selectable-chain"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/151632_88Oq_190591.png" alt="selectable-chain"></p>
 <p>那么我可以先用CSS选择器提取出这个div，然后在取到所有的链接。为了保险起见，我再使用正则表达式限定一下提取出的URL的格式，那么最终的写法是这样子的：</p>
 <pre><code class="lang-java">List&lt;String&gt; urls = page.getHtml().css(<span class="hljs-string">"div.pagination"</span>).links().regex(<span class="hljs-string">".*/search/\?l=java.*"</span>).all();
 </code></pre>
