@@ -10,9 +10,9 @@ Jsoup is a simple HTML parser, and it supports the use of CSS selectors way to f
 
 [Xsoup](https://github.com/code4craft/xsoup) is based Jsoup I developed an XPath parser.
 
-Before using the parser WebMagic [HtmlCleaner](http://htmlcleaner.sourceforge.net/), there are some problems during use. The main problem is XPath error position is not accurate, and it is not reasonable code structure, it is difficult to customize. I finally realized Xsoup, making it necessary to develop more in line with reptiles. It is gratifying, tested, Xsoup performance than HtmlCleaner faster than doubled.
+Before using the parser WebMagic [HtmlCleaner](http://htmlcleaner.sourceforge.net/), there are some problems during use. The main problem is XPath error position is not accurate, and it is not reasonable code structure, it is difficult to customize. I finally realized Xsoup, making it necessary to develop more in line with crawlers. It is gratifying, tested, Xsoup performance than HtmlCleaner faster than doubled.
 
-Xsoup development up to now, has been supported reptile common syntax, the following are some of them have supported syntax table:
+Xsoup development up to now, has been supported crawler common syntax, the following are some of them have supported syntax table:
 
 <table>
     <tr>
