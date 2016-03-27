@@ -5,7 +5,7 @@ This is part of our `GithubRepoPageProcessor` directly through this example to i
 ```java
 public class GithubRepoPageProcessor implements PageProcessor {
 
-    // Part I: crawl the site configuration, including coding, crawl space, retries, etc.
+    // Part I: crawl the site configuration, including coding, crawler space, retries, etc.
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
 
     @Override
@@ -20,7 +20,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
         }
         page.putField("readme", page.getHtml().xpath("//div[@id='readme']/tidyText()"));
 
-        // Part III: From the subsequent discovery page url address to crawl
+        // Part III: From the subsequent discovery page url address to crawler
         page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
     }
 
@@ -34,9 +34,9 @@ public class GithubRepoPageProcessor implements PageProcessor {
         Spider.create(new GithubRepoPageProcessor())
                 //From "https://github.com/code4craft" began to grasp
                 .addUrl("https://github.com/code4craft")
-                //Open 5 threads of Crawl
+                //Open 5 threads of Crawler
                 .thread(5)
-                //Start Crawl
+                //Start Crawler
                 .run();
     }
 }
