@@ -9,7 +9,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
 
     @Override
-    // Process custom reptile logic core interfaces, where the preparation of extraction logic
+    // Process custom crawler logic core interfaces, where the preparation of extraction logic
     public void process(Page page) {
         // Part II: the definition of how to extract information about the page, and preserved
         page.putField("author", page.getUrl().regex("https://github\\.com/(\\w+)/.*").toString());
@@ -48,7 +48,7 @@ The first part on the configuration of crawlers, including coding, crawl interva
 
 #### 4.1.2 Extraction of page elements
 
-The second part is the core of the reptiles: for download to Html page from you how to extract the information you want? WebMagic uses mainly three extraction technologies: XPath, regular expressions and CSS selectors. In addition, the content JSON format, you can use JsonPath resolution.
+The second part is the core of the crawlers: for download to Html page from you how to extract the information you want? WebMagic uses mainly three extraction technologies: XPath, regular expressions and CSS selectors. In addition, the content JSON format, you can use JsonPath resolution.
 
 1. XPath
 
