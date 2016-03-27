@@ -1,6 +1,6 @@
 ### 5.6 a complete process
 
-Prior to the date, we know the URL and extract the relevant API, a reptile has been basically completed the preparation.
+Prior to the date, we know the URL and extract the relevant API, a crawler has been basically completed the preparation.
 
 ```java
 @TargetUrl("https://github.com/\\w+/\\w+")
@@ -17,7 +17,7 @@ public class GithubRepo {
     private String readme;
 }
 ```
-#### 5.6.1 reptile creation and start
+#### 5.6.1 crawler creation and start
 
 Entrance annotation model is `OOSpider`, it inherits the` Spider` class that provides special creation method, other methods are similar. Create an annotation mode reptiles require one or more `Model` class, and one or more `PageModelPipeline`-- define the results manner.
 
