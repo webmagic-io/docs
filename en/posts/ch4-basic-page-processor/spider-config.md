@@ -6,18 +6,18 @@
 
 | Method | Description | Examples |
 | -------- | ------- | ------- |
-| create(PageProcessor)| Create Spider | Spider.create(new GithubRepoProcessor())|
-|addUrl(String…) | Add initial URL |spider .addUrl("http://webmagic.io/docs/") |
-|addRequest(Request...) | Add initial Request |spider .addRequest("http://webmagic.io/docs/") |
+| create(PageProcessor)| Create Spider | spider.create(new GithubRepoProcessor())|
+|addUrl(String…) | Add initial URL |spider.addUrl("http://webmagic.io/docs/") |
+|addRequest(Request...) | Add initial Request |spider.addRequest("http://webmagic.io/docs/") |
 | thread(n)| n threads open | spider.thread(5)| 
 |run()|starts, blocking the current thread of execution| spider.run() |
 |start()/runAsync()|asynchronous start, continue with the current thread | spider.start() |  
 |stop()|stop crawler | spider.stop() |  
-|test(String)|crawl a page to test | spider .test("http://webmagic.io/docs/") |
-| addPipeline(Pipeline) | add a Pipeline, a Spider can have multiple Pipeline | spider .addPipeline(new ConsolePipeline())|
+|test(String)|crawl a page to test | spider.test("http://webmagic.io/docs/") |
+| addPipeline(Pipeline) | add a Pipeline, a Spider can have multiple Pipeline | spider.addPipeline(new ConsolePipeline())|
 | setScheduler(Scheduler) | Settings Scheduler, a Spider must have at a Scheduler |  spider.setScheduler(new RedisScheduler()) |
-| setDownloader(Downloader) | Settings Downloader, a Spider must have at a Downloader |  spider .setDownloader(new SeleniumDownloader()) |
-| get(String) | synchronous calls, and direct access to the results | ResultItems result = spider .get("http://webmagic.io/docs/")
+| setDownloader(Downloader) | Settings Downloader, a Spider must have at a Downloader |  spider.setDownloader(new SeleniumDownloader()) |
+| get(String) | synchronous calls, and direct access to the results | ResultItems result = spider.get("http://webmagic.io/docs/")
 | getAll(String…) | synchronous calls, and direct access to a bunch of results | List&lt;ResultItems&gt; results = spider .getAll("http://webmagic.io/docs/", "http://webmagic.io/xxx")
 
 #### 4.4.2 Site
