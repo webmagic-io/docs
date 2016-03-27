@@ -1,8 +1,8 @@
 ## 5. Using annotations written in crawler
 
-WebMagic support the use of a unique style to write a comment reptile introduced webmagic-extension package to use this feature.
+WebMagic support the use of a unique style to write a comment crawler introduced webmagic-extension package to use this feature.
 
-In annotation mode, using a simple object add comments, use minimal amount of code to complete the preparation of a crawler. For simple reptiles, write simple and easy to understand, and also very easy to manage. It is also a major feature of WebMagic, I called it `OEM` (Object/Extraction Mapping).
+In annotation mode, using a simple object add comments, use minimal amount of code to complete the preparation of a crawler. For simple crawlers, write simple and easy to understand, and also very easy to manage. It is also a major feature of WebMagic, I called it `OEM` (Object/Extraction Mapping).
 
 Annotation model development approach is this:
 
@@ -11,7 +11,7 @@ Annotation model development approach is this:
 3. Add the `@ExtractBy` annotation on the class of the field, this field uses the definition of what way decimated.
 4. Define the result is stored.
 
-Here we still examples github chapter IV, to write a similar function reptiles, to explain the use of annotations. Final preparation of good reptile is like this, is not it easier?
+Here we still examples github chapter IV, to write a similar function crawlers, to explain the use of annotations. Final preparation of good crawler is like this, is not it easier?
 
 ```java
 @TargetUrl("https://github.com/\\w+/\\w+")
