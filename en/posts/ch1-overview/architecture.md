@@ -1,6 +1,6 @@
 ### 1.2 overall architecture
 
-WebMagic structured into `Downloader`,` PageProcessor`, `Scheduler`,` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four reptile lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
+WebMagic structured into `Downloader`,` PageProcessor`, `Scheduler`,` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four crawler lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
 
 The Spider will be several components to organize themselves so that they can interact with each other, the process of implementation can be considered Spider is a large container, it is also the core WebMagic logic.
 
@@ -52,9 +52,9 @@ Page WebMagic extraction process is the core of the object, which provides metho
 
 `ReusltItems` equivalent to a Map, which holds the result PageProcessor processing for use Pipeline. Map and its API is very similar, it is worth noting that it has a field `skip`, if set to true, the Pipeline should not be processed.
 
-### 1.2.3 Control reptile running engine --Spider
+### 1.2.3 Control crawler running engine --Spider
 
-Spider is the core WebMagic internal processes. A property Downloader, PageProcessor, Scheduler, Pipeline is the Spider, these properties can be freely set by setting this property can perform different functions. Spider WebMagic also operate the entrance, which encapsulates the creation of reptiles, start, stop, multi-threading capabilities. Here is a set of each component, and set an example of multi-threading and startup. See detailed Spider setting Chapter 4 - [crawler configuration, start and stop](../ch4-basic-page-processor/spider-config.html).
+Spider is the core WebMagic internal processes. A property Downloader, PageProcessor, Scheduler, Pipeline is the Spider, these properties can be freely set by setting this property can perform different functions. Spider WebMagic also operate the entrance, which encapsulates the creation of crawlers, start, stop, multi-threading capabilities. Here is a set of each component, and set an example of multi-threading and startup. See detailed Spider setting Chapter 4 - [crawler configuration, start and stop](../ch4-basic-page-processor/spider-config.html).
 
 ````java
 public static void main(String[] args) {
@@ -76,4 +76,4 @@ public static void main(String[] args) {
 
 A lot of the components described above, but in fact the user need to be concerned not so much, because most of the module WebMagic already provides a default implementation.
 
-In general, for the preparation of a reptile, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessr, and by Spider to start.
+In general, for the preparation of a crawler, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessr, and by Spider to start.
