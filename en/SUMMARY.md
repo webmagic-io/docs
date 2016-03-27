@@ -27,7 +27,7 @@ This is the summary of my book.
 	* [@ExtractBy](posts/ch5-annotation/extractby.md)
 	* [@ExtractBy on Class](posts/ch5-annotation/extractby-on-class.md)
 	* [Formatter of Result](posts/ch5-annotation/formatter.md)
-	* [A Complete Sample](posts/ch5-annotation/formatter.md)
+	* [A Complete Sample](posts/ch5-annotation/lifecycle.md)
 	* [AfterExtractor](posts/ch5-annotation/after-extractor.md)
 * [Customize Components](posts/ch6-custom-componenet/README.md)
 	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
