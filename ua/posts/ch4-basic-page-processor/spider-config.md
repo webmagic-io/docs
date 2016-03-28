@@ -2,13 +2,13 @@
 
 #### 4.4.1 Пошукач Spider
 
-`Spider` початковий вхід пошукача. Перед початком скануванням пошукачем, нам потрібно використовуючи `PageProcessor` створити об'єкт павука Spider, а тоді запустити його за допомогою `run()`. У той час як інші компоненти веб-павука Spider (завантажувач Downloader, планувальник Scheduler, конвейер Pipeline) може бути встановлений опционально.
+`Spider` початковий вхід пошукача. Перед початком скануванням пошукачем, нам потрібно використовуючи `PageProcessor` створити об'єкт павука Spider, а тоді запустити його за допомогою `run()`. У той час як інші компоненти веб-павука Spider (завантажувач Downloader, планувальник Scheduler, конвейер Pipeline) можуть бути установлени методами set.
 
 | метод | опис | приклади |
 | -------- | ------- | ------- |
-| create(PageProcessor)| створити Spider | іpider.create(new GithubRepoProcessor())|
+| create(PageProcessor)| створити Spider | spider.create(new GithubRepoProcessor())|
 |addUrl(String…) | додати URL ініціалізації |spider.addUrl("http://webmagic.io/docs/") |
-|addRequest(Request...) | додати Request ініціалізації |spider .addRequest("http://webmagic.io/docs/") |
+|addRequest(Request...) | додати Request ініціалізації |spider.addRequest("http://webmagic.io/docs/") |
 | thread(n)| к-ть потоків n threads | spider.thread(5)| 
 |run()|запуск, розблокування поточного потоку thread його визовом| spider.run() |
 |start()/runAsync()|асинхнонний старт, продовження з поточного потоку thread | spider.start() |  
