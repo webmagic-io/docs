@@ -3,7 +3,7 @@ In the chapter One, we reference the components of WebMagic. WebMagic the bigges
 
 In the Spider class, `PageProcessor`、`Downloader`、`Scheduler` and `Pipeline` are the fields of Spider class. Beside the `PageProcessor` have been assigned when the Spider create, the other three components can be changed by the setter function.
 
-|Function|Description|Example
+|Function|Description|Example|
 |-|-|
 |setScheduler()|Change the Scheduler|spipder.setScheduler(new FileCacheQueueScheduler("D:\\data\\webmagic"))|
 |setDownloader()|Change theDownloader|spipder.setDownloader(new SeleniumDownloader()))|
