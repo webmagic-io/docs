@@ -2,7 +2,7 @@
 
 Chain API `Selectable` relevant is a core function of WebMagic. Selectable interface to use, you can complete extraction chain directly to page elements, and need to take care of details withdrawn.
 
-Can be seen in the earlier example, page.getHtml() returns a `Html` object that implements the `Selectable` interface. This interface contains a number of important ways, I divide it into two categories: partial extraction section and get results.
+Can be seen in the earlier example, page.getHtml() returns a `Html` object that implements the `Selectable` interface. This interface contains a number of important ways. I divide it into two categories: partial extraction section and get results.
 
 #### Extraction section 4.2.1 API:
 
