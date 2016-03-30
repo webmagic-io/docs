@@ -2,7 +2,7 @@
 
 #### 4.4.1 Spider
 
-`Spider` crawler start entrance. Before starting the crawlers, we need to use a `PageProcessor` create a Spider object, and then use the `run()` to start. While other components of the Spider (Downloader, Scheduler, Pipeline) can be set by a set method.
+`Spider` is crawler start entrance. Before starting the crawlers, we need to use a `PageProcessor` create a Spider object, and then use the `run()` to start. While other components of the Spider (Downloader, Scheduler, Pipeline) can be set by a set method.
 
 | Method | Description | Examples |
 | -------- | ------- | ------- |
