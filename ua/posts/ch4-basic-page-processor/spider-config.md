@@ -2,7 +2,7 @@
 
 #### 4.4.1 Пошукач Spider
 
-`Spider` початковий вхід пошукача. Перед початком скануванням пошукачем, нам потрібно використовуючи `PageProcessor` створити об'єкт павука Spider, а тоді запустити його за допомогою `run()`. У той час як інші компоненти веб-павука Spider (завантажувач Downloader, планувальник Scheduler, конвеєр Pipeline) можуть бути установлени методами set.
+`Spider` початковий вхід пошукача. Перед початком скануванням пошукачем, нам потрібно використовуючи `PageProcessor` створити об'єкт павука Spider, а тоді запустити його за допомогою `run()`. У той час як інші компоненти веб-павука Spider (завантажувач Downloader, планувальник Scheduler, інфопровід Pipeline) можуть бути установлени методами set.
 
 | метод | опис | приклади |
 | -------- | ------- | ------- |
@@ -14,7 +14,7 @@
 |start()/runAsync()|асинхнонний старт, продовження з поточного потоку thread | spider.start() |  
 |stop()|стоп пошукача | spider.stop() |  
 |test(String)| тестова сторінка для пошукача | spider.test("http://webmagic.io/docs/") |
-| addPipeline(Pipeline) | додати конвеєр Pipeline, Spider може бути чисельним Pipeline | spider.addPipeline(new ConsolePipeline())|
+| addPipeline(Pipeline) | додати інфопровід Pipeline, Spider може бути чисельним Pipeline | spider.addPipeline(new ConsolePipeline())|
 | setScheduler(Scheduler) | установки Планувальника Scheduler, Spider повинен мати Scheduler |  spider.setScheduler(new RedisScheduler()) |
 | setDownloader(Downloader) | установки Завантажувача Downloader, Spider повинен бути при Downloader |  spider.setDownloader(new SeleniumDownloader()) |
 | get(String) | синхронні визови та прямий доступ до результатів | ResultItems result = spider.get("http://webmagic.io/docs/")
