@@ -95,8 +95,8 @@ Also my own definition for several crawlers, it is very convenient XPath functio
 |allText()	| all direct and indirect text child	| not support|
 |tidyText()	| all direct and indirect child nodes text, and replace some of the labels wrap, so plain text display cleaner |	not support |
 | html()	| internal html, html tag does not include itself |	not support |
-| outerHtml() |	internal html, including tags html itself |	not support
-|regex(@attr,expr,group) | @attr here and can be selected from the group, the default is group0 |	not support
+| outerHtml() |	internal html, including tags html itself |	not support |
+|regex(@attr,expr,group) | @attr here and can be selected from the group, the default is group0 |	not support|
 
 #### 4.5.3 Saxon
 
