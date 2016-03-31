@@ -56,7 +56,7 @@ Page WebMagic extraction process is the core of the object, which provides metho
 
 Spider is the core WebMagic internal processes. A property Downloader, PageProcessor, Scheduler, Pipeline is the Spider, these properties can be freely set by setting this property can perform different functions. Spider WebMagic also operate the entrance, which encapsulates the creation of crawlers, start, stop, multi-threading capabilities. Here is a set of each component, and set an example of multi-threading and startup. See detailed Spider setting Chapter 4 - [crawler configuration, start and stop](../ch4-basic-page-processor/spider-config.html).
 
-````java
+```java
 public static void main(String[] args) {
     Spider.create(new GithubRepoPageProcessor())
             // From https://github.com/code4craft began to grasp    
