@@ -11,7 +11,7 @@ public interface AfterExtractor {
 
 `afterProcess` extraction method in the end, after the fields are initialized to be called, you can deal with some special logic. Like in the example [using Jfinal ActiveRecord persistence webmagic crawled blog](http://www.oschina.net/code/snippet_190591_23456):
 
-```
+```java
 // TargetUrl mean only the following URL format will be extracted to generate the object model
 // Here is to do a little positive change, '' The default is no need to escape, and the '*' will be automatically replaced with '*', as described URL looked a little uncomfortable ...
 // Inherited jfinal the Model
@@ -52,6 +52,7 @@ public class OschinaBlog extends Model<OschinaBlog> implements AfterExtractor {
         OOSpider.create(Site.me().addStartUrl("http://my.oschina.net/flashsword/blog/145796"), OschinaBlog.class).run();
     }
 }
+```
 
 #### Conclusion
 
