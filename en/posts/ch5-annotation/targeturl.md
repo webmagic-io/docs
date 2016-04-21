@@ -22,7 +22,7 @@ public class GithubRepo {
 }
 ```
 
-##### TargetUrl custom regular expressions
+##### 5.2.2 TargetUrl custom regular expressions
 
 Here we are using regular expressions to specify the URL scope. Careful friends may be, will know `.` reserved character is a regular expression, this is not it wrong? In fact, here for the convenience, WebMagic own custom regex for URL's, mainly by two changes:
 
@@ -33,6 +33,6 @@ For example, `https://github.com/*` here is a valid expression that all URL unde
 
 In WebMagic, a page from the URL `TargetUrl` obtained, provided that they meet TargetUrl format, will also be downloaded. So even if you do not specify `HelpUrl` also possible - for example, there will always be some blog link "Next" on page  , in this case need to specify HelpUrl.
 
-##### sourceRegion
+##### 5.2.3 sourceRegion
 
 TargetUrl also supports the definition of `sourceRegion`, this parameter is an XPath expression that specifies the URL from where to get - not sourceRegion the URL will not be extracted.
