@@ -17,6 +17,6 @@ WebMagic in Action
 
 文章预览请点[http://webmagic.io/docs/](http://webmagic.io/docs/)，页面基于[gitbook](https://github.com/GitbookIO/gitbook/)进行构建。
 
-此文档仍在编写中，英文版也在征集译者。
+此文档仍在编写中，感谢[@alex4p](https://github.com/alex4ip)在国际化中所作的贡献。
 
 本文档遵循CC-BYNC协议。
