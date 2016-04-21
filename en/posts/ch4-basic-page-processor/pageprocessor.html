@@ -1,0 +1,546 @@
+<!DOCTYPE HTML>
+<html lang='zh-CN'>
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Implement PageProcessor | WebMagic in Action</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="code4craft">
+        <meta name="description" content="Little book of WebMagic.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../posts/ch4-basic-page-processor/selectable.html" />
+        
+        
+        <link rel="prev" href="../../posts/ch4-basic-page-processor/README.html" />
+        
+
+        <meta property="og:title" content="Implement PageProcessor | WebMagic in Action">
+        <meta property="og:site_name" content="WebMagic in Action">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="zh-CN">
+
+        <meta property="book:author" content="https://github.com/code4craft">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1461206539562">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/code4craft/webmagic/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/code4craft/webmagic/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../../" >WebMagic in Action</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/code4craft" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="posts/ch1-overview/README.html">
+                
+                <a href="../../posts/ch1-overview/README.html">
+                    <i class="fa fa-check"></i> <b>1)</b> WebMagic Overview
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="posts/ch1-overview/philosophy.html">
+                            
+                            <a href="../../posts/ch1-overview/philosophy.html">
+                                <i class="fa fa-check"></i> <b>1.1)</b> Philosophy
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="posts/ch1-overview/architecture.html">
+                            
+                            <a href="../../posts/ch1-overview/architecture.html">
+                                <i class="fa fa-check"></i> <b>1.2)</b> Architect
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="posts/ch1-overview/component.html">
+                            
+                            <a href="../../posts/ch1-overview/component.html">
+                                <i class="fa fa-check"></i> <b>1.3)</b> Components
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="posts/ch2-install/README.html">
+                
+                <a href="../../posts/ch2-install/README.html">
+                    <i class="fa fa-check"></i> <b>2)</b> Install
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
+                            
+                            <a href="../../posts/ch2-install/with-maven.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> With maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="posts/ch2-install/without-maven.html">
+                            
+                            <a href="../../posts/ch2-install/without-maven.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Without maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
+                            
+                            <a href="../../posts/ch2-install/first-project.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> First Project
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="posts/ch3-build-source/README.html">
+                
+                <a href="../../posts/ch3-build-source/README.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Build From Source
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="posts/ch3-build-source/git-repo.html">
+                            
+                            <a href="../../posts/ch3-build-source/git-repo.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Get the Source Code
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="posts/ch3-build-source/import-project.html">
+                            
+                            <a href="../../posts/ch3-build-source/import-project.html">
+                                <i class="fa fa-check"></i> <b>3.2)</b> Import Project
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="posts/ch3-build-source/compile-code.html">
+                            
+                            <a href="../../posts/ch3-build-source/compile-code.html">
+                                <i class="fa fa-check"></i> <b>3.3)</b> Build and run examples
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="posts/ch4-basic-page-processor/README.html">
+                
+                <a href="../../posts/ch4-basic-page-processor/README.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Basic crawler
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="posts/ch4-basic-page-processor/pageprocessor.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/pageprocessor.html">
+                                <i class="fa fa-check"></i> <b>4.1)</b> Implement PageProcessor
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="posts/ch4-basic-page-processor/selectable.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/selectable.html">
+                                <i class="fa fa-check"></i> <b>4.2)</b> Selectable
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" data-path="posts/ch4-basic-page-processor/results.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/results.html">
+                                <i class="fa fa-check"></i> <b>4.3)</b> Save the results
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.4" data-path="posts/ch4-basic-page-processor/spider-config.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/spider-config.html">
+                                <i class="fa fa-check"></i> <b>4.4)</b> Config and control
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.5" data-path="posts/ch4-basic-page-processor/xsoup.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/xsoup.html">
+                                <i class="fa fa-check"></i> <b>4.5)</b> Jsoup and Xsoup
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.6" data-path="posts/ch4-basic-page-processor/monitor.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/monitor.html">
+                                <i class="fa fa-check"></i> <b>4.6)</b> Monitor with JMX
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5" data-path="posts/ch5-annotation/README.html">
+                
+                <a href="../../posts/ch5-annotation/README.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Crawler in Annotation
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="posts/ch5-annotation/model.html">
+                            
+                            <a href="../../posts/ch5-annotation/model.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> Write Model class
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="posts/ch5-annotation/targeturl.html">
+                            
+                            <a href="../../posts/ch5-annotation/targeturl.html">
+                                <i class="fa fa-check"></i> <b>5.2)</b> TargetUrl and HelpUrl
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="posts/ch5-annotation/extractby.html">
+                            
+                            <a href="../../posts/ch5-annotation/extractby.html">
+                                <i class="fa fa-check"></i> <b>5.3)</b> @ExtractBy
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="posts/ch5-annotation/extractby-on-class.html">
+                            
+                            <a href="../../posts/ch5-annotation/extractby-on-class.html">
+                                <i class="fa fa-check"></i> <b>5.4)</b> @ExtractBy on Class
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5" data-path="posts/ch5-annotation/formatter.html">
+                            
+                            <a href="../../posts/ch5-annotation/formatter.html">
+                                <i class="fa fa-check"></i> <b>5.5)</b> Formatter of Result
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6" data-path="posts/ch5-annotation/lifecycle.html">
+                            
+                            <a href="../../posts/ch5-annotation/lifecycle.html">
+                                <i class="fa fa-check"></i> <b>5.6)</b> A Complete Sample
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7" data-path="posts/ch5-annotation/after-extractor.html">
+                            
+                            <a href="../../posts/ch5-annotation/after-extractor.html">
+                                <i class="fa fa-check"></i> <b>5.7)</b> AfterExtractor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="posts/ch6-custom-componenet/README.html">
+                
+                <a href="../../posts/ch6-custom-componenet/README.html">
+                    <i class="fa fa-check"></i> <b>6)</b> Customize Components
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1" data-path="posts/ch6-custom-componenet/pipeline.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/pipeline.html">
+                                <i class="fa fa-check"></i> <b>6.1)</b> Pipeline
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2" data-path="posts/ch6-custom-componenet/scheduler.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/scheduler.html">
+                                <i class="fa fa-check"></i> <b>6.2)</b> Scheduler
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3" data-path="posts/ch6-custom-componenet/downloader.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/downloader.html">
+                                <i class="fa fa-check"></i> <b>6.3)</b> Downloader
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 45.16129032258065%;min-width: 41.935483870967744%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../posts/ch1-overview/README.html" title="WebMagic Overview" class="chapter done new-chapter" data-progress="1" style="left: 3.225806451612903%;"></a>
+    
+        <a href="../../posts/ch1-overview/philosophy.html" title="Philosophy" class="chapter done " data-progress="1.1" style="left: 6.451612903225806%;"></a>
+    
+        <a href="../../posts/ch1-overview/architecture.html" title="Architect" class="chapter done " data-progress="1.2" style="left: 9.67741935483871%;"></a>
+    
+        <a href="../../posts/ch1-overview/component.html" title="Components" class="chapter done " data-progress="1.3" style="left: 12.903225806451612%;"></a>
+    
+        <a href="../../posts/ch2-install/README.html" title="Install" class="chapter done new-chapter" data-progress="2" style="left: 16.129032258064516%;"></a>
+    
+        <a href="../../posts/ch2-install/with-maven.html" title="With maven" class="chapter done " data-progress="2.1" style="left: 19.35483870967742%;"></a>
+    
+        <a href="../../posts/ch2-install/without-maven.html" title="Without maven" class="chapter done " data-progress="2.2" style="left: 22.580645161290324%;"></a>
+    
+        <a href="../../posts/ch2-install/first-project.html" title="First Project" class="chapter done " data-progress="2.3" style="left: 25.806451612903224%;"></a>
+    
+        <a href="../../posts/ch3-build-source/README.html" title="Build From Source" class="chapter done new-chapter" data-progress="3" style="left: 29.032258064516128%;"></a>
+    
+        <a href="../../posts/ch3-build-source/git-repo.html" title="Get the Source Code" class="chapter done " data-progress="3.1" style="left: 32.25806451612903%;"></a>
+    
+        <a href="../../posts/ch3-build-source/import-project.html" title="Import Project" class="chapter done " data-progress="3.2" style="left: 35.483870967741936%;"></a>
+    
+        <a href="../../posts/ch3-build-source/compile-code.html" title="Build and run examples" class="chapter done " data-progress="3.3" style="left: 38.70967741935484%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/README.html" title="Basic crawler" class="chapter done new-chapter" data-progress="4" style="left: 41.935483870967744%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="Implement PageProcessor" class="chapter done " data-progress="4.1" style="left: 45.16129032258065%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="Selectable" class="chapter  " data-progress="4.2" style="left: 48.38709677419355%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/results.html" title="Save the results" class="chapter  " data-progress="4.3" style="left: 51.61290322580645%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="Config and control" class="chapter  " data-progress="4.4" style="left: 54.83870967741935%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Jsoup and Xsoup" class="chapter  " data-progress="4.5" style="left: 58.064516129032256%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="Monitor with JMX" class="chapter  " data-progress="4.6" style="left: 61.29032258064516%;"></a>
+    
+        <a href="../../posts/ch5-annotation/README.html" title="Crawler in Annotation" class="chapter  new-chapter" data-progress="5" style="left: 64.51612903225806%;"></a>
+    
+        <a href="../../posts/ch5-annotation/model.html" title="Write Model class" class="chapter  " data-progress="5.1" style="left: 67.74193548387096%;"></a>
+    
+        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl and HelpUrl" class="chapter  " data-progress="5.2" style="left: 70.96774193548387%;"></a>
+    
+        <a href="../../posts/ch5-annotation/extractby.html" title="@ExtractBy" class="chapter  " data-progress="5.3" style="left: 74.19354838709677%;"></a>
+    
+        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="@ExtractBy on Class" class="chapter  " data-progress="5.4" style="left: 77.41935483870968%;"></a>
+    
+        <a href="../../posts/ch5-annotation/formatter.html" title="Formatter of Result" class="chapter  " data-progress="5.5" style="left: 80.64516129032258%;"></a>
+    
+        <a href="../../posts/ch5-annotation/lifecycle.html" title="A Complete Sample" class="chapter  " data-progress="5.6" style="left: 83.87096774193549%;"></a>
+    
+        <a href="../../posts/ch5-annotation/after-extractor.html" title="AfterExtractor" class="chapter  " data-progress="5.7" style="left: 87.09677419354838%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Customize Components" class="chapter  new-chapter" data-progress="6" style="left: 90.3225806451613%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Pipeline" class="chapter  " data-progress="6.1" style="left: 93.54838709677419%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="Scheduler" class="chapter  " data-progress="6.2" style="left: 96.7741935483871%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/downloader.html" title="Downloader" class="chapter  " data-progress="6.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_51">
+                    
+                        <h3 id="4-1-implement-pageprocessor">4.1 Implement PageProcessor</h3>
+<p>This is part of our <code>GithubRepoPageProcessor</code> directly through this example to introduce the write mode <code>PageProcessor</code>. I will PageProcessor customization is divided into three parts, namely, crawlers configuration, extracted page elements and links discovery.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> {</span>
+
+    <span class="hljs-comment">// Part I: crawl the site configuration, including coding, crawler space, retries, etc.</span>
+    <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-comment">// Process custom crawler logic core interfaces, where the preparation of extraction logic</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+        <span class="hljs-comment">// Part II: the definition of how to extract information about the page, and preserved</span>
+        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>) == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">//skip this page</span>
+            page.setSkip(<span class="hljs-keyword">true</span>);
+        }
+        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+
+        <span class="hljs-comment">// Part III: From the subsequent discovery page url address to crawler</span>
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span>() {
+        <span class="hljs-keyword">return</span> site;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+
+        Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())
+                <span class="hljs-comment">//From "https://github.com/code4craft" began to grasp</span>
+                .addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>)
+                <span class="hljs-comment">//Open 5 threads of Crawler</span>
+                .thread(<span class="hljs-number">5</span>)
+                <span class="hljs-comment">//Start Crawler</span>
+                .run();
+    }
+}
+</code></pre>
+<h4 id="4-1-1-crawler-configuration">4.1.1 Crawler configuration</h4>
+<p>The first part on the configuration of crawlers, including coding, crawl interval, timeout, retries, but also includes some analog parameters such as User Agent, cookie, and proxy settings, we&#39;ll Chapter 5 - &quot;crawlers configuration&quot; in introduced. Here we briefly set about: retries 3 times, crawl interval of 1 second.</p>
+<h4 id="4-1-2-extraction-of-page-elements">4.1.2 Extraction of page elements</h4>
+<p>The second part is the core of the crawlers: for download to Html page from you how to extract the information you want? WebMagic uses mainly three extraction technologies: XPath, regular expressions and CSS selectors. In addition, the content JSON format, you can use JsonPath resolution.</p>
+<ol>
+<li><p>XPath</p>
+<p>Originally XPath is a query language for XML elements acquired, but also more convenient for Html. E.g:</p>
+<pre><code class="lang-java"> page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>)
+</code></pre>
+<p>This code uses XPath, it means &quot;find all the class attribute &#39;entry-title public&#39; the h1 element, and find a child node of his strong child node, a node and extracts text information.&quot;
+Corresponding Html is like this:</p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/104607_Aqq8_190591.png" alt="Xpath-html"></p>
+</li>
+<li><p>CSS selector</p>
+<p>CSS and XPath selectors are similar language. If we did front-end development, know for sure that $(&#39;h1.entry-title&#39;) the wording of meaning. Objectively speaking, it is more than XPath to write simpler, but if you write more complex extraction rules, it is relatively little trouble.</p>
+</li>
+<li><p>Regular Expressions</p>
+<p>Regular expressions are a universal language text extraction.</p>
+<pre><code class="lang-java"> page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+</code></pre>
+<p>This code uses a regular expression that matches all &quot;<a href="https://github.com/code4craft/webmagic" target="_blank">https://github.com/code4craft/webmagic</a>&quot; such a link.</p>
+</li>
+<li><p>JsonPath</p>
+<p>JsonPath in XPath is a language very similar to that used to quickly locate a Json from content. WebMagic used JsonPath format can be found here: <a href="https://code.google.com/p/json-path/" target="_blank">https://code.google.com/p/json-path/</a></p>
+</li>
+</ol>
+<h4 id="4-1-3-link-found">4.1.3 link found</h4>
+<p>With the processing logic page, our crawlers will be close to done!</p>
+<p>But now there is a problem: a page of the site is a lot of from the beginning we can not all listed, then follow the link to discover how, is an indispensable part of a crawler.</p>
+<pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+</code></pre>
+<p>This code is divided into two parts, <code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code> With Get to meet all &quot;(<a href="https://github\\.com/\\w+/\\w+" target="_blank">https://github\\.com/\\w+/\\w+</a>)&quot; this regular expression links, <code>page.addTargetRequests()</code> these links will be added to the queue to be crawled go.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../posts/ch4-basic-page-processor/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="http://code4craft.qiniudn.com/ace.js"></script>
+        <script src="http://code4craft.qiniudn.com/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49956730-1', 'webmagic.io');
+  ga('send', 'pageview');
+
+</script>
+        
+    </body>
+</html>

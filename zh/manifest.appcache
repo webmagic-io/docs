@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1426746191322
+# Revision 1461206539542
 
 CACHE:
 index.html
@@ -10,10 +10,10 @@ posts/ch1-overview/thinking.html
 posts/ch2-install/README.html
 posts/ch2-install/first-project.html
 posts/ch2-install/with-maven.html
-posts/ch2-install/without-maven.html
-posts/ch3-build-source/README.html
-posts/ch3-build-source/compile-code.html
 posts/ch3-build-source/git-repo.html
+posts/ch2-install/without-maven.html
+posts/ch3-build-source/compile-code.html
+posts/ch3-build-source/README.html
 posts/ch3-build-source/import-project.html
 posts/ch4-basic-page-processor/README.html
 posts/ch4-basic-page-processor/monitor.html
@@ -32,8 +32,8 @@ posts/ch5-annotation/model.html
 posts/ch5-annotation/targeturl.html
 posts/ch6-custom-componenet/README.html
 posts/ch6-custom-componenet/downloader.html
-posts/ch6-custom-componenet/pipeline.html
 posts/ch6-custom-componenet/scheduler.html
+posts/ch6-custom-componenet/pipeline.html
 posts/chx-cases/README.html
 posts/chx-cases/basic-list-target.html
 posts/chx-cases/js-render-page.html
