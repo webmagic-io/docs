@@ -16,4 +16,4 @@ public class GithubRepo {
 
 Here are omitted getter and setter methods.
 
-In extracting the end, we will get one or more instances of this class, this is the result of reptiles.
+In extracting the end, we will get one or more instances of this class, this is the result of crawlers.
