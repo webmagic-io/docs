@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html lang='zh-CN'>
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Імплементація PageProcessor -а | WebMagic in Action</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="code4craft">
+        <meta name="description" content="Мала книга WebMagic.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../../posts/ch4-basic-page-processor/selectable.html" />
+        
+        
+        <link rel="prev" href="../../posts/ch4-basic-page-processor/README.html" />
+        
+
+        <meta property="og:title" content="Імплементація PageProcessor -а | WebMagic in Action">
+        <meta property="og:site_name" content="WebMagic in Action">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="zh-CN">
+
+        <meta property="book:author" content="https://github.com/code4craft">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1461206856622">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/code4craft/webmagic/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/code4craft/webmagic/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../../" >WebMagic in Action</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/code4craft" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/code4craft/webmagic/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="posts/ch1-overview/README.html">
+                
+                <a href="../../posts/ch1-overview/README.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Огляд WebMagic
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="posts/ch1-overview/philosophy.html">
+                            
+                            <a href="../../posts/ch1-overview/philosophy.html">
+                                <i class="fa fa-check"></i> <b>1.1)</b> Філософія
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="posts/ch1-overview/architecture.html">
+                            
+                            <a href="../../posts/ch1-overview/architecture.html">
+                                <i class="fa fa-check"></i> <b>1.2)</b> Архітектура
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="posts/ch1-overview/component.html">
+                            
+                            <a href="../../posts/ch1-overview/component.html">
+                                <i class="fa fa-check"></i> <b>1.3)</b> Компоненти
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="posts/ch2-install/README.html">
+                
+                <a href="../../posts/ch2-install/README.html">
+                    <i class="fa fa-check"></i> <b>2)</b> Збирання
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
+                            
+                            <a href="../../posts/ch2-install/with-maven.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Разом з Maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="posts/ch2-install/without-maven.html">
+                            
+                            <a href="../../posts/ch2-install/without-maven.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Без Maven
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
+                            
+                            <a href="../../posts/ch2-install/first-project.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> Перший проет
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="posts/ch3-build-source/README.html">
+                
+                <a href="../../posts/ch3-build-source/README.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Білд з сирцевого коду
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="posts/ch3-build-source/git-repo.html">
+                            
+                            <a href="../../posts/ch3-build-source/git-repo.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Отримати сирці
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="posts/ch3-build-source/import-project.html">
+                            
+                            <a href="../../posts/ch3-build-source/import-project.html">
+                                <i class="fa fa-check"></i> <b>3.2)</b> Імпорт проекту
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="posts/ch3-build-source/compile-code.html">
+                            
+                            <a href="../../posts/ch3-build-source/compile-code.html">
+                                <i class="fa fa-check"></i> <b>3.3)</b> Білд та запуск на прикладах
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="posts/ch4-basic-page-processor/README.html">
+                
+                <a href="../../posts/ch4-basic-page-processor/README.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Основні функції у пошукового робота
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="posts/ch4-basic-page-processor/pageprocessor.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/pageprocessor.html">
+                                <i class="fa fa-check"></i> <b>4.1)</b> Імплементація PageProcessor -а
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="posts/ch4-basic-page-processor/selectable.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/selectable.html">
+                                <i class="fa fa-check"></i> <b>4.2)</b> Послідовність `API Selectable` селекторності
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" data-path="posts/ch4-basic-page-processor/results.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/results.html">
+                                <i class="fa fa-check"></i> <b>4.3)</b> Збереження результатів
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.4" data-path="posts/ch4-basic-page-processor/spider-config.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/spider-config.html">
+                                <i class="fa fa-check"></i> <b>4.4)</b> Конфігурація пошукача, запуск і зупинка
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.5" data-path="posts/ch4-basic-page-processor/xsoup.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/xsoup.html">
+                                <i class="fa fa-check"></i> <b>4.5)</b> Знайомство з інструментами вилучення - екстракцією: Jsoup та Xsoup
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.6" data-path="posts/ch4-basic-page-processor/monitor.html">
+                            
+                            <a href="../../posts/ch4-basic-page-processor/monitor.html">
+                                <i class="fa fa-check"></i> <b>4.6)</b> Монітор з JMX
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5" data-path="posts/ch5-annotation/README.html">
+                
+                <a href="../../posts/ch5-annotation/README.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Використання анотацій при написанні пошукача
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="posts/ch5-annotation/model.html">
+                            
+                            <a href="../../posts/ch5-annotation/model.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> Написання класу Model
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="posts/ch5-annotation/targeturl.html">
+                            
+                            <a href="../../posts/ch5-annotation/targeturl.html">
+                                <i class="fa fa-check"></i> <b>5.2)</b> TargetUrl та HelpUrl
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="posts/ch5-annotation/extractby.html">
+                            
+                            <a href="../../posts/ch5-annotation/extractby.html">
+                                <i class="fa fa-check"></i> <b>5.3)</b> @ExtractBy
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="posts/ch5-annotation/extractby-on-class.html">
+                            
+                            <a href="../../posts/ch5-annotation/extractby-on-class.html">
+                                <i class="fa fa-check"></i> <b>5.4)</b> Використання @ExtractBy у классі
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5" data-path="posts/ch5-annotation/formatter.html">
+                            
+                            <a href="../../posts/ch5-annotation/formatter.html">
+                                <i class="fa fa-check"></i> <b>5.5)</b> Форматування результатів
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6" data-path="posts/ch5-annotation/lifecycle.html">
+                            
+                            <a href="../../posts/ch5-annotation/lifecycle.html">
+                                <i class="fa fa-check"></i> <b>5.6)</b> Життєвий цикл
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7" data-path="posts/ch5-annotation/after-extractor.html">
+                            
+                            <a href="../../posts/ch5-annotation/after-extractor.html">
+                                <i class="fa fa-check"></i> <b>5.7)</b> AfterExtractor
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="posts/ch6-custom-componenet/README.html">
+                
+                <a href="../../posts/ch6-custom-componenet/README.html">
+                    <i class="fa fa-check"></i> <b>6)</b> Налаштування компонентів
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1" data-path="posts/ch6-custom-componenet/pipeline.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/pipeline.html">
+                                <i class="fa fa-check"></i> <b>6.1)</b> Кастомизація конвееру Pipeline
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2" data-path="posts/ch6-custom-componenet/scheduler.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/scheduler.html">
+                                <i class="fa fa-check"></i> <b>6.2)</b> Планувальник Scheduler
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3" data-path="posts/ch6-custom-componenet/downloader.html">
+                            
+                            <a href="../../posts/ch6-custom-componenet/downloader.html">
+                                <i class="fa fa-check"></i> <b>6.3)</b> Завантажувач Downloader
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 45.16129032258065%;min-width: 41.935483870967744%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../../posts/ch1-overview/README.html" title="Огляд WebMagic" class="chapter done new-chapter" data-progress="1" style="left: 3.225806451612903%;"></a>
+    
+        <a href="../../posts/ch1-overview/philosophy.html" title="Філософія" class="chapter done " data-progress="1.1" style="left: 6.451612903225806%;"></a>
+    
+        <a href="../../posts/ch1-overview/architecture.html" title="Архітектура" class="chapter done " data-progress="1.2" style="left: 9.67741935483871%;"></a>
+    
+        <a href="../../posts/ch1-overview/component.html" title="Компоненти" class="chapter done " data-progress="1.3" style="left: 12.903225806451612%;"></a>
+    
+        <a href="../../posts/ch2-install/README.html" title="Збирання" class="chapter done new-chapter" data-progress="2" style="left: 16.129032258064516%;"></a>
+    
+        <a href="../../posts/ch2-install/with-maven.html" title="Разом з Maven" class="chapter done " data-progress="2.1" style="left: 19.35483870967742%;"></a>
+    
+        <a href="../../posts/ch2-install/without-maven.html" title="Без Maven" class="chapter done " data-progress="2.2" style="left: 22.580645161290324%;"></a>
+    
+        <a href="../../posts/ch2-install/first-project.html" title="Перший проет" class="chapter done " data-progress="2.3" style="left: 25.806451612903224%;"></a>
+    
+        <a href="../../posts/ch3-build-source/README.html" title="Білд з сирцевого коду" class="chapter done new-chapter" data-progress="3" style="left: 29.032258064516128%;"></a>
+    
+        <a href="../../posts/ch3-build-source/git-repo.html" title="Отримати сирці" class="chapter done " data-progress="3.1" style="left: 32.25806451612903%;"></a>
+    
+        <a href="../../posts/ch3-build-source/import-project.html" title="Імпорт проекту" class="chapter done " data-progress="3.2" style="left: 35.483870967741936%;"></a>
+    
+        <a href="../../posts/ch3-build-source/compile-code.html" title="Білд та запуск на прикладах" class="chapter done " data-progress="3.3" style="left: 38.70967741935484%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/README.html" title="Основні функції у пошукового робота" class="chapter done new-chapter" data-progress="4" style="left: 41.935483870967744%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="Імплементація PageProcessor -а" class="chapter done " data-progress="4.1" style="left: 45.16129032258065%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="Послідовність `API Selectable` селекторності" class="chapter  " data-progress="4.2" style="left: 48.38709677419355%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/results.html" title="Збереження результатів" class="chapter  " data-progress="4.3" style="left: 51.61290322580645%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="Конфігурація пошукача, запуск і зупинка" class="chapter  " data-progress="4.4" style="left: 54.83870967741935%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Знайомство з інструментами вилучення - екстракцією: Jsoup та Xsoup" class="chapter  " data-progress="4.5" style="left: 58.064516129032256%;"></a>
+    
+        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="Монітор з JMX" class="chapter  " data-progress="4.6" style="left: 61.29032258064516%;"></a>
+    
+        <a href="../../posts/ch5-annotation/README.html" title="Використання анотацій при написанні пошукача" class="chapter  new-chapter" data-progress="5" style="left: 64.51612903225806%;"></a>
+    
+        <a href="../../posts/ch5-annotation/model.html" title="Написання класу Model" class="chapter  " data-progress="5.1" style="left: 67.74193548387096%;"></a>
+    
+        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl та HelpUrl" class="chapter  " data-progress="5.2" style="left: 70.96774193548387%;"></a>
+    
+        <a href="../../posts/ch5-annotation/extractby.html" title="@ExtractBy" class="chapter  " data-progress="5.3" style="left: 74.19354838709677%;"></a>
+    
+        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="Використання @ExtractBy у классі" class="chapter  " data-progress="5.4" style="left: 77.41935483870968%;"></a>
+    
+        <a href="../../posts/ch5-annotation/formatter.html" title="Форматування результатів" class="chapter  " data-progress="5.5" style="left: 80.64516129032258%;"></a>
+    
+        <a href="../../posts/ch5-annotation/lifecycle.html" title="Життєвий цикл" class="chapter  " data-progress="5.6" style="left: 83.87096774193549%;"></a>
+    
+        <a href="../../posts/ch5-annotation/after-extractor.html" title="AfterExtractor" class="chapter  " data-progress="5.7" style="left: 87.09677419354838%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/README.html" title="Налаштування компонентів" class="chapter  new-chapter" data-progress="6" style="left: 90.3225806451613%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Кастомизація конвееру Pipeline" class="chapter  " data-progress="6.1" style="left: 93.54838709677419%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="Планувальник Scheduler" class="chapter  " data-progress="6.2" style="left: 96.7741935483871%;"></a>
+    
+        <a href="../../posts/ch6-custom-componenet/downloader.html" title="Завантажувач Downloader" class="chapter  " data-progress="6.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_4">
+                    
+                        <h3 id="4-1-pageprocessor">4.1 Імплементація PageProcessor</h3>
+<p>У наведеному прикладі - клас <code>GithubRepoPageProcessor</code>, імплементує <code>PageProcessor</code>.
+ Будемо настроювати PageProcessor за допомогою PageProcessoration, що ділиться на три частини: конфігурація пошукача, екстракція елементів сторінки і виявлення посилань (лінків).</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> {</span>
+
+    <span class="hljs-comment">// Part I: crawl the site configuration, including coding, crawler space, retries, etc.</span>
+    <span class="hljs-comment">/// Частина 1: пошукачу вказують сайт, включаючи кодування, простір для пошуку, повторні спроби і т.д.</span>
+    <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">1000</span>);
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-comment">// Process custom crawler logic core interfaces, where the preparation of extraction logic</span>
+    <span class="hljs-comment">/// Процес призначення пошукачу логіки основних інтерфейсів, де підготавлюється логіки екстракції даних </span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
+        <span class="hljs-comment">// Part II: the definition of how to extract information about the page, and preserved</span>
+        <span class="hljs-comment">/// Частина 2: визначення яким чином проводити екстракцію інформацію зі сторінки і як зберігається</span>
+        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
+        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
+        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>) == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">//skip this page</span>
+            <span class="hljs-comment">/// пропустити цю сторінку</span>
+            page.setSkip(<span class="hljs-keyword">true</span>);
+        }
+        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+
+        <span class="hljs-comment">// Part III: From the subsequent discovery page url address to crawler</span>
+        <span class="hljs-comment">/// Частина 3: Із результатів попередніх обробок вишукуемо URL адреси сторінок для передачи пошукачеві на обробку</span>
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+    }
+
+    <span class="hljs-annotation">@Override</span>
+    <span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span>() {
+        <span class="hljs-keyword">return</span> site;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+
+        Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())
+                <span class="hljs-comment">//From "https://github.com/code4craft" began to grasp</span>
+                <span class="hljs-comment">/// URL адреса "https://github.com/code4craft" з якої починається пошук</span>
+                .addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>)
+                <span class="hljs-comment">//Open 5 threads of Crawler</span>
+                <span class="hljs-comment">/// Відкрвати 5 паралельних потоків пошукача</span>
+                .thread(<span class="hljs-number">5</span>)
+                <span class="hljs-comment">//Start Crawler</span>
+                <span class="hljs-comment">/// Запуск в роботу пошукача</span>
+                .run();
+    }
+}
+</code></pre>
+<h4 id="4-1-1-">4.1.1 Конфігурація пошукача</h4>
+<p>Перша частина конфігурації сканеру пошукача, включають в себе: кодування, інтервал сканування, час очікування, число повторних спроб, а також включає в себе деякі параметри браузера: User Agent, cookie і налаштування проксі-сервера. Докладніше у (Глава 5 - Введеня до іструментарію екстракції). Якщо коротенько, то тут у прикладі встановлено: число повторних спроб -  до 3 разів, сканувати з інтервалом в 1 секунду.</p>
+<h4 id="4-1-2-">4.1.2 Екстракція елементів сторінок</h4>
+<p>Друга частина - ядро пошукового сканеру: витягти інформацію (екстракція) з HTML-сторінки, що щойно завантажена. WebMagic використовує в основному три технології екстракції: XPath, регулярні вирази (regular expressions) і CSS селектори. Крім того, для інформації у форматі JSON, ви можете використовувати JsonPath.</p>
+<ol>
+<li><p>XPath</p>
+<p>Започатковано XPath, як мова запитів XML елементів, але згодом також поширився та став зручним і для HTML, наприклад:</p>
+<pre><code class="lang-java"> page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>)
+</code></pre>
+<p>Цей код використовує XPath, та означає: &quot;знайти всі атрибута класу @class &#39;entry-title public&#39; для тегів (елемент) <code>&lt;h1&gt;</code>  і знайти дочірній тег-вузол (ноду node) <code>&lt;strong&gt;</code>, у якого наявний тег <code>&lt;a&gt;</code> та з нього витягнути текстову інформацію.&quot; Відповідний до нього HTML-код наприклад наступний:</p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/104607_Aqq8_190591.png" alt="Xpath-html"></p>
+</li>
+<li><p>CSS селектор</p>
+<p>CSS і XPath селектори схожі за синтаксисом мови. Для front-end розробки знайоме формулювання $(&#39;h1.entry-title&#39;), що відповідне до попереднього прикладу. Об&#39;єктивно кажучи, його простіше писати, ніж XPath, але якщо ви пишете більш складні правила екстракції, то це відносно невеликі проблеми.</p>
+</li>
+<li><p>Регулярні вирази regular Expressions</p>
+<p>Регулярні вирази є універсальною мовою для екстракції тексту.</p>
+<pre><code class="lang-java"> page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+</code></pre>
+<p>Цей код використовує регулярний вираз для екстракції усіх лінків з &quot;<a href="https://github.com/code4craft/webmagic" target="_blank">https://github.com/code4craft/webmagic</a>&quot;.</p>
+</li>
+<li><p>JsonPath</p>
+<p>JsonPath це мова дуже схожа у використанні на XPath, але для швидкого пошуку у JSON контенті. Докладніше про  використаний у WebMagic формат JsonPath можна знайти тут: <a href="https://code.google.com/p/json-path/" target="_blank">https://code.google.com/p/json-path/</a></p>
+</li>
+</ol>
+<h4 id="4-1-3-">4.1.3 Пошук лінків</h4>
+<p>Після обробки сторінки нашим сканером по всім виразам з логікою, краулер закриється!</p>
+<p>Але тепер виникає проблема: сторінок сайту багато, і з самого початку ми не можемо знати і перерахувати всі.Але згодом пройтися по линками із отсканованих сторінок щоб додати їх до списку линків для сканування, цей фунціонал є невід&#39;ємною частиною пошукача.</p>
+<pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+</code></pre>
+<p>Цей код складається з двох частин, <code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code> отримати всі лінки з &quot;(<a href="https://github\\.com/\\w+/\\w+" target="_blank">https://github\\.com/\\w+/\\w+</a>)&quot;  - це регулярний вираз посилання, <code>page.addTargetRequests()</code> - ці посилання будуть додані в чергу для пошукового сканування.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../posts/ch4-basic-page-processor/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../posts/ch4-basic-page-processor/selectable.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="http://code4craft.qiniudn.com/ace.js"></script>
+        <script src="http://code4craft.qiniudn.com/mode-javascript.js"></script>
+        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../../gitbook/app.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49956730-1', 'webmagic.io');
+  ga('send', 'pageview');
+
+</script>
+        
+    </body>
+</html>
