@@ -1,20 +1,20 @@
 ### 6.1 Customize Pipeline
-When the extract finished, we use`Pipeline`to persist the result of extract.We can also customize the pipeline to do some common function. In this chapter we will introduce the`Pipeline`, and use two examples to explane how to customize the pipeline.
+When the extract finished, we use `Pipeline` to persist the result of extract.We can also customize the pipeline to do some common function. In this chapter we will introduce the `Pipeline`, and use two examples to explane how to customize the pipeline.
 #### 6.1.1 Introduction of Pipeline
 The interface of`Pipeline`define is here:
 ```java
 public interface Pipeline {
 
-    // ResultItems persiste the result of extract，it is a structure of map
+    // ResultItems persist the result of extract，it is a structure of map
     // The data in the page.putField(key,value) can use the ResultItems.get(key) to get
     public void process(ResultItems resultItems, Task task);
 }
 ```
-We can see,`Pipeline` persist the data which was extracted by the`PageProcessor`. This work we can also do in the `PageProcessor`. But why we use the`Pipeline`? There is some reason for this:
-1. To separate the modules.The extract of page and persist the data are the to stages of a spider. On one hand, separate the modules can make the structure of the code more clear. On the other hand, we can separate the process, process in another thread or even in another server.
-2. The function of`Pipeline` is more stable, it is very easy to make it as a common component.There is a big difference between process of different pages.But the persist of data is almost the same,such as save in a file or perisist in the database.It is very commons for almost of the pages.There is lots of common`Pipeline`in the WebMagic, such as write to the console,save in a file, save in a file as a JSON format.
+We can see, `Pipeline` persist the data which was extracted by the`PageProcessor`. This work we can also do in the `PageProcessor`. But why we use the `Pipeline`? There is some reason for this:
+1. To separate the modules. The extract of page and persist the data are the to stages of a spider. On one hand, separate the modules can make the structure of the code more clear. On the other hand, we can separate the process, process in another thread or even in another server.
+2. The function of `Pipeline` is more stable, it is very easy to make it as a common component. There is a big difference between process of different pages. But the persist of data is almost the same,such as save in a file or persist in the database. It is very commons for almost of the pages. There is lots of common `Pipeline` in the WebMagic, such as write to the console, save in a file, save in a file as a JSON format.
 
-In the WebMagic, a`Spider`can have a lot of`Pipeline`, to use the `Spider.addPipeline()`can add a `Pipeline`. These `Pipeline` can all be process.For example, you can use:
+In the WebMagic, a `Spider` can have a lot of `Pipeline`, to use the `Spider.addPipeline()` can add a `Pipeline`. These `Pipeline` can all be process. For example, you can use:
 
 ```java
 spider.addPipeline(new ConsolePipeline()).addPipeline(new FilePipeline())
@@ -55,7 +55,7 @@ public class ConsolePipeline implements Pipeline {
     }
 }
 ```
-To Reference this example, you can customize your own `Pipeline`.Get the data from the `ResultItems` and process as your own method.
+To Reference this example, you can customize your own `Pipeline`. Get the data from the `ResultItems` and process as your own method.
 
 #### 6.1.3 persist the result in the MySQL
 First, we introduce a example[jobhunter](https://github.com/webmagic-io/jobhunter). It's a WebMagic which integrate a spring framework to crawl the job information. This example also show how to use Mybatis to persist the data in the MySQL database.
@@ -76,7 +76,7 @@ All we need to do is to implements a Pipeline,to combine the `ResultItem`and`Lie
 
 #### Annotation mode
 
-Under the annotation mode，there is a [PageModelPipeline](https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/pipeline/PageModelPipeline.java)in the WebMagic：
+Under the annotation mode, there is a [PageModelPipeline](https://github.com/code4craft/webmagic/blob/master/webmagic-extension/src/main/java/us/codecraft/webmagic/pipeline/PageModelPipeline.java) in the WebMagic：
 
 ```java
 public interface PageModelPipeline<T> {
