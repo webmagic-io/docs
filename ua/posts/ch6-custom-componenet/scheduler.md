@@ -65,5 +65,9 @@ In the Version 0.5.1,i jave rebuild the scheduler.The duplicated remover have be
 
 All the default scheduler use the HashSetDuplicateRemover to remove(except the RedisScheduler).If you have a mount of url to do this, we recommend you to use the BloomFilterDuplicateRemover . For example:
 
+```java
+
 spider.setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)) //10000000 is the estimate value of urls)
+
+```
 
