@@ -10,6 +10,20 @@ The scheduler is a components of the WebMagic which manage the url.Inurl. In gen
 
 WebMagic have some common schedular. If you just want to run some simple sprider in your local, then you needn't to customize scheduler.But it is meaningful for you to know some of them.
 
+|Class|Discreption|Remark|
+
+| -------- | ------- | ------- |
+
+|DuplicateRemovedScheduler|a abstract class,it provide some template method|extends it can achieve your own function
+
+|QueueScheduler|use the memory queue to save the url| |
+
+|PriorityScheduler|use the priority mamory queue to save the url|the use of memory is bigger than the QueueScheduler，but whne you set the request.priority.it is necessary to use the PriorityScheduler to take the priority effect |
+
+|FileCacheQueueScheduler|use the file to save the url，when the program exit and start next time，it can crawl the url which have been saved in the file|it need to set the path of the file. It will create two files .urls.txt and .cursor.txt |
+
+|RedisScheduler|use the redis to save the queue, it can crawl the internet in a distrubuted system|need to install redis and start it|
+
 <table>
   <tr>
     <td>Class</td>
