@@ -1,7 +1,6 @@
 ---
-title: scheduler.md
+title: -
 layout: post
-author: asshyrin
 source-id: 1J_cDTx-uXTR2EkM79l1CnkKXb_hCMgy0j-YgheYQTzc
 published: true
 ---
