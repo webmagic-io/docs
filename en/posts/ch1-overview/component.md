@@ -14,13 +14,13 @@ WebMagic includes two packages, both packages through extensive practical, more 
 
 `Webmagic-extension` is WebMagic major expansion module that provides some of the more convenient tool written in crawlers. Including annotation format definition crawlers, JSON, distributed and other support.
 
-### Peripheral functions 1.3.2
+### 1.3.2 Peripheral functions 
 
 In addition, WebMagic projects in several packages, these are some experimental features, and the purpose is to provide some tools to integrate peripheral sample. Because of the limited energy, these packages have not been widely used and tested, recommended way is to download the source code, then modify encounter problems.
 
 #### Webmagic-samples
 
-Here are some examples of crawlers author written earlier. Because of the limited time, some of these examples use is still the old version of the API, but also because there may be some changes in the structure of the target page is no longer available. To date, been featured examples, see the `us.codecraft.webmagic.processor.example` webmaigc-core package and the` webmaigc-core package of us.codecraft.webmagic.example`.
+Here are some examples of crawlers author written earlier. Because of the limited time, some of these examples use is still the old version of the API, but also because there may be some changes in the structure of the target page is no longer available. To date, been featured examples, see the `us.codecraft.webmagic.processor.example` webmagic-core package and the `webmaigc-core package of us.codecraft.webmagic.example`.
 
 #### Webmagic-scripts
 
@@ -30,7 +30,7 @@ Currently the project because the user is not much interested in, on hold, you c
 
 #### Webmagic-selenium
 
-WebmMgic and Selenium combined modules. Selenium is an analog browser page rendering tools, WebMagic rely Selenium crawl dynamic pages.
+WebMagic and Selenium combined modules. Selenium is an analog browser page rendering tools, WebMagic rely Selenium crawl dynamic pages.
 
 #### Webmagic-saxon
 
