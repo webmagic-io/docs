@@ -2,7 +2,7 @@
 title: scheduler.md
 layout: post
 author: asshyrin
-permalink: ch6-custom-componenet
+permalink: /ch6-custom-componenet/
 source-id: 1J_cDTx-uXTR2EkM79l1CnkKXb_hCMgy0j-YgheYQTzc
 published: true
 ---
