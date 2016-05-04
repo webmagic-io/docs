@@ -11,6 +11,6 @@ This little book will describe how to use WebMagic. It will also show some class
 
 This document is being writing currently. It is translated from my Chinese docs [http://webmagic.io/docs/zh/](http://webmagic.io/docs/zh/), and there may be some misktake. Thanks for [Reporting Issue](https://github.com/webmagic-io/docs/issues) or fork and send a pull request to me.
 
-Docs preview: [http://webmagic.io/docs/en/](http://webmagic.io/docs/en/)(construct based on [gitbook](https://github.com/GitbookIO/gitbook/))。
+Docs preview: [http://webmagic.io/docs/en/](http://webmagic.io/docs/en/)(construct based on [gitbook](https://github.com/GitbookIO/gitbook/)).
 
-License: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/)。
+License: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/).
