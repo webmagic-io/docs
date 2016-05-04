@@ -25,11 +25,7 @@ WebMagic мають деякі загальні Scheduler. Якщо ви хоч�
 
 ```java
 
-spider.setScheduler(new QueueScheduler()
-
-.setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)) //10000000 is the estimate value of urls ///10000000 приблизне значення кількості URL-ів
-
-)
+spider.setScheduler(new QueueScheduler()	.setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)) //10000000 is the estimate value of urls ///10000000 приблизне значення кількості URL-ів)
 
 ```
 
