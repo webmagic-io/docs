@@ -1,6 +1,6 @@
 ### 1.2 overall architecture
 
-WebMagic structured into `Downloader`,` PageProcessor`, `Scheduler`,` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four crawler lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
+WebMagic structured into `Downloader`, `PageProcessor`, `Scheduler`, ` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four crawler lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
 
 The Spider will be several components to organize themselves so that they can interact with each other, the process of implementation can be considered Spider is a large container, it is also the core WebMagic logic.
 
@@ -8,7 +8,8 @@ WebMagic overall architecture is as follows:
 
 ![image](http://code4craft.github.io/images/posts/webmagic.png)
 
-The four components ### 1.2.1 WebMagic
+The four components 
+### 1.2.1 WebMagic
 
 #### 1.Downloader
 
