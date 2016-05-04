@@ -13,4 +13,4 @@ This document is being writing currently. It is translated from my Chinese docs 
 
 Docs preview: [http://webmagic.io/docs/en/](http://webmagic.io/docs/en/)(construct based on [gitbook](https://github.com/GitbookIO/gitbook/))。
 
-Protocal: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/)。
+License: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/)。
