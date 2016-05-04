@@ -5,7 +5,7 @@ WebMagic in Action
 
 >Little book of WebMagic.
 
-[Українскою|Ukrainian](ua/)
+[Українською|Ukrainian](ua/)
 
 >Мала книга WebMagic.
 
