@@ -65,5 +65,5 @@ page.addTargetRequests(urls);
 
 `selectable.all()` - у результаті отримаєте всі елементів.
 
-Ну а тепер, якщо озирнутися назад на `GithubRepoPageProcessor` у Частину [4.1 Імплементація PageProcessor](././posts/ch4-basic-page-processor/pageprocessor.md), можливо ви вже відчуватимете себе більш ясно, чи не так?
+Ну а тепер, якщо озирнутися назад на `GithubRepoPageProcessor` у Частину [4.1 Імплементація PageProcessor](../../posts/ch4-basic-page-processor/pageprocessor.md), можливо ви вже відчуватимете себе більш ясно, чи не так?
 Переписати специфікацію `main()` метода, і тоді вже можна побачити оновлені результати роботи пошукача у виводу в консолі.
