@@ -77,7 +77,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 3. Регулярні вирази regular Expressions
 
-  Регулярні вирази [(вид. wikipedia)](https://uk.wikipedia.org/wiki/.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D1.8F.D1.80.D0.BD.D0.B8.D0.B9_.D0.B2.D0.B8.D1.80.D0.B0.D0.B7) є універсальною мовою для екстракції тексту.
+  Регулярні вирази [(вид. wikipedia)](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B8%D1%80%D0%B0%D0%B7) є універсальною мовою для екстракції тексту.
 
 	```java
 	page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
