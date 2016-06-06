@@ -1,8 +1,8 @@
 ### Crawl tip rendered page
 
-With the continued popularity of AJAX technology and the emergence of such AngularJS Single-page application framework now, now js render pages more and more. For reptiles, this page is more annoying: Just extract HTML content, are often unable to get valid information. So how do you deal with this pages? In general there are two approaches:
+With the continued popularity of AJAX technology and the emergence of such AngularJS Single-page application framework now, now js render pages more and more. For crawlers, this page is more annoying: Just extract HTML content, are often unable to get valid information. So how do you deal with this pages? In general there are two approaches:
 
-1. In the crawl phase, reptile built a browser kernel, after performing js rendering the page, and then crawl. This aspect of the corresponding tools `Selenium`,`HtmlUnit` or `PhantomJs`. But these tools there are some efficiency, at the same time it is not so stable. Benefit is to write the rules, like static pages.
+1. In the crawl phase, crawler built a browser kernel, after performing js rendering the page, and then crawl. This aspect of the corresponding tools `Selenium`,`HtmlUnit` or `PhantomJs`. But these tools there are some efficiency, at the same time it is not so stable. Benefit is to write the rules, like static pages.
 2. Because js rendering data page is from the rear end to get, and basically get AJAX, so analysis AJAX request, a request to find the corresponding data is also more feasible approach. And with respect to the page style, this interface is less likely to change. The disadvantage is to find the request, and simulation, is a relatively difficult process, but also requires a relatively large number of analytic experience.
 
 Comparison of two ways, my view is that the demand for one-time or small-scale, with the first approach saves time and effort. But for long-term, large-scale demand, or the second would be ideal. For some sites, and even some js confusing technology, this time, the first way is basically a panacea, while the second will be very complicated.
@@ -86,7 +86,7 @@ For a different site, the auxiliary data may have been previously output in page
 
 However, analysis of these data requests than the page analysis, it is still much more complicated, so this is actually a dynamic page fetch difficult.
 
-The example in this section do hope that in the analysis of the request, provide a model to follow for such reptiles write that `find secondary data => constructing a link => download and analyze the target AJAX` this mode.
+The example in this section do hope that in the analysis of the request, provide a model to follow for such crawlers write that `find secondary data => constructing a link => download and analyze the target AJAX` this mode.
 
 PS:
 

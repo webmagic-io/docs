@@ -33,4 +33,10 @@ This is the summary of my book.
 	* [Pipeline](posts/ch6-custom-componenet/pipeline.md)
 	* [Scheduler](posts/ch6-custom-componenet/scheduler.md)
 	* [Downloader](posts/ch6-custom-componenet/downloader.md)
+* [Case Study](posts/chx-cases/README.md)
+    * [The combination of basic page and list links](posts/chx-cases/basic-list-target.md)
+    * [Front-end JS rendering page](posts/chx-cases/js-render-page.md)
+    * Crawl page
+    * Periodically crawl
+    * [Incremental Update](posts/chx-cases/ajax.md)
 	
