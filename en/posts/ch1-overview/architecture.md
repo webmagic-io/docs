@@ -8,8 +8,7 @@ WebMagic overall architecture is as follows:
 
 ![image](http://code4craft.github.io/images/posts/webmagic.png)
 
-The four components 
-### 1.2.1 WebMagic
+### 1.2.1 The four components WebMagic
 
 #### 1.Downloader
 
