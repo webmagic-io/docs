@@ -1,4 +1,4 @@
-## 1.1 Філософія
+### 1.1 Філософія
 
 ![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 

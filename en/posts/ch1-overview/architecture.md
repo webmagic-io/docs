@@ -48,9 +48,9 @@ In addition to the URL itself, it contains a Key-Value Structure field `extra`. 
 
 Page WebMagic extraction process is the core of the object, which provides methods for extraction, save the results and so on. In the case of the fourth chapter, we will detail its use.
 
-#### 3. ReusltItems
+#### 3. ResultItems
 
-`ReusltItems` equivalent to a Map, which holds the result PageProcessor processing for use Pipeline. Map and its API is very similar, it is worth noting that it has a field `skip`, if set to true, the Pipeline should not be processed.
+`ResultItems` equivalent to a Map, which holds the result PageProcessor processing for use Pipeline. Map and its API is very similar, it is worth noting that it has a field `skip`, if set to true, the Pipeline should not be processed.
 
 ### 1.2.3 Control crawler running engine --Spider
 
@@ -76,4 +76,4 @@ public static void main(String[] args) {
 
 A lot of the components described above, but in fact the user need to be concerned not so much, because most of the module WebMagic already provides a default implementation.
 
-In general, for the preparation of a crawler, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessr, and by Spider to start.
+In general, for the preparation of a crawler, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessor, and by Spider to start.
