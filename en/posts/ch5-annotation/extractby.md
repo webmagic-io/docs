@@ -2,7 +2,7 @@
 
 `@ExtractBy` annotation is used to extract a element, which describes an extraction rule.
 
-#### 5.3.1 Intro to  ExtractBy annotation
+#### 5.3.1 Intro to @ExtractBy annotation
 
 @ExtractBy Annotation major role in the field, it means "the use of the extraction rules, to save the extracted result into this field." E.g:
 
@@ -25,7 +25,7 @@ private String content;
 
 @ExtractBy Contains a `notNull` property, if familiar with mysql students must be able to understand what it means: This field does not allow empty. If empty, this extract to the result is discarded. For critical attributes (such as the title of the article, etc.) some of the pages, set `notnull` to `true`, you can effectively filter out unwanted pages.
 
-`NotNull` default is `false`. 
+`NotNull` default is `false`.
 
 #### 5.3.4 multi (deprecated)
 

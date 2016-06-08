@@ -61,7 +61,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 1. XPath
 
-  Започатковано XPath [(дивіться у wikipedia)](https://uk.wikipedia.org/wiki/XPath), як мова запитів XML елементів, але згодом також поширився та став зручним і для HTML, наприклад:
+  Започатковано [XPath](https://uk.wikipedia.org/wiki/XPath), як мова запитів XML елементів, але згодом також поширився та став зручним і для HTML, наприклад:
 
 	```java
 	page.getHtml().xpath("//h1[@class='entry-title public']/strong/a/text()")
@@ -73,11 +73,11 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
 2. CSS селектор
 
-  CSS [(вид. wikipedia)](https://uk.wikipedia.org/wiki/CSS#.D0.A1.D0.B5.D0.BB.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8_.D1.82.D0.B0_.D0.9F.D1.81.D0.B5.D0.B2.D0.B4.D0.BE-.D0.BA.D0.BB.D0.B0.D1.81.D0.B8) і XPath селектори схожі за синтаксисом мови. Для front-end розробки знайоме формулювання $('h1.entry-title'), що відповідне до попереднього прикладу. Об'єктивно кажучи, його простіше писати, ніж XPath, але якщо ви пишете більш складні правила екстракції, то це відносно невеликі проблеми.
+  [CSS](https://uk.wikipedia.org/wiki/CSS#.D0.A1.D0.B5.D0.BB.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8_.D1.82.D0.B0_.D0.9F.D1.81.D0.B5.D0.B2.D0.B4.D0.BE-.D0.BA.D0.BB.D0.B0.D1.81.D0.B8) і XPath селектори схожі за синтаксисом мови. Для front-end розробки знайоме формулювання $('h1.entry-title'), що відповідне до попереднього прикладу. Об'єктивно кажучи, його простіше писати, ніж XPath, але якщо ви пишете більш складні правила екстракції, то це відносно невеликі проблеми.
 
 3. Регулярні вирази regular Expressions
 
-  Регулярні вирази [(вид. wikipedia)](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B8%D1%80%D0%B0%D0%B7) є універсальною мовою для екстракції тексту.
+  Регулярні вирази [(див. wikipedia)](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B8%D0%B9_%D0%B2%D0%B8%D1%80%D0%B0%D0%B7) є універсальною мовою для екстракції тексту.
 
 	```java
 	page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
