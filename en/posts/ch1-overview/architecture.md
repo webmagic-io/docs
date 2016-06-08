@@ -1,6 +1,6 @@
 ### 1.2 overall architecture
 
-WebMagic structured into `Downloader`,` PageProcessor`, `Scheduler`,` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four crawler lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
+WebMagic structured into `Downloader`, `PageProcessor`, `Scheduler`, ` Pipeline` four components by Spider will organize them with each other. This component corresponds to the four crawler lifecycle download, processing, management, and persistence capabilities. WebMagic design reference Scapy, but the implementation of some of the more Java.
 
 The Spider will be several components to organize themselves so that they can interact with each other, the process of implementation can be considered Spider is a large container, it is also the core WebMagic logic.
 
@@ -8,7 +8,7 @@ WebMagic overall architecture is as follows:
 
 ![image](http://code4craft.github.io/images/posts/webmagic.png)
 
-The four components ### 1.2.1 WebMagic
+### 1.2.1 The four components WebMagic
 
 #### 1.Downloader
 
@@ -48,9 +48,9 @@ In addition to the URL itself, it contains a Key-Value Structure field `extra`. 
 
 Page WebMagic extraction process is the core of the object, which provides methods for extraction, save the results and so on. In the case of the fourth chapter, we will detail its use.
 
-#### 3. ReusltItems
+#### 3. ResultItems
 
-`ReusltItems` equivalent to a Map, which holds the result PageProcessor processing for use Pipeline. Map and its API is very similar, it is worth noting that it has a field `skip`, if set to true, the Pipeline should not be processed.
+`ResultItems` equivalent to a Map, which holds the result PageProcessor processing for use Pipeline. Map and its API is very similar, it is worth noting that it has a field `skip`, if set to true, the Pipeline should not be processed.
 
 ### 1.2.3 Control crawler running engine --Spider
 
@@ -76,4 +76,4 @@ public static void main(String[] args) {
 
 A lot of the components described above, but in fact the user need to be concerned not so much, because most of the module WebMagic already provides a default implementation.
 
-In general, for the preparation of a crawler, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessr, and by Spider to start.
+In general, for the preparation of a crawler, `PageProcessor` is part of the need to write, and `Spider` is created and controlled entrance crawlers. In the fourth chapter, we will explain how to write a crawler customized PageProcessor, and by Spider to start.

@@ -48,9 +48,9 @@ Pipeline负责抽取结果的处理，包括计算、持久化到文件、数据
 
 Page是WebMagic抽取过程的核心对象，它提供一些方法可供抽取、结果保存等。在第四章的例子中，我们会详细介绍它的使用。
 
-#### 3. ReusltItems
+#### 3. ResultItems
 
-`ReusltItems`相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段`skip`，若设置为true，则不应被Pipeline处理。
+`ResultItems`相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段`skip`，若设置为true，则不应被Pipeline处理。
 
 ### 1.2.3 控制爬虫运转的引擎--Spider
 
@@ -76,4 +76,4 @@ public static void main(String[] args) {
 
 上面介绍了很多组件，但是其实使用者需要关心的没有那么多，因为大部分模块WebMagic已经提供了默认实现。
 
-一般来说，对于编写一个爬虫，`PageProcessor`是需要编写的部分，而`Spider`则是创建和控制爬虫的入口。在第四章中，我们会介绍如何通过定制PageProcessr来编写一个爬虫，并通过Spider来启动。
+一般来说，对于编写一个爬虫，`PageProcessor`是需要编写的部分，而`Spider`则是创建和控制爬虫的入口。在第四章中，我们会介绍如何通过定制PageProcessor来编写一个爬虫，并通过Spider来启动。

@@ -1,4 +1,4 @@
-### 5.4 Use in Class ExtractBy
+### 5.4 Use on Class ExtractBy
 
 In the previous annotation mode, we have a page corresponds to only one result. If a page has multiple extracted record it? For example, in "QQ food" list page [http://meishi.qq.com/beijing/c/all](http://meishi.qq.com/beijing/c/all), I want to extract all businesses Get names and information, how to do it?
 
