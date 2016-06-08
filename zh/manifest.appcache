@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1461206856777
+# Revision 1465426573997
 
 CACHE:
 index.html
@@ -12,11 +12,11 @@ posts/ch2-install/first-project.html
 posts/ch2-install/with-maven.html
 posts/ch2-install/without-maven.html
 posts/ch3-build-source/README.html
-posts/ch3-build-source/git-repo.html
 posts/ch3-build-source/compile-code.html
+posts/ch3-build-source/git-repo.html
 posts/ch3-build-source/import-project.html
-posts/ch4-basic-page-processor/monitor.html
 posts/ch4-basic-page-processor/README.html
+posts/ch4-basic-page-processor/monitor.html
 posts/ch4-basic-page-processor/pageprocessor.html
 posts/ch4-basic-page-processor/results.html
 posts/ch4-basic-page-processor/selectable.html

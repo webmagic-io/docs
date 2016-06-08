@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1461206856777">
+<div class="book" data-github="code4craft/webmagic" data-level="1.2" data-basepath="../.." data-revision="1465426573997">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -488,7 +488,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_14">
+                    <section class="normal" id="section-gitbook_4">
                     
                         <h3 id="1-2-">1.2 总体架构</h3>
 <p>WebMagic的结构分为<code>Downloader</code>、<code>PageProcessor</code>、<code>Scheduler</code>、<code>Pipeline</code>四大组件，并由Spider将它们彼此组织起来。这四大组件对应爬虫生命周期中的下载、处理、管理和持久化等功能。WebMagic的设计参考了Scapy，但是实现方式更Java化一些。</p>
@@ -515,8 +515,8 @@
 <h4 id="2-page">2. Page</h4>
 <p><code>Page</code>代表了从Downloader下载到的一个页面——可能是HTML，也可能是JSON或者其他文本格式的内容。</p>
 <p>Page是WebMagic抽取过程的核心对象，它提供一些方法可供抽取、结果保存等。在第四章的例子中，我们会详细介绍它的使用。</p>
-<h4 id="3-reusltitems">3. ReusltItems</h4>
-<p><code>ReusltItems</code>相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段<code>skip</code>，若设置为true，则不应被Pipeline处理。</p>
+<h4 id="3-resultitems">3. ResultItems</h4>
+<p><code>ResultItems</code>相当于一个Map，它保存PageProcessor处理的结果，供Pipeline使用。它的API与Map很类似，值得注意的是它有一个字段<code>skip</code>，若设置为true，则不应被Pipeline处理。</p>
 <h3 id="1-2-3-spider">1.2.3 控制爬虫运转的引擎--Spider</h3>
 <p>Spider是WebMagic内部流程的核心。Downloader、PageProcessor、Scheduler、Pipeline都是Spider的一个属性，这些属性是可以自由设置的，通过设置这个属性可以实现不同的功能。Spider也是WebMagic操作的入口，它封装了爬虫的创建、启动、停止、多线程等功能。下面是一个设置各个组件，并且设置多线程和启动的例子。详细的Spider设置请看第四章——<a href="../ch4-basic-page-processor/spider-config.html">爬虫的配置、启动和终止</a>。</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
@@ -535,7 +535,7 @@
 </code></pre>
 <h3 id="1-2-4-">1.2.4 快速上手</h3>
 <p>上面介绍了很多组件，但是其实使用者需要关心的没有那么多，因为大部分模块WebMagic已经提供了默认实现。</p>
-<p>一般来说，对于编写一个爬虫，<code>PageProcessor</code>是需要编写的部分，而<code>Spider</code>则是创建和控制爬虫的入口。在第四章中，我们会介绍如何通过定制PageProcessr来编写一个爬虫，并通过Spider来启动。</p>
+<p>一般来说，对于编写一个爬虫，<code>PageProcessor</code>是需要编写的部分，而<code>Spider</code>则是创建和控制爬虫的入口。在第四章中，我们会介绍如何通过定制PageProcessor来编写一个爬虫，并通过Spider来启动。</p>
 
                     
                     </section>
