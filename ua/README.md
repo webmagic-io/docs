@@ -1,4 +1,4 @@
-WebMagic в дії
+WebMagic у дії
 ==================
 
 > Мала книга WebMagic.
@@ -13,4 +13,4 @@ WebMagic в дії
 
 Попередній перегляд документації: [http://webmagic.io/docs/ua/](http://webmagic.io/docs/ua/)(створений на базі [gitbook](https://github.com/GitbookIO/gitbook/)).
 
-Protocal: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/).
+License: [CC-BYNC](http://creativecommons.org/licenses/by-nc/2.0/).

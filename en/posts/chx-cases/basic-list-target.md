@@ -20,7 +20,7 @@ Here we are with the author's Sina blog [http://blog.sina.com.cn/flashsword20](h
 
 #### 2 article URL found
 
-In this reptile demand, the article URL is our ultimate concern, so how to find all the articles in this blog address is the first step reptiles.
+In this crawler demand, the article URL is our ultimate concern, so how to find all the articles in this blog address is the first step crawlers.
 
 We can use the regular expression `http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html` a coarse filter for URL. More complicated here is that this URL is too broad and could crawl to the other blog information, so we must specify the area from the list page Get URL.
 

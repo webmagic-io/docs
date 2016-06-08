@@ -1,6 +1,6 @@
 ### 3.3 source code compilation and execution
 
-After the import is successful, there should be no mistake compilation! At this point you can run the webmagic-core project comes exmaple: "us.codecraft.webmagic.processor.example.GithubRepoPageProcessor".
+After the import is successful, there should be no mistake compilation! At this point you can run the webmagic-core project comes example: "us.codecraft.webmagic.processor.example.GithubRepoPageProcessor".
 
 Also, see the console output is as follows, it indicates that the source code to compile and execute a success!
 

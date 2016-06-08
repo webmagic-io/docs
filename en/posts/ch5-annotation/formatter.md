@@ -24,7 +24,7 @@ Automatic conversion supports all basic types and packing type.
 | byte | Byte |
 | boolean | Boolean |
 
-In addition, it supports `java.util.Date` type conversion. However, when you convert, you need to specify the Date format. Format according to standard JDK defined, specific norms can be seen here: [http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html](http://java.sun.com/ docs / books / tutorial / i18n / format / simpleDateFormat.html)
+In addition, it supports `java.util.Date` type conversion. However, when you convert, you need to specify the Date format. Format according to standard JDK defined, specific norms can be seen here: [http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html](http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html)
 
 ```java
 @Formatter("yyyy-MM-dd HH:mm")

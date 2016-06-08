@@ -19,7 +19,7 @@ public class GithubRepo {
 ```
 #### 5.6.1 crawler creation and start
 
-Entrance annotation model is `OOSpider`, it inherits the` Spider` class that provides special creation method, other methods are similar. Create an annotation mode crawles require one or more `Model` class, and one or more `PageModelPipeline`-- define the results manner.
+Entrance annotation model is `OOSpider`, it inherits the `Spider` class that provides special creation method, other methods are similar. Create an annotation mode crawles require one or more `Model` class, and one or more `PageModelPipeline`-- define the results manner.
 
 ```java
 public static OOSpider create(Site site, PageModelPipeline pageModelPipeline, Class... pageModels);

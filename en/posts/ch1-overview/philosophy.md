@@ -1,4 +1,4 @@
-## 1.1 Philosophy
+### 1.1 Philosophy
 
 ![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 
