@@ -21,7 +21,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
         page.putField("readme", page.getHtml().xpath("//div[@id='readme']/tidyText()"));
 
         // Part III: From the subsequent discovery page url address to crawler
-        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
+        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/[\w\-]+/[\w\-]+)").all());
     }
 
     @Override

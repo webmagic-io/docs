@@ -27,7 +27,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
 
         // Part III: From the subsequent discovery page url address to crawler
         /// Частина 3: Із результатів попередніх обробок вишукуемо URL адреси інших сторінок для передачи пошукачеві на обробку
-        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/\\w+/\\w+)").all());
+        page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/[\w\-]+/[\w\-]+)").all());
     }
 
     @Override
