@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1465426573997">
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1479946037557">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -510,7 +510,7 @@
         page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
 
         <span class="hljs-comment">// 部分三：从页面发现后续的url地址来抓取</span>
-        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\\w\\-]+/[\\w\\-]+)"</span>).all());
     }
 
     <span class="hljs-annotation">@Override</span>

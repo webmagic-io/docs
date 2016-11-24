@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1465426574250">
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1479946037762">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -492,7 +492,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_87">
+                    <section class="normal" id="section-gitbook_51">
                     
                         <h3 id="4-1-pageprocessor">4.1 Імплементація PageProcessor</h3>
 <p>У наведеному прикладі - клас <code>GithubRepoPageProcessor</code>, імплементує <code>PageProcessor</code>.
@@ -520,7 +520,7 @@
 
         <span class="hljs-comment">// Part III: From the subsequent discovery page url address to crawler</span>
         <span class="hljs-comment">/// Частина 3: Із результатів попередніх обробок вишукуемо URL адреси інших сторінок для передачи пошукачеві на обробку</span>
-        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\w\-]+/[\w\-]+)"</span>).all());
     }
 
     <span class="hljs-annotation">@Override</span>

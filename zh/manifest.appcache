@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# Revision 1465426573997
+# Revision 1479946037557
 
 CACHE:
 index.html
 posts/ch1-overview/README.html
-posts/ch1-overview/component.html
 posts/ch1-overview/architecture.html
+posts/ch1-overview/component.html
 posts/ch1-overview/thinking.html
 posts/ch2-install/README.html
 posts/ch2-install/first-project.html

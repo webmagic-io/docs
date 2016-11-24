@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1465426574243">
+<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1479946037778">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -492,7 +492,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_52">
+                    <section class="normal" id="section-gitbook_87">
                     
                         <h3 id="4-1-implement-pageprocessor">4.1 Implement PageProcessor</h3>
 <p>This is part of our <code>GithubRepoPageProcessor</code> directly through this example to introduce the write mode <code>PageProcessor</code>. I will PageProcessor customization is divided into three parts, namely, crawlers configuration, extracted page elements and links discovery.</p>
@@ -514,7 +514,7 @@
         page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
 
         <span class="hljs-comment">// Part III: From the subsequent discovery page url address to crawler</span>
-        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\w\-]+/[\w\-]+)"</span>).all());
     }
 
     <span class="hljs-annotation">@Override</span>
