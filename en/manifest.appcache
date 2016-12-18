@@ -1,34 +1,34 @@
 CACHE MANIFEST
-# Revision 1479946037778
+# Revision 1482032579851
 
 CACHE:
 index.html
-posts/ch1-overview/README.html
 posts/ch1-overview/architecture.html
+posts/ch1-overview/README.html
 posts/ch1-overview/component.html
 posts/ch1-overview/philosophy.html
 posts/ch2-install/README.html
+posts/ch2-install/first-project.html
 posts/ch2-install/with-maven.html
 posts/ch2-install/without-maven.html
-posts/ch2-install/first-project.html
 posts/ch3-build-source/README.html
 posts/ch3-build-source/compile-code.html
-posts/ch3-build-source/import-project.html
 posts/ch3-build-source/git-repo.html
+posts/ch3-build-source/import-project.html
 posts/ch4-basic-page-processor/README.html
 posts/ch4-basic-page-processor/monitor.html
-posts/ch4-basic-page-processor/pageprocessor.html
 posts/ch4-basic-page-processor/results.html
+posts/ch4-basic-page-processor/pageprocessor.html
 posts/ch4-basic-page-processor/selectable.html
 posts/ch4-basic-page-processor/spider-config.html
 posts/ch4-basic-page-processor/xsoup.html
 posts/ch5-annotation/README.html
 posts/ch5-annotation/after-extractor.html
-posts/ch5-annotation/extractby.html
-posts/ch5-annotation/lifecycle.html
 posts/ch5-annotation/extractby-on-class.html
-posts/ch5-annotation/model.html
+posts/ch5-annotation/extractby.html
 posts/ch5-annotation/formatter.html
+posts/ch5-annotation/lifecycle.html
+posts/ch5-annotation/model.html
 posts/ch5-annotation/targeturl.html
 posts/ch6-custom-componenet/README.html
 posts/ch6-custom-componenet/downloader.html

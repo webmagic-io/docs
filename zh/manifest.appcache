@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1479946037557
+# Revision 1482032579625
 
 CACHE:
 index.html
@@ -33,8 +33,8 @@ posts/ch5-annotation/targeturl.html
 posts/ch6-custom-componenet/README.html
 posts/ch6-custom-componenet/downloader.html
 posts/ch6-custom-componenet/pipeline.html
-posts/ch6-custom-componenet/scheduler.html
 posts/chx-cases/README.html
+posts/ch6-custom-componenet/scheduler.html
 posts/chx-cases/basic-list-target.html
 posts/chx-cases/js-render-page.html
 gitbook/app.js
