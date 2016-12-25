@@ -1,0 +1,803 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用ExtractBy进行抽取 · WebMagic Documents</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="extractby-on-class.html" />
+    
+    
+    <link rel="prev" href="targeturl.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch1-overview/">
+            
+                <a href="../ch1-overview/">
+            
+                    
+                    WebMagic概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch1-overview/thinking.html">
+            
+                <a href="../ch1-overview/thinking.html">
+            
+                    
+                    设计思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch1-overview/architecture.html">
+            
+                <a href="../ch1-overview/architecture.html">
+            
+                    
+                    总体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch1-overview/component.html">
+            
+                <a href="../ch1-overview/component.html">
+            
+                    
+                    项目组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch2-install/">
+            
+                <a href="../ch2-install/">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ch2-install/with-maven.html">
+            
+                <a href="../ch2-install/with-maven.html">
+            
+                    
+                    添加依赖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ch2-install/without-maven.html">
+            
+                <a href="../ch2-install/without-maven.html">
+            
+                    
+                    不使用Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ch2-install/first-project.html">
+            
+                <a href="../ch2-install/first-project.html">
+            
+                    
+                    编写第一个爬虫
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch3-build-source/">
+            
+                <a href="../ch3-build-source/">
+            
+                    
+                    下载和编译源码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ch3-build-source/git-repo.html">
+            
+                <a href="../ch3-build-source/git-repo.html">
+            
+                    
+                    下载源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ch3-build-source/import-project.html">
+            
+                <a href="../ch3-build-source/import-project.html">
+            
+                    
+                    导入项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../ch3-build-source/compile-code.html">
+            
+                <a href="../ch3-build-source/compile-code.html">
+            
+                    
+                    编译和执行源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ch4-basic-page-processor/">
+            
+                <a href="../ch4-basic-page-processor/">
+            
+                    
+                    编写基本的爬虫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../ch4-basic-page-processor/pageprocessor.html">
+            
+                <a href="../ch4-basic-page-processor/pageprocessor.html">
+            
+                    
+                    实现PageProcessor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../ch4-basic-page-processor/selectable.html">
+            
+                <a href="../ch4-basic-page-processor/selectable.html">
+            
+                    
+                    使用Selectable的链式API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../ch4-basic-page-processor/results.html">
+            
+                <a href="../ch4-basic-page-processor/results.html">
+            
+                    
+                    保存结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../ch4-basic-page-processor/spider-config.html">
+            
+                <a href="../ch4-basic-page-processor/spider-config.html">
+            
+                    
+                    爬虫的配置、启动和终止
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../ch4-basic-page-processor/xsoup.html">
+            
+                <a href="../ch4-basic-page-processor/xsoup.html">
+            
+                    
+                    Jsoup与Xsoup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../ch4-basic-page-processor/monitor.html">
+            
+                <a href="../ch4-basic-page-processor/monitor.html">
+            
+                    
+                    爬虫的监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    使用注解编写爬虫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    编写Model类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="targeturl.html">
+            
+                <a href="targeturl.html">
+            
+                    
+                    TargetUrl与HelpUrl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3" data-path="extractby.html">
+            
+                <a href="extractby.html">
+            
+                    
+                    使用ExtractBy进行抽取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="extractby-on-class.html">
+            
+                <a href="extractby-on-class.html">
+            
+                    
+                    在类上使用ExtractBy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="formatter.html">
+            
+                <a href="formatter.html">
+            
+                    
+                    结果的类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="lifecycle.html">
+            
+                <a href="lifecycle.html">
+            
+                    
+                    一个完整的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="after-extractor.html">
+            
+                <a href="after-extractor.html">
+            
+                    
+                    AfterExtractor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ch6-custom-componenet/">
+            
+                <a href="../ch6-custom-componenet/">
+            
+                    
+                    组件的使用和定制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ch6-custom-componenet/pipeline.html">
+            
+                <a href="../ch6-custom-componenet/pipeline.html">
+            
+                    
+                    定制Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ch6-custom-componenet/scheduler.html">
+            
+                <a href="../ch6-custom-componenet/scheduler.html">
+            
+                    
+                    使用Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ch6-custom-componenet/downloader.html">
+            
+                <a href="../ch6-custom-componenet/downloader.html">
+            
+                    
+                    使用Downloader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chx-cases/">
+            
+                <a href="../chx-cases/">
+            
+                    
+                    实例分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chx-cases/basic-list-target.html">
+            
+                <a href="../chx-cases/basic-list-target.html">
+            
+                    
+                    列表+详情的基本页面组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chx-cases/js-render-page.html">
+            
+                <a href="../chx-cases/js-render-page.html">
+            
+                    
+                    抓取前端渲染的页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                    分页抓取
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" >
+            
+                <span>
+            
+                    
+                    定期抓取
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" >
+            
+                <span>
+            
+                    
+                    增量更新
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >使用ExtractBy进行抽取</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="53-&#x4F7F;&#x7528;extractby&#x8FDB;&#x884C;&#x62BD;&#x53D6;">5.3 &#x4F7F;&#x7528;ExtractBy&#x8FDB;&#x884C;&#x62BD;&#x53D6;</h3>
+<p><code>@ExtractBy</code>&#x662F;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x62BD;&#x53D6;&#x5143;&#x7D20;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5B83;&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x79CD;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#x3002;</p>
+<h4 id="531-&#x521D;&#x8BC6;extractby&#x6CE8;&#x89E3;">5.3.1 &#x521D;&#x8BC6;ExtractBy&#x6CE8;&#x89E3;</h4>
+<p>@ExtractBy&#x6CE8;&#x89E3;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x4E8E;&#x5B57;&#x6BB5;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x201C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x62BD;&#x53D6;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x4E2D;&#x201D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@ExtractBy</span>(<span class="hljs-string">&quot;//div[@id=&apos;readme&apos;]/text()&quot;</span>)
+<span class="hljs-keyword">private</span> String readme;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&quot;//div[@id=&apos;readme&apos;]/text()&quot;&#x662F;&#x4E00;&#x4E2A;XPath&#x8868;&#x793A;&#x7684;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x62BD;&#x53D6;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x5219;&#x4F1A;&#x4FDD;&#x5B58;&#x5230;readme&#x5B57;&#x6BB5;&#x4E2D;&#x3002;</p>
+<h4 id="532-&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x62BD;&#x53D6;&#x65B9;&#x5F0F;">5.3.2 &#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x62BD;&#x53D6;&#x65B9;&#x5F0F;</h4>
+<p>&#x9664;&#x4E86;XPath&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x62BD;&#x53D6;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x62BD;&#x53D6;&#xFF0C;&#x5305;&#x62EC;CSS&#x9009;&#x62E9;&#x5668;&#x3001;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x548C;JsonPath&#xFF0C;&#x5728;&#x6CE8;&#x89E3;&#x4E2D;&#x6307;&#x660E;<code>type</code>&#x4E4B;&#x540E;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@ExtractBy</span>(value = <span class="hljs-string">&quot;div.BlogContent&quot;</span>, type = ExtractBy.Type.Css)
+<span class="hljs-keyword">private</span> String content;
+</code></pre>
+<h4 id="533-notnull">5.3.3 notnull</h4>
+<p>@ExtractBy&#x5305;&#x542B;&#x4E00;&#x4E2A;<code>notNull</code>&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x719F;&#x6089;mysql&#x7684;&#x540C;&#x5B66;&#x4E00;&#x5B9A;&#x80FD;&#x660E;&#x767D;&#x5B83;&#x7684;&#x610F;&#x601D;&#xFF1A;&#x6B64;&#x5B57;&#x6BB5;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A;&#x7A7A;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD9;&#x6761;&#x62BD;&#x53D6;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x9875;&#x9762;&#x7684;&#x5173;&#x952E;&#x6027;&#x5C5E;&#x6027;&#xFF08;&#x4F8B;&#x5982;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898;&#x7B49;&#xFF09;&#xFF0C;&#x8BBE;&#x7F6E;<code>notnull</code>&#x4E3A;<code>true</code>&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x7684;&#x8FC7;&#x6EE4;&#x6389;&#x65E0;&#x7528;&#x7684;&#x9875;&#x9762;&#x3002;</p>
+<p><code>notNull</code>&#x9ED8;&#x8BA4;&#x4E3A;<code>false</code>&#x3002;</p>
+<h4 id="534-multi&#xFF08;&#x5DF2;&#x5E9F;&#x5F03;&#xFF09;">5.3.4 multi&#xFF08;&#x5DF2;&#x5E9F;&#x5F03;&#xFF09;</h4>
+<p><code>multi</code>&#x662F;&#x4E00;&#x4E2A;boolean&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x8FD9;&#x6761;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#x662F;&#x5BF9;&#x5E94;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x8FD8;&#x662F;&#x5355;&#x6761;&#x8BB0;&#x5F55;&#x3002;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x4E3A;<code>java.util.List</code>&#x7C7B;&#x578B;&#x3002;&#x5728;0.4.3&#x4E4B;&#x540E;&#xFF0C;&#x5F53;&#x5B57;&#x6BB5;&#x4E3A;List&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4F1A;&#x81EA;&#x52A8;&#x4E3A;true&#xFF0C;&#x65E0;&#x987B;&#x518D;&#x8BBE;&#x7F6E;&#x3002;</p>
+<ul>
+<li><p>0.4.3&#x4EE5;&#x524D;</p>
+<pre><code class="lang-java">  <span class="hljs-meta">@ExtractBy</span>(value = <span class="hljs-string">&quot;//div[@class=&apos;BlogTags&apos;]/a/text()&quot;</span>, multi = <span class="hljs-keyword">true</span>)
+  <span class="hljs-keyword">private</span> List&lt;String&gt; tags;
+</code></pre>
+</li>
+<li><p>0.4.3&#x53CA;&#x4EE5;&#x540E;</p>
+<pre><code class="lang-java">  <span class="hljs-meta">@ExtractBy</span>(<span class="hljs-string">&quot;//div[@class=&apos;BlogTags&apos;]/a/text()&quot;</span>)
+  <span class="hljs-keyword">private</span> List&lt;String&gt; tags;
+</code></pre>
+</li>
+</ul>
+<h4 id="535-comboextract&#xFF08;&#x5DF2;&#x5E9F;&#x5F03;&#xFF09;">5.3.5 ComboExtract&#xFF08;&#x5DF2;&#x5E9F;&#x5F03;&#xFF09;</h4>
+<p><code>@ComboExtract</code>&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#xFF0C;&#x7EC4;&#x5408;&#x65B9;&#x5F0F;&#x5305;&#x62EC;&quot;AND/OR&quot;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x5728;WebMagic 0.4.3&#x7248;&#x672C;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;Xsoup 0.2.0&#x7248;&#x672C;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#xFF0C;XPath&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;&#x5927;&#x5927;&#x52A0;&#x5F3A;&#x4E86;&#xFF0C;&#x4E0D;&#x4F46;&#x652F;&#x6301;XPath&#x548C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x8FD8;&#x652F;&#x6301;&#x201C;|&#x201D;&#x8FDB;&#x884C;&#x6216;&#x8FD0;&#x7B97;&#x3002;&#x6240;&#x4EE5;&#x4F5C;&#x8005;&#x8BA4;&#x4E3A;&#xFF0C;<code>ComboExtract</code>&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x7EC4;&#x5408;&#x65B9;&#x5F0F;&#xFF0C;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4E86;&#x3002;</p>
+<ul>
+<li><p>XPath&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7EC4;&#x5408;</p>
+<pre><code class="lang-java">  <span class="hljs-meta">@ExtractBy</span>(<span class="hljs-string">&quot;//div[@class=&apos;BlogStat&apos;]/regex(&apos;\\d+-\\d+-\\d+\\s+\\d+:\\d+&apos;)&quot;</span>)
+  <span class="hljs-keyword">private</span> Date date;
+</code></pre>
+</li>
+<li><p>XPath&#x7684;&#x53D6;&#x6216;</p>
+<pre><code class="lang-java">  <span class="hljs-meta">@ExtractBy</span>(<span class="hljs-string">&quot;//div[@id=&apos;title&apos;]/text() | //title/text()&quot;</span>)
+  <span class="hljs-keyword">private</span> String title;
+</code></pre>
+</li>
+</ul>
+<h4 id="536-extractbyurl">5.3.6 ExtractByUrl</h4>
+<p><code>@ExtractByUrl</code>&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5B83;&#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x4ECE;URL&#x4E2D;&#x8FDB;&#x884C;&#x62BD;&#x53D6;&#x201D;&#x3002;&#x5B83;&#x53EA;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F5C;&#x4E3A;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="targeturl.html" class="navigation navigation-prev " aria-label="Previous page: TargetUrl与HelpUrl">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="extractby-on-class.html" class="navigation navigation-next " aria-label="Next page: 在类上使用ExtractBy">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用ExtractBy进行抽取","level":"1.6.3","depth":2,"next":{"title":"在类上使用ExtractBy","level":"1.6.4","depth":2,"path":"posts/ch5-annotation/extractby-on-class.md","ref":"posts/ch5-annotation/extractby-on-class.md","articles":[]},"previous":{"title":"TargetUrl与HelpUrl","level":"1.6.2","depth":2,"path":"posts/ch5-annotation/targeturl.md","ref":"posts/ch5-annotation/targeturl.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WebMagic Documents","language":"zh","gitbook":"*"},"file":{"path":"posts/ch5-annotation/extractby.md","mtime":"2014-05-14T15:46:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-25T01:43:26.686Z"},"basePath":"../..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
