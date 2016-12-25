@@ -1,4 +1,4 @@
-### 6.2 定制Scheduler
+### 6.2 使用和定制Scheduler
 
 Scheduler是WebMagic中进行URL管理的组件。一般来说，Scheduler包括两个作用：
 
@@ -22,10 +22,11 @@ WebMagic内置了几个常用的Scheduler。如果你只是在本地执行规模
 |HashSetDuplicateRemover|使用HashSet来进行去重，占用内存较大|
 |BloomFilterDuplicateRemover|使用BloomFilter来进行去重，占用内存较小，但是可能漏抓页面| |
 
-所有默认的Scheduler都使用HashSetDuplicateRemover来进行去重，（除开RedisScheduler是使用Redis的set进行去重）。如果你的URL较多，使用HashSetDuplicateRemover会比较占用内存，所以也可以尝试以下BloomFilterDuplicateRemover，使用方式：
+所有默认的Scheduler都使用HashSetDuplicateRemover来进行去重，（除开RedisScheduler是使用Redis的set进行去重）。如果你的URL较多，使用HashSetDuplicateRemover会比较占用内存，所以也可以尝试以下BloomFilterDuplicateRemover[^1]，使用方式：
 
 ```java
 spider.setScheduler(new QueueScheduler()
 .setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)) //10000000是估计的页面数量
 )
 ```
+[^1]: 0.6.0版本后，如果使用BloomFilterDuplicateRemover，需要单独引入Guava依赖包。

@@ -1,4 +1,4 @@
-### 6.1 定制Pipeline
+### 6.1 使用和定制Pipeline
 
 Pileline是抽取结束后，进行处理的部分，它主要用于抽取结果的保存，也可以定制Pileline可以实现一些通用的功能。在这一节中，我们会对Pipeline进行介绍，并用两个例子来讲解如何定制Pipeline。
 

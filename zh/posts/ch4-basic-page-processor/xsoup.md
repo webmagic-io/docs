@@ -1,4 +1,4 @@
-### 4.5 抽取工具简介
+### 4.5 Jsoup和Xsoup
 
 WebMagic的抽取主要用到了[Jsoup](http://jsoup.org/)和我自己开发的工具[Xsoup](https://github.com/code4craft/xsoup)。
 

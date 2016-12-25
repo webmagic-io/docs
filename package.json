@@ -1,21 +1,17 @@
 {
-    "name": "WebMagic-in-Action",
-    "version": "0.0.5",
-    "description": "",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/code4craft/webmagic-in-action"
-    },
-    "author": "Yihua.huang <code4crafter@gmail.com>",
-    "license": "Apache 2",
-    "dependencies": {},
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-gitbook": "0.4.2",
-        "grunt-gh-pages": "0.9.1",
-        "grunt-contrib-clean": "~0.5.0"
-    },
-    "peerDependencies": {
-        "grunt": "~0.4.1"
-    }
+  "name": "WebMagic-in-Action",
+  "version": "0.0.5",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code4craft/webmagic-in-action"
+  },
+  "author": "Yihua.huang <code4crafter@gmail.com>",
+  "license": "Apache 2",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-gitbook": "0.0.1"
+  },
+  "devDependencies": {}
 }

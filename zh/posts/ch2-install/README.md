@@ -1,4 +1,4 @@
-## 2. 使用WebMagic
+## 2. 快速开始
 
 WebMagic主要包含两个jar包：`webmagic-core-{version}.jar`和`webmagic-extension-{version}.jar`。在项目中添加这两个包的依赖，即可使用WebMagic。
 

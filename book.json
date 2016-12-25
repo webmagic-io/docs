@@ -1,0 +1,12 @@
+{
+    "title": "WebMagic Documents",
+    "pdf":{
+        "fontSize":10
+    },
+    "plugins": ["ga"],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-49956730-1"
+        }
+    }
+}

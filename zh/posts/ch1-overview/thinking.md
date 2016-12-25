@@ -1,4 +1,4 @@
-### 1.1 WebMagic的设计思想
+### 1.1 设计思想
 
 ![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 
