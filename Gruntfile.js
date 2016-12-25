@@ -1,36 +1,23 @@
 var path = require("path");
 
 module.exports = function (grunt) {
-    grunt.loadNpmTasks('grunt-gitbook');
     grunt.loadNpmTasks('grunt-gh-pages');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.initConfig({
-        'gitbook': {
-            development: {
-                output: path.join(__dirname, ".grunt/gitbook"),
-                input: "./",
-                title: "WebMagic in Action",
-                description: "",
-                github: "code4craft/webmagic",
-                theme: path.resolve(__dirname, 'theme')
-            }
-        },
         'gh-pages': {
             options: {
-                base: '.grunt/gitbook'
+                base: '_book'
             },
             src: ['**']
         },
         'clean': {
-            files: '.grunt'
+            files: '_book'
         }
     });
 
     grunt.registerTask('publish', [
-        'gitbook',
         'gh-pages',
         'clean'
     ]);
-    grunt.registerTask('default', 'gitbook');
 };
