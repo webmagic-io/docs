@@ -11,4 +11,6 @@ WebMagic in Action
 
 文章预览请点[http://webmagic.io/docs/](http://webmagic.io/docs/)，页面基于[gitbook](https://github.com/GitbookIO/gitbook/)进行构建。
 
+电子版下载：[WebMagic Docs 0.6.0.pdf](http://webmagic.qiniudn.com/books/WebMagic_Docs_0.6.0_zh.pdf)
+
 本文档遵循CC-BYNC协议。
