@@ -1,597 +1,824 @@
+
 <!DOCTYPE HTML>
-<html lang='zh-CN'>
-    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
-        
+<html lang="ua" >
+    <head>
         <meta charset="UTF-8">
-        <title>Обробка пошукачем сторінок на JS рендерингу | WebMagic in Action</title>
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="robots" content="index, follow">
-        <meta name="author" content="code4craft">
-        <meta name="description" content="Мала книга WebMagic.">
-        <meta name="keywords" content="gitbook,github" >
-        <meta name="generator" content="www.gitbook.io">
-
+        <title>Обробка пошукачем сторінок на JS рендерингу · WebMagic Documents</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
-        <link rel="prev" href="../../posts/chx-cases/basic-list-target.html" />
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
         
 
-        <meta property="og:title" content="Обробка пошукачем сторінок на JS рендерингу | WebMagic in Action">
-        <meta property="og:site_name" content="WebMagic in Action">
-        <meta property="og:type" content="book">
-        <meta property="og:locale" content="zh-CN">
+    
 
-        <meta property="book:author" content="https://github.com/code4craft">
-        <meta property="book:tag" content="GitBook">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
         
-        <link rel="stylesheet" href="../../gitbook/style.css">
-        
-        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="basic-list-target.html" />
+    
+
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="7.2" data-basepath="../.." data-revision="1482032579859">
-    <div class="book-header">
-    <!-- Actions Left -->
-    <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
 
-    <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+            
+                <nav role="navigation">
+                
 
-    <a href="https://github.com/code4craft/webmagic/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/code4craft/webmagic/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
 
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch1-overview/">
+            
+                <a href="../ch1-overview/">
+            
+                    
+                    Огляд WebMagic
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch1-overview/philosophy.html">
+            
+                <a href="../ch1-overview/philosophy.html">
+            
+                    
+                    Філософія
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch1-overview/architecture.html">
+            
+                <a href="../ch1-overview/architecture.html">
+            
+                    
+                    Архітектура
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch1-overview/component.html">
+            
+                <a href="../ch1-overview/component.html">
+            
+                    
+                    Компоненти
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch2-install/">
+            
+                <a href="../ch2-install/">
+            
+                    
+                    Збирання
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ch2-install/with-maven.html">
+            
+                <a href="../ch2-install/with-maven.html">
+            
+                    
+                    з використанням Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ch2-install/without-maven.html">
+            
+                <a href="../ch2-install/without-maven.html">
+            
+                    
+                    Без Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ch2-install/first-project.html">
+            
+                <a href="../ch2-install/first-project.html">
+            
+                    
+                    Перший проет
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch3-build-source/">
+            
+                <a href="../ch3-build-source/">
+            
+                    
+                    Білд з сирцевого коду
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ch3-build-source/git-repo.html">
+            
+                <a href="../ch3-build-source/git-repo.html">
+            
+                    
+                    Отримати сирці
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ch3-build-source/import-project.html">
+            
+                <a href="../ch3-build-source/import-project.html">
+            
+                    
+                    Імпорт проекту
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../ch3-build-source/compile-code.html">
+            
+                <a href="../ch3-build-source/compile-code.html">
+            
+                    
+                    Білд та запуск на прикладах
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ch4-basic-page-processor/">
+            
+                <a href="../ch4-basic-page-processor/">
+            
+                    
+                    Основні функції у пошукового робота
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../ch4-basic-page-processor/pageprocessor.html">
+            
+                <a href="../ch4-basic-page-processor/pageprocessor.html">
+            
+                    
+                    Імплементація PageProcessor -а
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../ch4-basic-page-processor/selectable.html">
+            
+                <a href="../ch4-basic-page-processor/selectable.html">
+            
+                    
+                    Послідовність селекторності з API Selectable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../ch4-basic-page-processor/results.html">
+            
+                <a href="../ch4-basic-page-processor/results.html">
+            
+                    
+                    Збереження результатів
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../ch4-basic-page-processor/spider-config.html">
+            
+                <a href="../ch4-basic-page-processor/spider-config.html">
+            
+                    
+                    Конфігурація пошукача, запуск і зупинка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../ch4-basic-page-processor/xsoup.html">
+            
+                <a href="../ch4-basic-page-processor/xsoup.html">
+            
+                    
+                    Знайомство з інструментами вилучення - екстракцією: Jsoup та Xsoup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../ch4-basic-page-processor/monitor.html">
+            
+                <a href="../ch4-basic-page-processor/monitor.html">
+            
+                    
+                    Монітор з JMX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ch5-annotation/">
+            
+                <a href="../ch5-annotation/">
+            
+                    
+                    Використання анотацій при написанні пошукача
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ch5-annotation/model.html">
+            
+                <a href="../ch5-annotation/model.html">
+            
+                    
+                    Написання класу Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ch5-annotation/targeturl.html">
+            
+                <a href="../ch5-annotation/targeturl.html">
+            
+                    
+                    TargetUrl та HelpUrl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ch5-annotation/extractby.html">
+            
+                <a href="../ch5-annotation/extractby.html">
+            
+                    
+                    @ExtractBy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../ch5-annotation/extractby-on-class.html">
+            
+                <a href="../ch5-annotation/extractby-on-class.html">
+            
+                    
+                    Використання @ExtractBy у классі
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../ch5-annotation/formatter.html">
+            
+                <a href="../ch5-annotation/formatter.html">
+            
+                    
+                    Форматування результатів
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../ch5-annotation/lifecycle.html">
+            
+                <a href="../ch5-annotation/lifecycle.html">
+            
+                    
+                    Життєвий цикл
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../ch5-annotation/after-extractor.html">
+            
+                <a href="../ch5-annotation/after-extractor.html">
+            
+                    
+                    AfterExtractor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ch6-custom-componenet/">
+            
+                <a href="../ch6-custom-componenet/">
+            
+                    
+                    Налаштування компонентів
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ch6-custom-componenet/pipeline.html">
+            
+                <a href="../ch6-custom-componenet/pipeline.html">
+            
+                    
+                    Кастомизація конвееру Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ch6-custom-componenet/scheduler.html">
+            
+                <a href="../ch6-custom-componenet/scheduler.html">
+            
+                    
+                    Планувальник Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ch6-custom-componenet/downloader.html">
+            
+                <a href="../ch6-custom-componenet/downloader.html">
+            
+                    
+                    Завантажувач Downloader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Навчальны приклади
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="basic-list-target.html">
+            
+                <a href="basic-list-target.html">
+            
+                    
+                    Основні комбінації сторінки та список деталей
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="js-render-page.html">
+            
+                <a href="js-render-page.html">
+            
+                    
+                    Обробка пошукачем сторінок на JS рендерингу
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                    Обробка пошукачем сторінки
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" >
+            
+                <span>
+            
+                    
+                    Періодична обробка пошукачем
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="ajax.html">
+            
+                <a href="ajax.html">
+            
+                    
+                    Асинхронне завантаження з ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
 
     <!-- Title -->
-    <h1><a href="../../" >WebMagic in Action</a></h1>
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Обробка пошукачем сторінок на JS рендерингу</a>
+    </h1>
 </div>
 
-    <div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Search" class="form-control" />
-    </div>
-    <ul class="summary">
-        <li>
-            <a href="https://github.com/code4craft" target="blank">About the author</a>
-        </li>
-        <li>
-            <a href="https://github.com/code4craft/webmagic/issues" target="blank">Questions and Issues</a>
-        </li>
-        <li class="divider"></li>
-        <li data-level="0" data-path="index.html">
-            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
-        </li>
-        
-            <li  data-level="1" data-path="posts/ch1-overview/README.html">
-                
-                <a href="../../posts/ch1-overview/README.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Огляд WebMagic
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="1.1" data-path="posts/ch1-overview/philosophy.html">
-                            
-                            <a href="../../posts/ch1-overview/philosophy.html">
-                                <i class="fa fa-check"></i> <b>1.1)</b> Філософія
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="1.2" data-path="posts/ch1-overview/architecture.html">
-                            
-                            <a href="../../posts/ch1-overview/architecture.html">
-                                <i class="fa fa-check"></i> <b>1.2)</b> Архітектура
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="1.3" data-path="posts/ch1-overview/component.html">
-                            
-                            <a href="../../posts/ch1-overview/component.html">
-                                <i class="fa fa-check"></i> <b>1.3)</b> Компоненти
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="2" data-path="posts/ch2-install/README.html">
-                
-                <a href="../../posts/ch2-install/README.html">
-                    <i class="fa fa-check"></i> <b>2)</b> Збирання
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
-                            
-                            <a href="../../posts/ch2-install/with-maven.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> з використанням `Maven`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="2.2" data-path="posts/ch2-install/without-maven.html">
-                            
-                            <a href="../../posts/ch2-install/without-maven.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Без `Maven`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
-                            
-                            <a href="../../posts/ch2-install/first-project.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> Перший проет
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="3" data-path="posts/ch3-build-source/README.html">
-                
-                <a href="../../posts/ch3-build-source/README.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Білд з сирцевого коду
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="3.1" data-path="posts/ch3-build-source/git-repo.html">
-                            
-                            <a href="../../posts/ch3-build-source/git-repo.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Отримати сирці
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="3.2" data-path="posts/ch3-build-source/import-project.html">
-                            
-                            <a href="../../posts/ch3-build-source/import-project.html">
-                                <i class="fa fa-check"></i> <b>3.2)</b> Імпорт проекту
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="3.3" data-path="posts/ch3-build-source/compile-code.html">
-                            
-                            <a href="../../posts/ch3-build-source/compile-code.html">
-                                <i class="fa fa-check"></i> <b>3.3)</b> Білд та запуск на прикладах
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="4" data-path="posts/ch4-basic-page-processor/README.html">
-                
-                <a href="../../posts/ch4-basic-page-processor/README.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Основні функції у пошукового робота
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="4.1" data-path="posts/ch4-basic-page-processor/pageprocessor.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/pageprocessor.html">
-                                <i class="fa fa-check"></i> <b>4.1)</b> Імплементація `PageProcessor` -а
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.2" data-path="posts/ch4-basic-page-processor/selectable.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/selectable.html">
-                                <i class="fa fa-check"></i> <b>4.2)</b> Послідовність селекторності з `API Selectable`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.3" data-path="posts/ch4-basic-page-processor/results.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/results.html">
-                                <i class="fa fa-check"></i> <b>4.3)</b> Збереження результатів
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.4" data-path="posts/ch4-basic-page-processor/spider-config.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/spider-config.html">
-                                <i class="fa fa-check"></i> <b>4.4)</b> Конфігурація пошукача, запуск і зупинка
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.5" data-path="posts/ch4-basic-page-processor/xsoup.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/xsoup.html">
-                                <i class="fa fa-check"></i> <b>4.5)</b> Знайомство з інструментами вилучення - екстракцією: Jsoup та Xsoup
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.6" data-path="posts/ch4-basic-page-processor/monitor.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/monitor.html">
-                                <i class="fa fa-check"></i> <b>4.6)</b> Монітор з `JMX`
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="5" data-path="posts/ch5-annotation/README.html">
-                
-                <a href="../../posts/ch5-annotation/README.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Використання анотацій при написанні пошукача
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="5.1" data-path="posts/ch5-annotation/model.html">
-                            
-                            <a href="../../posts/ch5-annotation/model.html">
-                                <i class="fa fa-check"></i> <b>5.1)</b> Написання класу Model
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.2" data-path="posts/ch5-annotation/targeturl.html">
-                            
-                            <a href="../../posts/ch5-annotation/targeturl.html">
-                                <i class="fa fa-check"></i> <b>5.2)</b> `TargetUrl` та `HelpUrl`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.3" data-path="posts/ch5-annotation/extractby.html">
-                            
-                            <a href="../../posts/ch5-annotation/extractby.html">
-                                <i class="fa fa-check"></i> <b>5.3)</b> `@ExtractBy`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.4" data-path="posts/ch5-annotation/extractby-on-class.html">
-                            
-                            <a href="../../posts/ch5-annotation/extractby-on-class.html">
-                                <i class="fa fa-check"></i> <b>5.4)</b> Використання `@ExtractBy` у классі
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.5" data-path="posts/ch5-annotation/formatter.html">
-                            
-                            <a href="../../posts/ch5-annotation/formatter.html">
-                                <i class="fa fa-check"></i> <b>5.5)</b> Форматування результатів
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.6" data-path="posts/ch5-annotation/lifecycle.html">
-                            
-                            <a href="../../posts/ch5-annotation/lifecycle.html">
-                                <i class="fa fa-check"></i> <b>5.6)</b> Життєвий цикл
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.7" data-path="posts/ch5-annotation/after-extractor.html">
-                            
-                            <a href="../../posts/ch5-annotation/after-extractor.html">
-                                <i class="fa fa-check"></i> <b>5.7)</b> `AfterExtractor`
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="6" data-path="posts/ch6-custom-componenet/README.html">
-                
-                <a href="../../posts/ch6-custom-componenet/README.html">
-                    <i class="fa fa-check"></i> <b>6)</b> Налаштування компонентів
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="6.1" data-path="posts/ch6-custom-componenet/pipeline.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/pipeline.html">
-                                <i class="fa fa-check"></i> <b>6.1)</b> Кастомизація конвееру `Pipeline`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="6.2" data-path="posts/ch6-custom-componenet/scheduler.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/scheduler.html">
-                                <i class="fa fa-check"></i> <b>6.2)</b> Планувальник `Scheduler`
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="6.3" data-path="posts/ch6-custom-componenet/downloader.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/downloader.html">
-                                <i class="fa fa-check"></i> <b>6.3)</b> Завантажувач `Downloader`
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="7" data-path="posts/chx-cases/README.html">
-                
-                <a href="../../posts/chx-cases/README.html">
-                    <i class="fa fa-check"></i> <b>7)</b> Навчальны приклади
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="7.1" data-path="posts/chx-cases/basic-list-target.html">
-                            
-                            <a href="../../posts/chx-cases/basic-list-target.html">
-                                <i class="fa fa-check"></i> <b>7.1)</b> Основні комбінації сторінки та список деталей
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="7.2" data-path="posts/chx-cases/js-render-page.html">
-                            
-                            <a href="../../posts/chx-cases/js-render-page.html">
-                                <i class="fa fa-check"></i> <b>7.2)</b> Обробка пошукачем сторінок на JS рендерингу
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="7.3" >
-                            
-                            <span><b>7.3)</b> Обробка пошукачем сторінки</span>
-                            
-                        </li>
-                    
-                        <li  data-level="7.4" >
-                            
-                            <span><b>7.4)</b> Періодична обробка пошукачем</span>
-                            
-                        </li>
-                    
-                        <li  data-level="7.5" data-path="posts/chx-cases/ajax.html">
-                            
-                            <a href="../../posts/chx-cases/ajax.html">
-                                <i class="fa fa-check"></i> <b>7.5)</b> Асинхронне завантаження з ajax
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-    </ul>
-</div>
 
-    <div class="book-body" tabindex="-1">
-        <div class="body-inner">
-            <div class="page-wrapper">
-                <div class="book-progress">
-    <div class="bar">
-        <div class="inner" style="width: 97.14285714285714%;min-width: 94.28571428571429%;"></div>
-    </div>
-    <div class="chapters">
-    
-        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
-    
-        <a href="../../posts/ch1-overview/README.html" title="Огляд WebMagic" class="chapter done new-chapter" data-progress="1" style="left: 2.857142857142857%;"></a>
-    
-        <a href="../../posts/ch1-overview/philosophy.html" title="Філософія" class="chapter done " data-progress="1.1" style="left: 5.714285714285714%;"></a>
-    
-        <a href="../../posts/ch1-overview/architecture.html" title="Архітектура" class="chapter done " data-progress="1.2" style="left: 8.571428571428571%;"></a>
-    
-        <a href="../../posts/ch1-overview/component.html" title="Компоненти" class="chapter done " data-progress="1.3" style="left: 11.428571428571429%;"></a>
-    
-        <a href="../../posts/ch2-install/README.html" title="Збирання" class="chapter done new-chapter" data-progress="2" style="left: 14.285714285714286%;"></a>
-    
-        <a href="../../posts/ch2-install/with-maven.html" title="з використанням `Maven`" class="chapter done " data-progress="2.1" style="left: 17.142857142857142%;"></a>
-    
-        <a href="../../posts/ch2-install/without-maven.html" title="Без `Maven`" class="chapter done " data-progress="2.2" style="left: 20%;"></a>
-    
-        <a href="../../posts/ch2-install/first-project.html" title="Перший проет" class="chapter done " data-progress="2.3" style="left: 22.857142857142858%;"></a>
-    
-        <a href="../../posts/ch3-build-source/README.html" title="Білд з сирцевого коду" class="chapter done new-chapter" data-progress="3" style="left: 25.714285714285715%;"></a>
-    
-        <a href="../../posts/ch3-build-source/git-repo.html" title="Отримати сирці" class="chapter done " data-progress="3.1" style="left: 28.571428571428573%;"></a>
-    
-        <a href="../../posts/ch3-build-source/import-project.html" title="Імпорт проекту" class="chapter done " data-progress="3.2" style="left: 31.428571428571427%;"></a>
-    
-        <a href="../../posts/ch3-build-source/compile-code.html" title="Білд та запуск на прикладах" class="chapter done " data-progress="3.3" style="left: 34.285714285714285%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/README.html" title="Основні функції у пошукового робота" class="chapter done new-chapter" data-progress="4" style="left: 37.142857142857146%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="Імплементація `PageProcessor` -а" class="chapter done " data-progress="4.1" style="left: 40%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="Послідовність селекторності з `API Selectable`" class="chapter done " data-progress="4.2" style="left: 42.857142857142854%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/results.html" title="Збереження результатів" class="chapter done " data-progress="4.3" style="left: 45.714285714285715%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="Конфігурація пошукача, запуск і зупинка" class="chapter done " data-progress="4.4" style="left: 48.57142857142857%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Знайомство з інструментами вилучення - екстракцією: Jsoup та Xsoup" class="chapter done " data-progress="4.5" style="left: 51.42857142857143%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="Монітор з `JMX`" class="chapter done " data-progress="4.6" style="left: 54.285714285714285%;"></a>
-    
-        <a href="../../posts/ch5-annotation/README.html" title="Використання анотацій при написанні пошукача" class="chapter done new-chapter" data-progress="5" style="left: 57.142857142857146%;"></a>
-    
-        <a href="../../posts/ch5-annotation/model.html" title="Написання класу Model" class="chapter done " data-progress="5.1" style="left: 60%;"></a>
-    
-        <a href="../../posts/ch5-annotation/targeturl.html" title="`TargetUrl` та `HelpUrl`" class="chapter done " data-progress="5.2" style="left: 62.857142857142854%;"></a>
-    
-        <a href="../../posts/ch5-annotation/extractby.html" title="`@ExtractBy`" class="chapter done " data-progress="5.3" style="left: 65.71428571428571%;"></a>
-    
-        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="Використання `@ExtractBy` у классі" class="chapter done " data-progress="5.4" style="left: 68.57142857142857%;"></a>
-    
-        <a href="../../posts/ch5-annotation/formatter.html" title="Форматування результатів" class="chapter done " data-progress="5.5" style="left: 71.42857142857143%;"></a>
-    
-        <a href="../../posts/ch5-annotation/lifecycle.html" title="Життєвий цикл" class="chapter done " data-progress="5.6" style="left: 74.28571428571429%;"></a>
-    
-        <a href="../../posts/ch5-annotation/after-extractor.html" title="`AfterExtractor`" class="chapter done " data-progress="5.7" style="left: 77.14285714285714%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/README.html" title="Налаштування компонентів" class="chapter done new-chapter" data-progress="6" style="left: 80%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="Кастомизація конвееру `Pipeline`" class="chapter done " data-progress="6.1" style="left: 82.85714285714286%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="Планувальник `Scheduler`" class="chapter done " data-progress="6.2" style="left: 85.71428571428571%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/downloader.html" title="Завантажувач `Downloader`" class="chapter done " data-progress="6.3" style="left: 88.57142857142857%;"></a>
-    
-        <a href="../../posts/chx-cases/README.html" title="Навчальны приклади" class="chapter done new-chapter" data-progress="7" style="left: 91.42857142857143%;"></a>
-    
-        <a href="../../posts/chx-cases/basic-list-target.html" title="Основні комбінації сторінки та список деталей" class="chapter done " data-progress="7.1" style="left: 94.28571428571429%;"></a>
-    
-        <a href="../../posts/chx-cases/js-render-page.html" title="Обробка пошукачем сторінок на JS рендерингу" class="chapter done " data-progress="7.2" style="left: 97.14285714285714%;"></a>
-    
-        <a href="../../posts/chx-cases/ajax.html" title="Асинхронне завантаження з ajax" class="chapter  " data-progress="7.5" style="left: 100%;"></a>
-    
-    </div>
-</div>
 
-                <div class="page-inner">
-                
-                    <section class="normal" id="section-gitbook_107">
-                    
-                        <h3 id="-js-">Обробка пошукачем сторінок на JS рендерингу</h3>
-<p>З незмінною популярністю технології AJAX та поява таких односторінкових програмних фреймворків як AngularJS, відтепер популярність JS рендеринга сторінок зростає все більше і більше. Для пошукових роботів, ця сторінка більше проблемна: якщо просто витягти вміст HTML, тоді часто не можуть отримати достовірну інформацію. Так як же мати справу з цієї сторінкою?</p>
-<p>В цілому існує два підходи:</p>
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x43E;&#x431;&#x440;&#x43E;&#x431;&#x43A;&#x430;-&#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x435;&#x43C;-&#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A;-&#x43D;&#x430;-js-&#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x443;">&#x41E;&#x431;&#x440;&#x43E;&#x431;&#x43A;&#x430; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x435;&#x43C; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A; &#x43D;&#x430; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x443;</h3>
+<p>&#x417; &#x43D;&#x435;&#x437;&#x43C;&#x456;&#x43D;&#x43D;&#x43E;&#x44E; &#x43F;&#x43E;&#x43F;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x456;&#x441;&#x442;&#x44E; &#x442;&#x435;&#x445;&#x43D;&#x43E;&#x43B;&#x43E;&#x433;&#x456;&#x457; AJAX &#x442;&#x430; &#x43F;&#x43E;&#x44F;&#x432;&#x430; &#x442;&#x430;&#x43A;&#x438;&#x445; &#x43E;&#x434;&#x43D;&#x43E;&#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x43E;&#x432;&#x438;&#x445; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43D;&#x438;&#x445; &#x444;&#x440;&#x435;&#x439;&#x43C;&#x432;&#x43E;&#x440;&#x43A;&#x456;&#x432; &#x44F;&#x43A; AngularJS, &#x432;&#x456;&#x434;&#x442;&#x435;&#x43F;&#x435;&#x440; &#x43F;&#x43E;&#x43F;&#x443;&#x43B;&#x44F;&#x440;&#x43D;&#x456;&#x441;&#x442;&#x44C; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x430; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A; &#x437;&#x440;&#x43E;&#x441;&#x442;&#x430;&#x454; &#x432;&#x441;&#x435; &#x431;&#x456;&#x43B;&#x44C;&#x448;&#x435; &#x456; &#x431;&#x456;&#x43B;&#x44C;&#x448;&#x435;. &#x414;&#x43B;&#x44F; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x43E;&#x432;&#x438;&#x445; &#x440;&#x43E;&#x431;&#x43E;&#x442;&#x456;&#x432;, &#x446;&#x44F; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x430; &#x431;&#x456;&#x43B;&#x44C;&#x448;&#x435; &#x43F;&#x440;&#x43E;&#x431;&#x43B;&#x435;&#x43C;&#x43D;&#x430;: &#x44F;&#x43A;&#x449;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x432;&#x438;&#x442;&#x44F;&#x433;&#x442;&#x438; &#x432;&#x43C;&#x456;&#x441;&#x442; HTML, &#x442;&#x43E;&#x434;&#x456; &#x447;&#x430;&#x441;&#x442;&#x43E; &#x43D;&#x435; &#x43C;&#x43E;&#x436;&#x443;&#x442;&#x44C; &#x43E;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x442;&#x438; &#x434;&#x43E;&#x441;&#x442;&#x43E;&#x432;&#x456;&#x440;&#x43D;&#x443; &#x456;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x456;&#x44E;. &#x422;&#x430;&#x43A; &#x44F;&#x43A; &#x436;&#x435; &#x43C;&#x430;&#x442;&#x438; &#x441;&#x43F;&#x440;&#x430;&#x432;&#x443; &#x437; &#x446;&#x456;&#x454;&#x457; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x43E;&#x44E;?</p>
+<p>&#x412; &#x446;&#x456;&#x43B;&#x43E;&#x43C;&#x443; &#x456;&#x441;&#x43D;&#x443;&#x454; &#x434;&#x432;&#x430; &#x43F;&#x456;&#x434;&#x445;&#x43E;&#x434;&#x438;:</p>
 <ol>
-<li>На етапі повзання, пошукач запускає ядро браузера та рендерить (прорисуовуеє) сторінки з викорисанням JS, а потім починає по ній повзати. Цей аспект відповідних інструментів <code>Selenium</code>, <code>HtmlUnit</code> або <code>PhantomJs</code>. Хоча ці інструменти ефективні, але в той же час ще не такі стабільні. Перевага полягає в написанні правил, як і статичній сторінці.</li>
-<li>При JS рендерингі сторінки данні приходять вкінці і в основному отримуються через AJAX. Тому аналіз AJAX запиту дасть відповідні дані, що є більш доцільним підходом. А по відношенню до стилю сторінки, то малоймовірно що інтерфейс зміниться. Недоліком є відносно складний процес, щоб знайти запит і змоделювати, котре вимагає великої кількості аналітичного досвіду.</li>
+<li>&#x41D;&#x430; &#x435;&#x442;&#x430;&#x43F;&#x456; &#x43F;&#x43E;&#x432;&#x437;&#x430;&#x43D;&#x43D;&#x44F;, &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447; &#x437;&#x430;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x454; &#x44F;&#x434;&#x440;&#x43E; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x430; &#x442;&#x430; &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x442;&#x44C; (&#x43F;&#x440;&#x43E;&#x440;&#x438;&#x441;&#x443;&#x43E;&#x432;&#x443;&#x435;&#x454;) &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438; &#x437; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x430;&#x43D;&#x43D;&#x44F;&#x43C; JS, &#x430; &#x43F;&#x43E;&#x442;&#x456;&#x43C; &#x43F;&#x43E;&#x447;&#x438;&#x43D;&#x430;&#x454; &#x43F;&#x43E; &#x43D;&#x456;&#x439; &#x43F;&#x43E;&#x432;&#x437;&#x430;&#x442;&#x438;. &#x426;&#x435;&#x439; &#x430;&#x441;&#x43F;&#x435;&#x43A;&#x442; &#x432;&#x456;&#x434;&#x43F;&#x43E;&#x432;&#x456;&#x434;&#x43D;&#x438;&#x445; &#x456;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x456;&#x432; <code>Selenium</code>, <code>HtmlUnit</code> &#x430;&#x431;&#x43E; <code>PhantomJs</code>. &#x425;&#x43E;&#x447;&#x430; &#x446;&#x456; &#x456;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x438; &#x435;&#x444;&#x435;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x456;, &#x430;&#x43B;&#x435; &#x432; &#x442;&#x43E;&#x439; &#x436;&#x435; &#x447;&#x430;&#x441; &#x449;&#x435; &#x43D;&#x435; &#x442;&#x430;&#x43A;&#x456; &#x441;&#x442;&#x430;&#x431;&#x456;&#x43B;&#x44C;&#x43D;&#x456;. &#x41F;&#x435;&#x440;&#x435;&#x432;&#x430;&#x433;&#x430; &#x43F;&#x43E;&#x43B;&#x44F;&#x433;&#x430;&#x454; &#x432; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x43D;&#x456; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;, &#x44F;&#x43A; &#x456; &#x441;&#x442;&#x430;&#x442;&#x438;&#x447;&#x43D;&#x456;&#x439; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x446;&#x456;.</li>
+<li>&#x41F;&#x440;&#x438; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x456; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x456; &#x43F;&#x440;&#x438;&#x445;&#x43E;&#x434;&#x44F;&#x442;&#x44C; &#x432;&#x43A;&#x456;&#x43D;&#x446;&#x456; &#x456; &#x432; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x43C;&#x443; &#x43E;&#x442;&#x440;&#x438;&#x43C;&#x443;&#x44E;&#x442;&#x44C;&#x441;&#x44F; &#x447;&#x435;&#x440;&#x435;&#x437; AJAX. &#x422;&#x43E;&#x43C;&#x443; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437; AJAX &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443; &#x434;&#x430;&#x441;&#x442;&#x44C; &#x432;&#x456;&#x434;&#x43F;&#x43E;&#x432;&#x456;&#x434;&#x43D;&#x456; &#x434;&#x430;&#x43D;&#x456;, &#x449;&#x43E; &#x454; &#x431;&#x456;&#x43B;&#x44C;&#x448; &#x434;&#x43E;&#x446;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x43C; &#x43F;&#x456;&#x434;&#x445;&#x43E;&#x434;&#x43E;&#x43C;. &#x410; &#x43F;&#x43E; &#x432;&#x456;&#x434;&#x43D;&#x43E;&#x448;&#x435;&#x43D;&#x43D;&#x44E; &#x434;&#x43E; &#x441;&#x442;&#x438;&#x43B;&#x44E; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;, &#x442;&#x43E; &#x43C;&#x430;&#x43B;&#x43E;&#x439;&#x43C;&#x43E;&#x432;&#x456;&#x440;&#x43D;&#x43E; &#x449;&#x43E; &#x456;&#x43D;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441; &#x437;&#x43C;&#x456;&#x43D;&#x438;&#x442;&#x44C;&#x441;&#x44F;. &#x41D;&#x435;&#x434;&#x43E;&#x43B;&#x456;&#x43A;&#x43E;&#x43C; &#x454; &#x432;&#x456;&#x434;&#x43D;&#x43E;&#x441;&#x43D;&#x43E; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;, &#x449;&#x43E;&#x431; &#x437;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x437;&#x430;&#x43F;&#x438;&#x442; &#x456; &#x437;&#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x44E;&#x432;&#x430;&#x442;&#x438;, &#x43A;&#x43E;&#x442;&#x440;&#x435; &#x432;&#x438;&#x43C;&#x430;&#x433;&#x430;&#x454; &#x432;&#x435;&#x43B;&#x438;&#x43A;&#x43E;&#x457; &#x43A;&#x456;&#x43B;&#x44C;&#x43A;&#x43E;&#x441;&#x442;&#x456; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x442;&#x438;&#x447;&#x43D;&#x43E;&#x433;&#x43E; &#x434;&#x43E;&#x441;&#x432;&#x456;&#x434;&#x443;.</li>
 </ol>
-<p>На мій погляд, при порівнянні двох способів для разових або дрібносерійних налаштуваннях пошукача у першиму підході економить час і зусилля. Але для довгострокового, великомасштабного проекту другий варіант буде ідеальним. Для деяких сайтів чи навіть деяких JS технологій пошукач може бути заплутаним, і вцьому випадку - перший спосіб в основному є панацеєю, в той час як другий буде дуже складним.</p>
-<p>Для першого способу - <code>webmagic-selenium</code>  що визначається як <code>Downloader</code> для завантаження сторінки, тобто рендерить ядром браузера. Конфігурація Selenium-а є відносно складною, але з версією платформи і не надто стабільний рішення. Детальніше дивіться цей блог: <a href="http://my.oschina.net/flashsword/blog/147334" target="_blank">використання Selenium для завантаження динамічних сторінок та їх обробки пошукачем</a></p>
-<p>Другий спосіб, і я сподіваюся, що врешті-решт ви подалаєте: розбір оригінальної сторінки  JS рендеринга, що це не так складно. Сайт китайською про AngularJS <a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a> в якості прикладу.</p>
-<h4 id="1-js-">1 Як визначити JS рендеринга</h4>
-<p>Визначити сторінку з JS рендерингом відносно простим спосібом: в браузері переглянути безпосередньо сирцевий код(під Windows Ctrl + U, під Mac командою + Alt + U). Якщо ефективної інформації немає - майже напевно Js рендеринг.</p>
+<p>&#x41D;&#x430; &#x43C;&#x456;&#x439; &#x43F;&#x43E;&#x433;&#x43B;&#x44F;&#x434;, &#x43F;&#x440;&#x438; &#x43F;&#x43E;&#x440;&#x456;&#x432;&#x43D;&#x44F;&#x43D;&#x43D;&#x456; &#x434;&#x432;&#x43E;&#x445; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x456;&#x432; &#x434;&#x43B;&#x44F; &#x440;&#x430;&#x437;&#x43E;&#x432;&#x438;&#x445; &#x430;&#x431;&#x43E; &#x434;&#x440;&#x456;&#x431;&#x43D;&#x43E;&#x441;&#x435;&#x440;&#x456;&#x439;&#x43D;&#x438;&#x445; &#x43D;&#x430;&#x43B;&#x430;&#x448;&#x442;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;&#x445; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x430; &#x443; &#x43F;&#x435;&#x440;&#x448;&#x438;&#x43C;&#x443; &#x43F;&#x456;&#x434;&#x445;&#x43E;&#x434;&#x456; &#x435;&#x43A;&#x43E;&#x43D;&#x43E;&#x43C;&#x438;&#x442;&#x44C; &#x447;&#x430;&#x441; &#x456; &#x437;&#x443;&#x441;&#x438;&#x43B;&#x43B;&#x44F;. &#x410;&#x43B;&#x435; &#x434;&#x43B;&#x44F; &#x434;&#x43E;&#x432;&#x433;&#x43E;&#x441;&#x442;&#x440;&#x43E;&#x43A;&#x43E;&#x432;&#x43E;&#x433;&#x43E;, &#x432;&#x435;&#x43B;&#x438;&#x43A;&#x43E;&#x43C;&#x430;&#x441;&#x448;&#x442;&#x430;&#x431;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x435;&#x43A;&#x442;&#x443; &#x434;&#x440;&#x443;&#x433;&#x438;&#x439; &#x432;&#x430;&#x440;&#x456;&#x430;&#x43D;&#x442; &#x431;&#x443;&#x434;&#x435; &#x456;&#x434;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x438;&#x43C;. &#x414;&#x43B;&#x44F; &#x434;&#x435;&#x44F;&#x43A;&#x438;&#x445; &#x441;&#x430;&#x439;&#x442;&#x456;&#x432; &#x447;&#x438; &#x43D;&#x430;&#x432;&#x456;&#x442;&#x44C; &#x434;&#x435;&#x44F;&#x43A;&#x438;&#x445; JS &#x442;&#x435;&#x445;&#x43D;&#x43E;&#x43B;&#x43E;&#x433;&#x456;&#x439; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447; &#x43C;&#x43E;&#x436;&#x435; &#x431;&#x443;&#x442;&#x438; &#x437;&#x430;&#x43F;&#x43B;&#x443;&#x442;&#x430;&#x43D;&#x438;&#x43C;, &#x456; &#x432;&#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x432;&#x438;&#x43F;&#x430;&#x434;&#x43A;&#x443; - &#x43F;&#x435;&#x440;&#x448;&#x438;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x456;&#x431; &#x432; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x43C;&#x443; &#x454; &#x43F;&#x430;&#x43D;&#x430;&#x446;&#x435;&#x454;&#x44E;, &#x432; &#x442;&#x43E;&#x439; &#x447;&#x430;&#x441; &#x44F;&#x43A; &#x434;&#x440;&#x443;&#x433;&#x438;&#x439; &#x431;&#x443;&#x434;&#x435; &#x434;&#x443;&#x436;&#x435; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x438;&#x43C;.</p>
+<p>&#x414;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x448;&#x43E;&#x433;&#x43E; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x443; - <code>webmagic-selenium</code>  &#x449;&#x43E; &#x432;&#x438;&#x437;&#x43D;&#x430;&#x447;&#x430;&#x454;&#x442;&#x44C;&#x441;&#x44F; &#x44F;&#x43A; <code>Downloader</code> &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x432;&#x430;&#x43D;&#x442;&#x430;&#x436;&#x435;&#x43D;&#x43D;&#x44F; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;, &#x442;&#x43E;&#x431;&#x442;&#x43E; &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x44F;&#x434;&#x440;&#x43E;&#x43C; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x430;. &#x41A;&#x43E;&#x43D;&#x444;&#x456;&#x433;&#x443;&#x440;&#x430;&#x446;&#x456;&#x44F; Selenium-&#x430; &#x454; &#x432;&#x456;&#x434;&#x43D;&#x43E;&#x441;&#x43D;&#x43E; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x43E;&#x44E;, &#x430;&#x43B;&#x435; &#x437; &#x432;&#x435;&#x440;&#x441;&#x456;&#x454;&#x44E; &#x43F;&#x43B;&#x430;&#x442;&#x444;&#x43E;&#x440;&#x43C;&#x438; &#x456; &#x43D;&#x435; &#x43D;&#x430;&#x434;&#x442;&#x43E; &#x441;&#x442;&#x430;&#x431;&#x456;&#x43B;&#x44C;&#x43D;&#x438;&#x439; &#x440;&#x456;&#x448;&#x435;&#x43D;&#x43D;&#x44F;. &#x414;&#x435;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x456;&#x448;&#x435; &#x434;&#x438;&#x432;&#x456;&#x442;&#x44C;&#x441;&#x44F; &#x446;&#x435;&#x439; &#x431;&#x43B;&#x43E;&#x433;: <a href="http://my.oschina.net/flashsword/blog/147334" target="_blank">&#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x430;&#x43D;&#x43D;&#x44F; Selenium &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x432;&#x430;&#x43D;&#x442;&#x430;&#x436;&#x435;&#x43D;&#x43D;&#x44F; &#x434;&#x438;&#x43D;&#x430;&#x43C;&#x456;&#x447;&#x43D;&#x438;&#x445; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A; &#x442;&#x430; &#x457;&#x445; &#x43E;&#x431;&#x440;&#x43E;&#x431;&#x43A;&#x438; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x435;&#x43C;</a></p>
+<p>&#x414;&#x440;&#x443;&#x433;&#x438;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x456;&#x431;, &#x456; &#x44F; &#x441;&#x43F;&#x43E;&#x434;&#x456;&#x432;&#x430;&#x44E;&#x441;&#x44F;, &#x449;&#x43E; &#x432;&#x440;&#x435;&#x448;&#x442;&#x456;-&#x440;&#x435;&#x448;&#x442; &#x432;&#x438; &#x43F;&#x43E;&#x434;&#x430;&#x43B;&#x430;&#x454;&#x442;&#x435;: &#x440;&#x43E;&#x437;&#x431;&#x456;&#x440; &#x43E;&#x440;&#x438;&#x433;&#x456;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x457; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;  JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x430;, &#x449;&#x43E; &#x446;&#x435; &#x43D;&#x435; &#x442;&#x430;&#x43A; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x43E;. &#x421;&#x430;&#x439;&#x442; &#x43A;&#x438;&#x442;&#x430;&#x439;&#x441;&#x44C;&#x43A;&#x43E;&#x44E; &#x43F;&#x440;&#x43E; AngularJS <a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a> &#x432; &#x44F;&#x43A;&#x43E;&#x441;&#x442;&#x456; &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x443;.</p>
+<h4 id="1-&#x44F;&#x43A;-&#x432;&#x438;&#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x438;-js-&#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x430;">1 &#x42F;&#x43A; &#x432;&#x438;&#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x438; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x430;</h4>
+<p>&#x412;&#x438;&#x437;&#x43D;&#x430;&#x447;&#x438;&#x442;&#x438; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x443; &#x437; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;&#x43E;&#x43C; &#x432;&#x456;&#x434;&#x43D;&#x43E;&#x441;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x438;&#x43C; &#x441;&#x43F;&#x43E;&#x441;&#x456;&#x431;&#x43E;&#x43C;: &#x432; &#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x456; &#x43F;&#x435;&#x440;&#x435;&#x433;&#x43B;&#x44F;&#x43D;&#x443;&#x442;&#x438; &#x431;&#x435;&#x437;&#x43F;&#x43E;&#x441;&#x435;&#x440;&#x435;&#x434;&#x43D;&#x44C;&#x43E; &#x441;&#x438;&#x440;&#x446;&#x435;&#x432;&#x438;&#x439; &#x43A;&#x43E;&#x434;(&#x43F;&#x456;&#x434; Windows Ctrl + U, &#x43F;&#x456;&#x434; Mac &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43E;&#x44E; + Alt + U). &#x42F;&#x43A;&#x449;&#x43E; &#x435;&#x444;&#x435;&#x43A;&#x442;&#x438;&#x432;&#x43D;&#x43E;&#x457; &#x456;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x456;&#x457; &#x43D;&#x435;&#x43C;&#x430;&#x454; - &#x43C;&#x430;&#x439;&#x436;&#x435; &#x43D;&#x430;&#x43F;&#x435;&#x432;&#x43D;&#x43E; Js &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;.</p>
 <p><img src="http://webmagic.qiniudn.com/oscimages/214310_cMYk_190591.png" alt="angular-view"></p>
 <p><img src="http://webmagic.qiniudn.com/oscimages/214226_8s1v_190591.png" alt="angular-source"></p>
-<p>У цьому прикладі заголовок сторінки “有孚计算机网络-前端攻城师” (змінна комп&#39;ютерна мережа - front-end відділ) не можна знайдений в вихідному коді, тому робимо висновок - використовується JS рендеринг, і ці дані отримані по AJAX.</p>
-<h4 id="2-request-">2 Аналіз request запросів</h4>
-<p>Тут ми входимо в найважчу частину: пошук запиту даних. В цьому нам допоможуть інструменти розробка для перегляду запитів веб-браузера.</p>
-<p>На прикладі Chome ми відкриваємо &quot;Developer Tools&quot; (під Windows, це F12, під Mac це command + Alt + I), потім оновіть сторінку (там можуть бути випадаюче метю або сторінки, та т.п., може ініціювати нові операції запросу даних), і не забудьте зберегти цей запрос, він використовується для запиту - тому аналізуйте його!</p>
-<p>Цей крок вимагає трохи терпіння, але це не з нізвідки. По-перше, що допоможе нам - зверху меню Сортування Sort (All, Document ()Всі, документувати) і інші варіанти). Якщо це звичайний AJAX, з&#39;являються під етикетою <code>XHR</code>, запит JSONP під <code>Scripts</code> етикетки, це є два найбільш поширених типа даних.</p>
-<p>Після цього ви можете подивитися на дані для визначення розміру, результати, як правило, - інтерфейс через якмй проходить повернення даних. Зрештою в основному покладаються на досвід, ось наприклад &quot;latest? P = 1 &amp; s = 20&quot; виглядає дуже підозріло ...</p>
+<p>&#x423; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x456; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438; &#x201C;&#x6709;&#x5B5A;&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;-&#x524D;&#x7AEF;&#x653B;&#x57CE;&#x5E08;&#x201D; (&#x437;&#x43C;&#x456;&#x43D;&#x43D;&#x430; &#x43A;&#x43E;&#x43C;&#x43F;&apos;&#x44E;&#x442;&#x435;&#x440;&#x43D;&#x430; &#x43C;&#x435;&#x440;&#x435;&#x436;&#x430; - front-end &#x432;&#x456;&#x434;&#x434;&#x456;&#x43B;) &#x43D;&#x435; &#x43C;&#x43E;&#x436;&#x43D;&#x430; &#x437;&#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x432;&#x438;&#x445;&#x456;&#x434;&#x43D;&#x43E;&#x43C;&#x443; &#x43A;&#x43E;&#x434;&#x456;, &#x442;&#x43E;&#x43C;&#x443; &#x440;&#x43E;&#x431;&#x438;&#x43C;&#x43E; &#x432;&#x438;&#x441;&#x43D;&#x43E;&#x432;&#x43E;&#x43A; - &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x454;&#x442;&#x44C;&#x441;&#x44F; JS &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433;, &#x456; &#x446;&#x456; &#x434;&#x430;&#x43D;&#x456; &#x43E;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x43D;&#x456; &#x43F;&#x43E; AJAX.</p>
+<h4 id="2-&#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;-request-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x456;&#x432;">2 &#x410;&#x43D;&#x430;&#x43B;&#x456;&#x437; request &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x456;&#x432;</h4>
+<p>&#x422;&#x443;&#x442; &#x43C;&#x438; &#x432;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x432; &#x43D;&#x430;&#x439;&#x432;&#x430;&#x436;&#x447;&#x443; &#x447;&#x430;&#x441;&#x442;&#x438;&#x43D;&#x443;: &#x43F;&#x43E;&#x448;&#x443;&#x43A; &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443; &#x434;&#x430;&#x43D;&#x438;&#x445;. &#x412; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x43D;&#x430;&#x43C; &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x43E;&#x436;&#x443;&#x442;&#x44C; &#x456;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x438; &#x440;&#x43E;&#x437;&#x440;&#x43E;&#x431;&#x43A;&#x430; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x433;&#x43B;&#x44F;&#x434;&#x443; &#x437;&#x430;&#x43F;&#x438;&#x442;&#x456;&#x432; &#x432;&#x435;&#x431;-&#x431;&#x440;&#x430;&#x443;&#x437;&#x435;&#x440;&#x430;.</p>
+<p>&#x41D;&#x430; &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x456; Chome &#x43C;&#x438; &#x432;&#x456;&#x434;&#x43A;&#x440;&#x438;&#x432;&#x430;&#x454;&#x43C;&#x43E; &quot;Developer Tools&quot; (&#x43F;&#x456;&#x434; Windows, &#x446;&#x435; F12, &#x43F;&#x456;&#x434; Mac &#x446;&#x435; command + Alt + I), &#x43F;&#x43E;&#x442;&#x456;&#x43C; &#x43E;&#x43D;&#x43E;&#x432;&#x456;&#x442;&#x44C; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x443; (&#x442;&#x430;&#x43C; &#x43C;&#x43E;&#x436;&#x443;&#x442;&#x44C; &#x431;&#x443;&#x442;&#x438; &#x432;&#x438;&#x43F;&#x430;&#x434;&#x430;&#x44E;&#x447;&#x435; &#x43C;&#x435;&#x442;&#x44E; &#x430;&#x431;&#x43E; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;, &#x442;&#x430; &#x442;.&#x43F;., &#x43C;&#x43E;&#x436;&#x435; &#x456;&#x43D;&#x456;&#x446;&#x456;&#x44E;&#x432;&#x430;&#x442;&#x438; &#x43D;&#x43E;&#x432;&#x456; &#x43E;&#x43F;&#x435;&#x440;&#x430;&#x446;&#x456;&#x457; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x443; &#x434;&#x430;&#x43D;&#x438;&#x445;), &#x456; &#x43D;&#x435; &#x437;&#x430;&#x431;&#x443;&#x434;&#x44C;&#x442;&#x435; &#x437;&#x431;&#x435;&#x440;&#x435;&#x433;&#x442;&#x438; &#x446;&#x435;&#x439; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;, &#x432;&#x456;&#x43D; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x454;&#x442;&#x44C;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443; - &#x442;&#x43E;&#x43C;&#x443; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x443;&#x439;&#x442;&#x435; &#x439;&#x43E;&#x433;&#x43E;!</p>
+<p>&#x426;&#x435;&#x439; &#x43A;&#x440;&#x43E;&#x43A; &#x432;&#x438;&#x43C;&#x430;&#x433;&#x430;&#x454; &#x442;&#x440;&#x43E;&#x445;&#x438; &#x442;&#x435;&#x440;&#x43F;&#x456;&#x43D;&#x43D;&#x44F;, &#x430;&#x43B;&#x435; &#x446;&#x435; &#x43D;&#x435; &#x437; &#x43D;&#x456;&#x437;&#x432;&#x456;&#x434;&#x43A;&#x438;. &#x41F;&#x43E;-&#x43F;&#x435;&#x440;&#x448;&#x435;, &#x449;&#x43E; &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x43E;&#x436;&#x435; &#x43D;&#x430;&#x43C; - &#x437;&#x432;&#x435;&#x440;&#x445;&#x443; &#x43C;&#x435;&#x43D;&#x44E; &#x421;&#x43E;&#x440;&#x442;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F; Sort (All, Document ()&#x412;&#x441;&#x456;, &#x434;&#x43E;&#x43A;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x443;&#x432;&#x430;&#x442;&#x438;) &#x456; &#x456;&#x43D;&#x448;&#x456; &#x432;&#x430;&#x440;&#x456;&#x430;&#x43D;&#x442;&#x438;). &#x42F;&#x43A;&#x449;&#x43E; &#x446;&#x435; &#x437;&#x432;&#x438;&#x447;&#x430;&#x439;&#x43D;&#x438;&#x439; AJAX, &#x437;&apos;&#x44F;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x44C;&#x441;&#x44F; &#x43F;&#x456;&#x434; &#x435;&#x442;&#x438;&#x43A;&#x435;&#x442;&#x43E;&#x44E; <code>XHR</code>, &#x437;&#x430;&#x43F;&#x438;&#x442; JSONP &#x43F;&#x456;&#x434; <code>Scripts</code> &#x435;&#x442;&#x438;&#x43A;&#x435;&#x442;&#x43A;&#x438;, &#x446;&#x435; &#x454; &#x434;&#x432;&#x430; &#x43D;&#x430;&#x439;&#x431;&#x456;&#x43B;&#x44C;&#x448; &#x43F;&#x43E;&#x448;&#x438;&#x440;&#x435;&#x43D;&#x438;&#x445; &#x442;&#x438;&#x43F;&#x430; &#x434;&#x430;&#x43D;&#x438;&#x445;.</p>
+<p>&#x41F;&#x456;&#x441;&#x43B;&#x44F; &#x446;&#x44C;&#x43E;&#x433;&#x43E; &#x432;&#x438; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43F;&#x43E;&#x434;&#x438;&#x432;&#x438;&#x442;&#x438;&#x441;&#x44F; &#x43D;&#x430; &#x434;&#x430;&#x43D;&#x456; &#x434;&#x43B;&#x44F; &#x432;&#x438;&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x43D;&#x44F; &#x440;&#x43E;&#x437;&#x43C;&#x456;&#x440;&#x443;, &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x438;, &#x44F;&#x43A; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x43E;, - &#x456;&#x43D;&#x442;&#x435;&#x440;&#x444;&#x435;&#x439;&#x441; &#x447;&#x435;&#x440;&#x435;&#x437; &#x44F;&#x43A;&#x43C;&#x439; &#x43F;&#x440;&#x43E;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x44C; &#x43F;&#x43E;&#x432;&#x435;&#x440;&#x43D;&#x435;&#x43D;&#x43D;&#x44F; &#x434;&#x430;&#x43D;&#x438;&#x445;. &#x417;&#x440;&#x435;&#x448;&#x442;&#x43E;&#x44E; &#x432; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x43C;&#x443; &#x43F;&#x43E;&#x43A;&#x43B;&#x430;&#x434;&#x430;&#x44E;&#x442;&#x44C;&#x441;&#x44F; &#x43D;&#x430; &#x434;&#x43E;&#x441;&#x432;&#x456;&#x434;, &#x43E;&#x441;&#x44C; &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434; &quot;latest? P = 1 &amp; s = 20&quot; &#x432;&#x438;&#x433;&#x43B;&#x44F;&#x434;&#x430;&#x454; &#x434;&#x443;&#x436;&#x435; &#x43F;&#x456;&#x434;&#x43E;&#x437;&#x440;&#x456;&#x43B;&#x43E; ...</p>
 <p><img src="http://webmagic.qiniudn.com/oscimages/233924_6rXz_190591.png" alt="angular-ajax-list"></p>
-<p>Для отримання підозрілого адреси, на цей раз можна подивитися на те, що є тілом відповіді. Доки не ясно, інструментами розробника дивимося URL <code>http://angularjs.cn/api/article/latest?p=1&amp;s=20</code> та копіюється в адресний рядок, запит ще раз (якщо для Chrome - то рекомендуємо встановити додаток jsonviewer, з ним легко побачити AJAX результати ). Дивіться результати, здається, що ми хочемо знайти.</p>
+<p>&#x414;&#x43B;&#x44F; &#x43E;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x43D;&#x43D;&#x44F; &#x43F;&#x456;&#x434;&#x43E;&#x437;&#x440;&#x456;&#x43B;&#x43E;&#x433;&#x43E; &#x430;&#x434;&#x440;&#x435;&#x441;&#x438;, &#x43D;&#x430; &#x446;&#x435;&#x439; &#x440;&#x430;&#x437; &#x43C;&#x43E;&#x436;&#x43D;&#x430; &#x43F;&#x43E;&#x434;&#x438;&#x432;&#x438;&#x442;&#x438;&#x441;&#x44F; &#x43D;&#x430; &#x442;&#x435;, &#x449;&#x43E; &#x454; &#x442;&#x456;&#x43B;&#x43E;&#x43C; &#x432;&#x456;&#x434;&#x43F;&#x43E;&#x432;&#x456;&#x434;&#x456;. &#x414;&#x43E;&#x43A;&#x438; &#x43D;&#x435; &#x44F;&#x441;&#x43D;&#x43E;, &#x456;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; &#x440;&#x43E;&#x437;&#x440;&#x43E;&#x431;&#x43D;&#x438;&#x43A;&#x430; &#x434;&#x438;&#x432;&#x438;&#x43C;&#x43E;&#x441;&#x44F; URL <code>http://angularjs.cn/api/article/latest?p=1&amp;s=20</code> &#x442;&#x430; &#x43A;&#x43E;&#x43F;&#x456;&#x44E;&#x454;&#x442;&#x44C;&#x441;&#x44F; &#x432; &#x430;&#x434;&#x440;&#x435;&#x441;&#x43D;&#x438;&#x439; &#x440;&#x44F;&#x434;&#x43E;&#x43A;, &#x437;&#x430;&#x43F;&#x438;&#x442; &#x449;&#x435; &#x440;&#x430;&#x437; (&#x44F;&#x43A;&#x449;&#x43E; &#x434;&#x43B;&#x44F; Chrome - &#x442;&#x43E; &#x440;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x454;&#x43C;&#x43E; &#x432;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x438;&#x442;&#x438; &#x434;&#x43E;&#x434;&#x430;&#x442;&#x43E;&#x43A; jsonviewer, &#x437; &#x43D;&#x438;&#x43C; &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x43F;&#x43E;&#x431;&#x430;&#x447;&#x438;&#x442;&#x438; AJAX &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x438; ). &#x414;&#x438;&#x432;&#x456;&#x442;&#x44C;&#x441;&#x44F; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x438;, &#x437;&#x434;&#x430;&#x454;&#x442;&#x44C;&#x441;&#x44F;, &#x449;&#x43E; &#x43C;&#x438; &#x445;&#x43E;&#x447;&#x435;&#x43C;&#x43E; &#x437;&#x43D;&#x430;&#x439;&#x442;&#x438;.</p>
 <p><img src="http://webmagic.qiniudn.com/oscimages/235310_8gHe_190591.png" alt="json"></p>
-<p>Таким же чином, ми входимо в сторінку детальних записів, та легко знайти конкретний зміст запиту request <code>http://angularjs.cn/api/article/A0y2</code>.</p>
-<h4 id="3-">3 Програмування</h4>
-<p>Нагадаємо, що попередньо маємо списк цільових сторінок + приклади. Знаходемо цей запит аналогічно попередньому, але замінюється списком способів -AJAX у режимі AJAX. Данні режим AJAX повертаються в форматі JSON. Ну, ми все ще можемо використовувати спосіб як і минулого разу - обробляти як дві частини сторінки:</p>
+<p>&#x422;&#x430;&#x43A;&#x438;&#x43C; &#x436;&#x435; &#x447;&#x438;&#x43D;&#x43E;&#x43C;, &#x43C;&#x438; &#x432;&#x445;&#x43E;&#x434;&#x438;&#x43C;&#x43E; &#x432; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x443; &#x434;&#x435;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x438;&#x445; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x456;&#x432;, &#x442;&#x430; &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x437;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x43A;&#x43E;&#x43D;&#x43A;&#x440;&#x435;&#x442;&#x43D;&#x438;&#x439; &#x437;&#x43C;&#x456;&#x441;&#x442; &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443; request <code>http://angularjs.cn/api/article/A0y2</code>.</p>
+<h4 id="3-&#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;">3 &#x41F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;</h4>
+<p>&#x41D;&#x430;&#x433;&#x430;&#x434;&#x430;&#x454;&#x43C;&#x43E;, &#x449;&#x43E; &#x43F;&#x43E;&#x43F;&#x435;&#x440;&#x435;&#x434;&#x43D;&#x44C;&#x43E; &#x43C;&#x430;&#x454;&#x43C;&#x43E; &#x441;&#x43F;&#x438;&#x441;&#x43A; &#x446;&#x456;&#x43B;&#x44C;&#x43E;&#x432;&#x438;&#x445; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A; + &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x438;. &#x417;&#x43D;&#x430;&#x445;&#x43E;&#x434;&#x435;&#x43C;&#x43E; &#x446;&#x435;&#x439; &#x437;&#x430;&#x43F;&#x438;&#x442; &#x430;&#x43D;&#x430;&#x43B;&#x43E;&#x433;&#x456;&#x447;&#x43D;&#x43E; &#x43F;&#x43E;&#x43F;&#x435;&#x440;&#x435;&#x434;&#x43D;&#x44C;&#x43E;&#x43C;&#x443;, &#x430;&#x43B;&#x435; &#x437;&#x430;&#x43C;&#x456;&#x43D;&#x44E;&#x454;&#x442;&#x44C;&#x441;&#x44F; &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x43E;&#x43C; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x456;&#x432; -AJAX &#x443; &#x440;&#x435;&#x436;&#x438;&#x43C;&#x456; AJAX. &#x414;&#x430;&#x43D;&#x43D;&#x456; &#x440;&#x435;&#x436;&#x438;&#x43C; AJAX &#x43F;&#x43E;&#x432;&#x435;&#x440;&#x442;&#x430;&#x44E;&#x442;&#x44C;&#x441;&#x44F; &#x432; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x456; JSON. &#x41D;&#x443;, &#x43C;&#x438; &#x432;&#x441;&#x435; &#x449;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x43C;&#x43E; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x432;&#x430;&#x442;&#x438; &#x441;&#x43F;&#x43E;&#x441;&#x456;&#x431; &#x44F;&#x43A; &#x456; &#x43C;&#x438;&#x43D;&#x443;&#x43B;&#x43E;&#x433;&#x43E; &#x440;&#x430;&#x437;&#x443; - &#x43E;&#x431;&#x440;&#x43E;&#x431;&#x43B;&#x44F;&#x442;&#x438; &#x44F;&#x43A; &#x434;&#x432;&#x456; &#x447;&#x430;&#x441;&#x442;&#x438;&#x43D;&#x438; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;:</p>
 <ol>
-<li><p>Список данних</p>
-<p> В цьому списку на сторінці, ми повинні знайти потрібну інформацію, щоб допомогти нам побудувати таргетований AJAX URL. Бачимо, що повинні надати <code>_id</code> для повідомлення ID постів, та послати деталі request запиту на кілька фіксованих URL з прікріпленим ID компонентів. Таким чином, на цьому етапі, ми повинні вручну побудувати URL, і додати в чергу для сканування. Тут ми використовуємо мову <code>JsonPath</code> для вибору параметрів збору даних (розширений пакет <code>webmagic-extension</code>, який забезпечує підтримку <code>JsonPathSelector</code>).</p>
+<li><p>&#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x434;&#x430;&#x43D;&#x43D;&#x438;&#x445;</p>
+<p> &#x412; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x443; &#x43D;&#x430; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x446;&#x456;, &#x43C;&#x438; &#x43F;&#x43E;&#x432;&#x438;&#x43D;&#x43D;&#x456; &#x437;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x43F;&#x43E;&#x442;&#x440;&#x456;&#x431;&#x43D;&#x443; &#x456;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x456;&#x44E;, &#x449;&#x43E;&#x431; &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x43E;&#x433;&#x442;&#x438; &#x43D;&#x430;&#x43C; &#x43F;&#x43E;&#x431;&#x443;&#x434;&#x443;&#x432;&#x430;&#x442;&#x438; &#x442;&#x430;&#x440;&#x433;&#x435;&#x442;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439; AJAX URL. &#x411;&#x430;&#x447;&#x438;&#x43C;&#x43E;, &#x449;&#x43E; &#x43F;&#x43E;&#x432;&#x438;&#x43D;&#x43D;&#x456; &#x43D;&#x430;&#x434;&#x430;&#x442;&#x438; <code>_id</code> &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x432;&#x456;&#x434;&#x43E;&#x43C;&#x43B;&#x435;&#x43D;&#x43D;&#x44F; ID &#x43F;&#x43E;&#x441;&#x442;&#x456;&#x432;, &#x442;&#x430; &#x43F;&#x43E;&#x441;&#x43B;&#x430;&#x442;&#x438; &#x434;&#x435;&#x442;&#x430;&#x43B;&#x456; request &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443; &#x43D;&#x430; &#x43A;&#x456;&#x43B;&#x44C;&#x43A;&#x430; &#x444;&#x456;&#x43A;&#x441;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x445; URL &#x437; &#x43F;&#x440;&#x456;&#x43A;&#x440;&#x456;&#x43F;&#x43B;&#x435;&#x43D;&#x438;&#x43C; ID &#x43A;&#x43E;&#x43C;&#x43F;&#x43E;&#x43D;&#x435;&#x43D;&#x442;&#x456;&#x432;. &#x422;&#x430;&#x43A;&#x438;&#x43C; &#x447;&#x438;&#x43D;&#x43E;&#x43C;, &#x43D;&#x430; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x435;&#x442;&#x430;&#x43F;&#x456;, &#x43C;&#x438; &#x43F;&#x43E;&#x432;&#x438;&#x43D;&#x43D;&#x456; &#x432;&#x440;&#x443;&#x447;&#x43D;&#x443; &#x43F;&#x43E;&#x431;&#x443;&#x434;&#x443;&#x432;&#x430;&#x442;&#x438; URL, &#x456; &#x434;&#x43E;&#x434;&#x430;&#x442;&#x438; &#x432; &#x447;&#x435;&#x440;&#x433;&#x443; &#x434;&#x43B;&#x44F; &#x441;&#x43A;&#x430;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F;. &#x422;&#x443;&#x442; &#x43C;&#x438; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x454;&#x43C;&#x43E; &#x43C;&#x43E;&#x432;&#x443; <code>JsonPath</code> &#x434;&#x43B;&#x44F; &#x432;&#x438;&#x431;&#x43E;&#x440;&#x443; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x456;&#x432; &#x437;&#x431;&#x43E;&#x440;&#x443; &#x434;&#x430;&#x43D;&#x438;&#x445; (&#x440;&#x43E;&#x437;&#x448;&#x438;&#x440;&#x435;&#x43D;&#x438;&#x439; &#x43F;&#x430;&#x43A;&#x435;&#x442; <code>webmagic-extension</code>, &#x44F;&#x43A;&#x438;&#x439; &#x437;&#x430;&#x431;&#x435;&#x437;&#x43F;&#x435;&#x447;&#x443;&#x454; &#x43F;&#x456;&#x434;&#x442;&#x440;&#x438;&#x43C;&#x43A;&#x443; <code>JsonPathSelector</code>).</p>
 <pre><code class="lang-java"> <span class="hljs-keyword">if</span> (page.getUrl().regex(LIST_URL).match()) {
      <span class="hljs-comment">//Here we use language JSONPATH this option to select the data</span>
-     List&lt;String&gt; ids = <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data[*]._id"</span>).selectList(page.getRawText());
+     List&lt;String&gt; ids = <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">&quot;$.data[*]._id&quot;</span>).selectList(page.getRawText());
      <span class="hljs-keyword">if</span> (CollectionUtils.isNotEmpty(ids)) {
          <span class="hljs-keyword">for</span> (String id : ids) {
-             page.addTargetRequest(<span class="hljs-string">"http://angularjs.cn/api/article/"</span>+id);
+             page.addTargetRequest(<span class="hljs-string">&quot;http://angularjs.cn/api/article/&quot;</span>+id);
          }
      }
  }
 </code></pre>
 </li>
-<li><p>Об&#39;єкти даний</p>
-<p> При наявності URL-ів насправді зібрати цільові дані дуже просто, так як дані в форматі <code>JSON</code> повністю структурований. Так що відпадає необхідність написати процес аналізу <code>XPath</code> в нашій сторінки. Тут ми всюди використовуємо <code>JsonPath</code>, щоб отримати заголовок <code>title</code> і зміст <code>content</code>.</p>
-<pre><code class="lang-java"> page.putField(<span class="hljs-string">"title"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data.title"</span>).select(page.getRawText()));
- page.putField(<span class="hljs-string">"content"</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">"$.data.content"</span>).select(page.getRawText()));
+<li><p>&#x41E;&#x431;&apos;&#x454;&#x43A;&#x442;&#x438; &#x434;&#x430;&#x43D;&#x438;&#x439;</p>
+<p> &#x41F;&#x440;&#x438; &#x43D;&#x430;&#x44F;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x456; URL-&#x456;&#x432; &#x43D;&#x430;&#x441;&#x43F;&#x440;&#x430;&#x432;&#x434;&#x456; &#x437;&#x456;&#x431;&#x440;&#x430;&#x442;&#x438; &#x446;&#x456;&#x43B;&#x44C;&#x43E;&#x432;&#x456; &#x434;&#x430;&#x43D;&#x456; &#x434;&#x443;&#x436;&#x435; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;, &#x442;&#x430;&#x43A; &#x44F;&#x43A; &#x434;&#x430;&#x43D;&#x456; &#x432; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x456; <code>JSON</code> &#x43F;&#x43E;&#x432;&#x43D;&#x456;&#x441;&#x442;&#x44E; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x439;. &#x422;&#x430;&#x43A; &#x449;&#x43E; &#x432;&#x456;&#x434;&#x43F;&#x430;&#x434;&#x430;&#x454; &#x43D;&#x435;&#x43E;&#x431;&#x445;&#x456;&#x434;&#x43D;&#x456;&#x441;&#x442;&#x44C; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x442;&#x438; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x443; <code>XPath</code> &#x432; &#x43D;&#x430;&#x448;&#x456;&#x439; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;. &#x422;&#x443;&#x442; &#x43C;&#x438; &#x432;&#x441;&#x44E;&#x434;&#x438; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x454;&#x43C;&#x43E; <code>JsonPath</code>, &#x449;&#x43E;&#x431; &#x43E;&#x442;&#x440;&#x438;&#x43C;&#x430;&#x442;&#x438; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A; <code>title</code> &#x456; &#x437;&#x43C;&#x456;&#x441;&#x442; <code>content</code>.</p>
+<pre><code class="lang-java"> page.putField(<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">&quot;$.data.title&quot;</span>).select(page.getRawText()));
+ page.putField(<span class="hljs-string">&quot;content&quot;</span>, <span class="hljs-keyword">new</span> JsonPathSelector(<span class="hljs-string">&quot;$.data.content&quot;</span>).select(page.getRawText()));
 </code></pre>
 </li>
 </ol>
-<p>Переглянути повний код приклади <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/AngularJSProcessor.java" target="_blank">AngularJSProcessor.java</a></p>
-<h4 id="4-">4 Висновки</h4>
-<p>У цьому прикладі ми проаналізували процесі сканування класичних динамічних сторінок. Насправді, при обробці пошукачем динамічних сторінок найбільша різниця: це більш складний пошук посилання. Ми порівняли дві моделі пошуку:</p>
+<p>&#x41F;&#x435;&#x440;&#x435;&#x433;&#x43B;&#x44F;&#x43D;&#x443;&#x442;&#x438; &#x43F;&#x43E;&#x432;&#x43D;&#x438;&#x439; &#x43A;&#x43E;&#x434; &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x438; <a href="https://github.com/code4craft/webmagic/blob/master/webmagic-samples/src/main/java/us/codecraft/webmagic/samples/AngularJSProcessor.java" target="_blank">AngularJSProcessor.java</a></p>
+<h4 id="4-&#x432;&#x438;&#x441;&#x43D;&#x43E;&#x432;&#x43A;&#x438;">4 &#x412;&#x438;&#x441;&#x43D;&#x43E;&#x432;&#x43A;&#x438;</h4>
+<p>&#x423; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x43F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x456; &#x43C;&#x438; &#x43F;&#x440;&#x43E;&#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x443;&#x432;&#x430;&#x43B;&#x438; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x441;&#x456; &#x441;&#x43A;&#x430;&#x43D;&#x443;&#x432;&#x430;&#x43D;&#x43D;&#x44F; &#x43A;&#x43B;&#x430;&#x441;&#x438;&#x447;&#x43D;&#x438;&#x445; &#x434;&#x438;&#x43D;&#x430;&#x43C;&#x456;&#x447;&#x43D;&#x438;&#x445; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A;. &#x41D;&#x430;&#x441;&#x43F;&#x440;&#x430;&#x432;&#x434;&#x456;, &#x43F;&#x440;&#x438; &#x43E;&#x431;&#x440;&#x43E;&#x431;&#x446;&#x456; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x435;&#x43C; &#x434;&#x438;&#x43D;&#x430;&#x43C;&#x456;&#x447;&#x43D;&#x438;&#x445; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A; &#x43D;&#x430;&#x439;&#x431;&#x456;&#x43B;&#x44C;&#x448;&#x430; &#x440;&#x456;&#x437;&#x43D;&#x438;&#x446;&#x44F;: &#x446;&#x435; &#x431;&#x456;&#x43B;&#x44C;&#x448; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x438;&#x439; &#x43F;&#x43E;&#x448;&#x443;&#x43A; &#x43F;&#x43E;&#x441;&#x438;&#x43B;&#x430;&#x43D;&#x43D;&#x44F;. &#x41C;&#x438; &#x43F;&#x43E;&#x440;&#x456;&#x432;&#x43D;&#x44F;&#x43B;&#x438; &#x434;&#x432;&#x456; &#x43C;&#x43E;&#x434;&#x435;&#x43B;&#x456; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x443;:</p>
 <ol>
-<li><p>Відображається кінцевий сторінці</p>
-<p>Завантажити допоміжну сторінку =&gt; знайти посилання =&gt; скачати і аналізувати цільові HTML</p>
+<li><p>&#x412;&#x456;&#x434;&#x43E;&#x431;&#x440;&#x430;&#x436;&#x430;&#x454;&#x442;&#x44C;&#x441;&#x44F; &#x43A;&#x456;&#x43D;&#x446;&#x435;&#x432;&#x438;&#x439; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x446;&#x456;</p>
+<p>&#x417;&#x430;&#x432;&#x430;&#x43D;&#x442;&#x430;&#x436;&#x438;&#x442;&#x438; &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x456;&#x436;&#x43D;&#x443; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x443; =&gt; &#x437;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x43F;&#x43E;&#x441;&#x438;&#x43B;&#x430;&#x43D;&#x43D;&#x44F; =&gt; &#x441;&#x43A;&#x430;&#x447;&#x430;&#x442;&#x438; &#x456; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x443;&#x432;&#x430;&#x442;&#x438; &#x446;&#x456;&#x43B;&#x44C;&#x43E;&#x432;&#x456; HTML</p>
 </li>
-<li><p>front-end рендеринг сторінки</p>
-<p> Знайти допоміжні дані =&gt; побудови посилання =&gt; скачати і проаналізувати цільовий AJAX</p>
+<li><p>front-end &#x440;&#x435;&#x43D;&#x434;&#x435;&#x440;&#x438;&#x43D;&#x433; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;</p>
+<p> &#x417;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x456;&#x436;&#x43D;&#x456; &#x434;&#x430;&#x43D;&#x456; =&gt; &#x43F;&#x43E;&#x431;&#x443;&#x434;&#x43E;&#x432;&#x438; &#x43F;&#x43E;&#x441;&#x438;&#x43B;&#x430;&#x43D;&#x43D;&#x44F; =&gt; &#x441;&#x43A;&#x430;&#x447;&#x430;&#x442;&#x438; &#x456; &#x43F;&#x440;&#x43E;&#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x443;&#x432;&#x430;&#x442;&#x438; &#x446;&#x456;&#x43B;&#x44C;&#x43E;&#x432;&#x438;&#x439; AJAX</p>
 </li>
 </ol>
-<p>Для різних сайтів, допоміжні дані можуть були раніше основної HTML сторінки, це можливо коли request запроси йдуть через AJAX. Можливо, навіть обробляти множинний multiple request запит даних, але основна картина незмінна.</p>
-<p>Проте, аналіз цих requests запитів даних, це все ще залишаеться набагато складніше, ніж аналіз сторінок. Так що це насправді важко витягати дані з динамічних сторінок.</p>
-<p>Приклад в цьому розділі при аналізі запиту, із наданого зразку для переходу написана послідовніть для пошукача <code>знайти вторинні дані =&gt; побудови посилання =&gt; завантаження та аналіз цільовим AJAX</code>.</p>
+<p>&#x414;&#x43B;&#x44F; &#x440;&#x456;&#x437;&#x43D;&#x438;&#x445; &#x441;&#x430;&#x439;&#x442;&#x456;&#x432;, &#x434;&#x43E;&#x43F;&#x43E;&#x43C;&#x456;&#x436;&#x43D;&#x456; &#x434;&#x430;&#x43D;&#x456; &#x43C;&#x43E;&#x436;&#x443;&#x442;&#x44C; &#x431;&#x443;&#x43B;&#x438; &#x440;&#x430;&#x43D;&#x456;&#x448;&#x435; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x43E;&#x457; HTML &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43A;&#x438;, &#x446;&#x435; &#x43C;&#x43E;&#x436;&#x43B;&#x438;&#x432;&#x43E; &#x43A;&#x43E;&#x43B;&#x438; request &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x438; &#x439;&#x434;&#x443;&#x442;&#x44C; &#x447;&#x435;&#x440;&#x435;&#x437; AJAX. &#x41C;&#x43E;&#x436;&#x43B;&#x438;&#x432;&#x43E;, &#x43D;&#x430;&#x432;&#x456;&#x442;&#x44C; &#x43E;&#x431;&#x440;&#x43E;&#x431;&#x43B;&#x44F;&#x442;&#x438; &#x43C;&#x43D;&#x43E;&#x436;&#x438;&#x43D;&#x43D;&#x438;&#x439; multiple request &#x437;&#x430;&#x43F;&#x438;&#x442; &#x434;&#x430;&#x43D;&#x438;&#x445;, &#x430;&#x43B;&#x435; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x430; &#x43A;&#x430;&#x440;&#x442;&#x438;&#x43D;&#x430; &#x43D;&#x435;&#x437;&#x43C;&#x456;&#x43D;&#x43D;&#x430;.</p>
+<p>&#x41F;&#x440;&#x43E;&#x442;&#x435;, &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437; &#x446;&#x438;&#x445; requests &#x437;&#x430;&#x43F;&#x438;&#x442;&#x456;&#x432; &#x434;&#x430;&#x43D;&#x438;&#x445;, &#x446;&#x435; &#x432;&#x441;&#x435; &#x449;&#x435; &#x437;&#x430;&#x43B;&#x438;&#x448;&#x430;&#x435;&#x442;&#x44C;&#x441;&#x44F; &#x43D;&#x430;&#x431;&#x430;&#x433;&#x430;&#x442;&#x43E; &#x441;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x456;&#x448;&#x435;, &#x43D;&#x456;&#x436; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A;. &#x422;&#x430;&#x43A; &#x449;&#x43E; &#x446;&#x435; &#x43D;&#x430;&#x441;&#x43F;&#x440;&#x430;&#x432;&#x434;&#x456; &#x432;&#x430;&#x436;&#x43A;&#x43E; &#x432;&#x438;&#x442;&#x44F;&#x433;&#x430;&#x442;&#x438; &#x434;&#x430;&#x43D;&#x456; &#x437; &#x434;&#x438;&#x43D;&#x430;&#x43C;&#x456;&#x447;&#x43D;&#x438;&#x445; &#x441;&#x442;&#x43E;&#x440;&#x456;&#x43D;&#x43E;&#x43A;.</p>
+<p>&#x41F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434; &#x432; &#x446;&#x44C;&#x43E;&#x43C;&#x443; &#x440;&#x43E;&#x437;&#x434;&#x456;&#x43B;&#x456; &#x43F;&#x440;&#x438; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437;&#x456; &#x437;&#x430;&#x43F;&#x438;&#x442;&#x443;, &#x456;&#x437; &#x43D;&#x430;&#x434;&#x430;&#x43D;&#x43E;&#x433;&#x43E; &#x437;&#x440;&#x430;&#x437;&#x43A;&#x443; &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x445;&#x43E;&#x434;&#x443; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x430; &#x43F;&#x43E;&#x441;&#x43B;&#x456;&#x434;&#x43E;&#x432;&#x43D;&#x456;&#x442;&#x44C; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x448;&#x443;&#x43A;&#x430;&#x447;&#x430; <code>&#x437;&#x43D;&#x430;&#x439;&#x442;&#x438; &#x432;&#x442;&#x43E;&#x440;&#x438;&#x43D;&#x43D;&#x456; &#x434;&#x430;&#x43D;&#x456; =&gt; &#x43F;&#x43E;&#x431;&#x443;&#x434;&#x43E;&#x432;&#x438; &#x43F;&#x43E;&#x441;&#x438;&#x43B;&#x430;&#x43D;&#x43D;&#x44F; =&gt; &#x437;&#x430;&#x432;&#x430;&#x43D;&#x442;&#x430;&#x436;&#x435;&#x43D;&#x43D;&#x44F; &#x442;&#x430; &#x430;&#x43D;&#x430;&#x43B;&#x456;&#x437; &#x446;&#x456;&#x43B;&#x44C;&#x43E;&#x432;&#x438;&#x43C; AJAX</code>.</p>
 <p>PS:</p>
-<p>Для WebMagic з 0.5.0 буде додана підтримка послыдовності <code>Json API</code>, пізніше ви можете використовувати:</p>
-<pre><code class="lang-java">page.getJson().jsonPath(<span class="hljs-string">"$.name"</span>).get();
+<p>&#x414;&#x43B;&#x44F; WebMagic &#x437; 0.5.0 &#x431;&#x443;&#x434;&#x435; &#x434;&#x43E;&#x434;&#x430;&#x43D;&#x430; &#x43F;&#x456;&#x434;&#x442;&#x440;&#x438;&#x43C;&#x43A;&#x430; &#x43F;&#x43E;&#x441;&#x43B;&#x44B;&#x434;&#x43E;&#x432;&#x43D;&#x43E;&#x441;&#x442;&#x456; <code>Json API</code>, &#x43F;&#x456;&#x437;&#x43D;&#x456;&#x448;&#x435; &#x432;&#x438; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x432;&#x438;&#x43A;&#x43E;&#x440;&#x438;&#x441;&#x442;&#x43E;&#x432;&#x443;&#x432;&#x430;&#x442;&#x438;:</p>
+<pre><code class="lang-java">page.getJson().jsonPath(<span class="hljs-string">&quot;$.name&quot;</span>).get();
 </code></pre>
-<p>Таким чином вибираються request <code>AJAX</code> запити.</p>
-<p>Також підтримується:</p>
-<pre><code class="lang-java">page.getJson().removePadding(<span class="hljs-string">"callback"</span>).jsonPath(<span class="hljs-string">"$.name"</span>).get();
+<p>&#x422;&#x430;&#x43A;&#x438;&#x43C; &#x447;&#x438;&#x43D;&#x43E;&#x43C; &#x432;&#x438;&#x431;&#x438;&#x440;&#x430;&#x44E;&#x442;&#x44C;&#x441;&#x44F; request <code>AJAX</code> &#x437;&#x430;&#x43F;&#x438;&#x442;&#x438;.</p>
+<p>&#x422;&#x430;&#x43A;&#x43E;&#x436; &#x43F;&#x456;&#x434;&#x442;&#x440;&#x438;&#x43C;&#x443;&#x454;&#x442;&#x44C;&#x441;&#x44F;:</p>
+<pre><code class="lang-java">page.getJson().removePadding(<span class="hljs-string">&quot;callback&quot;</span>).jsonPath(<span class="hljs-string">&quot;$.name&quot;</span>).get();
 </code></pre>
-<p>Таким чином будуються request <code>JSONP</code> запити</p>
+<p>&#x422;&#x430;&#x43A;&#x438;&#x43C; &#x447;&#x438;&#x43D;&#x43E;&#x43C; &#x431;&#x443;&#x434;&#x443;&#x44E;&#x442;&#x44C;&#x441;&#x44F; request <code>JSONP</code> &#x437;&#x430;&#x43F;&#x438;&#x442;&#x438;</p>
 
-                    
-                    </section>
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../../posts/chx-cases/basic-list-target.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
-        
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
-        
-        <script src="http://code4craft.qiniudn.com/ace.js"></script>
-        <script src="http://code4craft.qiniudn.com/mode-javascript.js"></script>
-        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
-        <script src="../../gitbook/app.js"></script>
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                        </div>
+                    </div>
+                
+            </div>
 
-  ga('create', 'UA-49956730-1', 'webmagic.io');
-  ga('send', 'pageview');
-
-</script>
+            
+                
+                <a href="basic-list-target.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Основні комбінації сторінки та список деталей">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
         
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Обробка пошукачем сторінок на JS рендерингу","level":"1.8.2","depth":2,"next":{"title":"Обробка пошукачем сторінки","level":"1.8.3","depth":2,"ref":"","articles":[]},"previous":{"title":"Основні комбінації сторінки та список деталей","level":"1.8.1","depth":2,"path":"posts/chx-cases/basic-list-target.md","ref":"posts/chx-cases/basic-list-target.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-49956730-1"},"livereload":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","instapaper","twitter","weibo"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WebMagic Documents","language":"ua","gitbook":"*"},"file":{"path":"posts/chx-cases/js-render-page.md","mtime":"2016-12-25T04:24:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-25T05:35:09.198Z"},"basePath":"../..","book":{"language":"ua"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
 </html>
+

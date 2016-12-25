@@ -1,0 +1,16 @@
+{
+  "name": "WebMagic-in-Action",
+  "version": "0.0.5",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code4craft/webmagic-in-action"
+  },
+  "author": "Yihua.huang <code4crafter@gmail.com>",
+  "license": "Apache 2",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gitbook": "0.0.1"
+  },
+  "devDependencies": {}
+}

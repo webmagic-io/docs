@@ -1,599 +1,819 @@
+
 <!DOCTYPE HTML>
-<html lang='zh-CN'>
-    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
-        
+<html lang="zh" >
+    <head>
         <meta charset="UTF-8">
-        <title>实现PageProcessor | WebMagic in Action</title>
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="robots" content="index, follow">
-        <meta name="author" content="code4craft">
-        <meta name="description" content="Little book of WebMagic.">
-        <meta name="keywords" content="gitbook,github" >
-        <meta name="generator" content="www.gitbook.io">
+        <title>4.1 实现PageProcessor · WebMagic Documents</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
         
-        <link rel="next" href="../../posts/ch4-basic-page-processor/selectable.html" />
-        
-        
-        <link rel="prev" href="../../posts/ch4-basic-page-processor/README.html" />
-        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
-        <meta property="og:title" content="实现PageProcessor | WebMagic in Action">
-        <meta property="og:site_name" content="WebMagic in Action">
-        <meta property="og:type" content="book">
-        <meta property="og:locale" content="zh-CN">
+    
+    <link rel="next" href="selectable.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
 
-        <meta property="book:author" content="https://github.com/code4craft">
-        <meta property="book:tag" content="GitBook">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../../gitbook/style.css">
-        
-        
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.1" data-basepath="../.." data-revision="1482032579625">
-    <div class="book-header">
-    <!-- Actions Left -->
-    <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
 
-    <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+            
+                <nav role="navigation">
+                
 
-    <a href="https://github.com/code4craft/webmagic/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/code4craft/webmagic/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
 
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../ch1-overview/">
+            
+                <a href="../ch1-overview/">
+            
+                    
+                    1. WebMagic概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ch1-overview/thinking.html">
+            
+                <a href="../ch1-overview/thinking.html">
+            
+                    
+                    1.1 设计思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ch1-overview/architecture.html">
+            
+                <a href="../ch1-overview/architecture.html">
+            
+                    
+                    1.2 总体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ch1-overview/component.html">
+            
+                <a href="../ch1-overview/component.html">
+            
+                    
+                    1.3 项目组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch2-install/">
+            
+                <a href="../ch2-install/">
+            
+                    
+                    2. 快速开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ch2-install/with-maven.html">
+            
+                <a href="../ch2-install/with-maven.html">
+            
+                    
+                    2.1 使用Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ch2-install/without-maven.html">
+            
+                <a href="../ch2-install/without-maven.html">
+            
+                    
+                    2.2 不使用Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ch2-install/first-project.html">
+            
+                <a href="../ch2-install/first-project.html">
+            
+                    
+                    2.3 第一个爬虫项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch3-build-source/">
+            
+                <a href="../ch3-build-source/">
+            
+                    
+                    3. 下载和编译源码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ch3-build-source/git-repo.html">
+            
+                <a href="../ch3-build-source/git-repo.html">
+            
+                    
+                    3.1 下载源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ch3-build-source/import-project.html">
+            
+                <a href="../ch3-build-source/import-project.html">
+            
+                    
+                    3.2 导入项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../ch3-build-source/compile-code.html">
+            
+                <a href="../ch3-build-source/compile-code.html">
+            
+                    
+                    3.3 编译和执行源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    4. 编写基本的爬虫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="pageprocessor.html">
+            
+                <a href="pageprocessor.html">
+            
+                    
+                    4.1 实现PageProcessor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="selectable.html">
+            
+                <a href="selectable.html">
+            
+                    
+                    4.2 使用Selectable抽取元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="results.html">
+            
+                <a href="results.html">
+            
+                    
+                    4.3 使用Pipeline保存结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="spider-config.html">
+            
+                <a href="spider-config.html">
+            
+                    
+                    4.4 爬虫的配置、启动和终止
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="xsoup.html">
+            
+                <a href="xsoup.html">
+            
+                    
+                    4.5 Jsoup与Xsoup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="monitor.html">
+            
+                <a href="monitor.html">
+            
+                    
+                    4.6 爬虫的监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="proxy.md">
+            
+                <span>
+            
+                    
+                    4.7 配置代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="post.md">
+            
+                <span>
+            
+                    
+                    4.8 处理POST请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ch5-annotation/">
+            
+                <a href="../ch5-annotation/">
+            
+                    
+                    5. 使用注解编写爬虫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ch5-annotation/model.html">
+            
+                <a href="../ch5-annotation/model.html">
+            
+                    
+                    5.1 编写Model类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ch5-annotation/targeturl.html">
+            
+                <a href="../ch5-annotation/targeturl.html">
+            
+                    
+                    5.2 TargetUrl与HelpUrl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ch5-annotation/extractby.html">
+            
+                <a href="../ch5-annotation/extractby.html">
+            
+                    
+                    5.3 使用ExtractBy进行抽取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../ch5-annotation/extractby-on-class.html">
+            
+                <a href="../ch5-annotation/extractby-on-class.html">
+            
+                    
+                    5.4 在类上使用ExtractBy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../ch5-annotation/formatter.html">
+            
+                <a href="../ch5-annotation/formatter.html">
+            
+                    
+                    5.5 结果的类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../ch5-annotation/lifecycle.html">
+            
+                <a href="../ch5-annotation/lifecycle.html">
+            
+                    
+                    5.6 一个完整的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../ch5-annotation/after-extractor.html">
+            
+                <a href="../ch5-annotation/after-extractor.html">
+            
+                    
+                    5.7 AfterExtractor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ch6-custom-componenet/">
+            
+                <a href="../ch6-custom-componenet/">
+            
+                    
+                    6. 组件的使用和定制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../ch6-custom-componenet/pipeline.html">
+            
+                <a href="../ch6-custom-componenet/pipeline.html">
+            
+                    
+                    6.1 使用和定制Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ch6-custom-componenet/scheduler.html">
+            
+                <a href="../ch6-custom-componenet/scheduler.html">
+            
+                    
+                    6.2 使用和定制Scheduler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../ch6-custom-componenet/downloader.html">
+            
+                <a href="../ch6-custom-componenet/downloader.html">
+            
+                    
+                    6.3 使用和定制Downloader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../chx-cases/">
+            
+                <a href="../chx-cases/">
+            
+                    
+                    附录：实例分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../chx-cases/basic-list-target.html">
+            
+                <a href="../chx-cases/basic-list-target.html">
+            
+                    
+                    列表+详情的基本页面组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../chx-cases/js-render-page.html">
+            
+                <a href="../chx-cases/js-render-page.html">
+            
+                    
+                    抓取前端渲染的页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
 
     <!-- Title -->
-    <h1><a href="../../" >WebMagic in Action</a></h1>
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4.1 实现PageProcessor</a>
+    </h1>
 </div>
 
-    <div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Search" class="form-control" />
-    </div>
-    <ul class="summary">
-        <li>
-            <a href="https://github.com/code4craft" target="blank">About the author</a>
-        </li>
-        <li>
-            <a href="https://github.com/code4craft/webmagic/issues" target="blank">Questions and Issues</a>
-        </li>
-        <li class="divider"></li>
-        <li data-level="0" data-path="index.html">
-            <a href="../../"><i class="fa fa-check"></i> Introduction</a>
-        </li>
-        
-            <li  data-level="1" data-path="posts/ch1-overview/README.html">
-                
-                <a href="../../posts/ch1-overview/README.html">
-                    <i class="fa fa-check"></i> <b>1)</b> WebMagic概览
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="1.1" data-path="posts/ch1-overview/thinking.html">
-                            
-                            <a href="../../posts/ch1-overview/thinking.html">
-                                <i class="fa fa-check"></i> <b>1.1)</b> 设计思想
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="1.2" data-path="posts/ch1-overview/architecture.html">
-                            
-                            <a href="../../posts/ch1-overview/architecture.html">
-                                <i class="fa fa-check"></i> <b>1.2)</b> 总体架构
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="1.3" data-path="posts/ch1-overview/component.html">
-                            
-                            <a href="../../posts/ch1-overview/component.html">
-                                <i class="fa fa-check"></i> <b>1.3)</b> 项目组成
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="2" data-path="posts/ch2-install/README.html">
-                
-                <a href="../../posts/ch2-install/README.html">
-                    <i class="fa fa-check"></i> <b>2)</b> 快速开始
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
-                            
-                            <a href="../../posts/ch2-install/with-maven.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> 添加依赖
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="2.2" data-path="posts/ch2-install/without-maven.html">
-                            
-                            <a href="../../posts/ch2-install/without-maven.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> 不使用Maven
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
-                            
-                            <a href="../../posts/ch2-install/first-project.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> 编写第一个爬虫
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="3" data-path="posts/ch3-build-source/README.html">
-                
-                <a href="../../posts/ch3-build-source/README.html">
-                    <i class="fa fa-check"></i> <b>3)</b> 下载和编译源码
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="3.1" data-path="posts/ch3-build-source/git-repo.html">
-                            
-                            <a href="../../posts/ch3-build-source/git-repo.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> 下载源码
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="3.2" data-path="posts/ch3-build-source/import-project.html">
-                            
-                            <a href="../../posts/ch3-build-source/import-project.html">
-                                <i class="fa fa-check"></i> <b>3.2)</b> 导入项目
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="3.3" data-path="posts/ch3-build-source/compile-code.html">
-                            
-                            <a href="../../posts/ch3-build-source/compile-code.html">
-                                <i class="fa fa-check"></i> <b>3.3)</b> 编译和执行源码
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="4" data-path="posts/ch4-basic-page-processor/README.html">
-                
-                <a href="../../posts/ch4-basic-page-processor/README.html">
-                    <i class="fa fa-check"></i> <b>4)</b> 编写基本的爬虫
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="4.1" data-path="posts/ch4-basic-page-processor/pageprocessor.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/pageprocessor.html">
-                                <i class="fa fa-check"></i> <b>4.1)</b> 实现PageProcessor
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.2" data-path="posts/ch4-basic-page-processor/selectable.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/selectable.html">
-                                <i class="fa fa-check"></i> <b>4.2)</b> 使用Selectable的链式API
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.3" data-path="posts/ch4-basic-page-processor/results.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/results.html">
-                                <i class="fa fa-check"></i> <b>4.3)</b> 保存结果
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.4" data-path="posts/ch4-basic-page-processor/spider-config.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/spider-config.html">
-                                <i class="fa fa-check"></i> <b>4.4)</b> 爬虫的配置、启动和终止
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.5" data-path="posts/ch4-basic-page-processor/xsoup.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/xsoup.html">
-                                <i class="fa fa-check"></i> <b>4.5)</b> Jsoup与Xsoup
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="4.6" data-path="posts/ch4-basic-page-processor/monitor.html">
-                            
-                            <a href="../../posts/ch4-basic-page-processor/monitor.html">
-                                <i class="fa fa-check"></i> <b>4.6)</b> 爬虫的监控
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="5" data-path="posts/ch5-annotation/README.html">
-                
-                <a href="../../posts/ch5-annotation/README.html">
-                    <i class="fa fa-check"></i> <b>5)</b> 使用注解编写爬虫
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="5.1" data-path="posts/ch5-annotation/model.html">
-                            
-                            <a href="../../posts/ch5-annotation/model.html">
-                                <i class="fa fa-check"></i> <b>5.1)</b> 编写Model类
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.2" data-path="posts/ch5-annotation/targeturl.html">
-                            
-                            <a href="../../posts/ch5-annotation/targeturl.html">
-                                <i class="fa fa-check"></i> <b>5.2)</b> TargetUrl与HelpUrl
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.3" data-path="posts/ch5-annotation/extractby.html">
-                            
-                            <a href="../../posts/ch5-annotation/extractby.html">
-                                <i class="fa fa-check"></i> <b>5.3)</b> 使用ExtractBy进行抽取
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.4" data-path="posts/ch5-annotation/extractby-on-class.html">
-                            
-                            <a href="../../posts/ch5-annotation/extractby-on-class.html">
-                                <i class="fa fa-check"></i> <b>5.4)</b> 在类上使用ExtractBy
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.5" data-path="posts/ch5-annotation/formatter.html">
-                            
-                            <a href="../../posts/ch5-annotation/formatter.html">
-                                <i class="fa fa-check"></i> <b>5.5)</b> 结果的类型转换
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.6" data-path="posts/ch5-annotation/lifecycle.html">
-                            
-                            <a href="../../posts/ch5-annotation/lifecycle.html">
-                                <i class="fa fa-check"></i> <b>5.6)</b> 一个完整的流程
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="5.7" data-path="posts/ch5-annotation/after-extractor.html">
-                            
-                            <a href="../../posts/ch5-annotation/after-extractor.html">
-                                <i class="fa fa-check"></i> <b>5.7)</b> AfterExtractor
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="6" data-path="posts/ch6-custom-componenet/README.html">
-                
-                <a href="../../posts/ch6-custom-componenet/README.html">
-                    <i class="fa fa-check"></i> <b>6)</b> 组件的使用和定制
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="6.1" data-path="posts/ch6-custom-componenet/pipeline.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/pipeline.html">
-                                <i class="fa fa-check"></i> <b>6.1)</b> 定制Pipeline
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="6.2" data-path="posts/ch6-custom-componenet/scheduler.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/scheduler.html">
-                                <i class="fa fa-check"></i> <b>6.2)</b> 使用Scheduler
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="6.3" data-path="posts/ch6-custom-componenet/downloader.html">
-                            
-                            <a href="../../posts/ch6-custom-componenet/downloader.html">
-                                <i class="fa fa-check"></i> <b>6.3)</b> 使用Downloader
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="7" data-path="posts/chx-cases/README.html">
-                
-                <a href="../../posts/chx-cases/README.html">
-                    <i class="fa fa-check"></i> <b>7)</b> 实例分析
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="7.1" data-path="posts/chx-cases/basic-list-target.html">
-                            
-                            <a href="../../posts/chx-cases/basic-list-target.html">
-                                <i class="fa fa-check"></i> <b>7.1)</b> 列表+详情的基本页面组合
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="7.2" data-path="posts/chx-cases/js-render-page.html">
-                            
-                            <a href="../../posts/chx-cases/js-render-page.html">
-                                <i class="fa fa-check"></i> <b>7.2)</b> 抓取前端渲染的页面
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="7.3" >
-                            
-                            <span><b>7.3)</b> 分页抓取</span>
-                            
-                        </li>
-                    
-                        <li  data-level="7.4" >
-                            
-                            <span><b>7.4)</b> 定期抓取</span>
-                            
-                        </li>
-                    
-                        <li  data-level="7.5" >
-                            
-                            <span><b>7.5)</b> 增量更新</span>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-    </ul>
-</div>
 
-    <div class="book-body" tabindex="-1">
-        <div class="body-inner">
-            <div class="page-wrapper">
-                <div class="book-progress">
-    <div class="bar">
-        <div class="inner" style="width: 41.1764705882353%;min-width: 38.23529411764706%;"></div>
-    </div>
-    <div class="chapters">
-    
-        <a href="../../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
-    
-        <a href="../../posts/ch1-overview/README.html" title="WebMagic概览" class="chapter done new-chapter" data-progress="1" style="left: 2.9411764705882355%;"></a>
-    
-        <a href="../../posts/ch1-overview/thinking.html" title="设计思想" class="chapter done " data-progress="1.1" style="left: 5.882352941176471%;"></a>
-    
-        <a href="../../posts/ch1-overview/architecture.html" title="总体架构" class="chapter done " data-progress="1.2" style="left: 8.823529411764707%;"></a>
-    
-        <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 11.764705882352942%;"></a>
-    
-        <a href="../../posts/ch2-install/README.html" title="快速开始" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
-    
-        <a href="../../posts/ch2-install/with-maven.html" title="添加依赖" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
-    
-        <a href="../../posts/ch2-install/without-maven.html" title="不使用Maven" class="chapter done " data-progress="2.2" style="left: 20.58823529411765%;"></a>
-    
-        <a href="../../posts/ch2-install/first-project.html" title="编写第一个爬虫" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
-    
-        <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 26.470588235294116%;"></a>
-    
-        <a href="../../posts/ch3-build-source/git-repo.html" title="下载源码" class="chapter done " data-progress="3.1" style="left: 29.41176470588235%;"></a>
-    
-        <a href="../../posts/ch3-build-source/import-project.html" title="导入项目" class="chapter done " data-progress="3.2" style="left: 32.35294117647059%;"></a>
-    
-        <a href="../../posts/ch3-build-source/compile-code.html" title="编译和执行源码" class="chapter done " data-progress="3.3" style="left: 35.294117647058826%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/README.html" title="编写基本的爬虫" class="chapter done new-chapter" data-progress="4" style="left: 38.23529411764706%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/pageprocessor.html" title="实现PageProcessor" class="chapter done " data-progress="4.1" style="left: 41.1764705882353%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" title="使用Selectable的链式API" class="chapter  " data-progress="4.2" style="left: 44.11764705882353%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/results.html" title="保存结果" class="chapter  " data-progress="4.3" style="left: 47.05882352941177%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/spider-config.html" title="爬虫的配置、启动和终止" class="chapter  " data-progress="4.4" style="left: 50%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/xsoup.html" title="Jsoup与Xsoup" class="chapter  " data-progress="4.5" style="left: 52.94117647058823%;"></a>
-    
-        <a href="../../posts/ch4-basic-page-processor/monitor.html" title="爬虫的监控" class="chapter  " data-progress="4.6" style="left: 55.88235294117647%;"></a>
-    
-        <a href="../../posts/ch5-annotation/README.html" title="使用注解编写爬虫" class="chapter  new-chapter" data-progress="5" style="left: 58.8235294117647%;"></a>
-    
-        <a href="../../posts/ch5-annotation/model.html" title="编写Model类" class="chapter  " data-progress="5.1" style="left: 61.76470588235294%;"></a>
-    
-        <a href="../../posts/ch5-annotation/targeturl.html" title="TargetUrl与HelpUrl" class="chapter  " data-progress="5.2" style="left: 64.70588235294117%;"></a>
-    
-        <a href="../../posts/ch5-annotation/extractby.html" title="使用ExtractBy进行抽取" class="chapter  " data-progress="5.3" style="left: 67.6470588235294%;"></a>
-    
-        <a href="../../posts/ch5-annotation/extractby-on-class.html" title="在类上使用ExtractBy" class="chapter  " data-progress="5.4" style="left: 70.58823529411765%;"></a>
-    
-        <a href="../../posts/ch5-annotation/formatter.html" title="结果的类型转换" class="chapter  " data-progress="5.5" style="left: 73.52941176470588%;"></a>
-    
-        <a href="../../posts/ch5-annotation/lifecycle.html" title="一个完整的流程" class="chapter  " data-progress="5.6" style="left: 76.47058823529412%;"></a>
-    
-        <a href="../../posts/ch5-annotation/after-extractor.html" title="AfterExtractor" class="chapter  " data-progress="5.7" style="left: 79.41176470588235%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/README.html" title="组件的使用和定制" class="chapter  new-chapter" data-progress="6" style="left: 82.3529411764706%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/pipeline.html" title="定制Pipeline" class="chapter  " data-progress="6.1" style="left: 85.29411764705883%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/scheduler.html" title="使用Scheduler" class="chapter  " data-progress="6.2" style="left: 88.23529411764706%;"></a>
-    
-        <a href="../../posts/ch6-custom-componenet/downloader.html" title="使用Downloader" class="chapter  " data-progress="6.3" style="left: 91.17647058823529%;"></a>
-    
-        <a href="../../posts/chx-cases/README.html" title="实例分析" class="chapter  new-chapter" data-progress="7" style="left: 94.11764705882354%;"></a>
-    
-        <a href="../../posts/chx-cases/basic-list-target.html" title="列表+详情的基本页面组合" class="chapter  " data-progress="7.1" style="left: 97.05882352941177%;"></a>
-    
-        <a href="../../posts/chx-cases/js-render-page.html" title="抓取前端渲染的页面" class="chapter  " data-progress="7.2" style="left: 100%;"></a>
-    
-    </div>
-</div>
 
-                <div class="page-inner">
-                
-                    <section class="normal" id="section-gitbook_16">
-                    
-                        <h3 id="4-1-pageprocessor">4.1 实现PageProcessor</h3>
-<p>这部分我们直接通过<code>GithubRepoPageProcessor</code>这个例子来介绍<code>PageProcessor</code>的编写方式。我将PageProcessor的定制分为三个部分，分别是爬虫的配置、页面元素的抽取和链接的发现。</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> {</span>
 
-    <span class="hljs-comment">// 部分一：抓取网站的相关配置，包括编码、抓取间隔、重试次数等</span>
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="41-&#x5B9E;&#x73B0;pageprocessor">4.1 &#x5B9E;&#x73B0;PageProcessor</h3>
+<p>&#x8FD9;&#x90E8;&#x5206;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>GithubRepoPageProcessor</code>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x4ECB;&#x7ECD;<code>PageProcessor</code>&#x7684;&#x7F16;&#x5199;&#x65B9;&#x5F0F;&#x3002;&#x6211;&#x5C06;PageProcessor&#x7684;&#x5B9A;&#x5236;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x722C;&#x866B;&#x7684;&#x914D;&#x7F6E;&#x3001;&#x9875;&#x9762;&#x5143;&#x7D20;&#x7684;&#x62BD;&#x53D6;&#x548C;&#x94FE;&#x63A5;&#x7684;&#x53D1;&#x73B0;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> </span>{
+
+    <span class="hljs-comment">// &#x90E8;&#x5206;&#x4E00;&#xFF1A;&#x6293;&#x53D6;&#x7F51;&#x7AD9;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5305;&#x62EC;&#x7F16;&#x7801;&#x3001;&#x6293;&#x53D6;&#x95F4;&#x9694;&#x3001;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x7B49;</span>
     <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">1000</span>);
 
-    <span class="hljs-annotation">@Override</span>
-    <span class="hljs-comment">// process是定制爬虫逻辑的核心接口，在这里编写抽取逻辑</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span>(Page page) {
-        <span class="hljs-comment">// 部分二：定义如何抽取页面信息，并保存下来</span>
-        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());
-        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());
-        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>) == <span class="hljs-keyword">null</span>) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-comment">// process&#x662F;&#x5B9A;&#x5236;&#x722C;&#x866B;&#x903B;&#x8F91;&#x7684;&#x6838;&#x5FC3;&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x7F16;&#x5199;&#x62BD;&#x53D6;&#x903B;&#x8F91;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(Page page)</span> </span>{
+        <span class="hljs-comment">// &#x90E8;&#x5206;&#x4E8C;&#xFF1A;&#x5B9A;&#x4E49;&#x5982;&#x4F55;&#x62BD;&#x53D6;&#x9875;&#x9762;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;</span>
+        page.putField(<span class="hljs-string">&quot;author&quot;</span>, page.getUrl().regex(<span class="hljs-string">&quot;https://github\\.com/(\\w+)/.*&quot;</span>).toString());
+        page.putField(<span class="hljs-string">&quot;name&quot;</span>, page.getHtml().xpath(<span class="hljs-string">&quot;//h1[@class=&apos;entry-title public&apos;]/strong/a/text()&quot;</span>).toString());
+        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">&quot;name&quot;</span>) == <span class="hljs-keyword">null</span>) {
             <span class="hljs-comment">//skip this page</span>
             page.setSkip(<span class="hljs-keyword">true</span>);
         }
-        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));
+        page.putField(<span class="hljs-string">&quot;readme&quot;</span>, page.getHtml().xpath(<span class="hljs-string">&quot;//div[@id=&apos;readme&apos;]/tidyText()&quot;</span>));
 
-        <span class="hljs-comment">// 部分三：从页面发现后续的url地址来抓取</span>
-        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\\w\\-]+/[\\w\\-]+)"</span>).all());
+        <span class="hljs-comment">// &#x90E8;&#x5206;&#x4E09;&#xFF1A;&#x4ECE;&#x9875;&#x9762;&#x53D1;&#x73B0;&#x540E;&#x7EED;&#x7684;url&#x5730;&#x5740;&#x6765;&#x6293;&#x53D6;</span>
+        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">&quot;(https://github\\.com/[\\w\\-]+/[\\w\\-]+)&quot;</span>).all());
     }
 
-    <span class="hljs-annotation">@Override</span>
-    <span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span>() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span><span class="hljs-params">()</span> </span>{
         <span class="hljs-keyword">return</span> site;
     }
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())
-                <span class="hljs-comment">//从"https://github.com/code4craft"开始抓</span>
-                .addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>)
-                <span class="hljs-comment">//开启5个线程抓取</span>
+                <span class="hljs-comment">//&#x4ECE;&quot;https://github.com/code4craft&quot;&#x5F00;&#x59CB;&#x6293;</span>
+                .addUrl(<span class="hljs-string">&quot;https://github.com/code4craft&quot;</span>)
+                <span class="hljs-comment">//&#x5F00;&#x542F;5&#x4E2A;&#x7EBF;&#x7A0B;&#x6293;&#x53D6;</span>
                 .thread(<span class="hljs-number">5</span>)
-                <span class="hljs-comment">//启动爬虫</span>
+                <span class="hljs-comment">//&#x542F;&#x52A8;&#x722C;&#x866B;</span>
                 .run();
     }
 }
 </code></pre>
-<h4 id="4-1-1-">4.1.1 爬虫的配置</h4>
-<p>第一部分关于爬虫的配置，包括编码、抓取间隔、超时时间、重试次数等，也包括一些模拟的参数，例如User Agent、cookie，以及代理的设置，我们会在第5章-“爬虫的配置”里进行介绍。在这里我们先简单设置一下：重试次数为3次，抓取间隔为一秒。</p>
-<h4 id="4-1-2-">4.1.2 页面元素的抽取</h4>
-<p>第二部分是爬虫的核心部分：对于下载到的Html页面，你如何从中抽取到你想要的信息？WebMagic里主要使用了三种抽取技术：XPath、正则表达式和CSS选择器。另外，对于JSON格式的内容，可使用JsonPath进行解析。</p>
+<h4 id="411-&#x722C;&#x866B;&#x7684;&#x914D;&#x7F6E;">4.1.1 &#x722C;&#x866B;&#x7684;&#x914D;&#x7F6E;</h4>
+<p>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x5173;&#x4E8E;&#x722C;&#x866B;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5305;&#x62EC;&#x7F16;&#x7801;&#x3001;&#x6293;&#x53D6;&#x95F4;&#x9694;&#x3001;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x3001;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x7B49;&#xFF0C;&#x4E5F;&#x5305;&#x62EC;&#x4E00;&#x4E9B;&#x6A21;&#x62DF;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F8B;&#x5982;User Agent&#x3001;cookie&#xFF0C;&#x4EE5;&#x53CA;&#x4EE3;&#x7406;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x7B2C;5&#x7AE0;-&#x201C;&#x722C;&#x866B;&#x7684;&#x914D;&#x7F6E;&#x201D;&#x91CC;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5148;&#x7B80;&#x5355;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;&#xFF1A;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x4E3A;3&#x6B21;&#xFF0C;&#x6293;&#x53D6;&#x95F4;&#x9694;&#x4E3A;&#x4E00;&#x79D2;&#x3002;</p>
+<h4 id="412-&#x9875;&#x9762;&#x5143;&#x7D20;&#x7684;&#x62BD;&#x53D6;">4.1.2 &#x9875;&#x9762;&#x5143;&#x7D20;&#x7684;&#x62BD;&#x53D6;</h4>
+<p>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x662F;&#x722C;&#x866B;&#x7684;&#x6838;&#x5FC3;&#x90E8;&#x5206;&#xFF1A;&#x5BF9;&#x4E8E;&#x4E0B;&#x8F7D;&#x5230;&#x7684;Html&#x9875;&#x9762;&#xFF0C;&#x4F60;&#x5982;&#x4F55;&#x4ECE;&#x4E2D;&#x62BD;&#x53D6;&#x5230;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF1F;WebMagic&#x91CC;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x4E86;&#x4E09;&#x79CD;&#x62BD;&#x53D6;&#x6280;&#x672F;&#xFF1A;XPath&#x3001;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x548C;CSS&#x9009;&#x62E9;&#x5668;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;JSON&#x683C;&#x5F0F;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;JsonPath&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p>
 <ol>
 <li><p>XPath</p>
-<p> XPath本来是用于XML中获取元素的一种查询语言，但是用于Html也是比较方便的。例如：</p>
-<pre><code class="lang-java"> page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>)
+<p> XPath&#x672C;&#x6765;&#x662F;&#x7528;&#x4E8E;XML&#x4E2D;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x7684;&#x4E00;&#x79CD;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#xFF0C;&#x4F46;&#x662F;&#x7528;&#x4E8E;Html&#x4E5F;&#x662F;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java"> page.getHtml().xpath(<span class="hljs-string">&quot;//h1[@class=&apos;entry-title public&apos;]/strong/a/text()&quot;</span>)
 </code></pre>
-<p> 这段代码使用了XPath，它的意思是“查找所有class属性为&#39;entry-title public&#39;的h1元素，并找到他的strong子节点的a子节点，并提取a节点的文本信息”。
-对应的Html是这样子的：</p>
+<p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x4E86;XPath&#xFF0C;&#x5B83;&#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x67E5;&#x627E;&#x6240;&#x6709;class&#x5C5E;&#x6027;&#x4E3A;&apos;entry-title public&apos;&#x7684;h1&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x627E;&#x5230;&#x4ED6;&#x7684;strong&#x5B50;&#x8282;&#x70B9;&#x7684;a&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x63D0;&#x53D6;a&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x201D;&#x3002;
+&#x5BF9;&#x5E94;&#x7684;Html&#x662F;&#x8FD9;&#x6837;&#x5B50;&#x7684;&#xFF1A;</p>
 <p> <img src="http://webmagic.qiniudn.com/oscimages/104607_Aqq8_190591.png" alt="xpath-html"></p>
 </li>
-<li><p>CSS选择器</p>
-<p> CSS选择器是与XPath类似的语言。如果大家做过前端开发，肯定知道$(&#39;h1.entry-title&#39;)这种写法的含义。客观的说，它比XPath写起来要简单一些，但是如果写复杂一点的抽取规则，就相对要麻烦一点。</p>
+<li><p>CSS&#x9009;&#x62E9;&#x5668;</p>
+<p> CSS&#x9009;&#x62E9;&#x5668;&#x662F;&#x4E0E;XPath&#x7C7B;&#x4F3C;&#x7684;&#x8BED;&#x8A00;&#x3002;&#x5982;&#x679C;&#x5927;&#x5BB6;&#x505A;&#x8FC7;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#xFF0C;&#x80AF;&#x5B9A;&#x77E5;&#x9053;$(&apos;h1.entry-title&apos;)&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x7684;&#x542B;&#x4E49;&#x3002;&#x5BA2;&#x89C2;&#x7684;&#x8BF4;&#xFF0C;&#x5B83;&#x6BD4;XPath&#x5199;&#x8D77;&#x6765;&#x8981;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5199;&#x590D;&#x6742;&#x4E00;&#x70B9;&#x7684;&#x62BD;&#x53D6;&#x89C4;&#x5219;&#xFF0C;&#x5C31;&#x76F8;&#x5BF9;&#x8981;&#x9EBB;&#x70E6;&#x4E00;&#x70B9;&#x3002;</p>
 </li>
-<li><p>正则表达式</p>
-<p> 正则表达式则是一种通用的文本抽取语言。</p>
-<pre><code class="lang-java"> page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+<li><p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
+<p> &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5219;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x7528;&#x7684;&#x6587;&#x672C;&#x62BD;&#x53D6;&#x8BED;&#x8A00;&#x3002;</p>
+<pre><code class="lang-java"> page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">&quot;(https://github\\.com/\\w+/\\w+)&quot;</span>).all());
 </code></pre>
-<p> 这段代码就用到了正则表达式，它表示匹配所有&quot;<a href="https://github.com/code4craft/webmagic&quot;这样的链接。" target="_blank">https://github.com/code4craft/webmagic&quot;这样的链接。</a></p>
+<p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C31;&#x7528;&#x5230;&#x4E86;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x5339;&#x914D;&#x6240;&#x6709;&quot;<a href="https://github.com/code4craft/webmagic&quot;&#x8FD9;&#x6837;&#x7684;&#x94FE;&#x63A5;&#x3002;" target="_blank">https://github.com/code4craft/webmagic&quot;&#x8FD9;&#x6837;&#x7684;&#x94FE;&#x63A5;&#x3002;</a></p>
 </li>
 <li><p>JsonPath</p>
-<p> JsonPath是于XPath很类似的一个语言，它用于从Json中快速定位一条内容。WebMagic中使用的JsonPath格式可以参考这里：<a href="https://code.google.com/p/json-path/" target="_blank">https://code.google.com/p/json-path/</a></p>
+<p> JsonPath&#x662F;&#x4E8E;XPath&#x5F88;&#x7C7B;&#x4F3C;&#x7684;&#x4E00;&#x4E2A;&#x8BED;&#x8A00;&#xFF0C;&#x5B83;&#x7528;&#x4E8E;&#x4ECE;Json&#x4E2D;&#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x4E00;&#x6761;&#x5185;&#x5BB9;&#x3002;WebMagic&#x4E2D;&#x4F7F;&#x7528;&#x7684;JsonPath&#x683C;&#x5F0F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x91CC;&#xFF1A;<a href="https://code.google.com/p/json-path/" target="_blank">https://code.google.com/p/json-path/</a></p>
 </li>
 </ol>
-<h4 id="4-1-3-">4.1.3 链接的发现</h4>
-<p>有了处理页面的逻辑，我们的爬虫就接近完工了！</p>
-<p>但是现在还有一个问题：一个站点的页面是很多的，一开始我们不可能全部列举出来，于是如何发现后续的链接，是一个爬虫不可缺少的一部分。</p>
-<pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/\\w+/\\w+)"</span>).all());
+<h4 id="413-&#x94FE;&#x63A5;&#x7684;&#x53D1;&#x73B0;">4.1.3 &#x94FE;&#x63A5;&#x7684;&#x53D1;&#x73B0;</h4>
+<p>&#x6709;&#x4E86;&#x5904;&#x7406;&#x9875;&#x9762;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x722C;&#x866B;&#x5C31;&#x63A5;&#x8FD1;&#x5B8C;&#x5DE5;&#x4E86;&#xFF01;</p>
+<p>&#x4F46;&#x662F;&#x73B0;&#x5728;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x4E00;&#x4E2A;&#x7AD9;&#x70B9;&#x7684;&#x9875;&#x9762;&#x662F;&#x5F88;&#x591A;&#x7684;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x4E0D;&#x53EF;&#x80FD;&#x5168;&#x90E8;&#x5217;&#x4E3E;&#x51FA;&#x6765;&#xFF0C;&#x4E8E;&#x662F;&#x5982;&#x4F55;&#x53D1;&#x73B0;&#x540E;&#x7EED;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x722C;&#x866B;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<pre><code class="lang-java">page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">&quot;(https://github\\.com/\\w+/\\w+)&quot;</span>).all());
 </code></pre>
-<p>这段代码的分为两部分，<code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code>用于获取所有满足&quot;(https:/ /github\.com/\w+/\w+)&quot;这个正则表达式的链接，<code>page.addTargetRequests()</code>则将这些链接加入到待抓取的队列中去。</p>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;<code>page.getHtml().links().regex(&quot;(https://github\\.com/\\w+/\\w+)&quot;).all()</code>&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&quot;(https:/ /github\.com/\w+/\w+)&quot;&#x8FD9;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x94FE;&#x63A5;&#xFF0C;<code>page.addTargetRequests()</code>&#x5219;&#x5C06;&#x8FD9;&#x4E9B;&#x94FE;&#x63A5;&#x52A0;&#x5165;&#x5230;&#x5F85;&#x6293;&#x53D6;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x53BB;&#x3002;</p>
 
-                    
-                    </section>
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../../posts/ch4-basic-page-processor/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../../posts/ch4-basic-page-processor/selectable.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
-        
-        <script src="http://code4craft.qiniudn.com/ace.js"></script>
-        <script src="http://code4craft.qiniudn.com/mode-javascript.js"></script>
-        <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
-        <script src="../../gitbook/app.js"></script>
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                        </div>
+                    </div>
+                
+            </div>
 
-  ga('create', 'UA-49956730-1', 'webmagic.io');
-  ga('send', 'pageview');
-
-</script>
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 4. 编写基本的爬虫">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="selectable.html" class="navigation navigation-next " aria-label="Next page: 4.2 使用Selectable抽取元素">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.1 实现PageProcessor","level":"1.5.1","depth":2,"next":{"title":"4.2 使用Selectable抽取元素","level":"1.5.2","depth":2,"path":"posts/ch4-basic-page-processor/selectable.md","ref":"posts/ch4-basic-page-processor/selectable.md","articles":[]},"previous":{"title":"4. 编写基本的爬虫","level":"1.5","depth":1,"path":"posts/ch4-basic-page-processor/README.md","ref":"posts/ch4-basic-page-processor/README.md","articles":[{"title":"4.1 实现PageProcessor","level":"1.5.1","depth":2,"path":"posts/ch4-basic-page-processor/pageprocessor.md","ref":"posts/ch4-basic-page-processor/pageprocessor.md","articles":[]},{"title":"4.2 使用Selectable抽取元素","level":"1.5.2","depth":2,"path":"posts/ch4-basic-page-processor/selectable.md","ref":"posts/ch4-basic-page-processor/selectable.md","articles":[]},{"title":"4.3 使用Pipeline保存结果","level":"1.5.3","depth":2,"path":"posts/ch4-basic-page-processor/results.md","ref":"posts/ch4-basic-page-processor/results.md","articles":[]},{"title":"4.4 爬虫的配置、启动和终止","level":"1.5.4","depth":2,"path":"posts/ch4-basic-page-processor/spider-config.md","ref":"posts/ch4-basic-page-processor/spider-config.md","articles":[]},{"title":"4.5 Jsoup与Xsoup","level":"1.5.5","depth":2,"path":"posts/ch4-basic-page-processor/xsoup.md","ref":"posts/ch4-basic-page-processor/xsoup.md","articles":[]},{"title":"4.6 爬虫的监控","level":"1.5.6","depth":2,"path":"posts/ch4-basic-page-processor/monitor.md","ref":"posts/ch4-basic-page-processor/monitor.md","articles":[]},{"title":"4.7 配置代理","level":"1.5.7","depth":2,"path":"posts/ch4-basic-page-processor/proxy.md","ref":"posts/ch4-basic-page-processor/proxy.md","articles":[]},{"title":"4.8 处理POST请求","level":"1.5.8","depth":2,"path":"posts/ch4-basic-page-processor/post.md","ref":"posts/ch4-basic-page-processor/post.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ga"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-49956730-1"},"livereload":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","instapaper","twitter","weibo"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WebMagic Documents","language":"zh","gitbook":"*"},"file":{"path":"posts/ch4-basic-page-processor/pageprocessor.md","mtime":"2016-12-25T04:24:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-25T05:35:09.198Z"},"basePath":"../..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
 </html>
+
