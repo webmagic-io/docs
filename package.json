@@ -10,7 +10,15 @@
   "license": "Apache 2",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-gitbook": "0.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-gh-pages": "0.9.1",
+    "grunt-contrib-clean": "~0.5.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  }
 }
