@@ -38,7 +38,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="7.2" data-basepath="../.." data-revision="1399991990048">
+<div class="book" data-github="code4craft/webmagic" data-level="7.2" data-basepath="../.." data-revision="1482032579625">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -114,7 +114,7 @@
             <li  data-level="2" data-path="posts/ch2-install/README.html">
                 
                 <a href="../../posts/ch2-install/README.html">
-                    <i class="fa fa-check"></i> <b>2)</b> 使用WebMagic
+                    <i class="fa fa-check"></i> <b>2)</b> 快速开始
                 </a>
                 
                 
@@ -123,7 +123,7 @@
                         <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
                             
                             <a href="../../posts/ch2-install/with-maven.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> 使用Maven
+                                <i class="fa fa-check"></i> <b>2.1)</b> 添加依赖
                             </a>
                             
                         </li>
@@ -139,7 +139,7 @@
                         <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
                             
                             <a href="../../posts/ch2-install/first-project.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> 第一个项目
+                                <i class="fa fa-check"></i> <b>2.3)</b> 编写第一个爬虫
                             </a>
                             
                         </li>
@@ -421,13 +421,13 @@
     
         <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 11.764705882352942%;"></a>
     
-        <a href="../../posts/ch2-install/README.html" title="使用WebMagic" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
+        <a href="../../posts/ch2-install/README.html" title="快速开始" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
     
-        <a href="../../posts/ch2-install/with-maven.html" title="使用Maven" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
+        <a href="../../posts/ch2-install/with-maven.html" title="添加依赖" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
     
         <a href="../../posts/ch2-install/without-maven.html" title="不使用Maven" class="chapter done " data-progress="2.2" style="left: 20.58823529411765%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="第一个项目" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="编写第一个爬虫" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
     
         <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 26.470588235294116%;"></a>
     
@@ -486,7 +486,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_38">
+                    <section class="normal" id="section-gitbook_35">
                     
                         <h3 id="-">抓取前端渲染的页面</h3>
 <p>随着AJAX技术不断的普及，以及现在AngularJS这种Single-page application框架的出现，现在js渲染出的页面越来越多。对于爬虫来说，这种页面是比较讨厌的：仅仅提取HTML内容，往往无法拿到有效的信息。那么如何处理这种页面呢？总的来说有两种做法：</p>
@@ -499,17 +499,17 @@
 <p>这里我主要介绍第二种方法，希望到最后你会发现：原来解析一个前端渲染的页面，也没有那么复杂。这里我们以AngularJS中文社区<a href="http://angularjs.cn/" target="_blank">http://angularjs.cn/</a>为例。</p>
 <h4 id="1-">1 如何判断前端渲染</h4>
 <p>判断页面是否为js渲染的方式比较简单，在浏览器中直接查看源码（Windows下Ctrl+U，Mac下command+alt+u），如果找不到有效的信息，则基本可以肯定为js渲染。</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0412/214310_cMYk_190591.png" alt="angular-view"></p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0412/214226_8s1v_190591.png" alt="angular-source"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/214310_cMYk_190591.png" alt="angular-view"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/214226_8s1v_190591.png" alt="angular-source"></p>
 <p>这个例子中，在页面中的标题“有孚计算机网络-前端攻城师”在源码中无法找到，则可以断定是js渲染，并且这个数据是AJAX得到。</p>
 <h4 id="2-">2 分析请求</h4>
 <p>下面我们进入最难的一部分：找到这个数据请求。这一步能帮助我们的工具，主要是浏览器中查看网络请求的开发者工具。</p>
-<p>以Chome为例，我们打开“开发者工具”（Windows下是F12，Mac下是command+alt+u），然后重新刷新页面（也有可能是下拉页面，总之是所有你认为可能触发新数据的操作），然后记得保留现场，把请求一个个拿来分析吧！</p>
+<p>以Chome为例，我们打开“开发者工具”（Windows下是F12，Mac下是command+alt+i），然后重新刷新页面（也有可能是下拉页面，总之是所有你认为可能触发新数据的操作），然后记得保留现场，把请求一个个拿来分析吧！</p>
 <p>这一步需要一点耐心，但是也并不是无章可循。首先能帮助我们的是上方的分类筛选（All、Document等选项）。如果是正常的AJAX，在<code>XHR</code>标签下会显示，而JSONP请求会在<code>Scripts</code>标签下，这是两个比较常见的数据类型。</p>
 <p>然后你可以根据数据大小来判断一下，一般结果体积较大的更有可能是返回数据的接口。剩下的，基本靠经验了，例如这里这个&quot;latest?p=1&amp;s=20&quot;一看就很可疑…</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0412/233924_6rXz_190591.png" alt="angular-ajax-list"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/233924_6rXz_190591.png" alt="angular-ajax-list"></p>
 <p>对于可疑的地址，这时候可以看一下响应体是什么内容了。这里在开发者工具看不清楚，我们把URL<code>http://angularjs.cn/api/article/latest?p=1&amp;s=20</code>复制到地址栏，重新请求一次（如果用Chrome推荐装个jsonviewer，查看AJAX结果很方便）。查看结果，看来我们找到了想要的。</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0412/235310_8gHe_190591.png" alt="json"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/235310_8gHe_190591.png" alt="json"></p>
 <p>同样的办法，我们进入到帖子详情页，找到了具体内容的请求：<code>http://angularjs.cn/api/article/A0y2</code>。</p>
 <h4 id="3-">3 编写程序</h4>
 <p>回想一下之前列表+目标页的例子，会发现我们这次的需求，跟之前是类似的，只不过换成了AJAX方式-AJAX方式的列表，AJAX方式的数据，而返回数据变成了JSON。那么，我们仍然可以用上次的方式，分为两种页面来进行编写：</p>

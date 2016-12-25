@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="code4craft/webmagic" data-level="4.6" data-basepath="../.." data-revision="1399991990048">
+<div class="book" data-github="code4craft/webmagic" data-level="4.6" data-basepath="../.." data-revision="1482032579625">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/code4craft/webmagic" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -116,7 +116,7 @@
             <li  data-level="2" data-path="posts/ch2-install/README.html">
                 
                 <a href="../../posts/ch2-install/README.html">
-                    <i class="fa fa-check"></i> <b>2)</b> 使用WebMagic
+                    <i class="fa fa-check"></i> <b>2)</b> 快速开始
                 </a>
                 
                 
@@ -125,7 +125,7 @@
                         <li  data-level="2.1" data-path="posts/ch2-install/with-maven.html">
                             
                             <a href="../../posts/ch2-install/with-maven.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> 使用Maven
+                                <i class="fa fa-check"></i> <b>2.1)</b> 添加依赖
                             </a>
                             
                         </li>
@@ -141,7 +141,7 @@
                         <li  data-level="2.3" data-path="posts/ch2-install/first-project.html">
                             
                             <a href="../../posts/ch2-install/first-project.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> 第一个项目
+                                <i class="fa fa-check"></i> <b>2.3)</b> 编写第一个爬虫
                             </a>
                             
                         </li>
@@ -423,13 +423,13 @@
     
         <a href="../../posts/ch1-overview/component.html" title="项目组成" class="chapter done " data-progress="1.3" style="left: 11.764705882352942%;"></a>
     
-        <a href="../../posts/ch2-install/README.html" title="使用WebMagic" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
+        <a href="../../posts/ch2-install/README.html" title="快速开始" class="chapter done new-chapter" data-progress="2" style="left: 14.705882352941176%;"></a>
     
-        <a href="../../posts/ch2-install/with-maven.html" title="使用Maven" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
+        <a href="../../posts/ch2-install/with-maven.html" title="添加依赖" class="chapter done " data-progress="2.1" style="left: 17.647058823529413%;"></a>
     
         <a href="../../posts/ch2-install/without-maven.html" title="不使用Maven" class="chapter done " data-progress="2.2" style="left: 20.58823529411765%;"></a>
     
-        <a href="../../posts/ch2-install/first-project.html" title="第一个项目" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
+        <a href="../../posts/ch2-install/first-project.html" title="编写第一个爬虫" class="chapter done " data-progress="2.3" style="left: 23.529411764705884%;"></a>
     
         <a href="../../posts/ch3-build-source/README.html" title="下载和编译源码" class="chapter done new-chapter" data-progress="3" style="left: 26.470588235294116%;"></a>
     
@@ -488,7 +488,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_15">
                     
                         <h3 id="4-6-">4.6 爬虫的监控</h3>
 <p>爬虫的监控是0.5.0新增的功能。利用这个功能，你可以查看爬虫的执行情况——已经下载了多少页面、还有多少页面、启动了多少线程等信息。该功能通过JMX实现，你可以使用Jconsole等JMX工具查看本地或者远程的爬虫信息。</p>
@@ -515,13 +515,13 @@
 <h4 id="4-6-2-">4.6.2 查看监控信息</h4>
 <p>WebMagic的监控使用JMX提供控制，你可以使用任何支持JMX的客户端来进行连接。我们这里以JDK自带的JConsole为例。我们首先启动WebMagic的一个Spider，并添加监控代码。然后我们通过JConsole来进行查看。</p>
 <p>我们按照4.6.1的例子启动程序，然后在命令行输入jconsole（windows下是在DOS下输入jconsole.exe）即可启动JConsole。</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0426/231513_lP2O_190591.png" alt="jconsole"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/231513_lP2O_190591.png" alt="jconsole"></p>
 <p>这里我们选择启动WebMagic的本地进程，连接后选择“MBean”，点开“WebMagic”，就能看到所有已经监控的Spider信息了！</p>
 <p>这里我们也可以选择“操作”，在操作里可以选择启动-start()和终止爬虫-stop()，这会直接调用对应Spider的start()和stop()方法，来达到基本控制的目的。</p>
-<p><img src="http://static.oschina.net/uploads/space/2014/0426/231652_B3Mt_190591.png" alt="jconsole-show"></p>
+<p><img src="http://webmagic.qiniudn.com/oscimages/231652_B3Mt_190591.png" alt="jconsole-show"></p>
 <h4 id="4-6-3-">4.6.3 扩展监控接口</h4>
-<p>除了已有的一些监控信息，如果你有更多的信息需要监控，也可以通过扩展的方式来解决。你可以通过继承<code>SpiderStatusMBean</code>来实现扩展，具体例子可以看这里：
-<a href="https://github.com/code4craft/webmagic/tree/master/webmagic-core/src/test/java/us/codecraft/webmagic/monitor" target="_blank">定制扩展demo</a>。</p>
+<p>除了已有的一些监控信息，如果你有更多的信息需要监控，也可以通过扩展的方式来解决。你可以通过继承<code>SpiderStatusMXBean</code>来实现扩展，具体例子可以看这里：
+<a href="https://github.com/code4craft/webmagic/tree/master/webmagic-extension/src/test/java/us/codecraft/webmagic/monitor" target="_blank">定制扩展demo</a>。</p>
 
                     
                     </section>
