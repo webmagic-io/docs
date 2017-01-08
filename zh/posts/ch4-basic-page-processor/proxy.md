@@ -23,9 +23,9 @@
 2. 设置代理池，其中包括101.101.101.101和102.102.102.102两个IP
 
 ```java
-	List<String[]> poolHosts = new ArrayList<String>();
-	poolHosts.add(new HttpHost("101.101.101.101","8888");
-	poolHosts.add(new HttpHost("102.102.102.102","8888");
+	List<String[]> poolHosts = new ArrayList<String[]>();
+	poolHosts.add(new String[]{"101.101.101.101","8888"});
+	poolHosts.add(new String[]{"102.102.102.102","8888"});
 	//httpProxyList输入是IP+PORT, isUseLastProxy是指重启时是否使用上一次的代理配置
 	site.setHttpProxyPool(poolHosts,false);
 ```
