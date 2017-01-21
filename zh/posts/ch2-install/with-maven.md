@@ -6,12 +6,12 @@ WebMagic基于Maven进行构建，推荐使用Maven来安装WebMagic。在你自
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-core</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
 </dependency>
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
 </dependency>
 ```
 
@@ -23,7 +23,7 @@ WebMagic使用slf4j-log4j12作为slf4j的实现.如果你自己定制了slf4j的
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
     <exclusions>
         <exclusion>
             <groupId>org.slf4j</groupId>
