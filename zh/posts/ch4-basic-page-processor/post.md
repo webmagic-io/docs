@@ -7,8 +7,12 @@
 	request.setMethod(HttpConstant.Method.POST);
 	NameValuePair[] nameValuePair = new NameValuePair[](){
 	new BasicNameValuePair("id","100"),new BasicNameValuePair("tag","2")};
-	request.setMethod(HttpConstant.Method.POST);
+	request.putExtra("nameValuePair", nameValuePair);
 	spider.addRequest(request);
 ```
 
-POST方式还有一些Bug，例如[#385 中文乱码](https://github.com/code4craft/webmagic/issues/385)、强制去重等，会在0.6.1版本中陆续修复。
+POST方式还有一些Bug，例如[#385 中文乱码](https://github.com/code4craft/webmagic/issues/385)等，会在0.6.2版本中陆续修复。
+
+#### POST的去重：
+
+从0.6.2版本开始，POST默认不会去重，详情见：[Issue 484](https://github.com/code4craft/webmagic/issues/484)。如果想要去重可以自己继承`DuplicateRemovedScheduler`，重写`push`方法。
