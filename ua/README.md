@@ -3,7 +3,7 @@ WebMagic у дії
 
 > Мала книга WebMagic.
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](http://webmagic.io/images/logo.jpeg)
 
 [WebMagic](https://github.com/code4craft/webmagic) - простий але масштабуємий фреймворк-пошуковий робот (web crowler/spider). Ви легко можете розробити шукач на його основі.
 

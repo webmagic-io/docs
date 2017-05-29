@@ -9,7 +9,7 @@ WebMagic in Action
 
 >Мала книга WebMagic.
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](hhttp://webmagic.io/images/logo.jpeg)
 
 [WebMagic](https://github.com/code4craft/webmagic)是我业余开发的一款简单灵活的爬虫框架。基于它你可以很容易的编写一个爬虫。
 

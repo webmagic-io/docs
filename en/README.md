@@ -3,7 +3,7 @@ WebMagic in Action
 
 >Little book of WebMagic.
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](http://webmagic.io/images/logo.jpeg)
 
 [WebMagic](https://github.com/code4craft/webmagic) is a simple but scalable crawler framework. You can develop a crawler easily based on it.
 

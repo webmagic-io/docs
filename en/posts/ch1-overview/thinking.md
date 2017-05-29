@@ -1,6 +1,6 @@
 ### 1.1 WebMagic design ideas
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](http://webmagic.io/images/logo.jpeg)
 
 #### 1. A framework, a field
 

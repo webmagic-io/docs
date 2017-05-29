@@ -1,6 +1,6 @@
 ### 1.1 Philosophy
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](http://webmagic.io/images/logo.jpeg)
 
 #### 1. Solution for Domain
 

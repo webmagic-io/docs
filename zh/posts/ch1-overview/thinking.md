@@ -1,6 +1,6 @@
 ### 1.1 设计思想
 
-![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
+![logo](http://webmagic.io/images/logo.jpeg)
 
 #### 1. 一个框架，一个领域
 
