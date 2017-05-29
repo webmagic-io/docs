@@ -657,9 +657,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="47-&#x914D;&#x7F6E;&#x4EE3;&#x7406;beta">4.7 &#x914D;&#x7F6E;&#x4EE3;&#x7406;(beta)</h2>
-<p>&#x4ECE;0.4.0&#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;WebMagic&#x5F00;&#x59CB;&#x652F;&#x6301;Http&#x4EE3;&#x7406;&#xFF0C;&#x5E76;&#x4E14;&#x5728;0.5.2&#x7248;&#x672C;&#x7531;&#x7F51;&#x53CB;<a href="https://github.com/yxssfxwzy" target="_blank">@yxssfxwzy</a>&#x63D0;&#x4EA4;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x7684;&#x4EE3;&#x7406;&#x6C60;&#x3002;</p>
-<p>&#x56E0;&#x4E3A;&#x573A;&#x666F;&#x7684;&#x591A;&#x6837;&#x6027;&#xFF0C;&#x4EE3;&#x7406;&#x8FD9;&#x90E8;&#x5206;API&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x4E0D;&#x7A33;&#x5B9A;&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x9700;&#x6C42;&#x786E;&#x5B9E;&#x5B58;&#x5728;&#xFF0C;&#x6240;&#x4EE5;WebMagic&#x4F1A;&#x7EE7;&#x7EED;&#x652F;&#x6301;&#x4EE3;&#x7406;&#x90E8;&#x5206;&#x7684;&#x5B8C;&#x5584;&#x3002;&#x76EE;&#x524D;&#x53D1;&#x5E03;&#x7684;API&#x53EA;&#x662F;beta&#x7248;&#xFF0C;&#x540E;&#x7EED;API&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x66F4;&#x6539;&#x3002;&#x4EE3;&#x7406;&#x76F8;&#x5173;&#x7684;&#x8BBE;&#x7F6E;&#x90FD;&#x5728;Site&#x7C7B;&#x4E2D;&#x3002;</p>
+                                <h2 id="47-&#x914D;&#x7F6E;&#x4EE3;&#x7406;">4.7 &#x914D;&#x7F6E;&#x4EE3;&#x7406;</h2>
+<p>&#x4ECE;0.7.0&#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;WebMagic&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x4E86;&#x65B0;&#x7684;&#x4EE3;&#x7406;API<code>ProxyProvider</code>&#x3002;&#x56E0;&#x4E3A;&#x76F8;&#x5BF9;&#x4E8E;Site&#x7684;&#x201C;&#x914D;&#x7F6E;&#x201D;&#xFF0C;ProxyProvider&#x5B9A;&#x4F4D;&#x66F4;&#x591A;&#x662F;&#x4E00;&#x4E2A;&#x201C;&#x7EC4;&#x4EF6;&#x201D;&#xFF0C;&#x6240;&#x4EE5;&#x4EE3;&#x7406;&#x4E0D;&#x518D;&#x4ECE;Site&#x8BBE;&#x7F6E;&#xFF0C;&#x800C;&#x662F;&#x7531;<code>HttpClientDownloader</code>&#x8BBE;&#x7F6E;&#x3002;</p>
 <table>
 <thead>
 <tr>
@@ -669,37 +668,29 @@
 </thead>
 <tbody>
 <tr>
-<td>Site.setHttpProxy(HttpHost httpProxy)</td>
-<td>&#x8BBE;&#x7F6E;&#x5355;&#x4E00;&#x7684;&#x666E;&#x901A;HTTP&#x4EE3;&#x7406;</td>
-</tr>
-<tr>
-<td>Site.setUsernamePasswordCredentials(UsernamePasswordCredentials usernamePasswordCredentials)</td>
-<td>&#x4E3A;HttpProxy&#x8BBE;&#x7F6E;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</td>
-</tr>
-<tr>
-<td>Site.setHttpProxyPool(List\<string[]> httpProxyList, boolean isUseLastProxy)</string[]></td>
-<td>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x6C60;</td>
+<td>HttpClientDownloader.setProxyProvider(ProxyProvider proxyProvider)</td>
+<td>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;</td>
 </tr>
 </tbody>
 </table>
+<p><code>ProxyProvider</code>&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF1A;<code>SimpleProxyProvider</code>&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x7B80;&#x5355;Round-Robin&#x7684;&#x3001;&#x6CA1;&#x6709;&#x5931;&#x8D25;&#x68C0;&#x67E5;&#x7684;ProxyProvider&#x3002;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4EFB;&#x610F;&#x4E2A;&#x5019;&#x9009;&#x4EE3;&#x7406;&#xFF0C;&#x6BCF;&#x6B21;&#x4F1A;&#x6309;&#x987A;&#x5E8F;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x4F7F;&#x7528;&#x3002;&#x5B83;&#x9002;&#x5408;&#x7528;&#x5728;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#x7684;&#x6BD4;&#x8F83;&#x7A33;&#x5B9A;&#x7684;&#x4EE3;&#x7406;&#x7684;&#x573A;&#x666F;&#x3002;</p>
 <p>&#x4EE3;&#x7406;&#x793A;&#x4F8B;&#xFF1A;</p>
 <ol>
 <li>&#x8BBE;&#x7F6E;&#x5355;&#x4E00;&#x7684;&#x666E;&#x901A;HTTP&#x4EE3;&#x7406;&#x4E3A;101.101.101.101&#x7684;8888&#x7AEF;&#x53E3;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#x4E3A;&quot;username&quot;,&quot;password&quot;</li>
 </ol>
-<pre><code class="lang-java">    site.setHttpProxy(<span class="hljs-keyword">new</span> HttpHost(<span class="hljs-string">&quot;101.101.101.101&quot;</span>,<span class="hljs-number">8888</span>))
-    .setUsernamePasswordCredentials(<span class="hljs-keyword">new</span> UsernamePasswordCredentials(<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;password&quot;</span>))
+<pre><code class="lang-java">    HttpClientDownloader httpClientDownloader = <span class="hljs-keyword">new</span> HttpClientDownloader();
+    httpClientDownloader.setProxyProvider(SimpleProxyProvider.from(<span class="hljs-keyword">new</span> Proxy(<span class="hljs-string">&quot;101.101.101.101&quot;</span>,<span class="hljs-number">8888</span>,<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;password&quot;</span>)));
+    spider.setDownloader(httpClientDownloader);
 </code></pre>
 <ol>
-<li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x6C60;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;101.101.101.101&#x548C;102.102.102.102&#x4E24;&#x4E2A;IP</li>
+<li>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x6C60;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;101.101.101.101&#x548C;102.102.102.102&#x4E24;&#x4E2A;IP&#xFF0C;&#x6CA1;&#x6709;&#x5BC6;&#x7801;</li>
 </ol>
-<pre><code class="lang-java">    List&lt;String[]&gt; poolHosts = <span class="hljs-keyword">new</span> ArrayList&lt;String[]&gt;();
-    poolHosts.add(<span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;password&quot;</span>,<span class="hljs-string">&quot;101.101.101.101&quot;</span>,<span class="hljs-string">&quot;8888&quot;</span>});
-    poolHosts.add(<span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;password&quot;</span>,<span class="hljs-string">&quot;102.102.102.102&quot;</span>,<span class="hljs-string">&quot;8888&quot;</span>});
-    <span class="hljs-comment">//httpProxyList&#x8F93;&#x5165;&#x662F;IP+PORT, isUseLastProxy&#x662F;&#x6307;&#x91CD;&#x542F;&#x65F6;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x4EE3;&#x7406;&#x914D;&#x7F6E;</span>
-    site.setHttpProxyPool(poolHosts,<span class="hljs-keyword">false</span>);
+<pre><code class="lang-java">    HttpClientDownloader httpClientDownloader = <span class="hljs-keyword">new</span> HttpClientDownloader();
+    httpClientDownloader.setProxyProvider(SimpleProxyProvider.from(
+    <span class="hljs-keyword">new</span> Proxy(<span class="hljs-string">&quot;101.101.101.101&quot;</span>,<span class="hljs-number">8888</span>)
+    ,<span class="hljs-keyword">new</span> Proxy(<span class="hljs-string">&quot;102.102.102.102&quot;</span>,<span class="hljs-number">8888</span>)));
 </code></pre>
-<p>0.6.0&#x7248;&#x672C;&#x540E;&#xFF0C;&#x5141;&#x8BB8;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7406;&#x6C60;&#xFF0C;&#x901A;&#x8FC7;&#x6269;&#x5C55;&#x63A5;&#x53E3;<code>ProxyPool</code>&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x76EE;&#x524D;WebMagic&#x7684;&#x4EE3;&#x7406;&#x6C60;&#x903B;&#x8F91;&#x662F;&#xFF1A;&#x8F6E;&#x6D41;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x6C60;&#x4E2D;&#x7684;IP&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;IP&#x5931;&#x8D25;&#x8D85;&#x8FC7;20&#x6B21;&#x5219;&#x589E;&#x52A0;2&#x5C0F;&#x65F6;&#x7684;&#x91CD;&#x7528;&#x65F6;&#x95F4;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<code>SimpleProxyPool</code>&#x3002;</p>
-<p>&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x4EE3;&#x7406;&#x90E8;&#x5206;&#x6709;&#x5EFA;&#x8BAE;&#x7684;&#xFF0C;&#x6B22;&#x8FCE;&#x53C2;&#x4E0E;&#x8BA8;&#x8BBA;<a href="https://github.com/code4craft/webmagic/issues/432" target="_blank">#432 &#x4EE3;&#x7406;API&#x548C;&#x9700;&#x6C42;&#x5F81;&#x96C6;</a></p>
+<p>&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x4EE3;&#x7406;&#x90E8;&#x5206;&#x6709;&#x5EFA;&#x8BAE;&#x7684;&#xFF0C;&#x6B22;&#x8FCE;&#x53C2;&#x4E0E;&#x8BA8;&#x8BBA;<a href="https://github.com/code4craft/webmagic/issues/579" target="_blank">#579 &#x66F4;&#x591A;&#x7684;&#x4EE3;&#x7406;ProxyProvider&#x5B9E;&#x73B0;</a></p>
 
                                 
                                 </section>
@@ -743,7 +734,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.7 配置代理(beta)","level":"1.5.7","depth":2,"next":{"title":"4.8 处理非HTTP GET请求(beta)","level":"1.5.8","depth":2,"path":"posts/ch4-basic-page-processor/post.md","ref":"posts/ch4-basic-page-processor/post.md","articles":[]},"previous":{"title":"4.6 爬虫的监控","level":"1.5.6","depth":2,"path":"posts/ch4-basic-page-processor/monitor.md","ref":"posts/ch4-basic-page-processor/monitor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-49956730-1"},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","instapaper","twitter","weibo"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WebMagic Documents","language":"zh","gitbook":"*"},"file":{"path":"posts/ch4-basic-page-processor/proxy.md","mtime":"2017-05-29T10:24:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:58:26.787Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"4.7 配置代理(beta)","level":"1.5.7","depth":2,"next":{"title":"4.8 处理非HTTP GET请求(beta)","level":"1.5.8","depth":2,"path":"posts/ch4-basic-page-processor/post.md","ref":"posts/ch4-basic-page-processor/post.md","articles":[]},"previous":{"title":"4.6 爬虫的监控","level":"1.5.6","depth":2,"path":"posts/ch4-basic-page-processor/monitor.md","ref":"posts/ch4-basic-page-processor/monitor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-49956730-1"},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","instapaper","twitter","weibo"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WebMagic Documents","language":"zh","gitbook":"*"},"file":{"path":"posts/ch4-basic-page-processor/proxy.md","mtime":"2017-05-29T12:27:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-29T12:49:11.784Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
