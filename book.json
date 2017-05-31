@@ -3,10 +3,13 @@
     "pdf":{
         "fontSize":10
     },
-    "plugins": ["ga"],
+    "plugins": ["ga","disqus"],
     "pluginsConfig": {
         "ga": {
             "token": "UA-49956730-1"
+        },
+        "disqus": {
+            "shortName": "webmagic"
         }
     }
 }
