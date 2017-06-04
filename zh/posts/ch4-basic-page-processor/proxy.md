@@ -1,6 +1,6 @@
 ## 4.7 配置代理
 
-从0.7.0版本开始，WebMagic开始使用了新的代理API`ProxyProvider`。因为相对于Site的“配置”，ProxyProvider定位更多是一个“组件”，所以代理不再从Site设置，而是由`HttpClientDownloader`设置。
+从0.7.1版本开始，WebMagic开始使用了新的代理API`ProxyProvider`。因为相对于Site的“配置”，ProxyProvider定位更多是一个“组件”，所以代理不再从Site设置，而是由`HttpClientDownloader`设置。
 
 
 | API	| 说明 |

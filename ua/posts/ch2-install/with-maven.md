@@ -6,12 +6,12 @@ WebMagic побудована на Maven, тому настійно рекоме
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-core</artifactId>
-    <version>0.7.0</version>
+    <version>0.7.1</version>
 </dependency>
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.7.0</version>
+    <version>0.7.1</version>
 </dependency>
 ```
 
@@ -24,7 +24,7 @@ WebMagic використовує `SLF4J-log4j12` як реалізація SLF4
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.7.0</version>
+    <version>0.7.1</version>
     <exclusions>
         <exclusion>
             <groupId>org.slf4j</groupId>
